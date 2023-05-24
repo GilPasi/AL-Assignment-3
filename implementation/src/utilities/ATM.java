@@ -9,6 +9,7 @@ public class ATM {
 	private int priority = 0;
 	private boolean isVisited = false;
 	final double x , y; 
+	final static double [] GEOGRAFIC_CENTER_XY = {35 , 32 };//TODO :replace with actual value
 	public final int id;
 	private static int idGenerator = 1;
 	private ArrayList<ATM> neighbors;
@@ -59,6 +60,14 @@ public class ATM {
 			   Math.pow(x - other.x , 2) 
 			   			+ 
 			   	Math.pow(y - other.y , 2) 	
+				);
+	}
+	
+	public double distance () { //Overloaded version for a comparison with geographic center
+		return Math.sqrt(
+			   Math.pow(x - GEOGRAFIC_CENTER_XY[0] , 2) 
+			   			+ 
+			   	Math.pow(y - GEOGRAFIC_CENTER_XY[1] , 2) 	
 				);
 	}
 

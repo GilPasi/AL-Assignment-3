@@ -25,7 +25,8 @@ public class Runner {
 
     		final int HOUR_SIZE = 60;
     		Object [][] data = new Object [RECORDS_COUNT][DATA_TYPES_COUNT];
-    		int journeyTime = 0;//In minutes
+    		double journeyTime = 0 , leftCashUnites = 100;//In minutes
+    		final int REFILL_TIME = 120; //minutes
     		
     		reader.extractEssentials(data);
     		
@@ -50,6 +51,13 @@ public class Runner {
     			ATM nn = nearestNeighbor(unvistedAtms , cur);
     			route += "-" + nn.id;
     			cur = removeByAtm(unvistedAtms, nn);
+    			journeyTime += getTime(cur, nn);
+    			leftCashUnites --;
+    			
+    			if(leftCashUnites == 0){//Then go back for a refill
+    				journeyTime += cur.distance() / 70 ;// 70kph on an extra-road
+    				leftCashUnites = 100;
+    			}
     			
     		}
     		
@@ -68,18 +76,18 @@ public class Runner {
 		}
     }
     
-    public double getTime (ATM src , ATM dst) {
+    public static double getTime (ATM src , ATM dst) {
 		final int  EXTRA_SPEED = 70 , INTRA_SPEED  = 30 ,//kph
-		FILL_TIME = 5,CITIES_TRANSFER_TIME = 6 , REFILL_TIME = 120;//mins
+		FILL_TIME = 5,CITIES_TRANSFER_TIME = 6 ;//mins
+		
     	
     	if(src.city.equals(dst.city))
     		return src.distance(dst) / INTRA_SPEED + FILL_TIME;
     	else {
-    		return src.distance(dst) / EXTRA_SPEED + CITIES_TRANSFER_TIME + FILL_TIME;
+    		return src.distance(dst) / EXTRA_SPEED 
+    				+ CITIES_TRANSFER_TIME + FILL_TIME;
     	}
     				
-    	
-    	return 0;
     }
     
     public static void printLongString  (String str) {
