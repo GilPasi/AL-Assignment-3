@@ -5,9 +5,11 @@
 package driver;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
+
 import utilities.ATM;
+import utilities.Journey;
+import utilities.Route;
 import excel.io.ReadExcel;
 import jxl.read.biff.BiffException;
 
@@ -20,13 +22,13 @@ public class Runner {
     	
 
     	try {
+    		
+    		//=================Extracting data =========================
     		final int DATA_TYPES_COUNT = 3;
     		final int RECORDS_COUNT = reader.getSheetRows();
 
     		final int HOUR_SIZE = 60;
-    		Object [][] data = new Object [RECORDS_COUNT][DATA_TYPES_COUNT];
-    		double journeyTime = 0 , leftCashUnites = 100;//In minutes
-    		final int REFILL_TIME = 120; //minutes
+    		Object [][] data = new Object [RECORDS_COUNT][DATA_TYPES_COUNT];//String and integers array
     		
     		reader.extractEssentials(data);
     		
@@ -40,55 +42,53 @@ public class Runner {
     			String city = (String)curAtmData[0];
     			double x = Double.parseDouble((String)curAtmData[1]);
     			double y = Double.parseDouble((String)curAtmData[2]);
-    			unvistedAtms.add(new ATM(city , x , y));
-    		}
-
-    		
-    		String route = "";
-    		ATM cur = unvistedAtms.remove(0);
-    		
-    		while(!unvistedAtms.isEmpty()) {
-    			ATM nn = nearestNeighbor(unvistedAtms , cur);
-    			route += "-" + nn.id;
-    			cur = removeByAtm(unvistedAtms, nn);
-    			journeyTime += getTime(cur, nn);
-    			leftCashUnites --;
-    			
-    			if(leftCashUnites == 0){//Then go back for a refill
-    				journeyTime += cur.distance() / 70 ;// 70kph on an extra-road
-    				leftCashUnites = 100;
-    			}
-    			
     		}
     		
-    	printLongString(route);
-    	System.out.println("the route ^^^");
-    	System.out.println("Journey time : " + journeyTime / HOUR_SIZE + " hours");
-
-
-
-    		
-
+    		// ====================Algorithm============================
     		
     		
+    		ATM a1 =  new ATM("באר שבע " , 35 ,34);
+    		ATM a2 =  new ATM("באר שבע " , 35 ,34);
+    		ATM a3 =  new ATM("באר שבע " , 35 ,34);
+    		ATM a4 =  new ATM("באר שבע " , 35 ,34);
+    		ATM center = ATM.GEOGRAFIC_CENTER;
+    		
+    		
+    		new Route (a1 , a2);
+    		new Route (a1 , a3);
+    		new Route (a1 , a4);
+    		new Route (a1 , center);
+    		new Route (a2 , a3);
+    		new Route (a2 , a4);
+    		new Route (a2 , center);
+    		new Route (a3 , a4);
+    		new Route (a3 , center);
+    		new Route (a4 , center);
+
+
+
+    		ArrayList<Journey>journeys = Journey.allPossibleJourneys();
+    		
+    		System.out.println(journeys);
+    		System.out.println(journeys.size());
+    		
+    		
+    		
+    		for (int i = 0 ; i < journeys.size() ; i++) {
+    			if (journeys.get(i).isDegenerated())
+    				System.out.println(journeys.get(i));
+    		}
+
+
 		} catch (IOException | IndexOutOfBoundsException | BiffException e) {
 			e.printStackTrace();
 		}
     }
     
-    public static double getTime (ATM src , ATM dst) {
-		final int  EXTRA_SPEED = 70 , INTRA_SPEED  = 30 ,//kph
-		FILL_TIME = 5,CITIES_TRANSFER_TIME = 6 ;//mins
-		
-    	
-    	if(src.city.equals(dst.city))
-    		return src.distance(dst) / INTRA_SPEED + FILL_TIME;
-    	else {
-    		return src.distance(dst) / EXTRA_SPEED 
-    				+ CITIES_TRANSFER_TIME + FILL_TIME;
-    	}
-    				
-    }
+
+    
+    
+
     
     public static void printLongString  (String str) {
     	
@@ -113,21 +113,9 @@ public class Runner {
     	
     	
     }
-    
-    public static ATM nearestNeighbor (ArrayList<ATM> unvisitedNegibors , ATM src ) {
-    	ATM nn = unvisitedNegibors.get(0);//Nearest neighbor
-    	double nd = src.distance(nn);//Nearest distance
-    	for(int i = 1 ; i < unvisitedNegibors.size(); i++) {
-    		ATM cur = unvisitedNegibors.get(i);
-    		//Update
-    		if(src.distance(cur) < nd) {
-    			nn = cur;
-    			nd = src.distance(cur);
-    		}
-    	}
-    	return nn;
 
-    }
+    
+
     
     public static ATM removeByAtm (ArrayList<ATM> atms , ATM value) {
     	for(int i = 0 ; i < atms.size() ; i++)
