@@ -7,46 +7,64 @@ import java.util.ArrayList;
 
 public class ATM {//Equivalent to an edge
 	private int priority = 0;
-	private boolean isVisited = false;
+	public int visitsCount = 0;
 	final double x , y; 
 	public final static ATM  GEOGRAFIC_CENTER = calcGeograficCenter();
-	public final int id;
-	private static int idGenerator = 1;
+	private int id = 0;
 
+	Graph graph;
 
-	private ArrayList<ATM> neighbors;
+	public ArrayList<Route> routes;
 	private static ArrayList<ATM> allATMs;
 	public final String city;
 	
 	
 	//Constructors
 	public ATM ( String city ,double x , double y ) {
-		id = ++idGenerator;
 		this.x = x;
 		this.y = y;
 		this.city = city;
-		
-		
-		if(allATMs == null)allATMs = new ArrayList<>();
-		allATMs.add(this);
-		
+		this.routes = new ArrayList<>();
+
 	}
 	
 	public ATM (int priority , String city ,double x , double y) {
-		id = idGenerator++;
-		this.x = x;
-		this.y = y;
-		this.city = city;
+		this(city , x ,y);
 		this.priority = priority;
-		
-		if(allATMs == null)allATMs = new ArrayList<>();
+	}
+	
+	public ATM (ATM other) {
+		this.x = other.x;
+		this.y = other.y;
+		this.city = other.city;
+		this.priority = other.priority;
+		this.routes = new ArrayList<>(other.routes);
+	}
+	
+	public void setId(int id) {
+		if(id == 0)
+			throw new ExceptionInInitializerError("Id is already set to " + id + " cannot be reinitialized");
+		this.id = id;
+	}
 
-		allATMs.add(this);
+	public ATM createIsolatedATM () {
+		ATM isolatedAtm = new ATM(
+				this.priority,
+				this.city,
+				this.x ,
+				this.y
+				);
+		routes = new ArrayList<Route>();
+		return isolatedAtm;
 	}
 	
 	//Accessor methods
 	public int getPriority () {return priority;}
-	public boolean getIsVisted () {return isVisited;}
+	public int getVisitsCout () {return visitsCount;}
+	public int getId() {return id;}
+	
+	public ArrayList<Route> getRoutes (){return new ArrayList<>(routes);}
+
 	
 	public String toString () {
 		return "[" + id + ":"+city+":" + x + "," + y + "]";
@@ -92,10 +110,10 @@ public class ATM {//Equivalent to an edge
 		return new ArrayList<>(allATMs);
 	}
 	
-	//Mutator methods
+	public int neighborsCount () {return routes.size();}
 	
-
-	public void visit () {isVisited = true;}
+	//Mutator methods
+	public void visit () {visitsCount++;}
 	
 	public int setPriority (int priority) throws Exception {
 		if(this.priority > 0) 
@@ -103,22 +121,12 @@ public class ATM {//Equivalent to an edge
 		return priority;
 	}
 	
-	public void addNeighbor (ATM neighbor) throws Exception {
-		if(neighbors.contains(neighbor))
-			throw new Exception("Try to add an existing neighbor");
-		
-		neighbors.add(neighbor);
-	}
+	public void addRoute (Route newRoute) {routes.add(newRoute);}
 	
-	public static void unvisitAll () {allATMs.forEach(atm->atm.isVisited = false);}
+	
 	
 	
 	//Class Methods
-	public static void resetTour () {
-		for(ATM atm : allATMs)
-			atm.isVisited = false;
-	}
-	
 	private static ATM calcGeograficCenter() {
 		//Taken from google-maps
 		final double SOUTHEST = 29.490584850191187, NORTHEST = 33.315720555693524,
@@ -127,6 +135,6 @@ public class ATM {//Equivalent to an edge
 		return new ATM ("Geographic center" ,(SOUTHEST + NORTHEST) / 2 , (WESTEST + EASTEST) /2);
 	
 	}
-	
+
 
 }

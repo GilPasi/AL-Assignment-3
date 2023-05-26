@@ -2,7 +2,6 @@ package utilities;
 
 import java.util.ArrayList;
 
-import javax.management.relation.RoleList;
 
 public class Journey {
 	private ArrayList <Route> routes;
@@ -41,36 +40,23 @@ public class Journey {
 		return alreadyExists;
 	}
 	
-    public boolean isDegenerated () {
-    	ATM.unvisitAll();
-    	
-    	ArrayList <Route>allRoutes = Route.getAllRoutes(); // == E
-    	ArrayList<Route> routesCopy = new ArrayList<>(routes); //Do not alter the current state
-    	ArrayList<ATM> atms = ATM.getAllATMs(); // == V 
-    	
-    	do {
-    		Route currentRoute = routesCopy.remove(0);
-    		ATM u = currentRoute.getU();
-    		ATM v= currentRoute.getV();
+    public boolean isDegenerated () { 
+    	final int MAX_NEIGBORS_DEGENERATED_TREE = 2;
+    	ATM.resetVisitsCount();
+    	for(Route r : routes) {
+    		r.getU().visit();
+    		r.getV().visit();
+    	}
+    	for(Route r : routes) {
+    		if(
+    			r.getU().getVisitsCout() > MAX_NEIGBORS_DEGENERATED_TREE
+    										||
+    			r.getV().getVisitsCout() > MAX_NEIGBORS_DEGENERATED_TREE
+    				)
+    			return false;
 
-    		if(! atms.contains(v))return false;//Meaning one route was examined twice
-    		
-    		if(v.getIsVisted())
-    			atms.remove(currentRoute.getV());
-    		else 
-    			v.visit();
-    		
-    		
-    		if(! atms.contains(u))return false;//Meaning one route was examined twice
-    		
-    		if(u.getIsVisted())
-    			atms.remove(currentRoute.getU());
-    		else 
-    			u.visit();
-    		
-    	}while(!routesCopy.isEmpty());
-    	
-    	return true;
+    	}
+    return true;
     }
     
     

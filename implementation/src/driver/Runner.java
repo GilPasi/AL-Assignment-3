@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import utilities.ATM;
+import utilities.Graph;
 import utilities.Journey;
 import utilities.Route;
 import excel.io.ReadExcel;
@@ -53,6 +54,12 @@ public class Runner {
     		ATM a4 =  new ATM("באר שבע " , 35 ,34);
     		ATM center = ATM.GEOGRAFIC_CENTER;
     		
+    		Graph g = new Graph();
+    		g.addATM(a1);
+    		g.addATM(a2);
+    		g.addATM(a3);
+    		g.addATM(a4);
+    		g.addATM(center);
     		
     		new Route (a1 , a2);
     		new Route (a1 , a3);
@@ -64,20 +71,44 @@ public class Runner {
     		new Route (a3 , a4);
     		new Route (a3 , center);
     		new Route (a4 , center);
+    		System.out.println(g);
+    		
+    		Graph g2 = new Graph();
+    		g2.graphName = "second";
+    		g2.addATM(a1.createIsolatedATM());
+    		g2.addATM(a2.createIsolatedATM());
+    		g2.addATM(a3.createIsolatedATM());
+    		g2.addATM(a4.createIsolatedATM());
+    		g2.addATM(center.createIsolatedATM());
+    		
+    		g2.addRoute(1, 2);
+    		g2.addRoute(1, 3);
+    		g2.addRoute(3, 4);
+    		g2.addRoute(4, 5);
+
+    		System.out.println(g2);
+
+    		System.out.println(g2.isDegenerated());
+
+    		
+    		
+//    		System.out.println(g.isDegenerated());
+    		
+    		
 
 
-
-    		ArrayList<Journey>journeys = Journey.allPossibleJourneys();
-    		
-    		System.out.println(journeys);
-    		System.out.println(journeys.size());
-    		
-    		
-    		
-    		for (int i = 0 ; i < journeys.size() ; i++) {
-    			if (journeys.get(i).isDegenerated())
-    				System.out.println(journeys.get(i));
-    		}
+//
+//    		ArrayList<Journey>journeys = Journey.allPossibleJourneys();
+//    		
+//    		System.out.println(journeys);
+//    		System.out.println(journeys.size());
+//    		
+//    		
+//    		
+//    		for (int i = 0 ; i < journeys.size() ; i++) {
+//    			if (journeys.get(i).isDegenerated())
+//    				System.out.println(journeys.get(i));
+//    		}
 
 
 		} catch (IOException | IndexOutOfBoundsException | BiffException e) {

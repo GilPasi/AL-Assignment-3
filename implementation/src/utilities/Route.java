@@ -11,13 +11,17 @@ public class Route { //Equivalent to an edge
 	private double weight , time ;
 	private static double maxWeight = Double.MIN_VALUE;
 	private static ArrayList<Route> allRoutes;
+    boolean isVisited = false;
 	
-	public Route (ATM s , ATM d) {
-		u = s;
-		v = d;
-
+	
+	//----Constructors----
+	public Route (ATM u , ATM v) {
+		this.u = u;
+		this.v = v;
+		u.addRoute(this);
+		v.addRoute(this);
 		
-		//Order is important!
+		//The order is important!
 		time = u.road(v);
 		maxWeight = Math.max(time, maxWeight);//Update if necessary
 		time = u.weight(v);
@@ -27,6 +31,8 @@ public class Route { //Equivalent to an edge
 		allRoutes.add(this);
 	}
 
+	
+	//-----Accessors-----
 	public ATM getU() {
 		return u;
 	}
@@ -54,7 +60,7 @@ public class Route { //Equivalent to an edge
 	}
 	
 	public String toString() {
-		return "(" + u.id +"," + v.id + ")";
+		return "(" + u.getId() +"," + v.getId() + ")";
 	}
 
 
