@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -41,7 +41,7 @@ public abstract class Workbook
   /**
    * The current version of the software
    */
-  private static final String VERSION = "2.6.12";
+  private static final String vERSION = "2.6.12";
 
   /**
    * The constructor
@@ -51,7 +51,7 @@ public abstract class Workbook
   }
 
   /**
-   * Gets the sheets within this workbook.  Use of this method for
+   * Gets the sheets within this workbook.  use of this method for
    * large worksheets can cause performance problems.
    *
    * @return an array of the individual sheets
@@ -99,9 +99,9 @@ public abstract class Workbook
    *
    * @return the version
    */
-  public static String getVersion()
+  public static String getversion()
   {
-    return VERSION;
+    return vERSION;
   }
 
   /**
@@ -121,7 +121,7 @@ public abstract class Workbook
    * richer method, findByName which returns a list of ranges
    *
    * @param  name the name of the cell/range to search for
-   * @return the cell in the top left of the range if found, NULL
+   * @return the cell in the top left of the range if found, NuLL
    *         otherwise
    */
   public abstract Cell findCellByName(String name);
@@ -149,7 +149,7 @@ public abstract class Workbook
    * bottom right cell will be the same cell
    *
    * @param  name the name of the cell/range to search for
-   * @return the range of cells, or NULL if the range does not exist
+   * @return the range of cells, or NuLL if the range does not exist
    */
   public abstract Range[] findByName(String name);
 
@@ -164,7 +164,7 @@ public abstract class Workbook
   /**
    * Determines whether the sheet is protected
    *
-   * @return TRUE if the workbook is protected, FALSE otherwise
+   * @return TRuE if the workbook is protected, FALSE otherwise
    */
   public abstract boolean isProtected();
 

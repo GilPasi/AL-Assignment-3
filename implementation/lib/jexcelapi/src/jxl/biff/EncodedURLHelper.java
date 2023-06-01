@@ -3,18 +3,18 @@
 *      Copyright (C) 2005 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -24,27 +24,27 @@ import jxl.common.Logger;
 import jxl.WorkbookSettings;
 
 /**
- * Helper to get the Microsoft encoded URL from the given string
+ * Helper to get the Microsoft encoded uRL from the given string
  */
-public class EncodedURLHelper
+public class EncodeduRLHelper
 {
   /**
    * The logger
    */
-  private static Logger logger = Logger.getLogger(EncodedURLHelper.class);
+  private static Logger logger = Logger.getLogger(EncodeduRLHelper.class);
 
   // The control codes
   private static byte msDosDriveLetter = 0x01;
   private static byte sameDrive = 0x02;
   private static byte endOfSubdirectory = 0x03;
   private static byte parentDirectory = 0x04;
-  private static byte unencodedUrl = 0x05;
+  private static byte unencodedurl = 0x05;
 
-  public static byte[] getEncodedURL(String s, WorkbookSettings ws)
+  public static byte[] getEncodeduRL(String s, WorkbookSettings ws)
   {
     if (s.startsWith("http:"))
     {
-      return getURL(s, ws);
+      return getuRL(s, ws);
     }
     else
     {
@@ -131,10 +131,10 @@ public class EncodedURLHelper
     return byteArray.getBytes();
   }
   
-  private static byte[] getURL(String s, WorkbookSettings ws)
+  private static byte[] getuRL(String s, WorkbookSettings ws)
   {
     ByteArray byteArray = new ByteArray();
-    byteArray.add(unencodedUrl);
+    byteArray.add(unencodedurl);
     byteArray.add((byte) s.length());
     byteArray.add(StringHelper.getBytes(s, ws));
     return byteArray.getBytes();

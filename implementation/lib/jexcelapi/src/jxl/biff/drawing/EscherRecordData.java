@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -101,7 +101,7 @@ final class EscherRecordData
     // Instance value is the first 12 bits
     instance = (value & 0xfff0) >> 4;
 
-    // Version is the last four bits
+    // version is the last four bits
     version = value & 0xf;
 
     // Bytes 2 and 3 are the record id
@@ -129,13 +129,13 @@ final class EscherRecordData
   public EscherRecordData(EscherRecordType t)
   {
     type = t;
-    recordId = type.getValue();
+    recordId = type.getvalue();
   }
 
   /**
    * Determines whether this record is a container
    *
-   * @return TRUE if this is a container, FALSE otherwise
+   * @return TRuE if this is a container, FALSE otherwise
    */
   public boolean isContainer()
   {
@@ -211,7 +211,7 @@ final class EscherRecordData
    * Sets whether or not this is a container - called when writing
    * out an escher stream
    *
-   * @param c TRUE if this is a container, FALSE otherwise
+   * @param c TRuE if this is a container, FALSE otherwise
    */
   void setContainer(boolean c)
   {
@@ -243,7 +243,7 @@ final class EscherRecordData
    *
    * @param v the version
    */
-  void setVersion(int v)
+  void setversion(int v)
   {
     version = v;
   }

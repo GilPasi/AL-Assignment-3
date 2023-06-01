@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -75,7 +75,7 @@ class NameRange extends Operand implements ParsedThing
 
     if (index < 0 )
     {
-      throw new FormulaException(FormulaException.CELL_NAME_NOT_FOUND, name);
+      throw new FormulaException(FormulaException.CELL_NAME_NOT_FOuND, name);
     }
 
     index += 1; // indexes are 1-based
@@ -100,7 +100,7 @@ class NameRange extends Operand implements ParsedThing
     }
     catch (NameRangeException e)
     {
-      throw new FormulaException(FormulaException.CELL_NAME_NOT_FOUND,"");
+      throw new FormulaException(FormulaException.CELL_NAME_NOT_FOuND,"");
     }
   }
 
@@ -113,9 +113,9 @@ class NameRange extends Operand implements ParsedThing
   {
     byte[] data = new byte[5];
 
-    data[0] = Token.NAMED_RANGE.getValueCode();
+    data[0] = Token.NAMED_RANGE.getvalueCode();
     
-    if (getParseContext() == ParseContext.DATA_VALIDATION)
+    if (getParseContext() == ParseContext.DATA_vALIDATION)
     {
       data[0] = Token.NAMED_RANGE.getReferenceCode();
     }

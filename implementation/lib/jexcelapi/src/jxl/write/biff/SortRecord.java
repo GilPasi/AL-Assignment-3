@@ -3,18 +3,18 @@
  *      Copyright (C) 200r Andrew Khan, Al Mantei
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
+ * modify it under the terms of the GNu Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * but WITHOuT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
  * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public
+ * You should have received a copy of the GNu Lesser General Public
  * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
  ***************************************************************************/
 
 package jxl.write.biff;
@@ -98,18 +98,18 @@ class SortRecord extends WritableRecordData
 		data[4] = (byte) column3Name.length();
 		// always write the headings in unicode
 		data[5] = 0x01;
-		StringHelper.getUnicodeBytes(column1Name, data, 6);
+		StringHelper.getunicodeBytes(column1Name, data, 6);
 		int curPos = 6 + (column1Name.length() * 2);
 		if (column2Name.length() > 0) 
     {
 			data[curPos++] = 0x01;
-			StringHelper.getUnicodeBytes(column2Name, data, curPos);
+			StringHelper.getunicodeBytes(column2Name, data, curPos);
 			curPos += column2Name.length() * 2;
 		}
 		if (column3Name.length() > 0) 
     {
 			data[curPos++] = 0x01;
-			StringHelper.getUnicodeBytes(column3Name, data, curPos);
+			StringHelper.getunicodeBytes(column3Name, data, curPos);
 			curPos += column3Name.length() * 2;
 		}
 

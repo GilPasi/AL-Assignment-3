@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -34,7 +34,7 @@ public class NumberFormatRecord extends FormatRecord
   private static Logger logger = Logger.getLogger(NumberFormatRecord.class);
 
   // Dummy class to specify non validation
-  protected static class NonValidatingFormat{public NonValidatingFormat(){}};
+  protected static class NonvalidatingFormat{public NonvalidatingFormat(){}};
   
   
   /**
@@ -63,7 +63,7 @@ public class NumberFormatRecord extends FormatRecord
    * 
    * @param fmt the number format
    */
-  protected NumberFormatRecord(String fmt, NonValidatingFormat dummy)
+  protected NumberFormatRecord(String fmt, NonvalidatingFormat dummy)
   {
     super();
 
@@ -86,7 +86,7 @@ public class NumberFormatRecord extends FormatRecord
   {
     int firstHash = fs.indexOf('#');
     int firstZero = fs.indexOf('0');
-    int firstValidChar = 0;
+    int firstvalidChar = 0;
 
     if (firstHash == -1 && firstZero == -1)
     {
@@ -98,13 +98,13 @@ public class NumberFormatRecord extends FormatRecord
         firstHash != 1 && firstZero != 1)
     {
       // The string is dodgy.  Find the first valid char
-      firstHash = firstHash == -1?firstHash = Integer.MAX_VALUE:firstHash;
-      firstZero = firstZero == -1?firstZero = Integer.MAX_VALUE:firstZero;
-      firstValidChar = Math.min(firstHash, firstZero);
+      firstHash = firstHash == -1?firstHash = Integer.MAX_vALuE:firstHash;
+      firstZero = firstZero == -1?firstZero = Integer.MAX_vALuE:firstZero;
+      firstvalidChar = Math.min(firstHash, firstZero);
 
       StringBuffer tmp = new StringBuffer();
       tmp.append(fs.charAt(0));
-      tmp.append(fs.substring(firstValidChar));
+      tmp.append(fs.substring(firstvalidChar));
       fs = tmp.toString();
     }
 
@@ -119,17 +119,17 @@ public class NumberFormatRecord extends FormatRecord
     }
 
     // Find the last valid character
-    int lastValidChar = Math.max(lastHash, lastZero);
+    int lastvalidChar = Math.max(lastHash, lastZero);
 
     // Check for the existence of a ) or %
-    while ((fs.length() > lastValidChar + 1) &&
-           (fs.charAt(lastValidChar+1) == ')' ||
-            (fs.charAt(lastValidChar+1) == '%')))
+    while ((fs.length() > lastvalidChar + 1) &&
+           (fs.charAt(lastvalidChar+1) == ')' ||
+            (fs.charAt(lastvalidChar+1) == '%')))
     {
-      lastValidChar++;
+      lastvalidChar++;
     }
 
-    return fs.substring(0, lastValidChar+1);
+    return fs.substring(0, lastvalidChar+1);
   }
 }
 

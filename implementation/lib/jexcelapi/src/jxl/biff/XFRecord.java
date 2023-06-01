@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 
@@ -39,7 +39,7 @@ import jxl.format.Font;
 import jxl.format.Format;
 import jxl.format.Orientation;
 import jxl.format.Pattern;
-import jxl.format.VerticalAlignment;
+import jxl.format.verticalAlignment;
 import jxl.read.biff.Record;
 
 /**
@@ -113,7 +113,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * The vertical alignment for the cell (top, bottom, centre)
    */
-  private VerticalAlignment valign;
+  private verticalAlignment valign;
   /**
    * The orientation of the cell
    */
@@ -236,13 +236,13 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /** 
    * Constants for the used attributes
    */
-  private static final int USE_FONT = 0x4;
-  private static final int USE_FORMAT = 0x8;
-  private static final int USE_ALIGNMENT = 0x10;
-  private static final int USE_BORDER = 0x20;
-  private static final int USE_BACKGROUND = 0x40;
-  private static final int USE_PROTECTION = 0x80;
-  private static final int USE_DEFAULT_VALUE=0xf8;
+  private static final int uSE_FONT = 0x4;
+  private static final int uSE_FORMAT = 0x8;
+  private static final int uSE_ALIGNMENT = 0x10;
+  private static final int uSE_BORDER = 0x20;
+  private static final int uSE_BACKGROuND = 0x40;
+  private static final int uSE_PROTECTION = 0x80;
+  private static final int uSE_DEFAuLT_vALuE=0xf8;
 
   /**
    * The list of built in date format values
@@ -266,7 +266,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
    */
   private static final DateFormat[] javaDateFormats = new DateFormat[]
     {SimpleDateFormat.getDateInstance(DateFormat.SHORT),
-     SimpleDateFormat.getDateInstance(DateFormat.MEDIUM),
+     SimpleDateFormat.getDateInstance(DateFormat.MEDIuM),
      new SimpleDateFormat("d-MMM"),
      new SimpleDateFormat("MMM-yy"),
      new SimpleDateFormat("h:mm a"),
@@ -428,23 +428,23 @@ public class XFRecord extends WritableRecordData implements CellFormat
     locked             = true;
     hidden             = false;
     align              = Alignment.GENERAL;
-    valign             = VerticalAlignment.BOTTOM;
+    valign             = verticalAlignment.BOTTOM;
     orientation        = Orientation.HORIZONTAL;
     wrap               = false;
     leftBorder         = BorderLineStyle.NONE;
     rightBorder        = BorderLineStyle.NONE;
     topBorder          = BorderLineStyle.NONE;
     bottomBorder       = BorderLineStyle.NONE;
-    leftBorderColour   = Colour.AUTOMATIC;
-    rightBorderColour  = Colour.AUTOMATIC;
-    topBorderColour    = Colour.AUTOMATIC;
-    bottomBorderColour = Colour.AUTOMATIC;
+    leftBorderColour   = Colour.AuTOMATIC;
+    rightBorderColour  = Colour.AuTOMATIC;
+    topBorderColour    = Colour.AuTOMATIC;
+    bottomBorderColour = Colour.AuTOMATIC;
     pattern            = Pattern.NONE;
-    backgroundColour   = Colour.DEFAULT_BACKGROUND;
+    backgroundColour   = Colour.DEFAuLT_BACKGROuND;
     indentation        = 0;
     shrinkToFit        = false;
-    usedAttributes     = (byte) (USE_FONT | USE_FORMAT | 
-                         USE_BACKGROUND | USE_ALIGNMENT | USE_BORDER);
+    usedAttributes     = (byte) (uSE_FONT | uSE_FORMAT | 
+                         uSE_BACKGROuND | uSE_ALIGNMENT | uSE_BORDER);
 
     // This will be set by the initialize method and the subclass respectively
     parentFormat = 0;
@@ -462,7 +462,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   }
 
   /**
-   * Copy constructor.  Used for copying writable formats, typically
+   * Copy constructor.  used for copying writable formats, typically
    * when duplicating formats to handle merged cells
    *
    * @param fmt XFRecord
@@ -509,7 +509,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
 
   /**
    * A public copy constructor which can be used for copy formats between
-   * different sheets.  Unlike the the other copy constructor, this
+   * different sheets.  unlike the the other copy constructor, this
    * version does a deep copy
    *
    * @param cellFormat the format to copy
@@ -637,7 +637,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Sees if this format is a date format
    *
-   * @return TRUE if this refers to a built in date format
+   * @return TRuE if this refers to a built in date format
    */
   public boolean isDate()
   {
@@ -647,7 +647,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Sees if this format is a number format
    *
-   * @return TRUE if this refers to a built in date format
+   * @return TRuE if this refers to a built in date format
    */
   public boolean isNumber()
   {
@@ -657,7 +657,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Converts the various fields into binary data.  If this object has
    * been read from an Excel file rather than being requested by a user (ie.
-   * if the read flag is TRUE) then
+   * if the read flag is TRuE) then
    * no processing takes place and the raw data is simply returned.
    *
    * @return the raw data for writing
@@ -700,26 +700,26 @@ public class XFRecord extends WritableRecordData implements CellFormat
 
     IntegerHelper.getTwoBytes(cellAttributes, data, 4);
 
-    int alignMask = align.getValue();
+    int alignMask = align.getvalue();
 
     if (wrap)
     {
       alignMask |= 0x08;
     }
 
-    alignMask |= (valign.getValue() << 4);
+    alignMask |= (valign.getvalue() << 4);
 
-    alignMask |= (orientation.getValue() << 8);
+    alignMask |= (orientation.getvalue() << 8);
 
     IntegerHelper.getTwoBytes(alignMask, data, 6);
 
     data[9] = (byte) 0x10;
 
     // Set the borders
-    int borderMask = leftBorder.getValue();
-    borderMask |= (rightBorder.getValue() << 4);
-    borderMask |= (topBorder.getValue() << 8);
-    borderMask |= (bottomBorder.getValue() << 12);
+    int borderMask = leftBorder.getvalue();
+    borderMask |= (rightBorder.getvalue() << 4);
+    borderMask |= (topBorder.getvalue() << 8);
+    borderMask |= (bottomBorder.getvalue() << 12);
 
     IntegerHelper.getTwoBytes(borderMask, data, 10);
 
@@ -727,10 +727,10 @@ public class XFRecord extends WritableRecordData implements CellFormat
     // Hard code the colours to be black
     if (borderMask != 0)
     {
-    	byte lc = (byte)leftBorderColour.getValue();
-    	byte rc = (byte)rightBorderColour.getValue();
-    	byte tc = (byte)topBorderColour.getValue();
-    	byte bc = (byte)bottomBorderColour.getValue();
+    	byte lc = (byte)leftBorderColour.getvalue();
+    	byte rc = (byte)rightBorderColour.getvalue();
+    	byte tc = (byte)topBorderColour.getvalue();
+    	byte bc = (byte)bottomBorderColour.getvalue();
 
       int sideColourMask = (lc & 0x7f) | ((rc & 0x7f) << 7);
       int topColourMask  = (tc & 0x7f) | ((bc & 0x7f) << 7);
@@ -740,11 +740,11 @@ public class XFRecord extends WritableRecordData implements CellFormat
     }
 
     // Set the background pattern
-    int patternVal = pattern.getValue() << 10;
-    IntegerHelper.getTwoBytes(patternVal, data, 16);
+    int patternval = pattern.getvalue() << 10;
+    IntegerHelper.getTwoBytes(patternval, data, 16);
 
     // Set the colour palette
-    int colourPaletteMask = backgroundColour.getValue();
+    int colourPaletteMask = backgroundColour.getvalue();
     colourPaletteMask |= (0x40 << 7);
     IntegerHelper.getTwoBytes(colourPaletteMask, data, 18);
 
@@ -773,7 +773,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Accessor for the locked flag
    *
-   * @return TRUE if this XF record locks cells, FALSE otherwise
+   * @return TRuE if this XF record locks cells, FALSE otherwise
    */
   protected final boolean getLocked()
   {
@@ -783,7 +783,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Accessor for the hidden flag
    *
-   * @return TRUE if this XF record hides the cell, FALSE otherwise
+   * @return TRuE if this XF record hides the cell, FALSE otherwise
    */
   protected final boolean getHidden()
   {
@@ -798,7 +798,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   protected final void setXFLocked(boolean l)
   {
     locked = l;
-    usedAttributes |= USE_PROTECTION;
+    usedAttributes |= uSE_PROTECTION;
   }
 
   /**
@@ -822,7 +822,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     align = a;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
@@ -834,7 +834,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     indentation = i;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
@@ -846,7 +846,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     shrinkToFit = s;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
@@ -882,7 +882,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Gets the shrink to fit flag
    *
-   * @return TRUE if this format is shrink to fit, FALSE otherise
+   * @return TRuE if this format is shrink to fit, FALSE otherise
    */
   public boolean isShrinkToFit()
   {
@@ -897,7 +897,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Accessor for whether a particular cell is locked
    *
-   * @return TRUE if this cell is locked, FALSE otherwise
+   * @return TRuE if this cell is locked, FALSE otherwise
    */
   public boolean isLocked()
   {
@@ -915,7 +915,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
    *
    * @return the alignment
    */
-  public VerticalAlignment getVerticalAlignment()
+  public verticalAlignment getverticalAlignment()
   {
     if (!formatInfoInitialized)
     {
@@ -953,7 +953,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
     Assert.verify(!initialized);
     backgroundColour = c;
     pattern = p;
-    usedAttributes |= USE_BACKGROUND;
+    usedAttributes |= uSE_BACKGROuND;
   }
 
   /**
@@ -994,11 +994,11 @@ public class XFRecord extends WritableRecordData implements CellFormat
    *
    * @param va the vertical alignment
    */
-  protected void setXFVerticalAlignment(VerticalAlignment va)
+  protected void setXFverticalAlignment(verticalAlignment va)
   {
     Assert.verify(!initialized);
     valign = va;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
@@ -1013,7 +1013,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     orientation = o;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
@@ -1027,13 +1027,13 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     wrap = w;
-    usedAttributes |= USE_ALIGNMENT;
+    usedAttributes |= uSE_ALIGNMENT;
   }
 
   /**
    * Gets whether or not the contents of this cell are wrapped
    *
-   * @return TRUE if this cell's contents are wrapped, FALSE otherwise
+   * @return TRuE if this cell's contents are wrapped, FALSE otherwise
    */
   public boolean getWrap()
   {
@@ -1057,7 +1057,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   {
     Assert.verify(!initialized);
     
-    if (c == Colour.BLACK || c == Colour.UNKNOWN) 
+    if (c == Colour.BLACK || c == Colour.uNKNOWN) 
     {
       c = Colour.PALETTE_BLACK;
     }
@@ -1083,7 +1083,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
       bottomBorderColour = c;
     }
 
-    usedAttributes |= USE_BORDER;
+    usedAttributes |= uSE_BORDER;
 
     return;
   }
@@ -1188,10 +1188,10 @@ public class XFRecord extends WritableRecordData implements CellFormat
 
 
   /**
-   * Determines if this cell format has any borders at all.  Used to
+   * Determines if this cell format has any borders at all.  used to
    * set the new borders when merging a group of cells
    *
-   * @return TRUE if this cell has any borders, FALSE otherwise
+   * @return TRuE if this cell has any borders, FALSE otherwise
    */
   public final boolean hasBorders()
   {
@@ -1292,7 +1292,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
   /**
    * Accessor to see if this format is initialized
    *
-   * @return TRUE if this format is initialized, FALSE otherwise
+   * @return TRuE if this format is initialized, FALSE otherwise
    */
   public final boolean isInitialized()
   {
@@ -1300,10 +1300,10 @@ public class XFRecord extends WritableRecordData implements CellFormat
   }
 
   /**
-   * Accessor to see if this format was read in.  Used when checking merged
+   * Accessor to see if this format was read in.  used when checking merged
    * cells
    *
-   * @return TRUE if this XF record was read in, FALSE if it was generated by
+   * @return TRuE if this XF record was read in, FALSE if it was generated by
    *         the user API
    */
   public final boolean isRead()
@@ -1390,7 +1390,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
     align = Alignment.getAlignment(alignMask & 0x7);
 
     // Get the vertical alignment
-    valign = VerticalAlignment.getAlignment((alignMask >> 4) & 0x7);
+    valign = verticalAlignment.getAlignment((alignMask >> 4) & 0x7);
 
     // Get the orientation
     orientation = Orientation.getOrientation((alignMask >> 8) & 0xff);
@@ -1431,25 +1431,25 @@ public class XFRecord extends WritableRecordData implements CellFormat
     if (biffType == biff8)
     {
       // Get the background pattern.  This is the six most significant bits
-      int patternVal = IntegerHelper.getInt(data[16], data[17]);
-      patternVal = patternVal & 0xfc00;
-      patternVal = patternVal >> 10;
-      pattern = Pattern.getPattern(patternVal);
+      int patternval = IntegerHelper.getInt(data[16], data[17]);
+      patternval = patternval & 0xfc00;
+      patternval = patternval >> 10;
+      pattern = Pattern.getPattern(patternval);
 
       // Get the background colour
       int colourPaletteMask = IntegerHelper.getInt(data[18], data[19]);
       backgroundColour = Colour.getInternalColour(colourPaletteMask & 0x3f);
 
-      if (backgroundColour == Colour.UNKNOWN ||
-          backgroundColour == Colour.DEFAULT_BACKGROUND1)
+      if (backgroundColour == Colour.uNKNOWN ||
+          backgroundColour == Colour.DEFAuLT_BACKGROuND1)
       {
-        backgroundColour = Colour.DEFAULT_BACKGROUND;
+        backgroundColour = Colour.DEFAuLT_BACKGROuND;
       }
     }
     else
     {
       pattern = Pattern.NONE;
-      backgroundColour = Colour.DEFAULT_BACKGROUND;
+      backgroundColour = Colour.DEFAuLT_BACKGROuND;
     }
 
     // Set the lazy initialization flag
@@ -1468,49 +1468,49 @@ public class XFRecord extends WritableRecordData implements CellFormat
       initializeFormatInformation();
     }
 
-    int hashValue = 17;
+    int hashvalue = 17;
     int oddPrimeNumber = 37;
 
     // The boolean fields
-    hashValue = oddPrimeNumber*hashValue + (hidden ? 1:0);
-    hashValue = oddPrimeNumber*hashValue + (locked ? 1:0);
-    hashValue = oddPrimeNumber*hashValue + (wrap ? 1:0);
-    hashValue = oddPrimeNumber*hashValue + (shrinkToFit ? 1:0);
+    hashvalue = oddPrimeNumber*hashvalue + (hidden ? 1:0);
+    hashvalue = oddPrimeNumber*hashvalue + (locked ? 1:0);
+    hashvalue = oddPrimeNumber*hashvalue + (wrap ? 1:0);
+    hashvalue = oddPrimeNumber*hashvalue + (shrinkToFit ? 1:0);
 
     // The enumerations
     if (xfFormatType == cell)
     {
-      hashValue = oddPrimeNumber*hashValue + 1;
+      hashvalue = oddPrimeNumber*hashvalue + 1;
     }
     else if (xfFormatType == style)
     {
-      hashValue = oddPrimeNumber*hashValue + 2;
+      hashvalue = oddPrimeNumber*hashvalue + 2;
     }
 
-    hashValue = oddPrimeNumber*hashValue + (align.getValue() + 1);
-    hashValue = oddPrimeNumber*hashValue + (valign.getValue() + 1);
-    hashValue = oddPrimeNumber*hashValue + (orientation.getValue());
+    hashvalue = oddPrimeNumber*hashvalue + (align.getvalue() + 1);
+    hashvalue = oddPrimeNumber*hashvalue + (valign.getvalue() + 1);
+    hashvalue = oddPrimeNumber*hashvalue + (orientation.getvalue());
 
-    hashValue ^= leftBorder.getDescription().hashCode();
-    hashValue ^= rightBorder.getDescription().hashCode();
-    hashValue ^= topBorder.getDescription().hashCode();
-    hashValue ^= bottomBorder.getDescription().hashCode();
+    hashvalue ^= leftBorder.getDescription().hashCode();
+    hashvalue ^= rightBorder.getDescription().hashCode();
+    hashvalue ^= topBorder.getDescription().hashCode();
+    hashvalue ^= bottomBorder.getDescription().hashCode();
 
-    hashValue = oddPrimeNumber*hashValue + (leftBorderColour.getValue());
-    hashValue = oddPrimeNumber*hashValue + (rightBorderColour.getValue());
-    hashValue = oddPrimeNumber*hashValue + (topBorderColour.getValue());
-    hashValue = oddPrimeNumber*hashValue + (bottomBorderColour.getValue());
-    hashValue = oddPrimeNumber*hashValue + (backgroundColour.getValue());
-    hashValue = oddPrimeNumber*hashValue + (pattern.getValue() + 1);
+    hashvalue = oddPrimeNumber*hashvalue + (leftBorderColour.getvalue());
+    hashvalue = oddPrimeNumber*hashvalue + (rightBorderColour.getvalue());
+    hashvalue = oddPrimeNumber*hashvalue + (topBorderColour.getvalue());
+    hashvalue = oddPrimeNumber*hashvalue + (bottomBorderColour.getvalue());
+    hashvalue = oddPrimeNumber*hashvalue + (backgroundColour.getvalue());
+    hashvalue = oddPrimeNumber*hashvalue + (pattern.getvalue() + 1);
 
     // The integer fields
-    hashValue = oddPrimeNumber*hashValue + usedAttributes;
-    hashValue = oddPrimeNumber*hashValue + parentFormat;
-    hashValue = oddPrimeNumber*hashValue + fontIndex;
-    hashValue = oddPrimeNumber*hashValue + formatIndex;
-    hashValue = oddPrimeNumber*hashValue + indentation;
+    hashvalue = oddPrimeNumber*hashvalue + usedAttributes;
+    hashvalue = oddPrimeNumber*hashvalue + parentFormat;
+    hashvalue = oddPrimeNumber*hashvalue + fontIndex;
+    hashvalue = oddPrimeNumber*hashvalue + formatIndex;
+    hashvalue = oddPrimeNumber*hashvalue + indentation;
 
-    return hashValue;
+    return hashvalue;
   }
 
   /**
@@ -1518,7 +1518,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
    * in order to prevent duplicate formats being added to the workbook
    *
    * @param o object to compare
-   * @return TRUE if the objects are equal, FALSE otherwise
+   * @return TRuE if the objects are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {
@@ -1591,7 +1591,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
       // Both formats are initialized, so it is sufficient to just do 
       // shallow equals on font, format objects,
       // since we are testing for the presence of clones anwyay
-      // Use indices rather than objects because of the rationalization
+      // use indices rather than objects because of the rationalization
       // process (which does not set the object on an XFRecord)
       if (fontIndex   != xfr.fontIndex ||
           formatIndex != xfr.formatIndex)
@@ -1670,7 +1670,7 @@ public class XFRecord extends WritableRecordData implements CellFormat
 
   /**
    * Sets the font object with a workbook specific clone.  Called from 
-   * the CellValue object when the font has been identified as a statically
+   * the Cellvalue object when the font has been identified as a statically
    * shared font
    * Also called to superimpose a HyperlinkFont on an existing label cell
    */

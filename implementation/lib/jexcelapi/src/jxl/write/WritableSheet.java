@@ -3,23 +3,23 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
 
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.Range;
 import jxl.Sheet;
 import jxl.format.CellFormat;
@@ -70,14 +70,14 @@ public interface WritableSheet extends Sheet
 
   /**
    * Sets the width of the column on this sheet, in characters.  This causes
-   * Excel to resize the entire column.
+   * Excel to rpathCount the entire column.
    * If the columns specified already has view information associated
    * with it, then it is replaced by the new data
    *
    * @param col the column to be formatted
    * @param width the width of the column
    */
-  public void setColumnView(int col, int width);
+  public void setColumnview(int col, int width);
 
   /**
    * Sets the width and style of every cell in the specified column.
@@ -87,9 +87,9 @@ public interface WritableSheet extends Sheet
    * @param col the column to be formatted
    * @param format the format of every cell in the column
    * @param width the width of the column, in characters
-   * @deprecated Use the CellView bean instead
+   * @deprecated use the Cellview bean instead
    */
-  public void setColumnView(int col, int width, CellFormat format);
+  public void setColumnview(int col, int width, CellFormat format);
 
   /**
    * Sets the view for this column
@@ -97,7 +97,7 @@ public interface WritableSheet extends Sheet
    * @param col the column on which to set the view
    * @param view the view to set
    */
-  public void setColumnView(int col, CellView view);
+  public void setColumnview(int col, Cellview view);
 
   /**
    * Sets the height of the specified row, as well as its collapse status
@@ -106,7 +106,7 @@ public interface WritableSheet extends Sheet
    * @param height the row height in characters
    * @exception jxl.write.biff.RowsExceededException
    */
-  public void setRowView(int row, int height)
+  public void setRowview(int row, int height)
     throws RowsExceededException;
 
   /**
@@ -116,7 +116,7 @@ public interface WritableSheet extends Sheet
    * @param collapsed indicates whether the row is collapsed
    * @exception jxl.write.biff.RowsExceededException
    */
-  public void setRowView(int row, boolean collapsed)
+  public void setRowview(int row, boolean collapsed)
     throws RowsExceededException;
 
   /**
@@ -127,7 +127,7 @@ public interface WritableSheet extends Sheet
    * @param collapsed indicates whether the row is collapsed
    * @exception jxl.write.biff.RowsExceededException
    */
-  public void setRowView(int row, int height,
+  public void setRowview(int row, int height,
                          boolean collapsed)
                          throws RowsExceededException;
 
@@ -138,10 +138,10 @@ public interface WritableSheet extends Sheet
    * @param view the view to set
    * @exception RowsExceededException
    */
-  public void setRowView(int row, CellView view) throws RowsExceededException;
+  public void setRowview(int row, Cellview view) throws RowsExceededException;
 
   /**
-   * Gets the writable cell from this sheet.  Use of this method allows
+   * Gets the writable cell from this sheet.  use of this method allows
    * the returned  cell to be modified by the users application
    *
    * @param column the column
@@ -230,7 +230,7 @@ public interface WritableSheet extends Sheet
     throws WriteException, RowsExceededException;
 
   /** 
-   * Unsets a row grouping
+   * unsets a row grouping
    *
    * @param row1 the first row to unset
    * @param row2 the last row to unset
@@ -253,7 +253,7 @@ public interface WritableSheet extends Sheet
     throws WriteException, RowsExceededException;
 
   /** 
-   * Unsets a column grouping
+   * unsets a column grouping
    *
    * @param col1 the first column to unset
    * @param col2 the last column to unset
@@ -264,7 +264,7 @@ public interface WritableSheet extends Sheet
     throws WriteException, RowsExceededException;
     
   /**
-   * Unmerges the specified cells.  The Range passed in should be one that
+   * unmerges the specified cells.  The Range passed in should be one that
    * has been previously returned as a result of the getMergedCells method
    *
    * @param r the range of cells to unmerge
@@ -308,7 +308,7 @@ public interface WritableSheet extends Sheet
    * getHyperlinks method
    *
    * @param h the hyperlink to remove.
-   * @param preserveLabel if TRUE preserves the label contents, if FALSE
+   * @param preserveLabel if TRuE preserves the label contents, if FALSE
    * removes them
    */
   public void removeHyperlink(WritableHyperlink h, boolean preserveLabel);
@@ -414,7 +414,7 @@ public interface WritableSheet extends Sheet
    * @param col the number of cells accross to apply this data validation
    * @param row the number of cells downwards to apply this data validation
    */
-  public void applySharedDataValidation(WritableCell cell, int col, int row) 
+  public void applySharedDatavalidation(WritableCell cell, int col, int row) 
     throws WriteException;
 
   /**
@@ -424,7 +424,7 @@ public interface WritableSheet extends Sheet
    *
    * @param cell the top left cell containing the shared data validation
    */
-  public void removeSharedDataValidation(WritableCell cell)
+  public void removeSharedDatavalidation(WritableCell cell)
     throws WriteException;
 }
 

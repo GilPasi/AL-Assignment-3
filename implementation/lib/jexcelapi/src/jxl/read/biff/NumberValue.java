@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -32,7 +32,7 @@ import jxl.format.CellFormat;
  * A numerical cell value, initialized indirectly from a multiple biff record
  * rather than directly from the binary data
  */
-class NumberValue implements NumberCell, CellFeaturesAccessor
+class Numbervalue implements NumberCell, CellFeaturesAccessor
 {
   /**
    * The row containing this number
@@ -98,7 +98,7 @@ class NumberValue implements NumberCell, CellFeaturesAccessor
    * @param fr the formatting records
    * @param si the sheet
    */
-  public NumberValue(int r, int c, double val,
+  public Numbervalue(int r, int c, double val,
                      int xfi,
                      FormattingRecords fr,
                      SheetImpl si)
@@ -153,7 +153,7 @@ class NumberValue implements NumberCell, CellFeaturesAccessor
    *
    * @return the value
    */
-  public double getValue()
+  public double getvalue()
   {
     return value;
   }
@@ -175,7 +175,7 @@ class NumberValue implements NumberCell, CellFeaturesAccessor
    */
   public CellType getType()
   {
-    return CellType.NUMBER;
+    return CellType.NuMBER;
   }
 
   /**
@@ -197,7 +197,7 @@ class NumberValue implements NumberCell, CellFeaturesAccessor
   /**
    * Determines whether or not this cell has been hidden
    *
-   * @return TRUE if this cell has been hidden, FALSE otherwise
+   * @return TRuE if this cell has been hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -232,7 +232,7 @@ class NumberValue implements NumberCell, CellFeaturesAccessor
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public CellFeatures getCellFeatures()
   {

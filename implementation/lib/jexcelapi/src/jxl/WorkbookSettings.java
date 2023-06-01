@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -30,7 +30,7 @@ import jxl.biff.formula.FunctionNames;
 
 /**
  * This is a bean which client applications may use to set various advanced
- * workbook properties.  Use of this bean is not mandatory, and its absence
+ * workbook properties.  use of this bean is not mandatory, and its absence
  * will merely result in workbooks being read/written using the default
  * settings
  */
@@ -46,7 +46,7 @@ public final class WorkbookSettings
    * reading a worksheet.  For processeses reading many small workbooks inside
    * a WAS it might be necessary to reduce the default size
    */
-  private int initialFileSize;
+  private int initialFilpathCount;
 
   /**
    * The amount of memory allocated to the array containing the workbook
@@ -56,16 +56,16 @@ public final class WorkbookSettings
 
   /**
    * Flag to indicate whether the drawing feature is enabled or not
-   * Drawings deactivated using -Djxl.nodrawings=true on the JVM command line
-   * Activated by default or by using -Djxl.nodrawings=false on the JVM command
+   * Drawings deactivated using -Djxl.nodrawings=true on the JvM command line
+   * Activated by default or by using -Djxl.nodrawings=false on the JvM command
    * line
    */
   private boolean drawingsDisabled;
 
   /**
    * Flag to indicate whether the name feature is enabled or not
-   * Names deactivated using -Djxl.nonames=true on the JVM command line
-   * Activated by default or by using -Djxl.nonames=false on the JVM command
+   * Names deactivated using -Djxl.nonames=true on the JvM command line
+   * Activated by default or by using -Djxl.nonames=false on the JvM command
    * line
    */
   private boolean namesDisabled;
@@ -84,9 +84,9 @@ public final class WorkbookSettings
    * command line, but better to deactivate the feature when reading
    * large spreadsheets within a WAS, as the calls to System.gc() not
    * only garbage collect the junk in JExcelApi, but also in the
-   * webservers JVM and can cause significant slowdown
-   * GC deactivated using -Djxl.nogc=true on the JVM command line
-   * Activated by default or by using -Djxl.nogc=false on the JVM command line
+   * webservers JvM and can cause significant slowdown
+   * GC deactivated using -Djxl.nogc=true on the JvM command line
+   * Activated by default or by using -Djxl.nogc=false on the JvM command line
    */
   private boolean gcDisabled;
 
@@ -95,7 +95,7 @@ public final class WorkbookSettings
    * disabled or not.
    * Rationalization is enabled by default, but may be disabled for
    * performance reasons.  It can be deactivated using -Djxl.norat=true on
-   * the JVM command line
+   * the JvM command line
    */
   private boolean rationalizationDisabled;
 
@@ -114,7 +114,7 @@ public final class WorkbookSettings
   /**
    * Flag to indicate that cell validation criteria are ignored
    */
-  private boolean cellValidationDisabled;
+  private boolean cellvalidationDisabled;
 
   /**
    * Flag to indicate whether or not to ignore blank cells when processing
@@ -136,7 +136,7 @@ public final class WorkbookSettings
 
   /**
    * The directory for used for the temporary file during write.  If this
-   * is NULL, the default system directory is used
+   * is NuLL, the default system directory is used
    */
   private File temporaryFileDuringWriteDirectory;
 
@@ -146,7 +146,7 @@ public final class WorkbookSettings
    * sources) where you may want to specify the locale on an individual
    * worksheet basis
    * The locale may also be specified on the command line using the lang and
-   * country System properties eg. -Djxl.lang=en -Djxl.country=UK for UK
+   * country System properties eg. -Djxl.lang=en -Djxl.country=uK for uK
    * English
    */
   private Locale locale;
@@ -190,7 +190,7 @@ public final class WorkbookSettings
   private boolean refreshAll;
 
   /**
-   * Flag to indicate whether the file is a template or not (Usually with .xlt
+   * Flag to indicate whether the file is a template or not (usually with .xlt
    * file name extension)
    */
   private boolean template;
@@ -216,46 +216,46 @@ public final class WorkbookSettings
 
   /**
    * Write access user name.
-   * When not set (null) then we set it to  Java Excel API + Version number
+   * When not set (null) then we set it to  Java Excel API + version number
    */
   private String writeAccess;
 
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab.
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab.
    */
   private int hideobj;
 
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab.
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab.
    */
   public final static int HIDEOBJ_HIDE_ALL= 2;
 
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab.
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab.
    */
   public final static int HIDEOBJ_SHOW_PLACEHOLDERS= 1;
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab.
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab.
    */
   public final static int HIDEOBJ_SHOW_ALL= 0;
 
   // **
   // The default values
   // **
-  private static final int DEFAULT_INITIAL_FILE_SIZE = 5 * 1024 * 1024;
+  private static final int DEFAuLT_INITIAL_FILE_SIZE = 5 * 1024 * 1024;
     // 5 megabytes
-  private static final int DEFAULT_ARRAY_GROW_SIZE = 1024 * 1024; // 1 megabyte
+  private static final int DEFAuLT_ARRAY_GROW_SIZE = 1024 * 1024; // 1 megabyte
   
   /**
    * Default constructor
    */
   public WorkbookSettings()
   {
-    initialFileSize = DEFAULT_INITIAL_FILE_SIZE;
-    arrayGrowSize = DEFAULT_ARRAY_GROW_SIZE;
+    initialFilpathCount = DEFAuLT_INITIAL_FILE_SIZE;
+    arrayGrowSize = DEFAuLT_ARRAY_GROW_SIZE;
     localeFunctionNames = new HashMap();
-    excelDisplayLanguage = CountryCode.USA.getCode();
-    excelRegionalSettings = CountryCode.UK.getCode();
+    excelDisplayLanguage = CountryCode.uSA.getCode();
+    excelRegionalSettings = CountryCode.uK.getCode();
     refreshAll = false;
     template = false;
     excel9file = false;
@@ -277,7 +277,7 @@ public final class WorkbookSettings
                                 Boolean.getBoolean("jxl.noformulaadjust");
       propertySetsDisabled = Boolean.getBoolean("jxl.nopropertysets");
       ignoreBlankCells = Boolean.getBoolean("jxl.ignoreblanks");
-      cellValidationDisabled = Boolean.getBoolean("jxl.nocellvalidation");
+      cellvalidationDisabled = Boolean.getBoolean("jxl.nocellvalidation");
       autoFilterDisabled = !Boolean.getBoolean("jxl.autofilter"); 
              // autofilter currently disabled by default
       useTemporaryFileDuringWrite = 
@@ -355,9 +355,9 @@ public final class WorkbookSettings
    *
    * @param sz the file size in bytes
    */
-  public void setInitialFileSize(int sz)
+  public void setInitialFilpathCount(int sz)
   {
-    initialFileSize = sz;
+    initialFilpathCount = sz;
   }
 
   /**
@@ -365,15 +365,15 @@ public final class WorkbookSettings
    *
    * @return the initial file size
    */
-  public int getInitialFileSize()
+  public int getInitialFilpathCount()
   {
-    return initialFileSize;
+    return initialFilpathCount;
   }
 
   /**
    * Gets the drawings disabled flag
    *
-   * @return TRUE if drawings are disabled, FALSE otherwise
+   * @return TRuE if drawings are disabled, FALSE otherwise
    */
   public boolean getDrawingsDisabled()
   {
@@ -383,7 +383,7 @@ public final class WorkbookSettings
   /**
    * Accessor for the disabling of garbage collection
    *
-   * @return FALSE if JExcelApi hints for garbage collection, TRUE otherwise
+   * @return FALSE if JExcelApi hints for garbage collection, TRuE otherwise
    */
   public boolean getGCDisabled()
   {
@@ -393,7 +393,7 @@ public final class WorkbookSettings
   /**
    * Accessor for the disabling of interpretation of named ranges
    *
-   * @return FALSE if named cells are interpreted, TRUE otherwise
+   * @return FALSE if named cells are interpreted, TRuE otherwise
    */
   public boolean getNamesDisabled()
   {
@@ -403,7 +403,7 @@ public final class WorkbookSettings
   /**
    * Disables the handling of names
    *
-   * @param b TRUE to disable the names feature, FALSE otherwise
+   * @param b TRuE to disable the names feature, FALSE otherwise
    */
   public void setNamesDisabled(boolean b)
   {
@@ -413,7 +413,7 @@ public final class WorkbookSettings
   /**
    * Disables the handling of drawings
    *
-   * @param b TRUE to disable the names feature, FALSE otherwise
+   * @param b TRuE to disable the names feature, FALSE otherwise
    */
   public void setDrawingsDisabled(boolean b)
   {
@@ -434,7 +434,7 @@ public final class WorkbookSettings
   /**
    * Accessor to retrieve the rationalization flag
    *
-   * @return TRUE if rationalization is off, FALSE if rationalization is on
+   * @return TRuE if rationalization is off, FALSE if rationalization is on
    */
   public boolean getRationalizationDisabled()
   {
@@ -444,7 +444,7 @@ public final class WorkbookSettings
   /**
    * Accessor to retrieve the merged cell checking flag
    *
-   * @return TRUE if merged cell checking is off, FALSE if it is on
+   * @return TRuE if merged cell checking is off, FALSE if it is on
    */
   public boolean getMergedCellCheckingDisabled()
   {
@@ -454,7 +454,7 @@ public final class WorkbookSettings
   /**
    * Accessor to set the merged cell checking
    *
-   * @param b - TRUE to enable merged cell checking, FALSE otherwise
+   * @param b - TRuE to enable merged cell checking, FALSE otherwise
    */
   public void setMergedCellChecking(boolean b)
   {
@@ -477,7 +477,7 @@ public final class WorkbookSettings
   /**
    * Accessor to retrieve the property sets disabled flag
    *
-   * @return TRUE if property sets are disabled, FALSE otherwise
+   * @return TRuE if property sets are disabled, FALSE otherwise
    */
   public boolean getPropertySetsDisabled()
   {
@@ -487,7 +487,7 @@ public final class WorkbookSettings
   /**
    * Accessor to set the suppress warnings flag.  Due to the change
    * in logging in version 2.4, this will now set the warning
-   * behaviour across the JVM (depending on the type of logger used)
+   * behaviour across the JvM (depending on the type of logger used)
    *
    * @param w the flag
    */
@@ -499,7 +499,7 @@ public final class WorkbookSettings
   /**
    * Accessor for the formula adjust disabled
    *
-   * @return TRUE if formulas are adjusted following row/column inserts/deletes
+   * @return TRuE if formulas are adjusted following row/column inserts/deletes
    *         FALSE otherwise
    */
   public boolean getFormulaAdjust()
@@ -510,7 +510,7 @@ public final class WorkbookSettings
   /**
    * Setter for the formula adjust disabled property
    *
-   * @param b TRUE to adjust formulas, FALSE otherwise
+   * @param b TRuE to adjust formulas, FALSE otherwise
    */
   public void setFormulaAdjust(boolean b)
   {
@@ -609,7 +609,7 @@ public final class WorkbookSettings
   /**
    * Sets the garbage collection disabled
    *
-   * @param disabled TRUE to disable garbage collection, FALSE to enable it
+   * @param disabled TRuE to disable garbage collection, FALSE to enable it
    */
   public void setGCDisabled(boolean disabled)
   {
@@ -619,7 +619,7 @@ public final class WorkbookSettings
   /**
    * Sets the ignore blanks flag
    *
-   * @param ignoreBlanks TRUE to ignore blanks, FALSE to take them into account
+   * @param ignoreBlanks TRuE to ignore blanks, FALSE to take them into account
    */
   public void setIgnoreBlanks(boolean ignoreBlanks)
   {
@@ -629,7 +629,7 @@ public final class WorkbookSettings
   /**
    * Accessor for the ignore blanks flag
    *
-   * @return TRUE if blank cells are being ignored, FALSE otherwise
+   * @return TRuE if blank cells are being ignored, FALSE otherwise
    */
   public boolean getIgnoreBlanks()
   {
@@ -639,21 +639,21 @@ public final class WorkbookSettings
   /**
    * Sets the ignore cell validation flag
    *
-   * @param cv TRUE to disable cell validation, FALSE to enable it
+   * @param cv TRuE to disable cell validation, FALSE to enable it
    */
-  public void setCellValidationDisabled(boolean cv)
+  public void setCellvalidationDisabled(boolean cv)
   {
-    cellValidationDisabled = cv;
+    cellvalidationDisabled = cv;
   }
 
   /**
    * Accessor for the ignore cell validation
    *
-   * @return TRUE if cell validation is disabled
+   * @return TRuE if cell validation is disabled
    */
-  public boolean getCellValidationDisabled()
+  public boolean getCellvalidationDisabled()
   {
-    return cellValidationDisabled;
+    return cellvalidationDisabled;
   }
 
   /**
@@ -699,7 +699,7 @@ public final class WorkbookSettings
   /**
    * Accessor for the autofilter disabled feature
    *
-   * @return TRUE if autofilter is disabled, FALSE otherwise
+   * @return TRuE if autofilter is disabled, FALSE otherwise
    */
   public boolean getAutoFilterDisabled()
   {
@@ -723,10 +723,10 @@ public final class WorkbookSettings
    * this flag involves an assessment of the trade-offs between memory usage
    * and performance
    *
-   * @return TRUE if a temporary is file is used during writing, 
+   * @return TRuE if a temporary is file is used during writing, 
    * FALSE otherwise
    */
-  public boolean getUseTemporaryFileDuringWrite()
+  public boolean getuseTemporaryFileDuringWrite()
   {
     return useTemporaryFileDuringWrite;
   }
@@ -738,20 +738,20 @@ public final class WorkbookSettings
    * this flag involves an assessment of the trade-offs between memory usage
    * and performance
    *
-   * @return TRUE if a temporary is file is used during writing, 
+   * @return TRuE if a temporary is file is used during writing, 
    * FALSE otherwise
    */
-  public void setUseTemporaryFileDuringWrite(boolean temp)
+  public void setuseTemporaryFileDuringWrite(boolean temp)
   {
     useTemporaryFileDuringWrite = temp;
   }
 
   /**
-   * Used in conjunction with the UseTemporaryFileDuringWrite setting to
+   * used in conjunction with the useTemporaryFileDuringWrite setting to
    * set the target directory for the temporary files.   If this is not set,
    * the system default temporary directory is used.
    * This has no effect unless the useTemporaryFileDuringWrite setting
-   * is TRUE
+   * is TRuE
    *
    * @param dir the directory to which temporary files should be written
    */
@@ -761,12 +761,12 @@ public final class WorkbookSettings
   }
 
   /**
-   * Used in conjunction with the UseTemporaryFileDuringWrite setting to
+   * used in conjunction with the useTemporaryFileDuringWrite setting to
    * set the target directory for the temporary files.  This value can 
-   * be NULL, in which case the normal system default temporary directory
+   * be NuLL, in which case the normal system default temporary directory
    * is used instead
    *
-   * @return the temporary directory used during write, or NULL if it is 
+   * @return the temporary directory used during write, or NuLL if it is 
    *         not set
    */
   public File getTemporaryFileDuringWriteDirectory()
@@ -850,7 +850,7 @@ public final class WorkbookSettings
   }
 
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab
    *
    * Possible values are:
    * HIDEOBJ_HIDE_ALL, HIDEOBJ_SHOW_ALL and HIDEOBJ_SHOW_PLACEHOLDERS
@@ -862,7 +862,7 @@ public final class WorkbookSettings
   }
 
   /**
-   * The HIDEOBJ record stores options selected in the Options dialog,View tab
+   * The HIDEOBJ record stores options selected in the Options dialog,view tab
    *
    * Possible values are:
    * HIDEOBJ_HIDE_ALL, HIDEOBJ_SHOW_ALL and HIDEOBJ_SHOW_PLACEHOLDERS

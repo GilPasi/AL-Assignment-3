@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -37,25 +37,25 @@ public class WritableImage extends Drawing
   // for doing this is that they  appear nicely in the javadoc
 
   /**
-   * Image anchor properties which will move and resize an image
+   * Image anchor properties which will move and rpathCount an image
    * along with the cells
    */
-  public static ImageAnchorProperties MOVE_AND_SIZE_WITH_CELLS = 
-    Drawing.MOVE_AND_SIZE_WITH_CELLS;
+  public static ImageAnchorProperties MOvE_AND_SIZE_WITH_CELLS = 
+    Drawing.MOvE_AND_SIZE_WITH_CELLS;
 
   /**
    * Image anchor properties which will move an image
    * when cells are inserted or deleted
    */
-  public static ImageAnchorProperties MOVE_WITH_CELLS = 
-    Drawing.MOVE_WITH_CELLS;
+  public static ImageAnchorProperties MOvE_WITH_CELLS = 
+    Drawing.MOvE_WITH_CELLS;
 
   /**
    * Image anchor properties which will leave an image unaffected when
-   * other cells are inserted, removed or resized
+   * other cells are inserted, removed or rpathCountd
    */
-  public static ImageAnchorProperties NO_MOVE_OR_SIZE_WITH_CELLS = 
-    Drawing.NO_MOVE_OR_SIZE_WITH_CELLS;
+  public static ImageAnchorProperties NO_MOvE_OR_SIZE_WITH_CELLS = 
+    Drawing.NO_MOvE_OR_SIZE_WITH_CELLS;
 
   /**
    * Constructor

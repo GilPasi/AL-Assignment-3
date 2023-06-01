@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -115,11 +115,11 @@ class DateRecord implements DateCell, CellFeaturesAccessor
   private static final TimeZone gmtZone = TimeZone.getTimeZone("GMT");
 
   // The number of days between 01 Jan 1900 and 01 Jan 1970 - this gives
-  // the UTC offset
+  // the uTC offset
   private static final int utcOffsetDays = 25569;
 
   // The number of days between 01 Jan 1904 and 01 Jan 1970 - this gives
-  // the UTC offset using the 1904 date system
+  // the uTC offset using the 1904 date system
   private static final int utcOffsetDays1904 = 24107;
 
   // The number of milliseconds in  a day
@@ -151,9 +151,9 @@ class DateRecord implements DateCell, CellFeaturesAccessor
     format = formattingRecords.getDateFormat(xfIndex);
 
     // This value represents the number of days since 01 Jan 1900
-    double numValue = num.getValue();
+    double numvalue = num.getvalue();
 
-    if (Math.abs(numValue) < 1)
+    if (Math.abs(numvalue) < 1)
     {
       if (format == null)
       {
@@ -174,9 +174,9 @@ class DateRecord implements DateCell, CellFeaturesAccessor
     // called the 29th Feb, 1900 - but in actual fact this was not a leap year.
     // Therefore for values less than 61 in the 1900 date system,
     // add one to the numeric value
-    if (!nf && !time && numValue < nonLeapDay)
+    if (!nf && !time && numvalue < nonLeapDay)
     {
-      numValue += 1;
+      numvalue += 1;
     }
 
     // Get rid of any timezone adjustments - we are not interested
@@ -185,14 +185,14 @@ class DateRecord implements DateCell, CellFeaturesAccessor
 
     // Convert this to the number of days since 01 Jan 1970
     int offsetDays = nf ? utcOffsetDays1904 : utcOffsetDays;
-    double utcDays = numValue - offsetDays;
+    double utcDays = numvalue - offsetDays;
 
     // Convert this into utc by multiplying by the number of milliseconds
-    // in a day.  Use the round function prior to ms conversion due
+    // in a day.  use the round function prior to ms conversion due
     // to a rounding feature of Excel (contributed by Jurgen
-    long utcValue = Math.round(utcDays * secondsInADay) * msInASecond;
+    long utcvalue = Math.round(utcDays * secondsInADay) * msInASecond;
 
-    date = new Date(utcValue);
+    date = new Date(utcvalue);
   }
 
   /**
@@ -250,7 +250,7 @@ class DateRecord implements DateCell, CellFeaturesAccessor
    * Indicates whether the date value contained in this cell refers to a date,
    * or merely a time
    *
-   * @return TRUE if the value refers to a time
+   * @return TRuE if the value refers to a time
    */
   public boolean isTime()
   {
@@ -273,7 +273,7 @@ class DateRecord implements DateCell, CellFeaturesAccessor
   }
 
   /**
-   * Gets the CellFormat object for this cell.  Used by the WritableWorkbook
+   * Gets the CellFormat object for this cell.  used by the WritableWorkbook
    * API
    *
    * @return the CellFormat used for this cell
@@ -292,7 +292,7 @@ class DateRecord implements DateCell, CellFeaturesAccessor
   /**
    * Determines whether or not this cell has been hidden
    *
-   * @return TRUE if this cell has been hidden, FALSE otherwise
+   * @return TRuE if this cell has been hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -326,7 +326,7 @@ class DateRecord implements DateCell, CellFeaturesAccessor
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public CellFeatures getCellFeatures()
   {

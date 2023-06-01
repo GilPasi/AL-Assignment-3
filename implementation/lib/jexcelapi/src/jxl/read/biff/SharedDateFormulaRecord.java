@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -73,7 +73,7 @@ public class SharedDateFormulaRecord extends BaseSharedFormulaRecord
           si,
           pos);
     dateRecord  = new DateRecord(nfr, nfr.getXFIndex(), fr, nf, si);
-    value = nfr.getValue();
+    value = nfr.getvalue();
   }
 
   /**
@@ -81,7 +81,7 @@ public class SharedDateFormulaRecord extends BaseSharedFormulaRecord
    *
    * @return the value
    */
-  public double getValue()
+  public double getvalue()
   {
     return value;
   }
@@ -103,12 +103,12 @@ public class SharedDateFormulaRecord extends BaseSharedFormulaRecord
    */
   public CellType getType()
   {
-    return CellType.DATE_FORMULA;
+    return CellType.DATE_FORMuLA;
   }
 
   /**
    * Gets the raw bytes for the formula.  This will include the
-   * parsed tokens array.  Used when copying spreadsheets
+   * parsed tokens array.  used when copying spreadsheets
    *
    * @return the raw record data
    * @exception FormulaException
@@ -117,7 +117,7 @@ public class SharedDateFormulaRecord extends BaseSharedFormulaRecord
   {
     if (!getSheet().getWorkbookBof().isBiff8())
     {
-      throw new FormulaException(FormulaException.BIFF8_SUPPORTED);
+      throw new FormulaException(FormulaException.BIFF8_SuPPORTED);
     }
 
     // Get the tokens, taking into account the mapping from shared
@@ -162,7 +162,7 @@ public class SharedDateFormulaRecord extends BaseSharedFormulaRecord
    * Indicates whether the date value contained in this cell refers to a date,
    * or merely a time
    *
-   * @return TRUE if the value refers to a time
+   * @return TRuE if the value refers to a time
    */
   public boolean isTime()
   {

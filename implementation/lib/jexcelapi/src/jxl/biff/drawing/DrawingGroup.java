@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -126,7 +126,7 @@ public class DrawingGroup implements EscherStream
 
   /**
    * Copy constructor
-   * Uses a shallow copy for most things, since as soon as anything
+   * uses a shallow copy for most things, since as soon as anything
    * is changed, the drawing group is invalidated and all the data blocks
    * regenerated
    *
@@ -299,7 +299,7 @@ public class DrawingGroup implements EscherStream
    */
   public void remove(DrawingGroupObject d)
   {
-    // Unless there are real images or some such, it is possible that
+    // unless there are real images or some such, it is possible that
     // a BStoreContainer will not be present.  In that case simply return
     if (getBStoreContainer() == null)
     {
@@ -558,7 +558,7 @@ public class DrawingGroup implements EscherStream
   /**
    * Accessor for the drawingsOmitted flag
    *
-   * @return TRUE if a drawing has been omitted, FALSE otherwise
+   * @return TRuE if a drawing has been omitted, FALSE otherwise
    */
   public boolean hasDrawingsOmitted()
   {
@@ -566,11 +566,11 @@ public class DrawingGroup implements EscherStream
   }
 
   /**
-   * Updates this with the appropriate data from the drawing group passed in
+   * updates this with the appropriate data from the drawing group passed in
    * This is called during the copy process:  this is first initialised as
    * an empty object, but during the copy, the source DrawingGroup may
    * change.  After the copy process, this method is then called to update
-   * the relevant fields.  Unfortunately, the copy process required the
+   * the relevant fields.  unfortunately, the copy process required the
    * presence of a drawing group
    *
    * @param dg the drawing group containing the updated data

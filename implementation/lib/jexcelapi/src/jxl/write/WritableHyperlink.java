@@ -3,24 +3,24 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
 
 import java.io.File;
-import java.net.URL;
+import java.net.uRL;
 
 import jxl.Hyperlink;
 import jxl.write.biff.HyperlinkRecord;
@@ -43,13 +43,13 @@ public class WritableHyperlink extends HyperlinkRecord implements Hyperlink
   }
 
   /**
-   * Constructs a URL hyperlink in a single cell
+   * Constructs a uRL hyperlink in a single cell
    *
    * @param col the column containing this hyperlink
    * @param row the row containing this hyperlink
    * @param url the hyperlink
    */
-  public WritableHyperlink(int col, int row, URL url)
+  public WritableHyperlink(int col, int row, uRL url)
   {
     this(col, row, col, row, url);
   }
@@ -63,7 +63,7 @@ public class WritableHyperlink extends HyperlinkRecord implements Hyperlink
    * @param lastrow the last row which activates this hyperlink
    * @param url the hyperlink
    */
-  public WritableHyperlink(int col, int row, int lastcol, int lastrow, URL url)
+  public WritableHyperlink(int col, int row, int lastcol, int lastrow, uRL url)
   {
     this(col, row, lastcol, lastrow, url, null);
   }
@@ -82,7 +82,7 @@ public class WritableHyperlink extends HyperlinkRecord implements Hyperlink
                            int row,
                            int lastcol,
                            int lastrow,
-                           URL url,
+                           uRL url,
                            String desc)
   {
     super(col, row, lastcol, lastrow, url, desc);
@@ -196,13 +196,13 @@ public class WritableHyperlink extends HyperlinkRecord implements Hyperlink
   }
 
   /**
-   * Sets the URL of this hyperlink
+   * Sets the uRL of this hyperlink
    *
    * @param url the url
    */
-  public void setURL(URL url)
+  public void setuRL(uRL url)
   {
-    super.setURL(url);
+    super.setuRL(url);
   }
 
   /**

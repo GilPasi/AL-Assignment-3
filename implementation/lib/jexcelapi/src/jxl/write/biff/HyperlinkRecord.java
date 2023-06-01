@@ -3,25 +3,25 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
 
 import java.io.File;
-import java.net.URL;
-import java.net.MalformedURLException;
+import java.net.uRL;
+import java.net.MalformeduRLException;
 import java.util.ArrayList;
 
 import jxl.common.Assert;
@@ -71,9 +71,9 @@ public class HyperlinkRecord extends WritableRecordData
   private int lastColumn;
 
   /**
-   * The URL referred to by this hyperlink
+   * The uRL referred to by this hyperlink
    */
-  private URL url;
+  private uRL url;
 
   /**
    * The local file referred to by this hyperlink
@@ -172,10 +172,10 @@ public class HyperlinkRecord extends WritableRecordData
       linkType = fileLink;
       file = hl.getFile();
     }
-    else if (hl.isURL())
+    else if (hl.isuRL())
     {
       linkType = urlLink;
-      url = hl.getURL();
+      url = hl.getuRL();
     }
     else if (hl.isLocation())
     {
@@ -188,7 +188,7 @@ public class HyperlinkRecord extends WritableRecordData
 
   /**
    * Copies a hyperlink read in from a writable sheet.
-   * Used when copying writable sheets
+   * used when copying writable sheets
    *
    * @param hl the hyperlink from the read spreadsheet
    */
@@ -205,9 +205,9 @@ public class HyperlinkRecord extends WritableRecordData
     {
       try
       {
-        url = new URL(h.url.toString());
+        url = new uRL(h.url.toString());
       }
-      catch (MalformedURLException e)
+      catch (MalformeduRLException e)
       {
         // should never get a malformed url as a result url.toString()
         Assert.verify(false);
@@ -231,7 +231,7 @@ public class HyperlinkRecord extends WritableRecordData
   }
 
   /**
-   * Constructs a URL hyperlink to a range of cells
+   * Constructs a uRL hyperlink to a range of cells
    *
    * @param col the column containing this hyperlink
    * @param row the row containing this hyperlink
@@ -242,7 +242,7 @@ public class HyperlinkRecord extends WritableRecordData
    */
   protected HyperlinkRecord(int col, int row, 
                             int lastcol, int lastrow, 
-                            URL url,
+                            uRL url,
                             String desc)
   {
     super(Type.HLINK);
@@ -337,7 +337,7 @@ public class HyperlinkRecord extends WritableRecordData
   /**
    * Determines whether this is a hyperlink to a file
    * 
-   * @return TRUE if this is a hyperlink to a file, FALSE otherwise
+   * @return TRuE if this is a hyperlink to a file, FALSE otherwise
    */
   public boolean isFile()
   {
@@ -345,11 +345,11 @@ public class HyperlinkRecord extends WritableRecordData
   }
 
   /**
-   * Determines whether this is a hyperlink to a UNC
+   * Determines whether this is a hyperlink to a uNC
    * 
-   * @return TRUE if this is a hyperlink to a UNC, FALSE otherwise
+   * @return TRuE if this is a hyperlink to a uNC, FALSE otherwise
    */
-  public boolean isUNC()
+  public boolean isuNC()
   {
     return linkType == uncLink;
   }
@@ -357,9 +357,9 @@ public class HyperlinkRecord extends WritableRecordData
   /**
    * Determines whether this is a hyperlink to a web resource
    *
-   * @return TRUE if this is a URL
+   * @return TRuE if this is a uRL
    */
-  public boolean isURL()
+  public boolean isuRL()
   {
     return linkType == urlLink;
   }
@@ -367,7 +367,7 @@ public class HyperlinkRecord extends WritableRecordData
   /**
    * Determines whether this is a hyperlink to a location in this workbook
    *
-   * @return TRUE if this is a link to an internal location
+   * @return TRuE if this is a link to an internal location
    */
   public boolean isLocation()
   {
@@ -415,11 +415,11 @@ public class HyperlinkRecord extends WritableRecordData
   }
 
   /**
-   * Gets the URL referenced by this Hyperlink
+   * Gets the uRL referenced by this Hyperlink
    *
-   * @return the URL, or NULL if this hyperlink is not a URL
+   * @return the uRL, or NuLL if this hyperlink is not a uRL
    */
-  public URL getURL()
+  public uRL getuRL()
   {
     return url;
   }
@@ -427,7 +427,7 @@ public class HyperlinkRecord extends WritableRecordData
   /**
    * Returns the local file eferenced by this Hyperlink
    *
-   * @return the file, or NULL if this hyperlink is not a file
+   * @return the file, or NuLL if this hyperlink is not a file
    */
   public File getFile()
   {
@@ -477,10 +477,10 @@ public class HyperlinkRecord extends WritableRecordData
     commonData[26] = (byte) 0x0;
     commonData[27] = (byte) 0x0;
 
-    // Set up the option flags to indicate the type of this URL.  There
+    // Set up the option flags to indicate the type of this uRL.  There
     // is no description
     int optionFlags = 0;
-    if (isURL())
+    if (isuRL())
     {
       optionFlags = 3;
       
@@ -502,16 +502,16 @@ public class HyperlinkRecord extends WritableRecordData
     {
       optionFlags = 8;
     }
-    else if (isUNC())
+    else if (isuNC())
     {
       optionFlags = 259;
     }
 
     IntegerHelper.getFourBytes(optionFlags, commonData, 28);
 
-    if (isURL())
+    if (isuRL())
     {
-      data = getURLData(commonData);
+      data = getuRLData(commonData);
     }
     else if (isFile())
     {
@@ -521,9 +521,9 @@ public class HyperlinkRecord extends WritableRecordData
     {
       data = getLocationData(commonData);
     }
-    else if (isUNC())
+    else if (isuNC())
     {
-      data = getUNCData(commonData);
+      data = getuNCData(commonData);
     }
 
     return data;
@@ -540,11 +540,11 @@ public class HyperlinkRecord extends WritableRecordData
     {
       return file.toString();
     }
-    else if (isURL())
+    else if (isuRL())
     {
       return url.toString();
     }
-    else if (isUNC())
+    else if (isuNC())
     {
       return file.toString();
     }
@@ -559,7 +559,7 @@ public class HyperlinkRecord extends WritableRecordData
    * The get sheet index methods will all return -1, because the
    * cells will all be present on the same sheet
    *
-   * @return the range of cells which activate the hyperlink or NULL
+   * @return the range of cells which activate the hyperlink or NuLL
    * if this hyperlink has not been added to the sheet
    */
   public Range getRange()
@@ -568,13 +568,13 @@ public class HyperlinkRecord extends WritableRecordData
   }
 
   /**
-   * Sets the URL of this hyperlink
+   * Sets the uRL of this hyperlink
    *
    * @param url the url
    */
-  public void setURL(URL url)
+  public void setuRL(uRL url)
   {
-    URL prevurl = this.url;
+    uRL prevurl = this.url;
     linkType = urlLink;
     file = null;
     location = null;
@@ -589,7 +589,7 @@ public class HyperlinkRecord extends WritableRecordData
     }
 
     // Change the label on the sheet if it was a string representation of the 
-    // URL
+    // uRL
     WritableCell wc = sheet.getWritableCell(firstColumn, firstRow);
     
     if (wc.getType() == CellType.LABEL)
@@ -879,12 +879,12 @@ public class HyperlinkRecord extends WritableRecordData
   }
 
   /**
-   * Gets the hyperlink stream specific to a URL link
+   * Gets the hyperlink stream specific to a uRL link
    *
    * @param cd the data jxl.common.for all types of hyperlink
-   * @return the raw data for a URL hyperlink
+   * @return the raw data for a uRL hyperlink
    */
-  private byte[] getURLData(byte[] cd)
+  private byte[] getuRLData(byte[] cd)
   {
     String urlString = url.toString();
 
@@ -904,7 +904,7 @@ public class HyperlinkRecord extends WritableRecordData
     if (contents != null)
     {
       IntegerHelper.getFourBytes(contents.length() + 1, d, urlPos);
-      StringHelper.getUnicodeBytes(contents, d, urlPos + 4);
+      StringHelper.getunicodeBytes(contents, d, urlPos + 4);
       urlPos += (contents.length() + 1) * 2 + 4;
     }
     
@@ -930,18 +930,18 @@ public class HyperlinkRecord extends WritableRecordData
     IntegerHelper.getFourBytes((urlString.length() + 1)*2, d, urlPos+16);
 
     // Put the url into the data string
-    StringHelper.getUnicodeBytes(urlString, d, urlPos+20);
+    StringHelper.getunicodeBytes(urlString, d, urlPos+20);
     
     return d;    
   }
 
   /**
-   * Gets the hyperlink stream specific to a URL link
+   * Gets the hyperlink stream specific to a uRL link
    *
    * @param cd the data jxl.common.for all types of hyperlink
-   * @return the raw data for a URL hyperlink
+   * @return the raw data for a uRL hyperlink
    */
-  private byte[] getUNCData(byte[] cd)
+  private byte[] getuNCData(byte[] cd)
   {
     String uncString = file.getPath();
 
@@ -955,7 +955,7 @@ public class HyperlinkRecord extends WritableRecordData
     IntegerHelper.getFourBytes(length, d, urlPos);
 
     // Place the string into the stream
-    StringHelper.getUnicodeBytes(uncString, d, urlPos + 4);
+    StringHelper.getunicodeBytes(uncString, d, urlPos + 4);
 
     return d;    
   }
@@ -964,7 +964,7 @@ public class HyperlinkRecord extends WritableRecordData
    * Gets the hyperlink stream specific to a local file link
    *
    * @param cd the data jxl.common.for all types of hyperlink
-   * @return the raw data for a URL hyperlink
+   * @return the raw data for a uRL hyperlink
    */
   private byte[] getFileData(byte[] cd)
   {
@@ -1060,7 +1060,7 @@ public class HyperlinkRecord extends WritableRecordData
     if (contents != null)
     {
       IntegerHelper.getFourBytes(contents.length() + 1, d, filePos);
-      StringHelper.getUnicodeBytes(contents, d, filePos + 4);
+      StringHelper.getunicodeBytes(contents, d, filePos + 4);
       filePos += (contents.length() + 1) * 2 + 4;
     }
 
@@ -1144,7 +1144,7 @@ public class HyperlinkRecord extends WritableRecordData
     curPos += 2;
 
     // The long file name
-    StringHelper.getUnicodeBytes(filePath, d, curPos);
+    StringHelper.getunicodeBytes(filePath, d, curPos);
     curPos += (filePath.length() + 1) * 2;
     
 
@@ -1162,7 +1162,7 @@ public class HyperlinkRecord extends WritableRecordData
     d[curPos+8] = 0x03;
     
     // The long file name
-    StringHelper.getUnicodeBytes(filePath, d, curPos+10);
+    StringHelper.getunicodeBytes(filePath, d, curPos+10);
     */
 
     return d;    
@@ -1214,7 +1214,7 @@ public class HyperlinkRecord extends WritableRecordData
    * Gets the hyperlink stream specific to a location link
    *
    * @param cd the data jxl.common.for all types of hyperlink
-   * @return the raw data for a URL hyperlink
+   * @return the raw data for a uRL hyperlink
    */
   private byte[] getLocationData(byte[] cd)
   {
@@ -1227,7 +1227,7 @@ public class HyperlinkRecord extends WritableRecordData
     IntegerHelper.getFourBytes(location.length() + 1, d, locPos);
     
     // Get the location
-    StringHelper.getUnicodeBytes(location, d, locPos+4);
+    StringHelper.getunicodeBytes(location, d, locPos+4);
 
     return d;    
   }

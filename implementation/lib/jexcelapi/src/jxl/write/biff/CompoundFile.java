@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -179,7 +179,7 @@ final class CompoundFile extends BaseCompoundFile
   // The following member variables are used across methods when
   // writing out the big block depot
   /**
-   * The current position within the bbd.  Used when writing out the
+   * The current position within the bbd.  used when writing out the
    * BBD
    */
   private int bbdPos;
@@ -560,7 +560,7 @@ final class CompoundFile extends BaseCompoundFile
     // Set the number of BBD blocks
     IntegerHelper.getFourBytes(numBigBlockDepotBlocks, 
                                headerBlock, 
-                               NUM_BIG_BLOCK_DEPOT_BLOCKS_POS);  
+                               NuM_BIG_BLOCK_DEPOT_BLOCKS_POS);  
 
     // Set the small block depot chain 
     IntegerHelper.getFourBytes(sbdStartBlockChain,
@@ -570,7 +570,7 @@ final class CompoundFile extends BaseCompoundFile
     // Set the number of blocks in the small block depot chain 
     IntegerHelper.getFourBytes(numSmallBlockDepotChainBlocks,
                                headerBlock,
-                               NUM_SMALL_BLOCK_DEPOT_BLOCKS_POS);
+                               NuM_SMALL_BLOCK_DEPOT_BLOCKS_POS);
 
     // Set the extension block 
     IntegerHelper.getFourBytes(extensionBlock,
@@ -580,7 +580,7 @@ final class CompoundFile extends BaseCompoundFile
     // Set the number of extension blocks to be the number of BBD blocks - 1
     IntegerHelper.getFourBytes(numExtensionBlocks,
                                headerBlock, 
-                               NUM_EXTENSION_BLOCK_POS);
+                               NuM_EXTENSION_BLOCK_POS);
     
     // Set the root start block
     IntegerHelper.getFourBytes(rootStartBlock,
@@ -1059,7 +1059,7 @@ final class CompoundFile extends BaseCompoundFile
     pos += PROPERTY_STORAGE_BLOCK_SIZE;
 
     // Set the summary information
-    ps = new PropertyStorage(SUMMARY_INFORMATION_NAME);
+    ps = new PropertyStorage(SuMMARY_INFORMATION_NAME);
     ps.setType(2);
     ps.setStartBlock(excelDataStartBlock + excelDataBlocks);
     ps.setSize(SMALL_BLOCK_THRESHOLD);
@@ -1070,7 +1070,7 @@ final class CompoundFile extends BaseCompoundFile
     if (additionalPropertySets != null)
     {
       ReadPropertyStorage rps = (ReadPropertyStorage) 
-                            standardPropertySets.get(SUMMARY_INFORMATION_NAME);
+                            standardPropertySets.get(SuMMARY_INFORMATION_NAME);
 
       if (rps != null)
       {
@@ -1091,7 +1091,7 @@ final class CompoundFile extends BaseCompoundFile
     pos += PROPERTY_STORAGE_BLOCK_SIZE;
 
     // Set the document summary information
-    ps = new PropertyStorage(DOCUMENT_SUMMARY_INFORMATION_NAME);
+    ps = new PropertyStorage(DOCuMENT_SuMMARY_INFORMATION_NAME);
     ps.setType(2);
     ps.setStartBlock(excelDataStartBlock + excelDataBlocks + 8);
     ps.setSize(SMALL_BLOCK_THRESHOLD);

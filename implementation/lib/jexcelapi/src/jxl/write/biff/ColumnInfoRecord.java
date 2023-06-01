@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -189,7 +189,7 @@ class ColumnInfoRecord extends WritableRecordData
   }
 
   /**
-   * Sets the width.  Used when autosizing columns
+   * Sets the width.  used when autosizing columns
    * 
    * @param w the new width
    */
@@ -243,7 +243,7 @@ class ColumnInfoRecord extends WritableRecordData
   }
 
   /**
-   * Sets the cell format.  Used when importing spreadsheets
+   * Sets the cell format.  used when importing spreadsheets
    *
    * @param xfr the xf record
    */
@@ -274,7 +274,7 @@ class ColumnInfoRecord extends WritableRecordData
   /**
    * Sets this column to be hidden (or otherwise)
    *
-   * @param h TRUE if the column is to be hidden, FALSE otherwise
+   * @param h TRuE if the column is to be hidden, FALSE otherwise
    */
   void setHidden(boolean h)
   {
@@ -284,7 +284,7 @@ class ColumnInfoRecord extends WritableRecordData
   /**
    * Accessor for the hidden flag
    * 
-   * @return TRUE if this column is hidden, FALSE otherwise
+   * @return TRuE if this column is hidden, FALSE otherwise
    */
   boolean getHidden()
   {
@@ -294,7 +294,7 @@ class ColumnInfoRecord extends WritableRecordData
   /**
    * Standard equals method
    *
-   * @return TRUE if these objects are equal, FALSE otherwise
+   * @return TRuE if these objects are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {
@@ -336,20 +336,20 @@ class ColumnInfoRecord extends WritableRecordData
    */
   public int hashCode()
   {
-    int hashValue = 137;
+    int hashvalue = 137;
     int oddPrimeNumber = 79;
     
-    hashValue = hashValue * oddPrimeNumber + column;
-    hashValue = hashValue * oddPrimeNumber + xfIndex;
-    hashValue = hashValue * oddPrimeNumber + width;
-    hashValue = hashValue * oddPrimeNumber + (hidden ? 1:0);
+    hashvalue = hashvalue * oddPrimeNumber + column;
+    hashvalue = hashvalue * oddPrimeNumber + xfIndex;
+    hashvalue = hashvalue * oddPrimeNumber + width;
+    hashvalue = hashvalue * oddPrimeNumber + (hidden ? 1:0);
 
     if (style != null)
     {
-      hashValue ^= style.hashCode();
+      hashvalue ^= style.hashCode();
     }
 
-    return hashValue;
+    return hashvalue;
   }
 
   /**

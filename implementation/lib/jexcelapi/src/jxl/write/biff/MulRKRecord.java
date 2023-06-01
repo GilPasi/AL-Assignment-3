@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -59,7 +59,7 @@ class MulRKRecord extends WritableRecordData
    */
   public MulRKRecord(List numbers)
   {
-    super(Type.MULRK);
+    super(Type.MuLRK);
     row = ((Number)numbers.get(0)).getRow();
     colFirst = ((Number)numbers.get(0)).getColumn();
     colLast = colFirst + numbers.size() - 1;
@@ -69,8 +69,8 @@ class MulRKRecord extends WritableRecordData
 
     for (int i = 0; i < numbers.size(); i++)
     {
-      rknumbers[i] = (int) ((Number)numbers.get(i)).getValue();
-      xfIndices[i] = ( (CellValue) numbers.get(i)).getXFIndex();
+      rknumbers[i] = (int) ((Number)numbers.get(i)).getvalue();
+      xfIndices[i] = ( (Cellvalue) numbers.get(i)).getXFIndex();
     }
   }
 
@@ -89,7 +89,7 @@ class MulRKRecord extends WritableRecordData
 
     // Add all the rk numbers
     int pos = 4;
-    int rkValue = 0;
+    int rkvalue = 0;
     byte[] rkBytes = new byte[4];
     for (int i = 0; i < rknumbers.length; i++)
     {
@@ -99,11 +99,11 @@ class MulRKRecord extends WritableRecordData
       // undergo some outrageous jiggery pokery, as follows:
 
       // Gets the  bit representation of the number
-      rkValue = rknumbers[i] << 2;
+      rkvalue = rknumbers[i] << 2;
 
       // Set the integer bit
-      rkValue |= 0x2;
-      IntegerHelper.getFourBytes(rkValue, data, pos+2);
+      rkvalue |= 0x2;
+      IntegerHelper.getFourBytes(rkvalue, data, pos+2);
 
       pos+=6;
     }

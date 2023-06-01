@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -67,7 +67,7 @@ public class SupbookRecord extends RecordData
   public static final Type EXTERNAL = new Type();
   public static final Type ADDIN    = new Type();
   public static final Type LINK     = new Type();
-  public static final Type UNKNOWN  = new Type();
+  public static final Type uNKNOWN  = new Type();
 
   /**
    * Constructs this object from the raw data
@@ -93,7 +93,7 @@ public class SupbookRecord extends RecordData
       }
       else
       {
-        type = UNKNOWN;
+        type = uNKNOWN;
       }
     }
     else if (data[0] == 0 && data[1] == 0)
@@ -153,12 +153,12 @@ public class SupbookRecord extends RecordData
       pos = 7;
       if (encoding == 0)
       {
-        fileName = StringHelper.getUnicodeString(data, ln, pos);
+        fileName = StringHelper.getunicodeString(data, ln, pos);
         pos += ln * 2;
       }
       else
       {
-        fileName = getUnicodeEncodedFilename(data, ln, pos);
+        fileName = getunicodeEncodedFilename(data, ln, pos);
         pos += ln * 2;
       }
     }
@@ -176,7 +176,7 @@ public class SupbookRecord extends RecordData
       }
       else if (data[pos + 2] == 0x1)
       {
-        sheetNames[i] = StringHelper.getUnicodeString(data, ln, pos + 3);
+        sheetNames[i] = StringHelper.getunicodeString(data, ln, pos + 3);
         pos += ln * 2 + 3;
       }
     }
@@ -293,7 +293,7 @@ public class SupbookRecord extends RecordData
    * @param pos the position in the array
    * @return the string
    */
-  private String getUnicodeEncodedFilename(byte[] data, int ln, int pos)
+  private String getunicodeEncodedFilename(byte[] data, int ln, int pos)
   {
     StringBuffer buf = new StringBuffer();
     int endpos = pos + ln * 2;

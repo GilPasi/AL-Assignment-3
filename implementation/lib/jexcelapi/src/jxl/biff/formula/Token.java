@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -135,7 +135,7 @@ class Token
 
   /**
    * Gets the an alternative token code for the specified token
-   * Used for certain types of volatile function
+   * used for certain types of volatile function
    * 
    * @return the token code
    */
@@ -150,7 +150,7 @@ class Token
    * 
    * @return the token code
    */
-  public byte getValueCode()
+  public byte getvalueCode()
   {
     return (byte) (value.length > 0 ? value[1] : value[0]);
   }
@@ -162,7 +162,7 @@ class Token
   {
     Token t = (Token) tokens.get(new Integer(v));
     
-    return t != null ? t : UNKNOWN;
+    return t != null ? t : uNKNOWN;
   }
 
   // Operands
@@ -173,10 +173,10 @@ class Token
   public static final Token ERR         = new Token(0x1c);
   public static final Token BOOL        = new Token(0x1d);
   public static final Token INTEGER     = new Token(0x1e);
-  public static final Token DOUBLE      = new Token(0x1f);
+  public static final Token DOuBLE      = new Token(0x1f);
   public static final Token REFERR      = new Token(0x2a, 0x4a, 0x6a);
-  public static final Token REFV        = new Token(0x2c, 0x4c, 0x6c);
-  public static final Token AREAV       = new Token(0x2d, 0x4d, 0x6d);
+  public static final Token REFv        = new Token(0x2c, 0x4c, 0x6c);
+  public static final Token AREAv       = new Token(0x2d, 0x4d, 0x6d);
   public static final Token MEM_AREA    = new Token(0x26, 0x46, 0x66);
   public static final Token AREA        = new Token(0x25, 0x65, 0x45);
   public static final Token NAMED_RANGE = new Token(0x23, 0x43, 0x63);
@@ -184,37 +184,37 @@ class Token
   public static final Token NAME        = new Token(0x39, 0x59);
   public static final Token AREA3D      = new Token(0x3b, 0x5b);
 
-  // Unary Operators
-  public static final Token UNARY_PLUS   = new Token(0x12);  
-  public static final Token UNARY_MINUS  = new Token(0x13);  
+  // unary Operators
+  public static final Token uNARY_PLuS   = new Token(0x12);  
+  public static final Token uNARY_MINuS  = new Token(0x13);  
   public static final Token PERCENT      = new Token(0x14);
   public static final Token PARENTHESIS  = new Token(0x15);
 
   // Binary Operators
   public static final Token ADD           = new Token(0x3);  
-  public static final Token SUBTRACT      = new Token(0x4);  
-  public static final Token MULTIPLY      = new Token(0x5);
-  public static final Token DIVIDE        = new Token(0x6);
+  public static final Token SuBTRACT      = new Token(0x4);  
+  public static final Token MuLTIPLY      = new Token(0x5);
+  public static final Token DIvIDE        = new Token(0x6);
   public static final Token POWER         = new Token(0x7);
   public static final Token CONCAT        = new Token(0x8);
   public static final Token LESS_THAN     = new Token(0x9);
-  public static final Token LESS_EQUAL    = new Token(0xa);
-  public static final Token EQUAL         = new Token(0xb);
-  public static final Token GREATER_EQUAL = new Token(0xc);
+  public static final Token LESS_EQuAL    = new Token(0xa);
+  public static final Token EQuAL         = new Token(0xb);
+  public static final Token GREATER_EQuAL = new Token(0xc);
   public static final Token GREATER_THAN  = new Token(0xd);
-  public static final Token NOT_EQUAL     = new Token(0xe);
-  public static final Token UNION         = new Token(0x10);
+  public static final Token NOT_EQuAL     = new Token(0xe);
+  public static final Token uNION         = new Token(0x10);
   public static final Token RANGE         = new Token(0x11);
 
   // Functions
-  public static final Token FUNCTION       = new Token(0x41, 0x21, 0x61);
-  public static final Token FUNCTIONVARARG = new Token(0x42, 0x22, 0x62);
+  public static final Token FuNCTION       = new Token(0x41, 0x21, 0x61);
+  public static final Token FuNCTIONvARARG = new Token(0x42, 0x22, 0x62);
 
   // Control
-  public static final Token ATTRIBUTE = new Token(0x19);
-  public static final Token MEM_FUNC = new Token(0x29, 0x49, 0x69);
+  public static final Token ATTRIBuTE = new Token(0x19);
+  public static final Token MEM_FuNC = new Token(0x29, 0x49, 0x69);
 
-  // Unknown token
-  public static final Token UNKNOWN = new Token(0xffff);
+  // unknown token
+  public static final Token uNKNOWN = new Token(0xffff);
 }
 

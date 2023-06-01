@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -55,7 +55,7 @@ class RowRecord extends WritableRecordData
   /**
    * The cells which comprise this row
    */
-  private CellValue[] cells;
+  private Cellvalue[] cells;
   /**
    * The height of this row in 1/20ths of a point
    */
@@ -96,12 +96,12 @@ class RowRecord extends WritableRecordData
   /**
    * The maximum integer value that can be squeezed into 30 bits
    */
-  private static final int maxRKValue = 0x1fffffff;
+  private static final int maxRKvalue = 0x1fffffff;
 
   /**
    * The minimum integer value that can be squeezed into 30 bits
    */
-  private static final int minRKValue = -0x20000000;
+  private static final int minRKvalue = -0x20000000;
 
   /**
    * Indicates that the row is default height
@@ -137,7 +137,7 @@ class RowRecord extends WritableRecordData
   {
     super(Type.ROW);
     rowNumber  = rn;
-    cells      = new CellValue[0];
+    cells      = new Cellvalue[0];
     numColumns  = 0;
     rowHeight  = defaultHeightIndicator;
     collapsed  = false;
@@ -173,7 +173,7 @@ class RowRecord extends WritableRecordData
    * @param col the collapsed status of the row
    * @param ol the outline level
    * @param gs the group start
-   * @param xf the xfrecord for the row (NULL if no default is set)
+   * @param xf the xfrecord for the row (NuLL if no default is set)
    */
   void setRowDetails(int height, 
                      boolean mdfh, 
@@ -221,7 +221,7 @@ class RowRecord extends WritableRecordData
    * 
    * @param cv the cell to add
    */
-  public void addCell(CellValue cv)
+  public void addCell(Cellvalue cv)
   {
     int col = cv.getColumn();
 
@@ -237,8 +237,8 @@ class RowRecord extends WritableRecordData
     // Grow the array if needs be
     if (col >= cells.length)
     {
-      CellValue[] oldCells = cells;
-      cells = new CellValue[Math.max(oldCells.length + growSize, col+1)];
+      Cellvalue[] oldCells = cells;
+      cells = new Cellvalue[Math.max(oldCells.length + growSize, col+1)];
       System.arraycopy(oldCells, 0, cells, 0, oldCells.length);
       oldCells = null;
     }
@@ -253,10 +253,10 @@ class RowRecord extends WritableRecordData
 
         // if the cell is part of a shared data validation,then don't remove
         // the validation
-        if (wcf.getDVParser() != null &&
-            !wcf.getDVParser().extendedCellsValidation())
+        if (wcf.getDvParser() != null &&
+            !wcf.getDvParser().extendedCellsvalidation())
         {
-          wcf.removeDataValidation();
+          wcf.removeDatavalidation();
         }
       }
 
@@ -306,44 +306,44 @@ class RowRecord extends WritableRecordData
     throws IOException
   {
     // This is the list for integer values
-    ArrayList integerValues = new ArrayList();
-    boolean integerValue = false;
+    ArrayList integervalues = new ArrayList();
+    boolean integervalue = false;
 
     // Write out all the records
     for (int i = 0; i < numColumns; i++)
     {
-      integerValue = false;
+      integervalue = false;
       if (cells[i] != null)
       {
         // See if this cell is a 30-bit integer value (without additional
         // cell features)
-        if (cells[i].getType() == CellType.NUMBER)
+        if (cells[i].getType() == CellType.NuMBER)
         {
           Number nc = (Number) cells[i];
-          if (nc.getValue() == (int) nc.getValue() && 
-              nc.getValue() < maxRKValue &&
-              nc.getValue() > minRKValue &&
+          if (nc.getvalue() == (int) nc.getvalue() && 
+              nc.getvalue() < maxRKvalue &&
+              nc.getvalue() > minRKvalue &&
               nc.getCellFeatures() == null)
           {
-            integerValue = true;
+            integervalue = true;
           }
         }
 
-        if (integerValue)
+        if (integervalue)
         {
           // This cell is an integer, add it to the list
-          integerValues.add(cells[i]);
+          integervalues.add(cells[i]);
         }
         else
         {
           // This cell is not an integer.  Write out whatever integers we
           // have, and then write out this cell
-          writeIntegerValues(integerValues, outputFile);
+          writeIntegervalues(integervalues, outputFile);
           outputFile.write(cells[i]);
 
           // If the cell is a string formula, write out the string record
           // immediately afterwards
-          if (cells[i].getType() == CellType.STRING_FORMULA)
+          if (cells[i].getType() == CellType.STRING_FORMuLA)
           {
             StringRecord sr = new StringRecord(cells[i].getContents());
             outputFile.write(sr);
@@ -354,12 +354,12 @@ class RowRecord extends WritableRecordData
       {
         // Cell does not exist.  Write out the list of integers that
         // we have
-        writeIntegerValues(integerValues, outputFile);
+        writeIntegervalues(integervalues, outputFile);
       }
     }
     
     // All done.  Write out any remaining integer values
-    writeIntegerValues(integerValues, outputFile);
+    writeIntegervalues(integervalues, outputFile);
   }
 
   /**
@@ -368,34 +368,34 @@ class RowRecord extends WritableRecordData
    * 
    * @exception IOException 
    * @param outputFile the output file
-   * @param integerValues the array of integer values
+   * @param integervalues the array of integer values
    */
-  private void writeIntegerValues(ArrayList integerValues, File outputFile)
+  private void writeIntegervalues(ArrayList integervalues, File outputFile)
    throws IOException
   {
-    if (integerValues.size() == 0)
+    if (integervalues.size() == 0)
     {
       return;
     }
 
-    if (integerValues.size() >= 3 )
+    if (integervalues.size() >= 3 )
     {
       // Write out as a MulRK record
-      MulRKRecord mulrk = new MulRKRecord(integerValues);
+      MulRKRecord mulrk = new MulRKRecord(integervalues);
       outputFile.write(mulrk);
     }
     else
     {
       // Write out as number records
-      Iterator i = integerValues.iterator();
+      Iterator i = integervalues.iterator();
       while (i.hasNext())
       {
-        outputFile.write((CellValue) i.next());
+        outputFile.write((Cellvalue) i.next());
       }
     }
 
-    // Clear out the list of integerValues
-    integerValues.clear();
+    // Clear out the list of integervalues
+    integervalues.clear();
   }
 
   /**
@@ -413,7 +413,7 @@ class RowRecord extends WritableRecordData
     // specifying the "match default" flag doesn't work
     int rh = rowHeight;
     if (sheet.getSettings().getDefaultRowHeight() != 
-        SheetSettings.DEFAULT_DEFAULT_ROW_HEIGHT)
+        SheetSettings.DEFAuLT_DEFAuLT_ROW_HEIGHT)
     {
       // the default row height has been changed.  If this row does not
       // have a specific row height set on it, then set it to the default
@@ -472,7 +472,7 @@ class RowRecord extends WritableRecordData
    * @return the cell value at the specified position, or null if the column 
    *     is invalid
    */
-  public CellValue getCell(int col)
+  public Cellvalue getCell(int col)
   {
     return (col >= 0 && col < numColumns) ? cells[col] : null;
   }
@@ -526,15 +526,15 @@ class RowRecord extends WritableRecordData
     }
 
     // Create a new array to hold the new column.  Grow it if need be
-    CellValue[] oldCells = cells;
+    Cellvalue[] oldCells = cells;
 
     if (numColumns  >= cells.length - 1)
     {
-      cells = new CellValue[oldCells.length + growSize];
+      cells = new Cellvalue[oldCells.length + growSize];
     }
     else
     {
-      cells = new CellValue[oldCells.length];
+      cells = new Cellvalue[oldCells.length];
     }
 
     // Copy in everything up to the new column
@@ -571,9 +571,9 @@ class RowRecord extends WritableRecordData
     }
 
     // Create a new array to hold the new columns
-    CellValue[] oldCells = cells;
+    Cellvalue[] oldCells = cells;
 
-    cells = new CellValue[oldCells.length];
+    cells = new Cellvalue[oldCells.length];
 
     // Copy in everything up to the column
     System.arraycopy(oldCells, 0, cells, 0, col);
@@ -597,7 +597,7 @@ class RowRecord extends WritableRecordData
   /**
    * Interrogates whether this row is of default height
    *
-   * @return TRUE if this is set to the default height, FALSE otherwise
+   * @return TRuE if this is set to the default height, FALSE otherwise
    */
   public boolean isDefaultHeight()
   {
@@ -650,7 +650,7 @@ class RowRecord extends WritableRecordData
   /**
    * Accessor for the default format flag
    *
-   * @return TRUE if this row has its own default format
+   * @return TRuE if this row has its own default format
    */
   boolean hasDefaultFormat()
   {
@@ -660,7 +660,7 @@ class RowRecord extends WritableRecordData
   /**
    * Accessor for the matches default font height  flag
    *
-   * @return TRUE if this row matches the default font height
+   * @return TRuE if this row matches the default font height
    */
   boolean matchesDefaultFontHeight()
   {

@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -36,7 +36,7 @@ import jxl.write.WritableCellFormat;
 /**
  * A date stored in the database
  */
-public abstract class DateRecord extends CellValue
+public abstract class DateRecord extends Cellvalue
 {
   /**
    * The logger
@@ -58,7 +58,7 @@ public abstract class DateRecord extends CellValue
   private boolean time;
 
   // The number of days between 01 Jan 1900 and 01 Jan 1970 - this gives
-  // the UTC offset
+  // the uTC offset
   /**
    */
   private final static int utcOffsetDays = 25569;
@@ -73,7 +73,7 @@ public abstract class DateRecord extends CellValue
    * whether or not to override it with the column cell format
    */
   static final WritableCellFormat defaultDateFormat = 
-    new WritableCellFormat(DateFormats.DEFAULT);
+    new WritableCellFormat(DateFormats.DEFAuLT);
 
   // The number of days between 1 Jan 1900 and 1 March 1900. Excel thinks
   // the day before this was 29th Feb 1900, but it was 28th Feb 19000.
@@ -126,9 +126,9 @@ public abstract class DateRecord extends CellValue
    */
   protected DateRecord(int c, int r, Date d, CellFormat st)
   {
-    super(Type.NUMBER, c, r,st);
+    super(Type.NuMBER, c, r,st);
     date = d;
-    calculateValue(true);
+    calculatevalue(true);
   }
 
   /**
@@ -142,9 +142,9 @@ public abstract class DateRecord extends CellValue
    */
   protected DateRecord(int c, int r, Date d, CellFormat st, GMTDate a)
   {
-    super(Type.NUMBER, c, r, st);
+    super(Type.NuMBER, c, r, st);
     date = d;
-    calculateValue(false);
+    calculatevalue(false);
   }
 
   /**
@@ -158,10 +158,10 @@ public abstract class DateRecord extends CellValue
    */
   protected DateRecord(int c, int r, Date d, CellFormat st, boolean tim)
   {
-    super(Type.NUMBER, c, r, st);
+    super(Type.NuMBER, c, r, st);
     date = d;
     time = tim;
-    calculateValue(false);
+    calculatevalue(false);
   }
 
   /**
@@ -171,10 +171,10 @@ public abstract class DateRecord extends CellValue
    */
   protected DateRecord(DateCell dc)
   {
-    super(Type.NUMBER, dc);
+    super(Type.NuMBER, dc);
     date = dc.getDate();
     time = dc.isTime();
-    calculateValue(false);
+    calculatevalue(false);
   }
 
   /**
@@ -186,7 +186,7 @@ public abstract class DateRecord extends CellValue
    */
   protected DateRecord(int c, int r, DateRecord dr)
   {
-    super(Type.NUMBER, c, r, dr);
+    super(Type.NuMBER, c, r, dr);
     value = dr.value;
     time = dr.time;
     date = dr.date;
@@ -196,10 +196,10 @@ public abstract class DateRecord extends CellValue
    * Calculates the 1900 based numerical value based upon the utc value held
    * in the date object
    *
-   * @param adjust TRUE if we want to incorporate timezone information
-   * into the raw UTC date eg. when copying from a spreadsheet
+   * @param adjust TRuE if we want to incorporate timezone information
+   * into the raw uTC date eg. when copying from a spreadsheet
    */
-  private void calculateValue(boolean adjust)
+  private void calculatevalue(boolean adjust)
   {
     // Offsets for current time zone
     long zoneOffset = 0;
@@ -217,11 +217,11 @@ public abstract class DateRecord extends CellValue
       dstOffset = cal.get(Calendar.DST_OFFSET);
     }
 
-    long utcValue = date.getTime() + zoneOffset + dstOffset;
+    long utcvalue = date.getTime() + zoneOffset + dstOffset;
 
     // Convert this to the number of days, plus fractions of a day since
     // 01 Jan 1970
-    double utcDays = (double) utcValue / (double) msInADay;
+    double utcDays = (double) utcvalue / (double) msInADay;
 
     // Add in the offset to get the number of days since 01 Jan 1900
     value = utcDays + utcOffsetDays;
@@ -287,7 +287,7 @@ public abstract class DateRecord extends CellValue
   protected void setDate(Date d)
   {
     date = d;
-    calculateValue(true);
+    calculatevalue(true);
   }
 
   /**
@@ -299,7 +299,7 @@ public abstract class DateRecord extends CellValue
   protected void setDate(Date d, GMTDate a)
   {
     date = d;
-    calculateValue(false);
+    calculatevalue(false);
   }
 
 
@@ -318,7 +318,7 @@ public abstract class DateRecord extends CellValue
    * or merely a time.  When writing a cell, all dates are fully defined,
    * even if they refer to a time
    * 
-   * @return FALSE if this is full date, TRUE if a time
+   * @return FALSE if this is full date, TRuE if a time
    */
   public boolean isTime()
   {

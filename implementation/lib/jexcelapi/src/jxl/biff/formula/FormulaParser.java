@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the7 Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -66,11 +66,11 @@ public class FormulaParser
     if (es.getWorkbookBof() != null &&
         !es.getWorkbookBof().isBiff8())
     {
-      throw new FormulaException(FormulaException.BIFF8_SUPPORTED);
+      throw new FormulaException(FormulaException.BIFF8_SuPPORTED);
     }
     Assert.verify(nt != null);
     parser = new TokenFormulaParser(tokens, rt, es, nt, ws, 
-                                    ParseContext.DEFAULT);
+                                    ParseContext.DEFAuLT);
   }
 
   /**
@@ -97,7 +97,7 @@ public class FormulaParser
     if (es.getWorkbookBof() != null &&
         !es.getWorkbookBof().isBiff8())
     {
-      throw new FormulaException(FormulaException.BIFF8_SUPPORTED);
+      throw new FormulaException(FormulaException.BIFF8_SuPPORTED);
     }
     Assert.verify(nt != null);
     parser = new TokenFormulaParser(tokens, rt, es, nt, ws, pc);
@@ -117,7 +117,7 @@ public class FormulaParser
                        WorkbookSettings ws)
   {
     parser = new StringFormulaParser(form, es, nt, ws,
-                                     ParseContext.DEFAULT);
+                                     ParseContext.DEFAuLT);
   }
 
   /**
@@ -141,7 +141,7 @@ public class FormulaParser
 
   /**
    * Adjusts all the relative cell references in this formula by the
-   * amount specified.  Used when copying formulas
+   * amount specified.  used when copying formulas
    *
    * @param colAdjust the amount to add on to each relative cell reference
    * @param rowAdjust the amount to add on to each relative row reference
@@ -190,7 +190,7 @@ public class FormulaParser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnInserted(int sheetIndex, int col, boolean currentSheet)
@@ -205,7 +205,7 @@ public class FormulaParser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnRemoved(int sheetIndex, int col, boolean currentSheet)
@@ -220,7 +220,7 @@ public class FormulaParser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param row the row number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowInserted(int sheetIndex, int row, boolean currentSheet)
@@ -235,7 +235,7 @@ public class FormulaParser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param row the row number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowRemoved(int sheetIndex, int row, boolean currentSheet)
@@ -247,7 +247,7 @@ public class FormulaParser
    * If this formula was on an imported sheet, check that
    * cell references to another sheet are warned appropriately
    *
-   * @return TRUE if the formula is valid import, FALSE otherwise
+   * @return TRuE if the formula is valid import, FALSE otherwise
    */
   public boolean handleImportedCellReferences()
   {

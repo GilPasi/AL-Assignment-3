@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -56,7 +56,7 @@ public class File
   /**
    * The initial file size
    */
-  private int initialFileSize;
+  private int initialFilpathCount;
   /**
    * The amount to increase the growable array by
    */
@@ -84,10 +84,10 @@ public class File
   {
     // Initialize the file sizing parameters from the settings
     workbookSettings = ws;
-    initialFileSize = workbookSettings.getInitialFileSize();
+    initialFilpathCount = workbookSettings.getInitialFilpathCount();
     arrayGrowSize = workbookSettings.getArrayGrowSize();
 
-    byte[] d = new byte[initialFileSize];
+    byte[] d = new byte[initialFilpathCount];
     int bytesRead = is.read(d);
     int pos = bytesRead;
 
@@ -149,7 +149,7 @@ public class File
       System.gc();
     }
 
-    // Uncomment the following lines to send the pure workbook stream
+    // uncomment the following lines to send the pure workbook stream
     // (ie. a defragged ole stream) to an output file
 
 //      FileOutputStream fos = new FileOutputStream("defraggedxls");
@@ -159,7 +159,7 @@ public class File
   }
 
   /**
-   * Constructs a file from already defragged binary data.  Useful for
+   * Constructs a file from already defragged binary data.  useful for
    * displaying subportions of excel streams.  This is only used during
    * special runs of the "BiffDump" demo program and should not be invoked
    * as part of standard JExcelApi parsing
@@ -306,7 +306,7 @@ public class File
   /**
    * Determines if the current position exceeds the end of the file
    *
-   * @return TRUE if there is more data left in the array, FALSE otherwise
+   * @return TRuE if there is more data left in the array, FALSE otherwise
    */
   public boolean hasNext()
   {

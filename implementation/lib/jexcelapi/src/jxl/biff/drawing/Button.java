@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -240,9 +240,9 @@ public class Button implements DrawingGroupObject
     shapeId = sp.getShapeId();
     type = ShapeType.getType(sp.getShapeType());
 
-    if (type == ShapeType.UNKNOWN)
+    if (type == ShapeType.uNKNOWN)
     {
-      logger.warn("Unknown shape type");
+      logger.warn("unknown shape type");
     }
 
     ClientAnchor clientAnchor = null;
@@ -458,7 +458,7 @@ public class Button implements DrawingGroupObject
   }
 
   /**
-   * Sets the column position of this drawing.  Used when inserting/removing
+   * Sets the column position of this drawing.  used when inserting/removing
    * columns from the spreadsheet
    *
    * @param x the column
@@ -733,7 +733,7 @@ public class Button implements DrawingGroupObject
     // Data for the first continue record
     byte[] textData = new byte[commentText.length() * 2 + 1];
     textData[0] = 0x1; // unicode indicator
-    StringHelper.getUnicodeBytes(commentText, textData, 1);
+    StringHelper.getunicodeBytes(commentText, textData, 1);
     //StringHelper.getBytes(commentText, textData, 1);
     ContinueRecord textContinue = new ContinueRecord(textData);
     outputFile.write(textContinue);
@@ -805,7 +805,7 @@ public class Button implements DrawingGroupObject
       }
       else
       {
-        commentText = StringHelper.getUnicodeString
+        commentText = StringHelper.getunicodeString
           (td, (td.length - 1) / 2, 1);
       }
     }
@@ -843,7 +843,7 @@ public class Button implements DrawingGroupObject
    * copying unmodified sheets to indicate that this drawing contains
    * the first time Escher gubbins
    *
-   * @return TRUE if this MSORecord is the first drawing on the sheet
+   * @return TRuE if this MSORecord is the first drawing on the sheet
    */
   public boolean isFirst()
   {
@@ -852,10 +852,10 @@ public class Button implements DrawingGroupObject
 
   /**
    * Queries whether this object is a form object.  Form objects have their
-   * drawings records spread over TXO and CONTINUE records and
+   * drawings records spread over TXO and CONTINuE records and
    * require special handling
    *
-   * @return TRUE if this is a form object, FALSE otherwise
+   * @return TRuE if this is a form object, FALSE otherwise
    */
   public boolean isFormObject()
   {

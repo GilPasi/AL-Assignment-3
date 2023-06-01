@@ -3,25 +3,25 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
 
 import jxl.format.Colour;
 import jxl.format.ScriptStyle;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 
 /**
  * A class which is instantiated when the user application wishes to specify
@@ -61,42 +61,42 @@ public class Font extends WritableFont
   /**
    * @deprecated
    */
-  public static final UnderlineStyle NO_UNDERLINE  =
-    UnderlineStyle.NO_UNDERLINE;
+  public static final underlineStyle NO_uNDERLINE  =
+    underlineStyle.NO_uNDERLINE;
 
   /**
    * @deprecated
    */
-  public static final UnderlineStyle SINGLE        = UnderlineStyle.SINGLE;
+  public static final underlineStyle SINGLE        = underlineStyle.SINGLE;
 
   /**
    * @deprecated
    */
-  public static final UnderlineStyle DOUBLE        = UnderlineStyle.DOUBLE;
+  public static final underlineStyle DOuBLE        = underlineStyle.DOuBLE;
 
   /**
    * @deprecated
    */
-  public static final UnderlineStyle SINGLE_ACCOUNTING =
-    UnderlineStyle.SINGLE_ACCOUNTING;
+  public static final underlineStyle SINGLE_ACCOuNTING =
+    underlineStyle.SINGLE_ACCOuNTING;
 
   /**
    * @deprecated
    */
-  public static final UnderlineStyle DOUBLE_ACCOUNTING =
-    UnderlineStyle.DOUBLE_ACCOUNTING;
+  public static final underlineStyle DOuBLE_ACCOuNTING =
+    underlineStyle.DOuBLE_ACCOuNTING;
 
   // The script styles
   public static final ScriptStyle NORMAL_SCRIPT = ScriptStyle.NORMAL_SCRIPT;
-  public static final ScriptStyle SUPERSCRIPT   = ScriptStyle.SUPERSCRIPT;
-  public static final ScriptStyle SUBSCRIPT     = ScriptStyle.SUBSCRIPT;
+  public static final ScriptStyle SuPERSCRIPT   = ScriptStyle.SuPERSCRIPT;
+  public static final ScriptStyle SuBSCRIPT     = ScriptStyle.SuBSCRIPT;
 
   /**
    * Creates a default font, vanilla font of the specified face and with
    * default point size.
    *
    * @param fn the font name
-   * @deprecated Use jxl.write.WritableFont
+   * @deprecated use jxl.write.WritableFont
    */
   public Font(FontName fn)
   {
@@ -159,7 +159,7 @@ public class Font extends WritableFont
               int ps,
               BoldStyle bs,
               boolean it,
-              UnderlineStyle us)
+              underlineStyle us)
   {
     super(fn, ps, bs, it, us);
   }
@@ -181,7 +181,7 @@ public class Font extends WritableFont
               int ps,
               BoldStyle bs,
               boolean it,
-              UnderlineStyle us,
+              underlineStyle us,
               Colour c)
   {
     super(fn, ps, bs, it, us, c);
@@ -206,7 +206,7 @@ public class Font extends WritableFont
               int ps,
               BoldStyle bs,
               boolean it,
-              UnderlineStyle us,
+              underlineStyle us,
               Colour c,
               ScriptStyle ss)
   {

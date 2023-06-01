@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -188,7 +188,7 @@ class NameRecord extends WritableRecordData
    * @param theEndRow    Last row this name refers to.
    * @param theStartCol  First column this name refers to.
    * @param theEndCol    Last column this name refers to.
-   * @param global       TRUE if this is a global name
+   * @param global       TRuE if this is a global name
    */
   NameRecord(String theName, 
              int theIndex, 
@@ -225,7 +225,7 @@ class NameRecord extends WritableRecordData
    * @param theEndRow    Last row this name refers to.
    * @param theStartCol  First column this name refers to.
    * @param theEndCol    Last column this name refers to.
-   * @param global       TRUE if this is a global name
+   * @param global       TRuE if this is a global name
    */
   NameRecord(BuiltInName theName, 
              int theIndex, 
@@ -265,7 +265,7 @@ class NameRecord extends WritableRecordData
    * @param theEndRow2   Last row this name refers to (2nd instance).
    * @param theStartCol2 First column this name refers to (2nd instance).
    * @param theEndCol2   Last column this name refers to (2nd instance). 
-   * @param global       TRUE if this is a global name
+   * @param global       TRuE if this is a global name
    */
   NameRecord(BuiltInName theName, 
              int theIndex, 
@@ -368,7 +368,7 @@ class NameRecord extends WritableRecordData
     // The name
     if (builtInName != null)
     {
-      data[15] = (byte) builtInName.getValue();
+      data[15] = (byte) builtInName.getvalue();
     }
     else
     {
@@ -495,7 +495,7 @@ class NameRecord extends WritableRecordData
    *
    * @param sheetIndex the sheet index on which the column was inserted
    * @param row the column number which was inserted
-   * @reeturn TRUE if the name is to be removed entirely, FALSE otherwise
+   * @reeturn TRuE if the name is to be removed entirely, FALSE otherwise
    */
   boolean rowRemoved(int sheetIndex, int row)
   {
@@ -560,7 +560,7 @@ class NameRecord extends WritableRecordData
    *
    * @param sheetIndex the sheet index on which the column was inserted
    * @param row the column number which was inserted
-   * @reeturn TRUE if the name is to be removed entirely, FALSE otherwise
+   * @reeturn TRuE if the name is to be removed entirely, FALSE otherwise
    */
   boolean columnRemoved(int sheetIndex, int col)
   {

@@ -3,44 +3,44 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.format;
 
 /**
  * Enumeration class which contains the various underline styles available 
- * within the standard Excel UnderlineStyle palette
+ * within the standard Excel underlineStyle palette
  * 
  */
-public final class UnderlineStyle
+public final class underlineStyle
 {
   /**
-   * The internal numerical representation of the UnderlineStyle
+   * The internal numerical representation of the underlineStyle
    */
   private int value;
 
   /**
-   * The display string for the underline style.  Used when presenting the 
+   * The display string for the underline style.  used when presenting the 
    * format information
    */
   private String string;
 
   /**
-   * The list of UnderlineStyles
+   * The list of underlineStyles
    */
-  private static UnderlineStyle[] styles  = new UnderlineStyle[0];
+  private static underlineStyle[] styles  = new underlineStyle[0];
 
   /**
    * Private constructor
@@ -48,13 +48,13 @@ public final class UnderlineStyle
    * @param val 
    * @param s the display string
    */
-  protected UnderlineStyle(int val, String s)
+  protected underlineStyle(int val, String s)
   {
     value = val;
     string = s;
 
-    UnderlineStyle[] oldstyles = styles;
-    styles = new UnderlineStyle[oldstyles.length + 1];
+    underlineStyle[] oldstyles = styles;
+    styles = new underlineStyle[oldstyles.length + 1];
     System.arraycopy(oldstyles, 0, styles, 0, oldstyles.length);
     styles[oldstyles.length] = this;
   }
@@ -65,7 +65,7 @@ public final class UnderlineStyle
    * 
    * @return the binary value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -81,39 +81,39 @@ public final class UnderlineStyle
   }
 
   /**
-   * Gets the UnderlineStyle from the value
+   * Gets the underlineStyle from the value
    *
    * @param val 
-   * @return the UnderlineStyle with that value
+   * @return the underlineStyle with that value
    */
-  public static UnderlineStyle getStyle(int val)
+  public static underlineStyle getStyle(int val)
   {
     for (int i = 0 ; i < styles.length ; i++)
     {
-      if (styles[i].getValue() == val)
+      if (styles[i].getvalue() == val)
       {
         return styles[i];
       }
     }
 
-    return NO_UNDERLINE;
+    return NO_uNDERLINE;
   }
 
   // The underline styles
-  public static final UnderlineStyle NO_UNDERLINE  = 
-    new UnderlineStyle(0, "none");
+  public static final underlineStyle NO_uNDERLINE  = 
+    new underlineStyle(0, "none");
 
-  public static final UnderlineStyle SINGLE        = 
-    new UnderlineStyle(1, "single");
+  public static final underlineStyle SINGLE        = 
+    new underlineStyle(1, "single");
 
-  public static final UnderlineStyle DOUBLE        = 
-    new UnderlineStyle(2, "double");
+  public static final underlineStyle DOuBLE        = 
+    new underlineStyle(2, "double");
 
-  public static final UnderlineStyle SINGLE_ACCOUNTING = 
-    new UnderlineStyle(0x21, "single accounting");
+  public static final underlineStyle SINGLE_ACCOuNTING = 
+    new underlineStyle(0x21, "single accounting");
 
-  public static final UnderlineStyle DOUBLE_ACCOUNTING = 
-    new UnderlineStyle(0x22, "double accounting");
+  public static final underlineStyle DOuBLE_ACCOuNTING = 
+    new underlineStyle(0x22, "double accounting");
 }
 
 

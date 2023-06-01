@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -26,7 +26,7 @@ import jxl.WorkbookSettings;
 import jxl.format.Colour;
 import jxl.format.Font;
 import jxl.format.ScriptStyle;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 import jxl.read.biff.Record;
 
 /**
@@ -100,7 +100,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * The conversion factor between microsoft internal units and point size
    */
-  private static final int EXCEL_UNITS_PER_POINT = 20;
+  private static final int EXCEL_uNITS_PER_POINT = 20;
 
   /**
    * Constructor, used when creating a new font for writing out.
@@ -129,7 +129,7 @@ public class FontRecord extends WritableRecordData implements Font
   }
 
   /**
-   * Constructs this object from the raw data.  Used when reading in a
+   * Constructs this object from the raw data.  used when reading in a
    * format record
    *
    * @param t the raw data
@@ -142,7 +142,7 @@ public class FontRecord extends WritableRecordData implements Font
     byte[] data = getRecord().getData();
 
     pointHeight = IntegerHelper.getInt(data[0], data[1]) /
-      EXCEL_UNITS_PER_POINT;
+      EXCEL_uNITS_PER_POINT;
     colourIndex = IntegerHelper.getInt(data[4], data[5]);
     boldWeight  = IntegerHelper.getInt(data[6], data[7]);
     scriptStyle = IntegerHelper.getInt(data[8], data[9]);
@@ -168,7 +168,7 @@ public class FontRecord extends WritableRecordData implements Font
     }
     else if (data[15] == 1)
     {
-      name = StringHelper.getUnicodeString(data, numChars, 16);
+      name = StringHelper.getunicodeString(data, numChars, 16);
     }
     else
     {
@@ -178,7 +178,7 @@ public class FontRecord extends WritableRecordData implements Font
   }
 
   /**
-   * Constructs this object from the raw data.  Used when reading in a
+   * Constructs this object from the raw data.  used when reading in a
    * format record
    *
    * @param t the raw data
@@ -192,7 +192,7 @@ public class FontRecord extends WritableRecordData implements Font
     byte[] data = getRecord().getData();
 
     pointHeight = IntegerHelper.getInt(data[0], data[1]) /
-      EXCEL_UNITS_PER_POINT;
+      EXCEL_uNITS_PER_POINT;
     colourIndex = IntegerHelper.getInt(data[4], data[5]);
     boldWeight  = IntegerHelper.getInt(data[6], data[7]);
     scriptStyle = IntegerHelper.getInt(data[8], data[9]);
@@ -226,10 +226,10 @@ public class FontRecord extends WritableRecordData implements Font
     Assert.verify(f != null);
 
     pointHeight = f.getPointSize();
-    colourIndex = f.getColour().getValue();
+    colourIndex = f.getColour().getvalue();
     boldWeight = f.getBoldWeight();
-    scriptStyle = f.getScriptStyle().getValue();
-    underlineStyle = f.getUnderlineStyle().getValue();
+    scriptStyle = f.getScriptStyle().getvalue();
+    underlineStyle = f.getunderlineStyle().getvalue();
     italic = f.isItalic();
     name = f.getName();
     struckout = f.isStruckout();
@@ -246,7 +246,7 @@ public class FontRecord extends WritableRecordData implements Font
     byte[] data = new byte[16 + name.length() * 2];
 
     // Excel expects font heights in 1/20ths of a point
-    IntegerHelper.getTwoBytes(pointHeight * EXCEL_UNITS_PER_POINT, data, 0);
+    IntegerHelper.getTwoBytes(pointHeight * EXCEL_uNITS_PER_POINT, data, 0);
 
     // Set the font attributes to be zero for now
     if (italic)
@@ -268,7 +268,7 @@ public class FontRecord extends WritableRecordData implements Font
     // Script style
     IntegerHelper.getTwoBytes(scriptStyle, data, 8);
 
-    // Underline style
+    // underline style
     data[10] = (byte) underlineStyle;
 
     // Set the font family to be 0
@@ -286,7 +286,7 @@ public class FontRecord extends WritableRecordData implements Font
     data[15] = (byte) 1;
 
     // Copy in the string
-    StringHelper.getUnicodeBytes(name, data, 16);
+    StringHelper.getunicodeBytes(name, data, 16);
 
     return data;
   }
@@ -294,7 +294,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * Accessor to see whether this object is initialized or not.
    *
-   * @return TRUE if this font record has been initialized, FALSE otherwise
+   * @return TRuE if this font record has been initialized, FALSE otherwise
    */
   public final boolean isInitialized()
   {
@@ -392,7 +392,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * Returns the italic flag
    *
-   * @return TRUE if this font is italic, FALSE otherwise
+   * @return TRuE if this font is italic, FALSE otherwise
    */
   public boolean isItalic()
   {
@@ -405,7 +405,7 @@ public class FontRecord extends WritableRecordData implements Font
    *
    * @param us the underline style
    */
-  protected void setFontUnderlineStyle(int us)
+  protected void setFontunderlineStyle(int us)
   {
     Assert.verify(!initialized);
 
@@ -417,9 +417,9 @@ public class FontRecord extends WritableRecordData implements Font
    *
    * @return the underline style
    */
-  public UnderlineStyle getUnderlineStyle()
+  public underlineStyle getunderlineStyle()
   {
-    return UnderlineStyle.getStyle(underlineStyle);
+    return underlineStyle.getStyle(underlineStyle);
   }
 
   /**
@@ -490,7 +490,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * Standard equals method
    * @param o the object to compare
-   * @return TRUE if the objects are equal, FALSE otherwise
+   * @return TRuE if the objects are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {
@@ -526,7 +526,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * Accessor for the strike out flag
    *
-   * @return TRUE if this font is struck out, FALSE otherwise
+   * @return TRuE if this font is struck out, FALSE otherwise
    */
   public boolean isStruckout()
   {
@@ -536,7 +536,7 @@ public class FontRecord extends WritableRecordData implements Font
   /**
    * Sets the struck out flag
    *
-   * @param os TRUE if the font is struck out, false otherwise
+   * @param os TRuE if the font is struck out, false otherwise
    */
   protected void setFontStruckout(boolean os)
   {

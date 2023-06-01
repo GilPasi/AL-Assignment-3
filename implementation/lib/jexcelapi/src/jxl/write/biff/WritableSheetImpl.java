@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -34,7 +34,7 @@ import jxl.Cell;
 import jxl.CellFeatures;
 import jxl.CellReferenceHelper;
 import jxl.CellType;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.DateCell;
 import jxl.HeaderFooter;
 import jxl.Hyperlink;
@@ -49,8 +49,8 @@ import jxl.biff.AutoFilter;
 import jxl.biff.BuiltInName;
 import jxl.biff.CellFinder;
 import jxl.biff.ConditionalFormat;
-import jxl.biff.DataValidation;
-import jxl.biff.DVParser;
+import jxl.biff.Datavalidation;
+import jxl.biff.DvParser;
 import jxl.biff.EmptyCell;
 import jxl.biff.FormattingRecords;
 import jxl.biff.FormulaData;
@@ -160,10 +160,10 @@ class WritableSheetImpl implements WritableSheet
   private boolean chartOnly;
 
   /**
-   * The data validations on this page.  Used to store data validations
+   * The data validations on this page.  used to store data validations
    * from a read sheet
    */
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
 
   /**
    * Array of row page breaks
@@ -277,7 +277,7 @@ class WritableSheetImpl implements WritableSheet
      * Equals method
      * 
      * @param o the object to compare
-     * @return TRUE if equal, FALSE otherwise
+     * @return TRuE if equal, FALSE otherwise
      */
     public boolean equals(Object o)
     {
@@ -660,20 +660,20 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Adjust any data validations
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.insertRow(row);
+      datavalidation.insertRow(row);
     }
 
     if (validatedCells != null && validatedCells.size() > 0)
     {
       for (Iterator vci = validatedCells.iterator(); vci.hasNext();)
       {
-        CellValue cv = (CellValue) vci.next();
+        Cellvalue cv = (Cellvalue) vci.next();
         CellFeatures cf = cv.getCellFeatures();
-        if (cf.getDVParser() != null)
+        if (cf.getDvParser() != null)
         {
-          cf.getDVParser().insertRow(row);
+          cf.getDvParser().insertRow(row);
         }
       }
     }
@@ -686,7 +686,7 @@ class WritableSheetImpl implements WritableSheet
     Iterator ri = rowBreaks.iterator();
     while (ri.hasNext())
     {
-      int val = ( (Integer) ri.next()).intValue();
+      int val = ( (Integer) ri.next()).intvalue();
       if (val >= row)
       {
         val++;
@@ -767,9 +767,9 @@ class WritableSheetImpl implements WritableSheet
       {
         Integer colnumber = (Integer) i.next();
 
-        if (colnumber.intValue() >= col)
+        if (colnumber.intvalue() >= col)
         {
-          newAutosized.add(new Integer(colnumber.intValue() + 1));
+          newAutosized.add(new Integer(colnumber.intvalue() + 1));
         }
         else
         {
@@ -780,20 +780,20 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Handle any data validations
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.insertColumn(col);
+      datavalidation.insertColumn(col);
     }
 
     if (validatedCells != null && validatedCells.size() > 0)
     {
       for (Iterator vci = validatedCells.iterator(); vci.hasNext();)
       {
-        CellValue cv = (CellValue) vci.next();
+        Cellvalue cv = (Cellvalue) vci.next();
         CellFeatures cf = cv.getCellFeatures();
-        if (cf.getDVParser() != null)
+        if (cf.getDvParser() != null)
         {
-          cf.getDVParser().insertColumn(col);
+          cf.getDvParser().insertColumn(col);
         }
       }
     }
@@ -806,7 +806,7 @@ class WritableSheetImpl implements WritableSheet
     Iterator ri = columnBreaks.iterator();
     while (ri.hasNext())
     {
-      int val = ( (Integer) ri.next()).intValue();
+      int val = ( (Integer) ri.next()).intvalue();
       if (val >= col)
       {
         val++;
@@ -875,20 +875,20 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Adjust any data validations
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.removeColumn(col);
+      datavalidation.removeColumn(col);
     }
 
     if (validatedCells != null && validatedCells.size() > 0)
     {
       for (Iterator vci = validatedCells.iterator(); vci.hasNext();)
       {
-        CellValue cv = (CellValue) vci.next();
+        Cellvalue cv = (Cellvalue) vci.next();
         CellFeatures cf = cv.getCellFeatures();
-        if (cf.getDVParser() != null)
+        if (cf.getDvParser() != null)
         {
-          cf.getDVParser().removeColumn(col);
+          cf.getDvParser().removeColumn(col);
         }
       }
     }
@@ -901,7 +901,7 @@ class WritableSheetImpl implements WritableSheet
     Iterator ri = columnBreaks.iterator();
     while (ri.hasNext())
     {
-      int val = ( (Integer) ri.next()).intValue();
+      int val = ( (Integer) ri.next()).intvalue();
 
       if (val != col)
       {
@@ -948,13 +948,13 @@ class WritableSheetImpl implements WritableSheet
       {
         Integer colnumber = (Integer) i.next();
 
-        if (colnumber.intValue() == col)
+        if (colnumber.intvalue() == col)
         {
           // do nothing
         }
-        else if (colnumber.intValue() > col)
+        else if (colnumber.intvalue() > col)
         {
-          newAutosized.add(new Integer(colnumber.intValue() - 1));
+          newAutosized.add(new Integer(colnumber.intvalue() - 1));
         }
         else
         {
@@ -1040,20 +1040,20 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Adjust any data validations
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.removeRow(row);
+      datavalidation.removeRow(row);
     }
 
     if (validatedCells != null && validatedCells.size() > 0)
     {
       for (Iterator vci = validatedCells.iterator(); vci.hasNext();)
       {
-        CellValue cv = (CellValue) vci.next();
+        Cellvalue cv = (Cellvalue) vci.next();
         CellFeatures cf = cv.getCellFeatures();
-        if (cf.getDVParser() != null)
+        if (cf.getDvParser() != null)
         {
-          cf.getDVParser().removeRow(row);
+          cf.getDvParser().removeRow(row);
         }
       }
     }
@@ -1066,7 +1066,7 @@ class WritableSheetImpl implements WritableSheet
     Iterator ri = rowBreaks.iterator();
     while (ri.hasNext())
     {
-      int val = ( (Integer) ri.next()).intValue();
+      int val = ( (Integer) ri.next()).intvalue();
 
       if (val != row)
       {
@@ -1140,7 +1140,7 @@ class WritableSheetImpl implements WritableSheet
       }
     }
     
-    CellValue cv = (CellValue) cell;
+    Cellvalue cv = (Cellvalue) cell;
 
     if (cv.isReferenced())
     {
@@ -1150,19 +1150,19 @@ class WritableSheetImpl implements WritableSheet
     int row = cell.getRow();
     RowRecord rowrec = getRowRecord(row);
 
-    CellValue curcell = rowrec.getCell(cv.getColumn());
-    boolean curSharedValidation = (curcell != null &&
+    Cellvalue curcell = rowrec.getCell(cv.getColumn());
+    boolean curSharedvalidation = (curcell != null &&
       curcell.getCellFeatures() != null &&
-      curcell.getCellFeatures().getDVParser() != null &&
-      curcell.getCellFeatures().getDVParser().extendedCellsValidation());
+      curcell.getCellFeatures().getDvParser() != null &&
+      curcell.getCellFeatures().getDvParser().extendedCellsvalidation());
 
     // Check for shared data validations, but only if the cell being added
     // has a data validation
     if (cell.getCellFeatures() != null &&
-        cell.getCellFeatures().hasDataValidation() && 
-        curSharedValidation)
+        cell.getCellFeatures().hasDatavalidation() && 
+        curSharedvalidation)
     {
-      DVParser dvp = curcell.getCellFeatures().getDVParser();
+      DvParser dvp = curcell.getCellFeatures().getDvParser();
       logger.warn("Cannot add cell at " + 
                   CellReferenceHelper.getCellReference(cv) + 
                   " because it is part of the shared cell validation group " +
@@ -1175,7 +1175,7 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Apply any shared validation from the current cell to this cell
-    if (curSharedValidation)
+    if (curSharedvalidation)
     {
       WritableCellFeatures wcf = cell.getWritableCellFeatures();
       
@@ -1185,7 +1185,7 @@ class WritableSheetImpl implements WritableSheet
         cell.setCellFeatures(wcf);
       }
 
-      wcf.shareDataValidation(curcell.getCellFeatures());
+      wcf.shareDatavalidation(curcell.getCellFeatures());
     }
 
     rowrec.addCell(cv);
@@ -1296,7 +1296,7 @@ class WritableSheetImpl implements WritableSheet
    * Sets the hidden status of this sheet
    * 
    * @param h the hiden flag
-   * @deprecated Use the settings bean instead
+   * @deprecated use the settings bean instead
    */
   public void setHidden(boolean h)
   {
@@ -1307,7 +1307,7 @@ class WritableSheetImpl implements WritableSheet
    * Indicates whether or not this sheet is protected
    * 
    * @param prot protected flag
-   * @deprecated Use the settings bean instead
+   * @deprecated use the settings bean instead
    */
   public void setProtected(boolean prot)
   {
@@ -1316,7 +1316,7 @@ class WritableSheetImpl implements WritableSheet
 
   /**
    * Sets this sheet as selected
-   * @deprecated Use the settings bean
+   * @deprecated use the settings bean
    */
   public void setSelected()
   {
@@ -1326,8 +1326,8 @@ class WritableSheetImpl implements WritableSheet
   /**
    * Retrieves the hidden status of this sheet
    * 
-   * @return TRUE if hidden, FALSE otherwise
-   * @deprecated Use the sheet settings bean instead
+   * @return TRuE if hidden, FALSE otherwise
+   * @deprecated use the sheet settings bean instead
    */
   public boolean isHidden()
   {
@@ -1340,11 +1340,11 @@ class WritableSheetImpl implements WritableSheet
    * @param col the column whose width to set
    * @param width the width of the column in characters
    */
-  public void setColumnView(int col, int width)
+  public void setColumnview(int col, int width)
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(width * 256);
-    setColumnView(col, cv);
+    setColumnview(col, cv);
   }
 
   /**
@@ -1355,12 +1355,12 @@ class WritableSheetImpl implements WritableSheet
    * @param width the width in characters
    * @param format the formt details for the column
    */
-  public void setColumnView(int col, int width, CellFormat format)
+  public void setColumnview(int col, int width, CellFormat format)
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(width * 256);
     cv.setFormat(format);
-    setColumnView(col, cv);
+    setColumnview(col, cv);
   }
 
   /** 
@@ -1369,7 +1369,7 @@ class WritableSheetImpl implements WritableSheet
    * @param col the column on which to set the view
    * @param view the view to set
    */
-  public void setColumnView(int col, CellView view)
+  public void setColumnview(int col, Cellview view)
   {
     XFRecord xfr =  (XFRecord) view.getFormat();
     if (xfr == null)
@@ -1385,7 +1385,7 @@ class WritableSheetImpl implements WritableSheet
         formatRecords.addStyle(xfr);
       }
       
-      int width = view.depUsed() ? view.getDimension() * 256 : view.getSize();
+      int width = view.depused() ? view.getDimension() * 256 : view.getSize();
 
       if (view.isAutosize())
       {
@@ -1413,7 +1413,7 @@ class WritableSheetImpl implements WritableSheet
     }
     catch (NumFormatRecordsException e)
     {
-      logger.warn("Maximum number of format records exceeded.  Using " +
+      logger.warn("Maximum number of format records exceeded.  using " +
                   "default format.");
 
       ColumnInfoRecord cir = new ColumnInfoRecord
@@ -1432,14 +1432,14 @@ class WritableSheetImpl implements WritableSheet
    * @param row the row to be formatted
    * @param height the row height in 1/20ths of a  point
    * @exception RowsExceededException
-   * @deprecated use the override which takes a CellView object
+   * @deprecated use the override which takes a Cellview object
    */
-  public void setRowView(int row, int height) throws RowsExceededException
+  public void setRowview(int row, int height) throws RowsExceededException
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(height);
     cv.setHidden(false);
-    setRowView(row, cv);
+    setRowview(row, cv);
   }
 
   /**
@@ -1448,14 +1448,14 @@ class WritableSheetImpl implements WritableSheet
    * @param row the row to be formatted
    * @param collapsed indicates whether the row is collapsed
    * @exception jxl.write.biff.RowsExceededException
-   * @deprecated use the override which takes a CellView object
+   * @deprecated use the override which takes a Cellview object
    */
-  public void setRowView(int row, boolean collapsed)
+  public void setRowview(int row, boolean collapsed)
     throws RowsExceededException
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setHidden(collapsed);
-    setRowView(row, cv);
+    setRowview(row, cv);
   }
 
   /**
@@ -1466,16 +1466,16 @@ class WritableSheetImpl implements WritableSheet
    * @param collapsed indicates whether the row is collapsed
    * @param zeroHeight indicates that the row has zero height
    * @exception RowsExceededException
-   * @deprecated use the override which takes a CellView object
+   * @deprecated use the override which takes a Cellview object
    */
-  public void setRowView(int row, int height, 
+  public void setRowview(int row, int height, 
                          boolean collapsed)
                          throws RowsExceededException
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(height);
     cv.setHidden(collapsed);
-    setRowView(row, cv);
+    setRowview(row, cv);
   }
 
   /**
@@ -1485,7 +1485,7 @@ class WritableSheetImpl implements WritableSheet
    * @param view the view to set
    * @exception RowsExceededException
    */
-  public void setRowView(int row, CellView view) throws RowsExceededException
+  public void setRowview(int row, Cellview view) throws RowsExceededException
   {
     RowRecord rowrec = getRowRecord(row);
 
@@ -1503,7 +1503,7 @@ class WritableSheetImpl implements WritableSheet
     }
     catch (NumFormatRecordsException e)
     {
-      logger.warn("Maximum number of format records exceeded.  Using " +
+      logger.warn("Maximum number of format records exceeded.  using " +
                   "default format.");
 
       xfr = null;
@@ -1551,7 +1551,7 @@ class WritableSheetImpl implements WritableSheet
     sheetWriter.setPLS(plsRecord);
     sheetWriter.setDrawings(drawings, dmod);
     sheetWriter.setButtonPropertySet(buttonPropertySet);
-    sheetWriter.setDataValidation(dataValidation, validatedCells);
+    sheetWriter.setDatavalidation(datavalidation, validatedCells);
     sheetWriter.setConditionalFormats(conditionalFormats);
     sheetWriter.setAutoFilter(autoFilter);
     
@@ -1579,11 +1579,11 @@ class WritableSheetImpl implements WritableSheet
     si.setDrawings(drawings);
     si.setImages(images);
     si.setConditionalFormats(conditionalFormats);
-    si.setValidatedCells(validatedCells);
+    si.setvalidatedCells(validatedCells);
 
     si.copySheet();
 
-    dataValidation = si.getDataValidation();
+    datavalidation = si.getDatavalidation();
     comboBox = si.getComboBox();
     plsRecord = si.getPLSRecord();
     chartOnly = si.isChartOnly();
@@ -1610,18 +1610,18 @@ class WritableSheetImpl implements WritableSheet
     sc.setRows(si.rows);
     sc.setRowBreaks(si.rowBreaks, rowBreaks);
     sc.setColumnBreaks(si.columnBreaks, columnBreaks);
-    sc.setDataValidation(si.dataValidation);
+    sc.setDatavalidation(si.datavalidation);
     sc.setSheetWriter(sheetWriter);
     sc.setDrawings(si.drawings, drawings, images);
     sc.setWorkspaceOptions(si.getWorkspaceOptions());
     sc.setPLSRecord(si.plsRecord);
     sc.setButtonPropertySetRecord(si.buttonPropertySet);
     sc.setHyperlinks(si.hyperlinks, hyperlinks);
-    sc.setValidatedCells(validatedCells);
+    sc.setvalidatedCells(validatedCells);
 
     sc.copySheet();
 
-    dataValidation = sc.getDataValidation();
+    datavalidation = sc.getDatavalidation();
     plsRecord = sc.getPLSRecord();
     buttonPropertySet = sc.getButtonPropertySet();
   }
@@ -1649,7 +1649,7 @@ class WritableSheetImpl implements WritableSheet
    * Determines whether the sheet is protected
    *
    * @return whether or not the sheet is protected
-   * @deprecated Use the SheetSettings bean instead
+   * @deprecated use the SheetSettings bean instead
    */
   public boolean isProtected()
   {
@@ -1709,7 +1709,7 @@ class WritableSheetImpl implements WritableSheet
    * getHyperlinks method
    *
    * @param h the hyperlink to remove.
-   * @param preserveLabel if TRUE preserves the label contents, if FALSE
+   * @param preserveLabel if TRuE preserves the label contents, if FALSE
    * removes them
    */
   public void removeHyperlink(WritableHyperlink h)
@@ -1728,7 +1728,7 @@ class WritableSheetImpl implements WritableSheet
    * getHyperlinks method
    *
    * @param h the hyperlink to remove.
-   * @param preserveLabel if TRUE preserves the label contents, if FALSE
+   * @param preserveLabel if TRuE preserves the label contents, if FALSE
    * removes them
    */
   public void removeHyperlink(WritableHyperlink h, boolean preserveLabel)
@@ -1759,7 +1759,7 @@ class WritableSheetImpl implements WritableSheet
     Cell c = getCell(h.getColumn(), h.getRow());
 
     String contents = null;
-    if (h.isFile() || h.isUNC())
+    if (h.isFile() || h.isuNC())
     {
       String cnts = ( (HyperlinkRecord) h).getContents();
       if (cnts == null)
@@ -1771,12 +1771,12 @@ class WritableSheetImpl implements WritableSheet
         contents = cnts;
       }
     }
-    else if (h.isURL())
+    else if (h.isuRL())
     {
       String cnts = ( (HyperlinkRecord) h).getContents();
       if (cnts == null)
       {
-        contents = h.getURL().toString();
+        contents = h.getuRL().toString();
       }
       else
       {
@@ -1892,7 +1892,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /** 
-   * Unsets a row grouping
+   * unsets a row grouping
    *
    * @param row1 the first row to unset
    * @param row2 the last row to unset
@@ -1956,7 +1956,7 @@ class WritableSheetImpl implements WritableSheet
       // cell view
       if (cir == null)
       {
-        setColumnView(i, new CellView());
+        setColumnview(i, new Cellview());
         cir = getColumnInfo(i);
       }
 
@@ -1968,7 +1968,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /** 
-   * Unsets a column grouping
+   * unsets a column grouping
    *
    * @param col1 the first column to unset
    * @param col2 the last column to unset
@@ -2001,7 +2001,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /**
-   * Unmerges the specified cells.  The Range passed in should be one that
+   * unmerges the specified cells.  The Range passed in should be one that
    * has been previously returned as a result of the getMergedCells method
    *
    * @param r the range of cells to unmerge
@@ -2017,7 +2017,7 @@ class WritableSheetImpl implements WritableSheet
    * @param l the print header to print on the left side
    * @param c the print header to print in the centre
    * @param r the print header to print on the right hand side
-   * @deprecated Use the sheet settings bean
+   * @deprecated use the sheet settings bean
    */
   public void setHeader(String l, String c, String r)
   {
@@ -2034,7 +2034,7 @@ class WritableSheetImpl implements WritableSheet
    * @param l the print header to print on the left side
    * @param c the print header to print in the centre
    * @param r the print header to print on the right hand side
-   * @deprecated Use the sheet settings bean
+   * @deprecated use the sheet settings bean
    */
   public void setFooter(String l, String c, String r)
   {
@@ -2049,7 +2049,7 @@ class WritableSheetImpl implements WritableSheet
    * Sets the page setup details
    *
    * @param p  the page orientation
-   * @deprecated Use the SheetSettings bean
+   * @deprecated use the SheetSettings bean
    */
   public void setPageSetup(PageOrientation p)
   {
@@ -2062,7 +2062,7 @@ class WritableSheetImpl implements WritableSheet
    * @param p  the page orientation
    * @param hm the header margin, in inches
    * @param fm the footer margin, in inches
-   * @deprecated Use the SheetSettings bean
+   * @deprecated use the SheetSettings bean
    */
   public void setPageSetup(PageOrientation p, double hm, double fm)
   {
@@ -2078,7 +2078,7 @@ class WritableSheetImpl implements WritableSheet
    * @param ps the paper size
    * @param hm the header margin, in inches
    * @param fm the footer margin, in inches
-   * @deprecated Use the SheetSettings bean
+   * @deprecated use the SheetSettings bean
    */
   public void setPageSetup(PageOrientation p, PaperSize ps, 
                            double hm, double fm)
@@ -2120,7 +2120,7 @@ class WritableSheetImpl implements WritableSheet
 
     while (i.hasNext() && !found)
     {
-      if (( (Integer) i.next()).intValue() == row)
+      if (( (Integer) i.next()).intvalue() == row)
       {
         found = true;
       }
@@ -2145,7 +2145,7 @@ class WritableSheetImpl implements WritableSheet
 
     while (i.hasNext() && !found)
     {
-      if (( (Integer) i.next()).intValue() == col)
+      if (( (Integer) i.next()).intvalue() == col)
       {
         found = true;
       }
@@ -2158,7 +2158,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /**
-   * Accessor for the charts.  Used when copying
+   * Accessor for the charts.  used when copying
    *
    * @return the charts on this sheet
    */
@@ -2168,7 +2168,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /**
-   * Accessor for the drawings.  Used when copying
+   * Accessor for the drawings.  used when copying
    *
    * @return the drawings on this sheet
    */
@@ -2256,12 +2256,12 @@ class WritableSheetImpl implements WritableSheet
    * Gets the column format for the specified column
    *
    * @param col the column number
-   * @return the column format, or NULL if the column has no specific format
-   * @deprecated Use getColumnView instead
+   * @return the column format, or NuLL if the column has no specific format
+   * @deprecated use getColumnview instead
    */
   public CellFormat getColumnFormat(int col)
   {
-    return getColumnView(col).getFormat();
+    return getColumnview(col).getFormat();
   }
 
   /**
@@ -2270,11 +2270,11 @@ class WritableSheetImpl implements WritableSheet
    * @param col the column number
    * @return the column width, or the default width if the column has no
    *         specified format
-   * @deprecated Use getColumnView instead
+   * @deprecated use getColumnview instead
    */
   public int getColumnWidth(int col)
   {
-    return getColumnView(col).getDimension();
+    return getColumnview(col).getDimension();
   }
 
   /**
@@ -2283,17 +2283,17 @@ class WritableSheetImpl implements WritableSheet
    * @param row the column number
    * @return the row height, or the default height if the column has no
    *         specified format
-   * @deprecated Use getRowView instead
+   * @deprecated use getRowview instead
    */
   public int getRowHeight(int row)
   {
-    return getRowView(row).getDimension();
+    return getRowview(row).getDimension();
   }
 
   /**
    * Accessor for the chart only method
    * 
-   * @return TRUE if this is a chart only, FALSE otherwise
+   * @return TRuE if this is a chart only, FALSE otherwise
    */
   boolean isChartOnly()
   {
@@ -2307,9 +2307,9 @@ class WritableSheetImpl implements WritableSheet
    * @return the row format, or the default format if no override is
              specified
    */
-  public CellView getRowView(int row)
+  public Cellview getRowview(int row)
   {
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
 
     try
     {
@@ -2347,10 +2347,10 @@ class WritableSheetImpl implements WritableSheet
    * @return the column format, or the default format if no override is
              specified
    */
-  public CellView getColumnView(int col)
+  public Cellview getColumnview(int col)
   {
     ColumnInfoRecord cir = getColumnInfo(col);
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
 
     if (cir != null)
     {
@@ -2467,7 +2467,7 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /**
-   * Validates the sheet name
+   * validates the sheet name
    */
   private String validateName(String n)
   {
@@ -2524,15 +2524,15 @@ class WritableSheetImpl implements WritableSheet
 
   /**
    * Removes the data validation for the specified cell.  Called from
-   * CellValue in response to a cell being replaced
+   * Cellvalue in response to a cell being replaced
    *
    * @param cv the cell being removed
    */
-  void removeDataValidation(CellValue cv)
+  void removeDatavalidation(Cellvalue cv)
   {
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.removeDataValidation(cv.getColumn(), cv.getRow());
+      datavalidation.removeDatavalidation(cv.getColumn(), cv.getRow());
     }
 
     if (validatedCells != null)
@@ -2558,7 +2558,7 @@ class WritableSheetImpl implements WritableSheet
     int pos = 0;
     for (Iterator i = rowBreaks.iterator(); i.hasNext() ; pos++)
     {
-      rb[pos] = ( (Integer) i.next()).intValue();
+      rb[pos] = ( (Integer) i.next()).intvalue();
     }
     return rb;
   }
@@ -2574,7 +2574,7 @@ class WritableSheetImpl implements WritableSheet
     int pos = 0;
     for (Iterator i = columnBreaks.iterator(); i.hasNext() ; pos++)
     {
-      rb[pos] = ( (Integer) i.next()).intValue();
+      rb[pos] = ( (Integer) i.next()).intvalue();
     }
     return rb;
   }
@@ -2584,7 +2584,7 @@ class WritableSheetImpl implements WritableSheet
    *
    * @param cell the cell with data validation
    */
-  void addValidationCell(CellValue cv)
+  void addvalidationCell(Cellvalue cv)
   {
     validatedCells.add(cv);
   }
@@ -2611,11 +2611,11 @@ class WritableSheetImpl implements WritableSheet
   }
 
   /**
-   * Gets the data validation.  Retrieved by CellValue when copying sheets
+   * Gets the data validation.  Retrieved by Cellvalue when copying sheets
    */
-  public DataValidation getDataValidation()
+  public Datavalidation getDatavalidation()
   {
-    return dataValidation;
+    return datavalidation;
   }
 
   /**
@@ -2627,7 +2627,7 @@ class WritableSheetImpl implements WritableSheet
     while (i.hasNext())
     {
       Integer col = (Integer) i.next();
-      autosizeColumn(col.intValue());
+      autosizeColumn(col.intvalue());
     }
   }
 
@@ -2694,11 +2694,11 @@ class WritableSheetImpl implements WritableSheet
     si.setSheetWriter(sheetWriter);
     si.setDrawings(drawings);
     si.setImages(images);
-    si.setValidatedCells(validatedCells);
+    si.setvalidatedCells(validatedCells);
 
     si.importSheet();
 
-    dataValidation = si.getDataValidation();
+    datavalidation = si.getDatavalidation();
     comboBox = si.getComboBox();
     plsRecord = si.getPLSRecord();
     chartOnly = si.isChartOnly();
@@ -2715,14 +2715,14 @@ class WritableSheetImpl implements WritableSheet
    * @param c the number of cells accross to apply this data validation
    * @param r the number of cells downwards to apply this data validation
    */
-  public void applySharedDataValidation(WritableCell c, 
+  public void applySharedDatavalidation(WritableCell c, 
                                         int extraCols, 
                                         int extraRows)
     throws WriteException
   {
     // Check that the cell being applied has a data validation
     if (c.getWritableCellFeatures() == null ||
-        !c.getWritableCellFeatures().hasDataValidation())
+        !c.getWritableCellFeatures().hasDatavalidation())
     {
       logger.warn("Cannot extend data validation for " +
                   CellReferenceHelper.getCellReference(c.getColumn(), 
@@ -2755,7 +2755,7 @@ class WritableSheetImpl implements WritableSheet
           // Check that the target cell does not have any data validation
           if (c2 != null &&
               c2.getWritableCellFeatures() != null &&
-              c2.getWritableCellFeatures().hasDataValidation())
+              c2.getWritableCellFeatures().hasDatavalidation())
           {
             logger.warn("Cannot apply data validation from " +
                         CellReferenceHelper.getCellReference(startColumn,
@@ -2774,8 +2774,8 @@ class WritableSheetImpl implements WritableSheet
     }
 
     // Extend the range on the source data validation
-    WritableCellFeatures sourceDataValidation = c.getWritableCellFeatures();
-    sourceDataValidation.getDVParser().extendCellValidation(extraCols, 
+    WritableCellFeatures sourceDatavalidation = c.getWritableCellFeatures();
+    sourceDatavalidation.getDvParser().extendCellvalidation(extraCols, 
                                                             extraRows);
 
     // Go through all the additional cells and add the data validation cell
@@ -2797,7 +2797,7 @@ class WritableSheetImpl implements WritableSheet
         {
           Blank b = new Blank(x, y);
           WritableCellFeatures validation = new WritableCellFeatures();
-          validation.shareDataValidation(sourceDataValidation);
+          validation.shareDatavalidation(sourceDatavalidation);
           b.setCellFeatures(validation);
           addCell(b);
         }
@@ -2808,12 +2808,12 @@ class WritableSheetImpl implements WritableSheet
 
           if (validation != null)
           {
-            validation.shareDataValidation(sourceDataValidation);
+            validation.shareDatavalidation(sourceDatavalidation);
           }
           else
           {
             validation = new WritableCellFeatures();
-            validation.shareDataValidation(sourceDataValidation);
+            validation.shareDatavalidation(sourceDatavalidation);
             c2.setCellFeatures(validation);
           }
         }
@@ -2828,29 +2828,29 @@ class WritableSheetImpl implements WritableSheet
    *
    * @param cell the top left cell containing the shared data validation
    */
-  public void removeSharedDataValidation(WritableCell cell)
+  public void removeSharedDatavalidation(WritableCell cell)
     throws WriteException
   {
     WritableCellFeatures wcf = cell.getWritableCellFeatures();
     if (wcf == null ||
-        !wcf.hasDataValidation())
+        !wcf.hasDatavalidation())
     {
       return;
     }
 
-    DVParser dvp = wcf.getDVParser();
+    DvParser dvp = wcf.getDvParser();
     
     // If the cell is not part of an extended validation, then simply call
     // the atomic remove validation from the cell features
-    if (!dvp.extendedCellsValidation())
+    if (!dvp.extendedCellsvalidation())
     {
-      wcf.removeDataValidation();
+      wcf.removeDatavalidation();
       return;
     }
 
     // Check that the cell validation being removed is in the top left of the
     // validated area
-    if (dvp.extendedCellsValidation())
+    if (dvp.extendedCellsvalidation())
     {
       if (cell.getColumn() != dvp.getFirstColumn() ||
           cell.getRow() != dvp.getFirstRow())
@@ -2872,13 +2872,13 @@ class WritableSheetImpl implements WritableSheet
     {
       for (int x = dvp.getFirstColumn(); x <= dvp.getLastColumn(); x++)
       {
-        CellValue c2 = (CellValue) rows[y].getCell(x);
+        Cellvalue c2 = (Cellvalue) rows[y].getCell(x);
         
         // It's possible that some cells in the shared data range might
         // be null eg. in the event of an insertRow or insertColumn
         if (c2 != null)
         {
-          c2.getWritableCellFeatures().removeSharedDataValidation();
+          c2.getWritableCellFeatures().removeSharedDatavalidation();
           c2.removeCellFeatures();
         }
       }
@@ -2886,9 +2886,9 @@ class WritableSheetImpl implements WritableSheet
 
     // Remove this shared validation from any data validations that were
     // copied in
-    if (dataValidation != null)
+    if (datavalidation != null)
     {
-      dataValidation.removeSharedDataValidation(dvp.getFirstColumn(),
+      datavalidation.removeSharedDatavalidation(dvp.getFirstColumn(),
                                                 dvp.getFirstRow(),
                                                 dvp.getLastColumn(),
                                                 dvp.getLastRow());

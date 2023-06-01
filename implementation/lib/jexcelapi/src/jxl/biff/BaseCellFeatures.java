@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -28,7 +28,7 @@ import jxl.CellReferenceHelper;
 import jxl.Range;
 import jxl.biff.drawing.ComboBox;
 import jxl.biff.drawing.Comment;
-import jxl.write.biff.CellValue;
+import jxl.write.biff.Cellvalue;
 
 /**
  * Container for any additional cell features
@@ -68,12 +68,12 @@ public class BaseCellFeatures
   /**
    * The data validation settings
    */
-  private DataValiditySettingsRecord validationSettings;
+  private DatavaliditySettingsRecord validationSettings;
 
   /**
-   * The DV Parser used to contain the validation details
+   * The Dv Parser used to contain the validation details
    */
-  private DVParser dvParser;
+  private DvParser dvParser;
 
   /**
    * Indicates whether a drop down is required
@@ -83,55 +83,55 @@ public class BaseCellFeatures
   /**
    * Indicates whether this cell features has data validation
    */
-  private boolean dataValidation;
+  private boolean datavalidation;
 
   /**
    * The cell to which this is attached, and which may need to be notified
    */
-  private CellValue writableCell;
+  private Cellvalue writableCell;
 
   // Constants
   private final static double defaultCommentWidth = 3;
   private final static double defaultCommentHeight = 4;
 
-  // Validation conditions
-  protected static class ValidationCondition
+  // validation conditions
+  protected static class validationCondition
   {
-    private DVParser.Condition condition;
+    private DvParser.Condition condition;
     
-    private static ValidationCondition[] types = new ValidationCondition[0];
+    private static validationCondition[] types = new validationCondition[0];
    
-    ValidationCondition(DVParser.Condition c) 
+    validationCondition(DvParser.Condition c) 
     {
       condition = c;
-      ValidationCondition[] oldtypes = types;
-      types = new ValidationCondition[oldtypes.length+1];
+      validationCondition[] oldtypes = types;
+      types = new validationCondition[oldtypes.length+1];
       System.arraycopy(oldtypes, 0, types, 0, oldtypes.length);
       types[oldtypes.length] = this;
     }
 
-    public DVParser.Condition getCondition()
+    public DvParser.Condition getCondition()
     {
       return condition;
     }
   }
 
-  public static final ValidationCondition BETWEEN = 
-    new ValidationCondition(DVParser.BETWEEN);
-  public static final ValidationCondition NOT_BETWEEN = 
-    new ValidationCondition(DVParser.NOT_BETWEEN);
-  public static final ValidationCondition EQUAL = 
-    new ValidationCondition(DVParser.EQUAL);
-  public static final ValidationCondition NOT_EQUAL = 
-    new ValidationCondition(DVParser.NOT_EQUAL);
-  public static final ValidationCondition GREATER_THAN = 
-    new ValidationCondition(DVParser.GREATER_THAN);
-  public static final ValidationCondition LESS_THAN = 
-    new ValidationCondition(DVParser.LESS_THAN);
-  public static final ValidationCondition GREATER_EQUAL = 
-    new ValidationCondition(DVParser.GREATER_EQUAL);
-  public static final ValidationCondition LESS_EQUAL = 
-    new ValidationCondition(DVParser.LESS_EQUAL);
+  public static final validationCondition BETWEEN = 
+    new validationCondition(DvParser.BETWEEN);
+  public static final validationCondition NOT_BETWEEN = 
+    new validationCondition(DvParser.NOT_BETWEEN);
+  public static final validationCondition EQuAL = 
+    new validationCondition(DvParser.EQuAL);
+  public static final validationCondition NOT_EQuAL = 
+    new validationCondition(DvParser.NOT_EQuAL);
+  public static final validationCondition GREATER_THAN = 
+    new validationCondition(DvParser.GREATER_THAN);
+  public static final validationCondition LESS_THAN = 
+    new validationCondition(DvParser.LESS_THAN);
+  public static final validationCondition GREATER_EQuAL = 
+    new validationCondition(DvParser.GREATER_EQuAL);
+  public static final validationCondition LESS_EQuAL = 
+    new validationCondition(DvParser.LESS_EQuAL);
 
   /**
    * Constructor
@@ -154,13 +154,13 @@ public class BaseCellFeatures
 
     // The data validation stuff.  
     dropDown = cf.dropDown;
-    dataValidation = cf.dataValidation;
+    datavalidation = cf.datavalidation;
 
     validationSettings = cf.validationSettings; // ?
 
     if (cf.dvParser != null)
     {
-      dvParser = new DVParser(cf.dvParser);
+      dvParser = new DvParser(cf.dvParser);
     }
   }
 
@@ -193,13 +193,13 @@ public class BaseCellFeatures
    *
    * @param wc the writable cell
    */
-  public final void setWritableCell(CellValue wc)
+  public final void setWritableCell(Cellvalue wc)
   {
     writableCell = wc;
   } 
 
   /**
-   * Internal method to set the cell comment.  Used when reading
+   * Internal method to set the cell comment.  used when reading
    */
   public void setReadComment(String s, double w, double h)
   {
@@ -209,14 +209,14 @@ public class BaseCellFeatures
   }
 
   /**
-   * Internal method to set the data validation.  Used when reading
+   * Internal method to set the data validation.  used when reading
    */
-  public void setValidationSettings(DataValiditySettingsRecord dvsr)
+  public void setvalidationSettings(DatavaliditySettingsRecord dvsr)
   {
     Assert.verify(dvsr != null);
 
     validationSettings = dvsr;
-    dataValidation = true;
+    datavalidation = true;
   }
 
   /**
@@ -272,16 +272,16 @@ public class BaseCellFeatures
   /**
    * Public function which removes any data validation, if present
    */
-  public void removeDataValidation()
+  public void removeDatavalidation()
   {
-    if (!dataValidation)
+    if (!datavalidation)
     {
       return;
     }
 
     // If the data validation is shared, then generate a warning
-    DVParser dvp = getDVParser();
-    if (dvp.extendedCellsValidation())
+    DvParser dvp = getDvParser();
+    if (dvp.extendedCellsvalidation())
     {
       logger.warn("Cannot remove data validation from " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
@@ -295,25 +295,25 @@ public class BaseCellFeatures
     }
 
     // Remove the validation from the WritableSheet object if present
-    writableCell.removeDataValidation();
-    clearValidationSettings();
+    writableCell.removeDatavalidation();
+    clearvalidationSettings();
   }
 
   /**
    * Internal function which removes any data validation, including
    * shared ones, if present.  This is called from WritableSheetImpl
-   * in response to a call to removeDataValidation
+   * in response to a call to removeDatavalidation
    */
-  public void removeSharedDataValidation()
+  public void removeSharedDatavalidation()
   {
-    if (!dataValidation)
+    if (!datavalidation)
     {
       return;
     }
 
     // Remove the validation from the WritableSheet object if present
-    writableCell.removeDataValidation();
-    clearValidationSettings();
+    writableCell.removeDatavalidation();
+    clearvalidationSettings();
   }
 
   /**
@@ -333,18 +333,18 @@ public class BaseCellFeatures
   }
 
   /**
-   * Gets the data validation list as a formula.  Used only when reading
+   * Gets the data validation list as a formula.  used only when reading
    *
    * @return the validation formula as a list
    */
-  public String getDataValidationList()
+  public String getDatavalidationList()
   {
     if (validationSettings == null)
     {
       return null;
     }
 
-    return validationSettings.getValidationFormula();
+    return validationSettings.getvalidationFormula();
   }
 
   /**
@@ -354,19 +354,19 @@ public class BaseCellFeatures
    *
    * @param c the list of valid values
    */
-  public void setDataValidationList(Collection c)
+  public void setDatavalidationList(Collection c)
   {
-    if (dataValidation && getDVParser().extendedCellsValidation())
+    if (datavalidation && getDvParser().extendedCellsvalidation())
     {
       logger.warn("Cannot set data validation on " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " as it is part of a shared data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = new DVParser(c);
+    clearvalidationSettings();
+    dvParser = new DvParser(c);
     dropDown = true;
-    dataValidation = true;
+    datavalidation = true;
   }
 
   /**
@@ -374,100 +374,100 @@ public class BaseCellFeatures
    *
    * @param c the list of valid values
    */
-  public void setDataValidationRange(int col1, int r1, int col2, int r2)
+  public void setDatavalidationRange(int col1, int r1, int col2, int r2)
   {
-    if (dataValidation && getDVParser().extendedCellsValidation())
+    if (datavalidation && getDvParser().extendedCellsvalidation())
     {
       logger.warn("Cannot set data validation on " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " as it is part of a shared data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = new DVParser(col1, r1, col2, r2);
+    clearvalidationSettings();
+    dvParser = new DvParser(col1, r1, col2, r2);
     dropDown = true;
-    dataValidation = true;
+    datavalidation = true;
   }
 
   /**
    * Sets the data validation based upon a named range
    */
-  public void setDataValidationRange(String namedRange)
+  public void setDatavalidationRange(String namedRange)
   {
-    if (dataValidation && getDVParser().extendedCellsValidation())
+    if (datavalidation && getDvParser().extendedCellsvalidation())
     {
       logger.warn("Cannot set data validation on " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " as it is part of a shared data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = new DVParser(namedRange);
+    clearvalidationSettings();
+    dvParser = new DvParser(namedRange);
     dropDown = true;
-    dataValidation = true;
+    datavalidation = true;
   }
 
   /**
    * Sets the data validation based upon a numerical condition
    */
-  public void setNumberValidation(double val, ValidationCondition c)
+  public void setNumbervalidation(double val, validationCondition c)
   {
-    if (dataValidation && getDVParser().extendedCellsValidation())
+    if (datavalidation && getDvParser().extendedCellsvalidation())
     {
       logger.warn("Cannot set data validation on " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " as it is part of a shared data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = new DVParser(val, Double.NaN, c.getCondition());
+    clearvalidationSettings();
+    dvParser = new DvParser(val, Double.NaN, c.getCondition());
     dropDown = false;
-    dataValidation = true;
+    datavalidation = true;
   }
 
-  public void setNumberValidation(double val1, double val2, 
-                                  ValidationCondition c)
+  public void setNumbervalidation(double val1, double val2, 
+                                  validationCondition c)
   {
-    if (dataValidation && getDVParser().extendedCellsValidation())
+    if (datavalidation && getDvParser().extendedCellsvalidation())
     {
       logger.warn("Cannot set data validation on " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " as it is part of a shared data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = new DVParser(val1, val2, c.getCondition());
+    clearvalidationSettings();
+    dvParser = new DvParser(val1, val2, c.getCondition());
     dropDown = false;
-    dataValidation = true;
+    datavalidation = true;
   }
 
   /**
    * Accessor for the data validation
    *
-   * @return TRUE if this has a data validation associated with it,
+   * @return TRuE if this has a data validation associated with it,
              FALSE otherwise
   */
-  public boolean hasDataValidation()
+  public boolean hasDatavalidation()
   {
-    return dataValidation;
+    return datavalidation;
   }
 
   /**
    * Clears out any existing validation settings
    */
-  private void clearValidationSettings()
+  private void clearvalidationSettings()
   {
     validationSettings = null;
     dvParser = null;
     dropDown = false;
     comboBox = null;
-    dataValidation = false;
+    datavalidation = false;
   }
 
   /**
    * Accessor for whether a drop down is required
    *
-   * @return TRUE if this requires a drop down, FALSE otherwise
+   * @return TRuE if this requires a drop down, FALSE otherwise
    */
   public boolean hasDropDown()
   {
@@ -487,7 +487,7 @@ public class BaseCellFeatures
   /**
    * Gets the dv parser
    */
-  public DVParser getDVParser()
+  public DvParser getDvParser()
   {
     // straightforward - this was created as  a writable cell
     if (dvParser != null)
@@ -498,7 +498,7 @@ public class BaseCellFeatures
     // this was copied from a readable cell, and then copied again
     if (validationSettings != null)
     {
-      dvParser = new DVParser(validationSettings.getDVParser());
+      dvParser = new DvParser(validationSettings.getDvParser());
       return dvParser;
     }
 
@@ -506,23 +506,23 @@ public class BaseCellFeatures
   }
 
   /**
-   * Use the same data validation logic as the specified cell features
+   * use the same data validation logic as the specified cell features
    *
    * @param cf the data validation to reuse
    */
-  public void shareDataValidation(BaseCellFeatures source)
+  public void shareDatavalidation(BaseCellFeatures source)
   {
-    if (dataValidation)
+    if (datavalidation)
     {
       logger.warn("Attempting to share a data validation on cell " + 
                   CellReferenceHelper.getCellReference(writableCell) + 
                   " which already has a data validation");
       return;
     }
-    clearValidationSettings();
-    dvParser = source.getDVParser();
+    clearvalidationSettings();
+    dvParser = source.getDvParser();
     validationSettings = null;
-    dataValidation = true;
+    datavalidation = true;
     dropDown = source.dropDown;
     comboBox = source.comboBox;
   }
@@ -532,17 +532,17 @@ public class BaseCellFeatures
    * validation applies to just this cell, this will be reflected in the 
    * returned range
    *
-   * @return the range to which the same validation extends, or NULL if this
+   * @return the range to which the same validation extends, or NuLL if this
    *         cell doesn't have a validation
    */
-  public Range getSharedDataValidationRange()
+  public Range getSharedDatavalidationRange()
   {
-    if (!dataValidation)
+    if (!datavalidation)
     {
       return null;
     }
     
-    DVParser dvp = getDVParser();
+    DvParser dvp = getDvParser();
 
     return new SheetRangeImpl(writableCell.getSheet(),
                               dvp.getFirstColumn(),

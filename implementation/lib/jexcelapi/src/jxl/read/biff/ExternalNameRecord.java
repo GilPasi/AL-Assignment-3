@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -76,7 +76,7 @@ public class ExternalNameRecord extends RecordData
 
     if (unicode)
     {
-      name = StringHelper.getUnicodeString(data, length, 8);
+      name = StringHelper.getunicodeString(data, length, 8);
     }
     else
     { 
@@ -87,7 +87,7 @@ public class ExternalNameRecord extends RecordData
   /**
    * Queries whether this name record refers to an external record
    *
-   * @return TRUE if this name record is an add in function, FALSE otherwise
+   * @return TRuE if this name record is an add in function, FALSE otherwise
    */
   public boolean isAddInFunction()
   {

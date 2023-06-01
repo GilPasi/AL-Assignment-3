@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -40,7 +40,7 @@ import jxl.biff.formula.FormulaParser;
 /**
  * A string formula's last calculated value
  */
-class StringFormulaRecord extends CellValue
+class StringFormulaRecord extends Cellvalue
   implements LabelCell, FormulaData, StringFormulaCell
 {
   /**
@@ -116,7 +116,7 @@ class StringFormulaRecord extends CellValue
 
 		// Read in any continuation records
 		nextRecord = excelFile.peek();
-		while (nextRecord.getType() == Type.CONTINUE)
+		while (nextRecord.getType() == Type.CONTINuE)
 		{
 			nextRecord = excelFile.next(); // move the pointer within the data
 			byte[] d = new byte[stringData.length + nextRecord.getLength() - 1];
@@ -130,7 +130,7 @@ class StringFormulaRecord extends CellValue
   }
 
   /**
-   * Constructs this object from the raw data.  Used when reading in formula
+   * Constructs this object from the raw data.  used when reading in formula
    * strings which evaluate to null (in the case of some IF statements)
    *
    * @param t the raw data
@@ -178,7 +178,7 @@ class StringFormulaRecord extends CellValue
 
     if ((optionFlags & 0xf) != optionFlags)
     {
-      // Uh oh - looks like a plain old string, not unicode
+      // uh oh - looks like a plain old string, not unicode
       // Recalculate all the positions
       pos = 0;
       chars = IntegerHelper.getInt(d[0], (byte) 0);
@@ -211,7 +211,7 @@ class StringFormulaRecord extends CellValue
     }
     else
     {
-      value = StringHelper.getUnicodeString(d, chars, pos);
+      value = StringHelper.getunicodeString(d, chars, pos);
     }
   }
 
@@ -242,7 +242,7 @@ class StringFormulaRecord extends CellValue
    */
   public CellType getType()
   {
-    return CellType.STRING_FORMULA;
+    return CellType.STRING_FORMuLA;
   }
 
   /**
@@ -255,7 +255,7 @@ class StringFormulaRecord extends CellValue
   {
     if (!getSheet().getWorkbook().getWorkbookBof().isBiff8())
     {
-      throw new FormulaException(FormulaException.BIFF8_SUPPORTED);
+      throw new FormulaException(FormulaException.BIFF8_SuPPORTED);
     }
 
     // Lop off the standard information

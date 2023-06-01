@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -39,8 +39,8 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
   /**
    * Pass in to the constructor to bypass the format validation
    */
-  public static final NonValidatingFormat COMPLEX_FORMAT =
-    new NumberFormatRecord.NonValidatingFormat();
+  public static final NonvalidatingFormat COMPLEX_FORMAT =
+    new NumberFormatRecord.NonvalidatingFormat();
 
   // Some format strings
 
@@ -48,28 +48,28 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
    * Constant format string for the Euro currency symbol where it precedes
    * the format
    */
-  public static final String CURRENCY_EURO_PREFIX = "[$€-2]";
+  public static final String CuRRENCY_EuRO_PREFIX = "[$ï¿½-2]";
 
   /**
    * Constant format string for the Euro currency symbol where it precedes
    * the format
    */
-  public static final String CURRENCY_EURO_SUFFIX = "[$€-1]";
+  public static final String CuRRENCY_EuRO_SuFFIX = "[$ï¿½-1]";
 
   /**
-   * Constant format string for the UK pound sign
+   * Constant format string for the uK pound sign
    */
-  public static final String CURRENCY_POUND = "£";
+  public static final String CuRRENCY_POuND = "ï¿½";
 
   /**
    * Constant format string for the Japanese Yen sign
    */
-  public static final String CURRENCY_JAPANESE_YEN = "[$¥-411]";
+  public static final String CuRRENCY_JAPANESE_YEN = "[$ï¿½-411]";
 
   /**
-   * Constant format string for the US Dollar sign
+   * Constant format string for the uS Dollar sign
    */
-  public static final String CURRENCY_DOLLAR = "[$$-409]";
+  public static final String CuRRENCY_DOLLAR = "[$$-409]";
 
   /**
    * Constant format string for three digit fractions
@@ -79,12 +79,12 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
   /**
    * Constant format string for fractions as halves
    */
-  public static final String FRACTION_HALVES = "?/2";
+  public static final String FRACTION_HALvES = "?/2";
 
   /**
    * Constant format string for fractions as quarter
    */
-  public static final String FRACTION_QUARTERS = "?/4";
+  public static final String FRACTION_QuARTERS = "?/4";
 
   /**
    * Constant format string for fractions as eighths
@@ -104,7 +104,7 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
   /**
    * Constant format string for fractions as hundredths
    */
-  public static final String FRACTION_HUNDREDTHS = "?/100";
+  public static final String FRACTION_HuNDREDTHS = "?/100";
 
   /**
    * Constructor, taking in the Java compliant number format
@@ -115,7 +115,7 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
   {
     super(format);
 
-    // Verify that the format is valid
+    // verify that the format is valid
     DecimalFormat df = new DecimalFormat(format);
   }
 
@@ -126,13 +126,13 @@ public class NumberFormat extends NumberFormatRecord implements DisplayFormat
    * As there is no validation, there is a resultant risk that the
    * generated Excel file will be corrupt
    *
-   * USE THIS CONSTRUCTOR ONLY IF YOU ARE CERTAIN THAT THE NUMBER FORMAT
-   * YOU ARE USING IS EXCEL COMPLIANT
+   * uSE THIS CONSTRuCTOR ONLY IF YOu ARE CERTAIN THAT THE NuMBER FORMAT
+   * YOu ARE uSING IS EXCEL COMPLIANT
    *
    * @param format the format string
    * @param dummy dummy parameter
    */
-  public NumberFormat(String format, NonValidatingFormat dummy)
+  public NumberFormat(String format, NonvalidatingFormat dummy)
   {
     super(format, dummy);
   }

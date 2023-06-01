@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -25,10 +25,10 @@ import jxl.read.biff.Record;
 /**
  * Record containing the list of data validation settings for a given sheet
  */
-public class DataValidityListRecord extends WritableRecordData
+public class DatavalidityListRecord extends WritableRecordData
 {
   private static Logger logger = Logger.getLogger
-    (DataValidityListRecord.class);
+    (DatavalidityListRecord.class);
 
   /**
    * The number of settings records associated with this list
@@ -43,7 +43,7 @@ public class DataValidityListRecord extends WritableRecordData
   /**
    * The dval parser
    */
-  private DValParser dvalParser;
+  private DvalParser dvalParser;
 
   /**
    * The data
@@ -53,7 +53,7 @@ public class DataValidityListRecord extends WritableRecordData
   /**
    * Constructor
    */
-  public DataValidityListRecord(Record t)
+  public DatavalidityListRecord(Record t)
   {
     super(t);
 
@@ -65,9 +65,9 @@ public class DataValidityListRecord extends WritableRecordData
   /**
    * Constructor called when generating a data validity list from the API
    */
-  public DataValidityListRecord(DValParser dval)
+  public DatavalidityListRecord(DvalParser dval)
   {
-    super(Type.DVAL);
+    super(Type.DvAL);
 
     dvalParser = dval;
   }
@@ -77,9 +77,9 @@ public class DataValidityListRecord extends WritableRecordData
    *
    * @param dvlr the record copied from a read only sheet
    */
-  DataValidityListRecord(DataValidityListRecord dvlr)
+  DatavalidityListRecord(DatavalidityListRecord dvlr)
   {
-    super(Type.DVAL);
+    super(Type.DvAL);
 
     data = dvlr.getData();
   }
@@ -108,45 +108,45 @@ public class DataValidityListRecord extends WritableRecordData
   }
 
   /**
-   * Called when a remove row or column results in one of DV records being 
+   * Called when a remove row or column results in one of Dv records being 
    * removed
    */
   void dvRemoved()
   {
     if (dvalParser == null)
     {
-      dvalParser = new DValParser(data);
+      dvalParser = new DvalParser(data);
     }
 
     dvalParser.dvRemoved();
   }
 
   /**
-   * Called when a writable DV record is added to a copied validity list
+   * Called when a writable Dv record is added to a copied validity list
    */
   void dvAdded()
   {
     if (dvalParser == null)
     {
-      dvalParser = new DValParser(data);
+      dvalParser = new DvalParser(data);
     }
 
     dvalParser.dvAdded();
   }
 
   /**
-   * Accessor for the number of DV records
+   * Accessor for the number of Dv records
    *
-   * @return the number of DV records for this list
+   * @return the number of Dv records for this list
    */
-  public boolean hasDVRecords()
+  public boolean hasDvRecords()
   {
     if (dvalParser == null)
     {
       return true;
     }
 
-    return dvalParser.getNumberOfDVRecords() > 0;
+    return dvalParser.getNumberOfDvRecords() > 0;
   }
 
   /**

@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -148,7 +148,7 @@ public class PaletteRecord extends WritableRecordData
    * Accessor for the dirty flag, which indicates if this palette has been
    * modified
    *
-   * @return TRUE if the palette has been modified, FALSE if it is the default
+   * @return TRuE if the palette has been modified, FALSE if it is the default
    */
   public boolean isDirty()
   {
@@ -166,7 +166,7 @@ public class PaletteRecord extends WritableRecordData
   public void setColourRGB(Colour c, int r, int g, int b)
   {
     // Only colours on the standard palette with values 8-64 are acceptable
-    int pos = c.getValue() - 8;
+    int pos = c.getvalue() - 8;
     if (pos < 0 || pos >= numColours)
     {
       return;
@@ -178,9 +178,9 @@ public class PaletteRecord extends WritableRecordData
     }
 
     // Force the colours into the range 0-255
-    r = setValueRange(r, 0, 0xff);
-    g = setValueRange(g, 0, 0xff);
-    b = setValueRange(b, 0, 0xff);
+    r = setvalueRange(r, 0, 0xff);
+    g = setvalueRange(g, 0, 0xff);
+    b = setvalueRange(b, 0, 0xff);
 
     rgbColours[pos] = new RGB(r, g, b);
 
@@ -197,7 +197,7 @@ public class PaletteRecord extends WritableRecordData
   public RGB getColourRGB(Colour c)
   {
     // Only colours on the standard palette with values 8-64 are acceptable
-    int pos = c.getValue() - 8;
+    int pos = c.getvalue() - 8;
     if (pos < 0 || pos >= numColours)
     {
       return c.getDefaultRGB();
@@ -219,7 +219,7 @@ public class PaletteRecord extends WritableRecordData
    * @param max the maximum acceptable value
    * @return the constrained value
    */
-  private int setValueRange(int val, int min, int max)
+  private int setvalueRange(int val, int min, int max)
   {
     val = Math.max(val, min);
     val = Math.min(val, max);

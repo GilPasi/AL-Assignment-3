@@ -3,23 +3,23 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
 
-import java.io.UnsupportedEncodingException;
+import java.io.unsupportedEncodingException;
 
 import jxl.common.Logger;
 
@@ -36,12 +36,12 @@ public final class StringHelper
    */
   private static Logger logger = Logger.getLogger(StringHelper.class);
 
-  // Due to a a Sun bug in some versions of JVM 1.4, the UnicodeLittle
+  // Due to a a Sun bug in some versions of JvM 1.4, the unicodeLittle
   // encoding doesn't always work.  Making this a public static field
   // enables client code access to this (but in an undocumented and
   // unsupported fashion).  Suggested alternative values for this 
-  // are  "UTF-16LE" or "UnicodeLittleUnmarked"
-  public static String UNICODE_ENCODING = "UnicodeLittle";
+  // are  "uTF-16LE" or "unicodeLittleunmarked"
+  public static String uNICODE_ENCODING = "unicodeLittle";
 
   /**
    * Private default constructor to prevent instantiation
@@ -76,7 +76,7 @@ public final class StringHelper
     {
       return s.getBytes(ws.getEncoding());
     }
-    catch (UnsupportedEncodingException e)
+    catch (unsupportedEncodingException e)
     {
       // fail silently
       return null;
@@ -84,16 +84,16 @@ public final class StringHelper
   }
 
   /**
-   * Converts the string into a little-endian array of Unicode bytes
+   * Converts the string into a little-endian array of unicode bytes
    *
    * @param s the string to convert
    * @return the unicode values of the characters in the string
    */
-  public static byte[] getUnicodeBytes(String s)
+  public static byte[] getunicodeBytes(String s)
   {
     try
     {
-      byte[] b = s.getBytes(UNICODE_ENCODING);
+      byte[] b = s.getBytes(uNICODE_ENCODING);
 
       // Sometimes this method writes out the unicode
       // identifier
@@ -105,7 +105,7 @@ public final class StringHelper
       }
       return b;
     }
-    catch (UnsupportedEncodingException e)
+    catch (unsupportedEncodingException e)
     {
       // Fail silently
       return null;
@@ -135,9 +135,9 @@ public final class StringHelper
    * @param s the string to convert
    * @param d the byte array which will hold the string data
    */
-  public static void getUnicodeBytes(String s, byte[] d, int pos)
+  public static void getunicodeBytes(String s, byte[] d, int pos)
   {
-    byte[] b = getUnicodeBytes(s);
+    byte[] b = getunicodeBytes(s);
     System.arraycopy(b, 0, d, pos, b.length);
   }
 
@@ -166,7 +166,7 @@ public final class StringHelper
       //      System.arraycopy(d, pos, b, 0, length);
       //      return new String(b, ws.getEncoding());
     }
-    catch (UnsupportedEncodingException e)
+    catch (unsupportedEncodingException e)
     {
       logger.warn(e.toString());
       return "";
@@ -181,15 +181,15 @@ public final class StringHelper
    * @param d The byte data
    * @return the string built up from the unicode characters
    */
-  public static String getUnicodeString(byte[] d, int length, int pos)
+  public static String getunicodeString(byte[] d, int length, int pos)
   {
     try
     {
       byte[] b = new byte[length * 2];
       System.arraycopy(d, pos, b, 0, length * 2);
-      return new String(b, UNICODE_ENCODING);
+      return new String(b, uNICODE_ENCODING);
     }
-    catch (UnsupportedEncodingException e)
+    catch (unsupportedEncodingException e)
     {
       // Fail silently
       return "";

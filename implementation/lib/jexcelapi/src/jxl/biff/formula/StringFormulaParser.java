@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -155,7 +155,7 @@ class StringFormulaParser implements Parser
           StringOperator sop = (StringOperator) op;
           if (stack.isEmpty() || lastParseItem instanceof Operator)
           {
-            op = sop.getUnaryOperator();
+            op = sop.getunaryOperator();
           }
           else
           {
@@ -179,7 +179,7 @@ class StringFormulaParser implements Parser
             operators.push(op);
           }
 					else if (op.getPrecedence() == operator.getPrecedence() &&
-									 op instanceof UnaryOperator)
+									 op instanceof unaryOperator)
 					{
 						// The operators are of equal precedence, but because it is a
 						// unary operator the operand isn't available yet, so put it on
@@ -298,7 +298,7 @@ class StringFormulaParser implements Parser
   }
 
   /**
-   * Gets the formula as a string.  Uses the parse tree to do this, and
+   * Gets the formula as a string.  uses the parse tree to do this, and
    * does not simply return whatever string was passed in
    */
   public String getFormula()
@@ -322,11 +322,11 @@ class StringFormulaParser implements Parser
   {
     byte[] bytes = root.getBytes();
     
-    if (root.isVolatile())
+    if (root.isvolatile())
     {
       byte[] newBytes = new byte[bytes.length + 4];
       System.arraycopy(bytes, 0, newBytes, 4, bytes.length);
-      newBytes[0] = Token.ATTRIBUTE.getCode();
+      newBytes[0] = Token.ATTRIBuTE.getCode();
       newBytes[1] = (byte) 0x1;
       bytes = newBytes;
     }
@@ -349,14 +349,14 @@ class StringFormulaParser implements Parser
     ParseItem pi2 = parseCurrent(i); 
 
     // If the function is unknown, then throw an error
-    if (sf.getFunction(settings) == Function.UNKNOWN)
+    if (sf.getFunction(settings) == Function.uNKNOWN)
     {
-      throw new FormulaException(FormulaException.UNRECOGNIZED_FUNCTION);
+      throw new FormulaException(FormulaException.uNRECOGNIZED_FuNCTION);
     }
 
     // First check for possible optimized functions and possible
     // use of the Attribute token
-    if (sf.getFunction(settings) == Function.SUM && arguments == null)
+    if (sf.getFunction(settings) == Function.SuM && arguments == null)
     {
       // this is handled by an attribute
       Attribute a = new Attribute(sf, settings);
@@ -372,7 +372,7 @@ class StringFormulaParser implements Parser
           
       // Add in the if conditions as a var arg function in
       // the correct order
-      VariableArgFunction vaf = new VariableArgFunction(settings);
+      variableArgFunction vaf = new variableArgFunction(settings);
       int numargs = arguments.size();
       for (int j = 0 ; j < numargs; j++)
       {
@@ -395,7 +395,7 @@ class StringFormulaParser implements Parser
       if (arguments == null)
       {
         int numArgs = pi2 != null? 1:0;
-        VariableArgFunction vaf = new VariableArgFunction
+        variableArgFunction vaf = new variableArgFunction
           (sf.getFunction(settings), numArgs, settings);
 
         if (pi2 != null)
@@ -409,7 +409,7 @@ class StringFormulaParser implements Parser
       {
         // Add the args to the function in the correct order
         int numargs = arguments.size();
-        VariableArgFunction vaf = new VariableArgFunction
+        variableArgFunction vaf = new variableArgFunction
           (sf.getFunction(settings), numargs, settings);
         
         ParseItem[] args = new ParseItem[numargs];
@@ -445,10 +445,10 @@ class StringFormulaParser implements Parser
       if ((arguments == null && numargs != 0) ||
           (arguments != null && numargs != arguments.size()))
       {
-        throw new FormulaException(FormulaException.INCORRECT_ARGUMENTS);
+        throw new FormulaException(FormulaException.INCORRECT_ARGuMENTS);
       }
       // multiple arguments so go to the arguments stack.  
-      // Unlike the variable argument function, the args are
+      // unlike the variable argument function, the args are
       // stored in reverse order
       for (int j = 0; j < numargs ; j++)
       {
@@ -477,7 +477,7 @@ class StringFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnInserted(int sheetIndex, int col, boolean currentSheet)
@@ -493,7 +493,7 @@ class StringFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnRemoved(int sheetIndex, int col, boolean currentSheet)
@@ -508,7 +508,7 @@ class StringFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param row the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowInserted(int sheetIndex, int row, boolean currentSheet)
@@ -523,7 +523,7 @@ class StringFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param row the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowRemoved(int sheetIndex, int row, boolean currentSheet)
@@ -539,15 +539,15 @@ class StringFormulaParser implements Parser
    */
   private void handleOperand(Operand o, Stack stack)
   {
-    if (!(o instanceof IntegerValue))
+    if (!(o instanceof Integervalue))
     {
       stack.push(o);
       return;
     }
 
-    if (o instanceof IntegerValue)
+    if (o instanceof Integervalue)
     {
-      IntegerValue iv = (IntegerValue) o;
+      Integervalue iv = (Integervalue) o;
       if (!iv.isOutOfRange())
       {
         stack.push(iv);
@@ -555,7 +555,7 @@ class StringFormulaParser implements Parser
       else
       {
         // convert to a double
-        DoubleValue dv = new  DoubleValue(iv.getValue());
+        Doublevalue dv = new  Doublevalue(iv.getvalue());
         stack.push(dv);
       }
     }
@@ -565,11 +565,11 @@ class StringFormulaParser implements Parser
    * If this formula was on an imported sheet, check that
    * cell references to another sheet are warned appropriately
    *
-   * @return TRUE if the formula is valid import, FALSE otherwise
+   * @return TRuE if the formula is valid import, FALSE otherwise
    */
   public boolean handleImportedCellReferences()
   {
     root.handleImportedCellReferences();
-    return root.isValid();
+    return root.isvalid();
   }
 }

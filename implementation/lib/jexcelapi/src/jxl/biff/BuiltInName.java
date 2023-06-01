@@ -3,18 +3,18 @@
 *      Copyright (C) 2006 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -67,7 +67,7 @@ public class BuiltInName
    *
    * @return the value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -80,7 +80,7 @@ public class BuiltInName
     BuiltInName ret = FILTER_DATABASE;
     for (int i = 0 ; i < builtInNames.length; i++)
     {
-      if (builtInNames[i].getValue() == val)
+      if (builtInNames[i].getvalue() == val)
       {
         ret = builtInNames[i];
       }
@@ -91,9 +91,9 @@ public class BuiltInName
   // The list of built in names
   public static final BuiltInName CONSOLIDATE_AREA = 
     new BuiltInName("Consolidate_Area", 0x0);
-  public static final BuiltInName AUTO_OPEN = 
+  public static final BuiltInName AuTO_OPEN = 
     new BuiltInName("Auto_Open", 0x1);
-  public static final BuiltInName AUTO_CLOSE = 
+  public static final BuiltInName AuTO_CLOSE = 
     new BuiltInName("Auto_Open", 0x2);
   public static final BuiltInName EXTRACT = 
     new BuiltInName("Extract", 0x3);
@@ -109,9 +109,9 @@ public class BuiltInName
     new BuiltInName("Recorder", 0x8);
   public static final BuiltInName DATA_FORM = 
     new BuiltInName("Data_Form", 0x9);
-  public static final BuiltInName AUTO_ACTIVATE = 
+  public static final BuiltInName AuTO_ACTIvATE = 
     new BuiltInName("Auto_Activate", 0xa);
-  public static final BuiltInName AUTO_DEACTIVATE = 
+  public static final BuiltInName AuTO_DEACTIvATE = 
     new BuiltInName("Auto_Deactivate", 0xb);
   public static final BuiltInName SHEET_TITLE = 
     new BuiltInName("Sheet_Title", 0xb);

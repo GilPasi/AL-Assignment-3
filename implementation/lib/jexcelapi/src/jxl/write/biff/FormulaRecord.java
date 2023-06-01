@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -41,7 +41,7 @@ import jxl.write.WritableCell;
  * A formula record.  Parses the string passed in to deduce the set of
  * formula records
  */
-public class FormulaRecord extends CellValue implements FormulaData
+public class FormulaRecord extends Cellvalue implements FormulaData
 {
   /**
    * The logger
@@ -72,7 +72,7 @@ public class FormulaRecord extends CellValue implements FormulaData
    * The location where this formula was copied from.  It is used subsequently
    * to adjust relative cell references
    */
-  private CellValue copiedFrom;
+  private Cellvalue copiedFrom;
 
   /**
    * Constructor
@@ -81,7 +81,7 @@ public class FormulaRecord extends CellValue implements FormulaData
    */
   public FormulaRecord(int c, int r, String f)
   {
-    super(Type.FORMULA2, c, r);
+    super(Type.FORMuLA2, c, r);
     formulaToParse = f;
     copiedFrom = null;
   }
@@ -93,7 +93,7 @@ public class FormulaRecord extends CellValue implements FormulaData
    */
   public FormulaRecord(int c, int r, String f, CellFormat st)
   {
-    super(Type.FORMULA, c, r, st);
+    super(Type.FORMuLA, c, r, st);
     formulaToParse = f;
     copiedFrom = null;
   }
@@ -107,7 +107,7 @@ public class FormulaRecord extends CellValue implements FormulaData
    */
   protected FormulaRecord(int c, int r, FormulaRecord fr)
   {
-    super(Type.FORMULA, c, r, fr);
+    super(Type.FORMuLA, c, r, fr);
     copiedFrom = fr;
     formulaBytes = new byte[fr.formulaBytes.length];
     System.arraycopy(fr.formulaBytes, 0, formulaBytes, 0, formulaBytes.length);
@@ -122,7 +122,7 @@ public class FormulaRecord extends CellValue implements FormulaData
    */
   protected FormulaRecord(int c, int r, ReadFormulaRecord rfr)
   {
-    super(Type.FORMULA, c, r, rfr);
+    super(Type.FORMuLA, c, r, rfr);
     try
     {
       copiedFrom = rfr;

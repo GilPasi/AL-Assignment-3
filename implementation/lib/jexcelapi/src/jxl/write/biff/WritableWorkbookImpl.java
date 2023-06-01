@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -172,7 +172,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * 
    * @exception IOException 
    * @param os the output stream
-   * @param cs TRUE if the workbook should close the output stream, FALSE
+   * @param cs TRuE if the workbook should close the output stream, FALSE
    * @param ws the configuration for this workbook
    * otherwise
    */
@@ -193,7 +193,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
 
     // Reset the statically declared styles.  These are no longer needed
     // because the Styles class will intercept all calls within 
-    // CellValue.setCellDetails and if it detects a standard format, then it
+    // Cellvalue.setCellDetails and if it detects a standard format, then it
     // will return a clone.  In short, the static cell values will
     // never get initialized anyway.  Still, just to be extra sure...
     synchronized(SYNCHRONIZER)
@@ -221,7 +221,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * @exception IOException 
    * @param w the workbook to copy
    * @param os the output stream to write the data to
-   * @param cs TRUE if the workbook should close the output stream, FALSE
+   * @param cs TRuE if the workbook should close the output stream, FALSE
    * @param ws the configuration for this workbook
    */
   public WritableWorkbookImpl(OutputStream os,
@@ -234,7 +234,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
 
     // Reset the statically declared styles.  These are no longer needed
     // because the Styles class will intercept all calls within 
-    // CellValue.setCellDetails and if it detects a standard format, then it
+    // Cellvalue.setCellDetails and if it detects a standard format, then it
     // will return a clone.  In short, the static cell values will
     // never get initialized anyway.  Still, just to be extra sure...
     synchronized(SYNCHRONIZER)
@@ -352,7 +352,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
   }
 
   /**
-   * Gets the sheets within this workbook.  Use of this method for
+   * Gets the sheets within this workbook.  use of this method for
    * large worksheets can cause performance problems.
    * 
    * @return an array of the individual sheets
@@ -830,7 +830,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
     }
 
     // Write out the uses elfs record
-    UsesElfsRecord uer = new UsesElfsRecord();
+    usesElfsRecord uer = new usesElfsRecord();
     outputFile.write(uer);
     
     // Write out the boundsheet records.  Keep a handle to each one's
@@ -860,22 +860,22 @@ public class WritableWorkbookImpl extends WritableWorkbook
     {
       CountryCode lang = 
         CountryCode.getCountryCode(settings.getExcelDisplayLanguage());
-      if (lang == CountryCode.UNKNOWN)
+      if (lang == CountryCode.uNKNOWN)
       {
-        logger.warn("Unknown country code " + 
+        logger.warn("unknown country code " + 
                     settings.getExcelDisplayLanguage() + 
-                    " using " + CountryCode.USA.getCode());
-        lang = CountryCode.USA;
+                    " using " + CountryCode.uSA.getCode());
+        lang = CountryCode.uSA;
       }
       CountryCode region = 
         CountryCode.getCountryCode(settings.getExcelRegionalSettings());
       countryRecord = new CountryRecord(lang, region);
-      if (region == CountryCode.UNKNOWN)
+      if (region == CountryCode.uNKNOWN)
       {
-        logger.warn("Unknown country code " + 
+        logger.warn("unknown country code " + 
                     settings.getExcelDisplayLanguage() + 
-                    " using " + CountryCode.UK.getCode());
-        region = CountryCode.UK;
+                    " using " + CountryCode.uK.getCode());
+        region = CountryCode.uK;
       }
     }
 
@@ -1080,8 +1080,8 @@ public class WritableWorkbookImpl extends WritableWorkbook
     }
     
     // An unknown supbook - return unkown
-    logger.warn("Unknown Supbook 1");
-    return "[UNKNOWN]";
+    logger.warn("unknown Supbook 1");
+    return "[uNKNOWN]";
   }
 
   /**
@@ -1110,8 +1110,8 @@ public class WritableWorkbookImpl extends WritableWorkbook
     }
     
     // An unknown supbook - return unkown
-    logger.warn("Unknown Supbook 2");
-    return "[UNKNOWN]";
+    logger.warn("unknown Supbook 2");
+    return "[uNKNOWN]";
   }
 
   /**
@@ -1360,7 +1360,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    *
    * @param f the cell to add to the list
    */
-  void addRCIRCell(CellValue cv)
+  void addRCIRCell(Cellvalue cv)
   {
     rcirCells.add(cv);
   }
@@ -1377,7 +1377,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
     int externalSheetIndex = getExternalSheetIndex(s.getName());
     for (Iterator i = rcirCells.iterator() ; i.hasNext() ;)
     {
-      CellValue cv = (CellValue) i.next();
+      Cellvalue cv = (Cellvalue) i.next();
       cv.columnInserted(s, externalSheetIndex, col);
     }
 
@@ -1404,7 +1404,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
     int externalSheetIndex = getExternalSheetIndex(s.getName());
     for (Iterator i = rcirCells.iterator() ; i.hasNext() ;)
     {
-      CellValue cv = (CellValue) i.next();
+      Cellvalue cv = (Cellvalue) i.next();
       cv.columnRemoved(s, externalSheetIndex, col);
     }
 
@@ -1449,7 +1449,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
     // Adjust the row infos
     for (Iterator i = rcirCells.iterator() ; i.hasNext() ;)
     {
-      CellValue cv = (CellValue) i.next();
+      Cellvalue cv = (Cellvalue) i.next();
       cv.rowInserted(s, externalSheetIndex, row);
     }
 
@@ -1476,7 +1476,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
     int externalSheetIndex = getExternalSheetIndex(s.getName());
     for (Iterator i = rcirCells.iterator() ; i.hasNext() ;)
     {
-      CellValue cv = (CellValue) i.next();
+      Cellvalue cv = (Cellvalue) i.next();
       cv.rowRemoved(s, externalSheetIndex, row);
     }
 
@@ -1512,7 +1512,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * the name cannot be found, null is returned
    *
    * @param  the name of the cell/range to search for
-   * @return the cell in the top left of the range if found, NULL
+   * @return the cell in the top left of the range if found, NuLL
    *         otherwise
    */
   public WritableCell findCellByName(String name)
@@ -1727,7 +1727,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * @param firstRow  first row this name refers to.
    * @param lastCol    last column this name refers to.
    * @param lastRow    last row this name refers to.
-   * @param global   TRUE if this is a global name, FALSE if this is tied to 
+   * @param global   TRuE if this is a global name, FALSE if this is tied to 
    *                 the sheet
    */
   void addNameArea(String name, 
@@ -1770,7 +1770,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * @param firstRow  first row this name refers to.
    * @param lastCol    last column this name refers to.
    * @param lastRow    last row this name refers to.
-   * @param global   TRUE if this is a global name, FALSE if this is tied to 
+   * @param global   TRuE if this is a global name, FALSE if this is tied to 
    *                 the sheet
    */
   void addNameArea(BuiltInName name, 
@@ -1818,7 +1818,7 @@ public class WritableWorkbookImpl extends WritableWorkbook
    * @param firstRow2 first row this name refers to.
    * @param lastCol2  last column this name refers to.
    * @param lastRow2  last row this name refers to.
-   * @param global   TRUE if this is a global name, FALSE if this is tied to 
+   * @param global   TRuE if this is a global name, FALSE if this is tied to 
    *                 the sheet
    */
   void addNameArea(BuiltInName name, 

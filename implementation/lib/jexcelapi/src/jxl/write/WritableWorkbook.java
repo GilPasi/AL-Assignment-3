@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -25,7 +25,7 @@ import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.format.Colour;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 
 /**
  * A writable workbook
@@ -45,17 +45,17 @@ public abstract class WritableWorkbook
    */
   public static final WritableFont HYPERLINK_FONT =
     new WritableFont(WritableFont.ARIAL,
-                     WritableFont.DEFAULT_POINT_SIZE,
+                     WritableFont.DEFAuLT_POINT_SIZE,
                      WritableFont.NO_BOLD,
                      false,
-                     UnderlineStyle.SINGLE,
-                     Colour.BLUE);
+                     underlineStyle.SINGLE,
+                     Colour.BLuE);
 
   /**
    * The default style for cells
    */
   public static final WritableCellFormat NORMAL_STYLE =
-    new WritableCellFormat(ARIAL_10_PT, NumberFormats.DEFAULT);
+    new WritableCellFormat(ARIAL_10_PT, NumberFormats.DEFAuLT);
 
   /**
    * The style used for hyperlinks
@@ -77,7 +77,7 @@ public abstract class WritableWorkbook
   }
 
   /**
-   * Gets the sheets within this workbook.  Use of this method for
+   * Gets the sheets within this workbook.  use of this method for
    * large worksheets can cause performance problems.
    *
    * @return an array of the individual sheets
@@ -243,7 +243,7 @@ public abstract class WritableWorkbook
    * the name cannot be, null is returned
    *
    * @param name the name of the cell/range to search for
-   * @return the cell in the top left of the range if found, NULL
+   * @return the cell in the top left of the range if found, NuLL
    *         otherwise
    */
   public abstract WritableCell findCellByName(String name);

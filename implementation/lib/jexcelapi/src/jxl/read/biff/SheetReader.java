@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -42,9 +42,9 @@ import jxl.biff.ConditionalFormat;
 import jxl.biff.ConditionalFormatRangeRecord;
 import jxl.biff.ConditionalFormatRecord;
 import jxl.biff.ContinueRecord;
-import jxl.biff.DataValidation;
-import jxl.biff.DataValidityListRecord;
-import jxl.biff.DataValiditySettingsRecord;
+import jxl.biff.Datavalidation;
+import jxl.biff.DatavalidityListRecord;
+import jxl.biff.DatavaliditySettingsRecord;
 import jxl.biff.FilterModeRecord;
 import jxl.biff.FormattingRecords;
 import jxl.biff.Type;
@@ -168,7 +168,7 @@ final class SheetReader
   /**
    * The list of data validations on this page
    */
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
 
   /**
    * The list of charts on this page
@@ -298,7 +298,7 @@ final class SheetReader
    */
   private void addCell(Cell cell)
   {
-    // Sometimes multiple cells (eg. MULBLANK) can exceed the
+    // Sometimes multiple cells (eg. MuLBLANK) can exceed the
     // column/row boundaries.  Ignore these
     if (cell.getRow() < numRows && cell.getColumn() < numCols)
     {
@@ -375,7 +375,7 @@ final class SheetReader
       r = excelFile.next();
       Type type = r.getType();
 
-      if (type == Type.UNKNOWN && r.getCode() == 0)
+      if (type == Type.uNKNOWN && r.getCode() == 0)
       {
         logger.warn("Biff code zero found");
 
@@ -455,7 +455,7 @@ final class SheetReader
           mergedCells = newMergedCells;
         }
       }
-      else if (type == Type.MULRK)
+      else if (type == Type.MuLRK)
       {
         MulRKRecord mulrk = new MulRKRecord(r);
 
@@ -466,7 +466,7 @@ final class SheetReader
         {
           ixf = mulrk.getXFIndex(i);
 
-          NumberValue nv = new NumberValue
+          Numbervalue nv = new Numbervalue
             (mulrk.getRow(),
              mulrk.getFirstColumn() + i,
              RKHelper.getDouble(mulrk.getRKNumber(i)),
@@ -491,7 +491,7 @@ final class SheetReader
           }
         }
       }
-      else if (type == Type.NUMBER)
+      else if (type == Type.NuMBER)
       {
         NumberRecord nr = new NumberRecord(r, formattingRecords, sheet);
 
@@ -547,7 +547,7 @@ final class SheetReader
         }
 
         settings.setShowGridLines(window2Record.getShowGridLines());
-        settings.setDisplayZeroValues(window2Record.getDisplayZeroValues());
+        settings.setDisplayZerovalues(window2Record.getDisplayZerovalues());
         settings.setSelected(true);
         settings.setPageBreakPreviewMode(window2Record.isPageBreakPreview());
       }
@@ -558,11 +558,11 @@ final class SheetReader
         if (window2Record != null &&
             window2Record.getFrozen())
         {
-          settings.setVerticalFreeze(pr.getRowsVisible());
-          settings.setHorizontalFreeze(pr.getColumnsVisible());
+          settings.setverticalFreeze(pr.getRowsvisible());
+          settings.setHorizontalFreeze(pr.getColumnsvisible());
         }
       }
-      else if (type == Type.CONTINUE)
+      else if (type == Type.CONTINuE)
       {
         // don't know what this is for, but keep hold of it anyway
         continueRecord = new ContinueRecord(r);
@@ -605,7 +605,7 @@ final class SheetReader
         ProtectRecord pr = new ProtectRecord(r);
         settings.setProtected(pr.isProtected());
       }
-      else if (type == Type.SHAREDFORMULA)
+      else if (type == Type.SHAREDFORMuLA)
       {
         if (sharedFormula == null)
         {
@@ -625,7 +625,7 @@ final class SheetReader
         sharedFormulas.add(sfr);
         sharedFormula = null;
       }
-      else if (type == Type.FORMULA || type == Type.FORMULA2)
+      else if (type == Type.FORMuLA || type == Type.FORMuLA2)
       {
         FormulaRecord fr = new FormulaRecord(r,
                                              excelFile,
@@ -654,7 +654,7 @@ final class SheetReader
           {
             // Do nothing.  It's possible for the biff file to contain the
             // record sequence
-            // FORMULA-SHRFMLA-FORMULA-SHRFMLA-FORMULA-FORMULA-FORMULA
+            // FORMuLA-SHRFMLA-FORMuLA-SHRFMLA-FORMuLA-FORMuLA-FORMuLA
             // ie. it first lists all the formula templates, then it
             // lists all the individual formulas
             addCell(revertSharedFormula(prevSharedFormula));
@@ -666,7 +666,7 @@ final class SheetReader
           try
           {
             // See if the formula evaluates to date
-            if (fr.getFormula().getType() == CellType.NUMBER_FORMULA)
+            if (fr.getFormula().getType() == CellType.NuMBER_FORMuLA)
             {
               NumberFormulaRecord nfr = (NumberFormulaRecord) fr.getFormula();
               if (formattingRecords.isDate(nfr.getXFIndex()))
@@ -749,7 +749,7 @@ final class SheetReader
           addCell(bc);
         }
       }
-      else if (type == Type.MULBLANK)
+      else if (type == Type.MuLBLANK)
       {
         if (!workbookSettings.getIgnoreBlanks())
         {
@@ -813,7 +813,7 @@ final class SheetReader
         HeaderFooter footer = new HeaderFooter(fr.getFooter());
         settings.setFooter(footer);
       }
-      else if (type == Type.SETUP)
+      else if (type == Type.SETuP)
       {
         SetupRecord sr = new SetupRecord(r);
         
@@ -846,7 +846,7 @@ final class SheetReader
           settings.setFitHeight(sr.getFitHeight());
           settings.setHorizontalPrintResolution
             (sr.getHorizontalPrintResolution());
-          settings.setVerticalPrintResolution(sr.getVerticalPrintResolution());
+          settings.setverticalPrintResolution(sr.getverticalPrintResolution());
           settings.setCopies(sr.getCopies());
 
           if (workspaceOptions != null)
@@ -864,7 +864,7 @@ final class SheetReader
         DefaultColumnWidthRecord dcwr = new DefaultColumnWidthRecord(r);
         settings.setDefaultColumnWidth(dcwr.getWidth());
       }
-      else if (type == Type.DEFAULTROWHEIGHT)
+      else if (type == Type.DEFAuLTROWHEIGHT)
       {
         DefaultRowHeightRecord drhr = new DefaultRowHeightRecord(r);
         if (drhr.getHeight() != 0)
@@ -888,11 +888,11 @@ final class SheetReader
       {
         filterMode = new FilterModeRecord(r);
       }
-      else if (type == Type.AUTOFILTERINFO)
+      else if (type == Type.AuTOFILTERINFO)
       {
         autoFilterInfo = new AutoFilterInfoRecord(r);
       } 
-      else if (type == Type.AUTOFILTER)
+      else if (type == Type.AuTOFILTER)
       {
         if (!workbookSettings.getAutoFilterDisabled())
         {
@@ -943,18 +943,18 @@ final class SheetReader
         }
         rowBreaks = dr.getRowBreaks();
       }
-      else if (type == Type.VERTICALPAGEBREAKS)
+      else if (type == Type.vERTICALPAGEBREAKS)
       {
-        VerticalPageBreaksRecord dr = null;
+        verticalPageBreaksRecord dr = null;
 
         if (workbookBof.isBiff8())
         {
-          dr = new VerticalPageBreaksRecord(r);
+          dr = new verticalPageBreaksRecord(r);
         }
         else
         {
-          dr = new VerticalPageBreaksRecord
-            (r, VerticalPageBreaksRecord.biff7);
+          dr = new verticalPageBreaksRecord
+            (r, verticalPageBreaksRecord.biff7);
         }
         columnBreaks = dr.getColumnBreaks();
       }
@@ -963,16 +963,16 @@ final class SheetReader
         plsRecord = new PLSRecord(r);
 
         // Check for Continue records
-        while (excelFile.peek().getType() == Type.CONTINUE)
+        while (excelFile.peek().getType() == Type.CONTINuE)
         {
           r.addContinueRecord(excelFile.next());
         }
       }
-      else if (type == Type.DVAL)
+      else if (type == Type.DvAL)
       {
-        if (!workbookSettings.getCellValidationDisabled())
+        if (!workbookSettings.getCellvalidationDisabled())
         {
-          DataValidityListRecord dvlr = new DataValidityListRecord(r);
+          DatavalidityListRecord dvlr = new DatavalidityListRecord(r);
           if (dvlr.getObjectId() == -1)
           {
             if (msoRecord != null && objRecord == null)
@@ -988,17 +988,17 @@ final class SheetReader
               drawings.add(d2);
               msoRecord = null;
 
-              dataValidation = new DataValidation(dvlr);
+              datavalidation = new Datavalidation(dvlr);
             }
             else
             {
               // no drop down
-              dataValidation = new DataValidation(dvlr);
+              datavalidation = new Datavalidation(dvlr);
             }
           }
           else if (objectIds.contains(new Integer(dvlr.getObjectId())))
           {
-            dataValidation = new DataValidation(dvlr);
+            datavalidation = new Datavalidation(dvlr);
           }
           else
           {
@@ -1012,24 +1012,24 @@ final class SheetReader
       	CentreRecord hr = new CentreRecord(r);
       	settings.setHorizontalCentre(hr.isCentre());
       } 
-      else if (type == Type.VCENTER)
+      else if (type == Type.vCENTER)
       {
       	CentreRecord vc = new CentreRecord(r);
-      	settings.setVerticalCentre(vc.isCentre());
+      	settings.setverticalCentre(vc.isCentre());
       }
-      else if (type == Type.DV)
+      else if (type == Type.Dv)
       {
-        if (!workbookSettings.getCellValidationDisabled())
+        if (!workbookSettings.getCellvalidationDisabled())
         {
-          DataValiditySettingsRecord dvsr = 
-            new DataValiditySettingsRecord(r, 
+          DatavaliditySettingsRecord dvsr = 
+            new DatavaliditySettingsRecord(r, 
                                            workbook, 
                                            workbook,
                                            workbook.getSettings());
-          if (dataValidation != null)
+          if (datavalidation != null)
           {
-            dataValidation.add(dvsr);
-            addCellValidation(dvsr.getFirstColumn(),
+            datavalidation.add(dvsr);
+            addCellvalidation(dvsr.getFirstColumn(),
                               dvsr.getFirstRow(),
                               dvsr.getLastColumn(),
                               dvsr.getLastRow(), 
@@ -1086,7 +1086,7 @@ final class SheetReader
           }
         }
       }
-      else if (type == Type.BUTTONPROPERTYSET)
+      else if (type == Type.BuTTONPROPERTYSET)
       {
         buttonPropertySet = new ButtonPropertySetRecord(r);
       }
@@ -1095,12 +1095,12 @@ final class SheetReader
         CalcModeRecord cmr = new CalcModeRecord(r);
         settings.setAutomaticFormulaCalculation(cmr.isAutomatic());
       }
-      else if (type == Type.SAVERECALC)
+      else if (type == Type.SAvERECALC)
       {
         SaveRecalcRecord cmr = new SaveRecalcRecord(r);
         settings.setRecalculateFormulasBeforeSave(cmr.getRecalculateOnSave());
       }
-      else if (type == Type.GUTS)
+      else if (type == Type.GuTS)
       {
         GuttersRecord gr = new GuttersRecord(r);
         maxRowOutlineLevel = 
@@ -1218,7 +1218,7 @@ final class SheetReader
    * groups
    *
    * @param fr the candidate shared formula
-   * @return TRUE if the formula was added, FALSE otherwise
+   * @return TRuE if the formula was added, FALSE otherwise
    */
   private boolean addToSharedFormulas(BaseSharedFormulaRecord fr)
   {
@@ -1264,7 +1264,7 @@ final class SheetReader
     Cell cell = fr.getFormula();
 
     // See if the formula evaluates to date
-    if (fr.getFormula().getType() == CellType.NUMBER_FORMULA)
+    if (fr.getFormula().getType() == CellType.NuMBER_FORMuLA)
     {
       NumberFormulaRecord nfr = (NumberFormulaRecord) fr.getFormula();
       if (formattingRecords.isDate(fr.getXFIndex()))
@@ -1399,9 +1399,9 @@ final class SheetReader
    *
    * @return the data validations
    */
-  final DataValidation getDataValidation()
+  final Datavalidation getDatavalidation()
   {
-    return dataValidation;
+    return datavalidation;
   }
 
   /**
@@ -1537,11 +1537,11 @@ final class SheetReader
    * @param row2 the row for the comment
    * @param dvsr the validation settings
    */
-  private void addCellValidation(int col1, 
+  private void addCellvalidation(int col1, 
                                  int row1, 
                                  int col2,
                                  int row2,
-                                 DataValiditySettingsRecord dvsr)
+                                 DatavaliditySettingsRecord dvsr)
   {
     for (int row = row1; row <= row2; row++)
     {
@@ -1562,7 +1562,7 @@ final class SheetReader
                                               formattingRecords,
                                               sheet);
           CellFeatures cf = new CellFeatures();
-          cf.setValidationSettings(dvsr);
+          cf.setvalidationSettings(dvsr);
           mbc.setCellFeatures(cf);
           addCell(mbc);
         }
@@ -1577,7 +1577,7 @@ final class SheetReader
             cv.setCellFeatures(cf);
           }
 
-          cf.setValidationSettings(dvsr);
+          cf.setvalidationSettings(dvsr);
         }
         else
         {
@@ -1610,7 +1610,7 @@ final class SheetReader
     try
     {
       // Handle images
-      if (objRecord.getType() == ObjRecord.PICTURE)
+      if (objRecord.getType() == ObjRecord.PICTuRE)
       {
         if (drawingData == null)
         {
@@ -1643,7 +1643,7 @@ final class SheetReader
         // Sometimes Excel writes out Continue records instead of drawing
         // records, so forcibly hack all of these into a drawing record
         Record r2 = excelFile.next();
-        if (r2.getType() == Type.MSODRAWING || r2.getType() == Type.CONTINUE)
+        if (r2.getType() == Type.MSODRAWING || r2.getType() == Type.CONTINuE)
         {
           MsoDrawingRecord mso = new MsoDrawingRecord(r2);
           comment.addMso(mso);
@@ -1654,12 +1654,12 @@ final class SheetReader
         comment.setTextObject(txo);
 
         r2 = excelFile.next();
-        Assert.verify(r2.getType() == Type.CONTINUE);
+        Assert.verify(r2.getType() == Type.CONTINuE);
         ContinueRecord text = new ContinueRecord(r2);
         comment.setText(text);
 
         r2 = excelFile.next();
-        if (r2.getType() == Type.CONTINUE)
+        if (r2.getType() == Type.CONTINuE)
         {
           ContinueRecord formatting = new ContinueRecord(r2);
           comment.setFormatting(formatting);
@@ -1702,8 +1702,8 @@ final class SheetReader
 
         Record r2 = excelFile.next();
         Assert.verify(r2.getType() == Type.MSODRAWING || 
-                      r2.getType() == Type.CONTINUE);
-        if (r2.getType() == Type.MSODRAWING || r2.getType() == Type.CONTINUE)
+                      r2.getType() == Type.CONTINuE);
+        if (r2.getType() == Type.MSODRAWING || r2.getType() == Type.CONTINuE)
         {
           MsoDrawingRecord mso = new MsoDrawingRecord(r2);
           checkBox.addMso(mso);
@@ -1720,12 +1720,12 @@ final class SheetReader
         }
 
         r2 = excelFile.next();
-        Assert.verify(r2.getType() == Type.CONTINUE);
+        Assert.verify(r2.getType() == Type.CONTINuE);
         ContinueRecord text = new ContinueRecord(r2);
         checkBox.setText(text);
 
         r2 = excelFile.next();
-        if (r2.getType() == Type.CONTINUE)
+        if (r2.getType() == Type.CONTINuE)
         {
           ContinueRecord formatting = new ContinueRecord(r2);
           checkBox.setFormatting(formatting);
@@ -1737,7 +1737,7 @@ final class SheetReader
       }
 
       // Handle form buttons
-      if (objRecord.getType() == ObjRecord.BUTTON)
+      if (objRecord.getType() == ObjRecord.BuTTON)
       {
         if (drawingData == null)
         {
@@ -1752,9 +1752,9 @@ final class SheetReader
 
         Record r2 = excelFile.next();
         Assert.verify(r2.getType() == Type.MSODRAWING || 
-                      r2.getType() == Type.CONTINUE);
+                      r2.getType() == Type.CONTINuE);
         if (r2.getType() == Type.MSODRAWING || 
-            r2.getType() == Type.CONTINUE)
+            r2.getType() == Type.CONTINuE)
         {
           MsoDrawingRecord mso = new MsoDrawingRecord(r2);
           button.addMso(mso);
@@ -1766,12 +1766,12 @@ final class SheetReader
         button.setTextObject(txo);
 
         r2 = excelFile.next();
-        Assert.verify(r2.getType() == Type.CONTINUE);
+        Assert.verify(r2.getType() == Type.CONTINuE);
         ContinueRecord text = new ContinueRecord(r2);
         button.setText(text);
 
         r2 = excelFile.next();
-        if (r2.getType() == Type.CONTINUE)
+        if (r2.getType() == Type.CONTINuE)
         {
           ContinueRecord formatting = new ContinueRecord(r2);
           button.setFormatting(formatting);
@@ -1799,9 +1799,9 @@ final class SheetReader
 
         Record r2 = excelFile.next();
         Assert.verify(r2.getType() == Type.MSODRAWING || 
-                      r2.getType() == Type.CONTINUE);
+                      r2.getType() == Type.CONTINuE);
         if (r2.getType() == Type.MSODRAWING || 
-            r2.getType() == Type.CONTINUE)
+            r2.getType() == Type.CONTINuE)
         {
           MsoDrawingRecord mso = new MsoDrawingRecord(r2);
           drawingData.addRawData(mso.getData());
@@ -1865,15 +1865,15 @@ final class SheetReader
    */
   private void handleOutOfBoundsCells()
   {
-    int resizedRows = numRows;
-    int resizedCols = numCols;
+    int rpathCountdRows = numRows;
+    int rpathCountdCols = numCols;
 
     // First, determine the new bounds
     for (Iterator i = outOfBoundsCells.iterator() ; i.hasNext() ;)
     {
       Cell cell = (Cell) i.next();
-      resizedRows = Math.max(resizedRows, cell.getRow() + 1);
-      resizedCols = Math.max(resizedCols, cell.getColumn() + 1);
+      rpathCountdRows = Math.max(rpathCountdRows, cell.getRow() + 1);
+      rpathCountdCols = Math.max(rpathCountdCols, cell.getColumn() + 1);
     }
     
     // There used to be a warning here about exceeding the sheet dimensions,
@@ -1881,34 +1881,34 @@ final class SheetReader
     // on entire rows or columns - in which case it would blow out any
     // existing dimensions
 
-    // Resize the columns, if necessary
-    if (resizedCols > numCols)
+    // RpathCount the columns, if necessary
+    if (rpathCountdCols > numCols)
     {
       for (int r = 0 ; r < numRows ; r++)
       {
-        Cell[] newRow = new Cell[resizedCols];
+        Cell[] newRow = new Cell[rpathCountdCols];
         Cell[] oldRow = cells[r];
         System.arraycopy(oldRow, 0, newRow, 0, oldRow.length);
         cells[r] = newRow;
       }
     }
 
-    // Resize the rows, if necessary
-    if (resizedRows > numRows)
+    // RpathCount the rows, if necessary
+    if (rpathCountdRows > numRows)
     {
-      Cell[][] newCells = new Cell[resizedRows][];
+      Cell[][] newCells = new Cell[rpathCountdRows][];
       System.arraycopy(cells, 0, newCells, 0, cells.length);
       cells = newCells;
 
       // Create the new rows
-      for (int i = numRows; i < resizedRows; i++)
+      for (int i = numRows; i < rpathCountdRows; i++)
       {
-        newCells[i] = new Cell[resizedCols];
+        newCells[i] = new Cell[rpathCountdCols];
       }
     }
 
-    numRows = resizedRows;
-    numCols = resizedCols;
+    numRows = rpathCountdRows;
+    numCols = rpathCountdCols;
 
     // Now add all the out of bounds cells into the new cells
     for (Iterator i = outOfBoundsCells.iterator(); i.hasNext(); )

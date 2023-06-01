@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -22,7 +22,7 @@ package jxl.write;
 import jxl.format.Colour;
 import jxl.format.Font;
 import jxl.format.ScriptStyle;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 import jxl.write.biff.WritableFontRecord;
 
 /**
@@ -85,9 +85,9 @@ public class WritableFont extends WritableFontRecord
   public static final FontName TIMES = new FontName("Times New Roman");
   /**
    * Objects created with this font name will be rendered within Excel as
-   * COURIER fonts
+   * COuRIER fonts
    */
-  public static final FontName COURIER = new FontName("Courier New");
+  public static final FontName COuRIER = new FontName("Courier New");
   /**
    * Objects created with this font name will be rendered within Excel as
    * TAHOMA fonts
@@ -108,7 +108,7 @@ public class WritableFont extends WritableFontRecord
   /**
    * The default point size for all Fonts
    */
-  public static final int DEFAULT_POINT_SIZE = 10;
+  public static final int DEFAuLT_POINT_SIZE = 10;
 
   /**
    * Creates a default font, vanilla font of the specified face and with
@@ -119,10 +119,10 @@ public class WritableFont extends WritableFontRecord
   public WritableFont(FontName fn)
   {
     this(fn,
-         DEFAULT_POINT_SIZE,
+         DEFAuLT_POINT_SIZE,
          NO_BOLD,
          false,
-         UnderlineStyle.NO_UNDERLINE,
+         underlineStyle.NO_uNDERLINE,
          Colour.BLACK,
          ScriptStyle.NORMAL_SCRIPT);
   }
@@ -147,7 +147,7 @@ public class WritableFont extends WritableFontRecord
   public WritableFont(FontName fn, int ps)
   {
     this(fn, ps, NO_BOLD, false,
-         UnderlineStyle.NO_UNDERLINE,
+         underlineStyle.NO_uNDERLINE,
          Colour.BLACK,
          ScriptStyle.NORMAL_SCRIPT);
   }
@@ -162,7 +162,7 @@ public class WritableFont extends WritableFontRecord
   public WritableFont(FontName fn, int ps, BoldStyle bs)
   {
     this(fn, ps, bs, false,
-         UnderlineStyle.NO_UNDERLINE,
+         underlineStyle.NO_uNDERLINE,
          Colour.BLACK,
          ScriptStyle.NORMAL_SCRIPT);
   }
@@ -179,7 +179,7 @@ public class WritableFont extends WritableFontRecord
   public WritableFont(FontName fn, int ps, BoldStyle bs, boolean italic)
   {
     this(fn, ps, bs, italic,
-         UnderlineStyle.NO_UNDERLINE,
+         underlineStyle.NO_uNDERLINE,
          Colour.BLACK,
          ScriptStyle.NORMAL_SCRIPT);
   }
@@ -198,7 +198,7 @@ public class WritableFont extends WritableFontRecord
                       int ps,
                       BoldStyle bs,
                       boolean it,
-                      UnderlineStyle us)
+                      underlineStyle us)
   {
     this(fn, ps, bs, it, us, Colour.BLACK, ScriptStyle.NORMAL_SCRIPT);
   }
@@ -219,7 +219,7 @@ public class WritableFont extends WritableFontRecord
                       int ps,
                       BoldStyle bs,
                       boolean it,
-                      UnderlineStyle us,
+                      underlineStyle us,
                       Colour c)
   {
     this(fn, ps, bs, it, us, c, ScriptStyle.NORMAL_SCRIPT);
@@ -243,13 +243,13 @@ public class WritableFont extends WritableFontRecord
                       int ps,
                       BoldStyle bs,
                       boolean it,
-                      UnderlineStyle us,
+                      underlineStyle us,
                       Colour c,
                       ScriptStyle ss)
   {
     super(fn.name, ps, bs.value, it,
-          us.getValue(),
-          c.getValue(), ss.getValue());
+          us.getvalue(),
+          c.getvalue(), ss.getvalue());
   }
 
   /**
@@ -293,9 +293,9 @@ public class WritableFont extends WritableFontRecord
    * @param us the underline style
    * @exception WriteException, if this font is already in use elsewhere
    */
-  public void setUnderlineStyle(UnderlineStyle us) throws WriteException
+  public void setunderlineStyle(underlineStyle us) throws WriteException
   {
-    super.setUnderlineStyle(us.getValue());
+    super.setunderlineStyle(us.getvalue());
   }
 
   /**
@@ -307,7 +307,7 @@ public class WritableFont extends WritableFontRecord
    */
   public void setColour(Colour colour) throws WriteException
   {
-    super.setColour(colour.getValue());
+    super.setColour(colour.getvalue());
   }
 
   /**
@@ -319,7 +319,7 @@ public class WritableFont extends WritableFontRecord
    */
   public void setScriptStyle(ScriptStyle scriptStyle) throws WriteException
   {
-    super.setScriptStyle(scriptStyle.getValue());
+    super.setScriptStyle(scriptStyle.getvalue());
   }
 
   /**
@@ -335,7 +335,7 @@ public class WritableFont extends WritableFontRecord
   /**
    * Sets Accessor for the strike-out flag
    *
-   * @param struckout TRUE if this is a struckout font
+   * @param struckout TRuE if this is a struckout font
    * @return the strike-out flag
    * @exception WriteException, if this font is already in use elsewhere
    */

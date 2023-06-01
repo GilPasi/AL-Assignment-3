@@ -3,27 +3,27 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
 
 import java.io.File;
-import java.net.URL;
+import java.net.uRL;
 
 /**
- * Hyperlink information.  Only URLs or file links are supported
+ * Hyperlink information.  Only uRLs or file links are supported
  *
  * Hyperlinks may apply to a range of cells; in such cases the methods
  * getRow and getColumn return the cell at the top left of the range
@@ -58,21 +58,21 @@ public interface Hyperlink
   /**
    * Determines whether this is a hyperlink to a file
    *
-   * @return TRUE if this is a hyperlink to a file, FALSE otherwise
+   * @return TRuE if this is a hyperlink to a file, FALSE otherwise
    */
   public boolean isFile();
 
   /**
    * Determines whether this is a hyperlink to a web resource
    *
-   * @return TRUE if this is a URL
+   * @return TRuE if this is a uRL
    */
-  public boolean isURL();
+  public boolean isuRL();
 
   /**
    * Determines whether this is a hyperlink to a location in this workbook
    *
-   * @return TRUE if this is a link to an internal location
+   * @return TRuE if this is a link to an internal location
    */
   public boolean isLocation();
 
@@ -91,16 +91,16 @@ public interface Hyperlink
   public int getLastColumn();
 
   /**
-   * Gets the URL referenced by this Hyperlink
+   * Gets the uRL referenced by this Hyperlink
    *
-   * @return the URL, or NULL if this hyperlink is not a URL
+   * @return the uRL, or NuLL if this hyperlink is not a uRL
    */
-  public URL getURL();
+  public uRL getuRL();
 
   /**
    * Returns the local file eferenced by this Hyperlink
    *
-   * @return the file, or NULL if this hyperlink is not a file
+   * @return the file, or NuLL if this hyperlink is not a file
    */
   public File getFile();
 }

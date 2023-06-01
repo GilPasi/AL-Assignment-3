@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -78,7 +78,7 @@ class Dgg extends EscherAtom
     /**
      * The something or other
      */
-    int shapeIdsUsed;
+    int shapeIdsused;
 
     /**
      * Constructor
@@ -89,7 +89,7 @@ class Dgg extends EscherAtom
     Cluster(int dgId, int sids)
     {
       drawingGroupId = dgId;
-      shapeIdsUsed = sids;
+      shapeIdsused = sids;
     }
   }
 
@@ -177,7 +177,7 @@ class Dgg extends EscherAtom
     {
       Cluster c = (Cluster) clusters.get(i);
       IntegerHelper.getTwoBytes(c.drawingGroupId, data, pos);
-      IntegerHelper.getTwoBytes(c.shapeIdsUsed, data, pos + 2);
+      IntegerHelper.getTwoBytes(c.shapeIdsused, data, pos + 2);
       pos += 4;
     }
 

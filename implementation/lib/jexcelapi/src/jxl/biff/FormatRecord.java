@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -138,7 +138,7 @@ public class FormatRecord extends WritableRecordData
   }
 
   /**
-   * Constructs this object from the raw data.  Used when reading in a
+   * Constructs this object from the raw data.  used when reading in a
    * format record
    *
    * @param t the raw data
@@ -162,7 +162,7 @@ public class FormatRecord extends WritableRecordData
       }
       else
       {
-        formatString = StringHelper.getUnicodeString(data, numchars, 5);
+        formatString = StringHelper.getunicodeString(data, numchars, 5);
       }
     }
     else
@@ -181,7 +181,7 @@ public class FormatRecord extends WritableRecordData
     {
       String dateString = dateStrings[i];
       if (formatString.indexOf(dateString) != -1 || 
-          formatString.indexOf(dateString.toUpperCase()) != -1)
+          formatString.indexOf(dateString.toupperCase()) != -1)
       {
         date = true;
         break;
@@ -200,7 +200,7 @@ public class FormatRecord extends WritableRecordData
   }
 
   /**
-   * Used to get the data when writing out the format record
+   * used to get the data when writing out the format record
    *
    * @return the raw data
    */
@@ -211,7 +211,7 @@ public class FormatRecord extends WritableRecordData
     IntegerHelper.getTwoBytes(indexCode, data, 0);
     IntegerHelper.getTwoBytes(formatString.length(), data, 2);
     data[4] = (byte) 1; // unicode indicator
-    StringHelper.getUnicodeBytes(formatString, data, 5);
+    StringHelper.getunicodeBytes(formatString, data, 5);
 
     return data;
   }
@@ -229,7 +229,7 @@ public class FormatRecord extends WritableRecordData
   /**
    * Accessor to see whether this object is initialized or not.
    *
-   * @return TRUE if this font record has been initialized, FALSE otherwise
+   * @return TRuE if this font record has been initialized, FALSE otherwise
    */
   public boolean isInitialized()
   {
@@ -250,7 +250,7 @@ public class FormatRecord extends WritableRecordData
   }
 
   /**
-   * Replaces all instances of search with replace in the input.  Used for
+   * Replaces all instances of search with replace in the input.  used for
    * replacing microsoft number formatting characters with java equivalents
    *
    * @param input the format string
@@ -287,7 +287,7 @@ public class FormatRecord extends WritableRecordData
   /**
    * Sees if this format is a date format
    *
-   * @return TRUE if this format is a date
+   * @return TRuE if this format is a date
    */
   public final  boolean isDate()
   {
@@ -297,7 +297,7 @@ public class FormatRecord extends WritableRecordData
   /**
    * Sees if this format is a number format
    *
-   * @return TRUE if this format is a number
+   * @return TRuE if this format is a number
    */
   public final boolean isNumber()
   {
@@ -431,7 +431,7 @@ public class FormatRecord extends WritableRecordData
           // minute or a month?  See which is closest out of the
           // letters H d s or y
           // First, h
-          int minuteDist = Integer.MAX_VALUE;
+          int minuteDist = Integer.MAX_vALuE;
           for (int j = i - 1; j > 0; j--)
           {
             if (formatBytes[j] == 'h')
@@ -488,7 +488,7 @@ public class FormatRecord extends WritableRecordData
           // We now have the distance of the closest character which could
           // indicate the the m refers to a minute
           // Repeat for d and y
-          int monthDist = Integer.MAX_VALUE;
+          int monthDist = Integer.MAX_vALuE;
           for (int j = i - 1; j > 0; j--)
           {
             if (formatBytes[j] == 'd')
@@ -527,10 +527,10 @@ public class FormatRecord extends WritableRecordData
           if (monthDist < minuteDist)
           {
             // The month indicator is closer, so convert to a capital M
-            formatBytes[i] = Character.toUpperCase(formatBytes[i]);
+            formatBytes[i] = Character.toupperCase(formatBytes[i]);
           }
           else if ((monthDist == minuteDist) &&
-                   (monthDist != Integer.MAX_VALUE))
+                   (monthDist != Integer.MAX_vALuE))
           {
             // They are equidistant.  As a tie-breaker, take the formatting
             // character which precedes the m
@@ -538,7 +538,7 @@ public class FormatRecord extends WritableRecordData
             if (ind == 'y' || ind == 'd')
             {
               // The preceding item indicates a month measure, so convert
-              formatBytes[i] = Character.toUpperCase(formatBytes[i]);
+              formatBytes[i] = Character.toupperCase(formatBytes[i]);
             }
           }
         }
@@ -601,7 +601,7 @@ public class FormatRecord extends WritableRecordData
    * format records, and not their indexCodes, which are ignored
    *
    * @param o the object to compare
-   * @return TRUE if the two objects are equal, FALSE otherwise
+   * @return TRuE if the two objects are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {
@@ -630,7 +630,7 @@ public class FormatRecord extends WritableRecordData
       return formatString.equals(fr.formatString);
     }
 
-    // Uninitialized format comparison
+    // uninitialized format comparison
     return formatString.equals(fr.formatString);
   }
 }

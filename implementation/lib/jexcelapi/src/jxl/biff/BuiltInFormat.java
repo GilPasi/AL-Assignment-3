@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -22,7 +22,7 @@ package jxl.biff;
 import jxl.format.Format;
 
 /**
- * The excel string for the various built in formats.  Used to present
+ * The excel string for the various built in formats.  used to present
  * the cell format information back to the user
  *
  * The difference between this class and the various format object contained
@@ -77,7 +77,7 @@ final class BuiltInFormat implements Format, DisplayFormat
   /**
    * Accessor to see whether this format has been initialized
    *
-   * @return TRUE if initialized, FALSE otherwise
+   * @return TRuE if initialized, FALSE otherwise
    */
   public boolean isInitialized()
   {
@@ -95,7 +95,7 @@ final class BuiltInFormat implements Format, DisplayFormat
   /**
    * Accessor to determine whether or not this format is built in
    *
-   * @return TRUE if this format is a built in format, FALSE otherwise
+   * @return TRuE if this format is a built in format, FALSE otherwise
    */
   public boolean isBuiltIn()
   {
@@ -105,7 +105,7 @@ final class BuiltInFormat implements Format, DisplayFormat
   /**
    * Equals method
    *
-   * @return TRUE if the two built in formats are equal, FALSE otherwise
+   * @return TRuE if the two built in formats are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {

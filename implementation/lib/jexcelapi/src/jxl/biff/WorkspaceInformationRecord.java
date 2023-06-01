@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -53,9 +53,9 @@ public class WorkspaceInformationRecord extends WritableRecordData
 
   // the masks
   private static final int FIT_TO_PAGES = 0x100;
-  private static final int SHOW_ROW_OUTLINE_SYMBOLS = 0x400;
-  private static final int SHOW_COLUMN_OUTLINE_SYMBOLS = 0x800;
-  private static final int DEFAULT_OPTIONS = 0x4c1;
+  private static final int SHOW_ROW_OuTLINE_SYMBOLS = 0x400;
+  private static final int SHOW_COLuMN_OuTLINE_SYMBOLS = 0x800;
+  private static final int DEFAuLT_OPTIONS = 0x4c1;
  
 
   /**
@@ -70,8 +70,8 @@ public class WorkspaceInformationRecord extends WritableRecordData
 
     wsoptions = IntegerHelper.getInt(data[0], data[1]);
     fitToPages = (wsoptions | FIT_TO_PAGES) != 0;
-    rowOutlines = (wsoptions | SHOW_ROW_OUTLINE_SYMBOLS) != 0;
-    columnOutlines = (wsoptions | SHOW_COLUMN_OUTLINE_SYMBOLS) != 0;
+    rowOutlines = (wsoptions | SHOW_ROW_OuTLINE_SYMBOLS) != 0;
+    columnOutlines = (wsoptions | SHOW_COLuMN_OuTLINE_SYMBOLS) != 0;
   }
 
   /**
@@ -80,13 +80,13 @@ public class WorkspaceInformationRecord extends WritableRecordData
   public WorkspaceInformationRecord()
   {
     super(Type.WSBOOL);
-    wsoptions = DEFAULT_OPTIONS;
+    wsoptions = DEFAuLT_OPTIONS;
   }
 
   /**
    * Gets the fit to pages flag
    *
-   * @return TRUE if fit to pages is set
+   * @return TRuE if fit to pages is set
    */
   public boolean getFitToPages()
   {
@@ -135,12 +135,12 @@ public class WorkspaceInformationRecord extends WritableRecordData
 
     if (rowOutlines)
     {
-      wsoptions |= SHOW_ROW_OUTLINE_SYMBOLS;
+      wsoptions |= SHOW_ROW_OuTLINE_SYMBOLS;
     }
 
     if (columnOutlines)
     {
-      wsoptions |= SHOW_COLUMN_OUTLINE_SYMBOLS;
+      wsoptions |= SHOW_COLuMN_OuTLINE_SYMBOLS;
     }
 
     IntegerHelper.getTwoBytes(wsoptions, data, 0);

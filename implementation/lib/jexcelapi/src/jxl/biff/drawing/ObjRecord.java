@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -28,7 +28,7 @@ import jxl.biff.WritableRecordData;
 import jxl.read.biff.Record;
 
 /**
- * A record which merely holds the OBJ data.  Used when copying files which
+ * A record which merely holds the OBJ data.  used when copying files which
  * contain images
  */
 public class ObjRecord extends WritableRecordData
@@ -81,8 +81,8 @@ public class ObjRecord extends WritableRecordData
 
     public static ObjType getType(int val)
     {
-      ObjType retval = UNKNOWN;
-      for (int i = 0; i < types.length && retval == UNKNOWN; i++)
+      ObjType retval = uNKNOWN;
+      for (int i = 0; i < types.length && retval == uNKNOWN; i++)
       {
         if (types[i].value == val)
         {
@@ -94,25 +94,25 @@ public class ObjRecord extends WritableRecordData
   }
 
   // The object types
-  public static final ObjType GROUP = new ObjType(0x0, "Group");
+  public static final ObjType GROuP = new ObjType(0x0, "Group");
   public static final ObjType LINE = new ObjType(0x01, "Line");
   public static final ObjType RECTANGLE = new ObjType(0x02, "Rectangle");
-  public static final ObjType OVAL = new ObjType(0x03, "Oval");
+  public static final ObjType OvAL = new ObjType(0x03, "Oval");
   public static final ObjType ARC = new ObjType(0x04, "Arc");
   public static final ObjType CHART = new ObjType(0x05, "Chart");
   public static final ObjType TEXT = new ObjType(0x06, "Text");
-  public static final ObjType BUTTON = new ObjType(0x07, "Button");
-  public static final ObjType PICTURE = new ObjType(0x08, "Picture");
+  public static final ObjType BuTTON = new ObjType(0x07, "Button");
+  public static final ObjType PICTuRE = new ObjType(0x08, "Picture");
   public static final ObjType POLYGON = new ObjType(0x09, "Polygon");
   public static final ObjType CHECKBOX = new ObjType(0x0b, "Checkbox");
   public static final ObjType OPTION = new ObjType(0x0c, "Option");
   public static final ObjType EDITBOX = new ObjType(0x0d, "Edit Box");
   public static final ObjType LABEL = new ObjType(0x0e, "Label");
-  public static final ObjType DIALOGUEBOX = new ObjType(0x0f, "Dialogue Box");
+  public static final ObjType DIALOGuEBOX = new ObjType(0x0f, "Dialogue Box");
   public static final ObjType SPINBOX = new ObjType(0x10, "Spin Box");
   public static final ObjType SCROLLBAR = new ObjType(0x11, "Scrollbar");
   public static final ObjType LISTBOX = new ObjType(0x12, "List Box");
-  public static final ObjType GROUPBOX = new ObjType(0x13, "Group Box");
+  public static final ObjType GROuPBOX = new ObjType(0x13, "Group Box");
   public static final ObjType COMBOBOX = new ObjType(0x14, "Combo Box");
   public static final ObjType MSOFFICEDRAWING = new ObjType
     (0x1e, "MS Office Drawing");
@@ -121,14 +121,14 @@ public class ObjRecord extends WritableRecordData
   public static final ObjType EXCELNOTE =
     new ObjType (0x19, "Excel Note");
 
-  public static final ObjType UNKNOWN = new ObjType(0xff, "Unknown");
+  public static final ObjType uNKNOWN = new ObjType(0xff, "unknown");
 
   // Field sub records
   private static final int COMMON_DATA_LENGTH = 22;
   private static final int CLIPBOARD_FORMAT_LENGTH = 6;
-  private static final int PICTURE_OPTION_LENGTH = 6;
-  private static final int NOTE_STRUCTURE_LENGTH = 26;
-  private static final int COMBOBOX_STRUCTURE_LENGTH = 44;
+  private static final int PICTuRE_OPTION_LENGTH = 6;
+  private static final int NOTE_STRuCTuRE_LENGTH = 26;
+  private static final int COMBOBOX_STRuCTuRE_LENGTH = 44;
   private static final int END_LENGTH = 4;
 
   /**
@@ -144,7 +144,7 @@ public class ObjRecord extends WritableRecordData
     read = true;
     type = ObjType.getType(objtype);
 
-    if (type == UNKNOWN)
+    if (type == uNKNOWN)
     {
       logger.warn("unknown object type code " + objtype);
     }
@@ -177,7 +177,7 @@ public class ObjRecord extends WritableRecordData
       return getRecord().getData();
     }
 
-    if (type == PICTURE || type == CHART)
+    if (type == PICTuRE || type == CHART)
     {
       return getPictureData();
     }
@@ -205,7 +205,7 @@ public class ObjRecord extends WritableRecordData
   {
     int dataLength = COMMON_DATA_LENGTH +
       CLIPBOARD_FORMAT_LENGTH +
-      PICTURE_OPTION_LENGTH +
+      PICTuRE_OPTION_LENGTH +
       END_LENGTH;
     int pos = 0;
     byte[] data = new byte[dataLength];
@@ -243,7 +243,7 @@ public class ObjRecord extends WritableRecordData
     IntegerHelper.getTwoBytes(0x8, data, pos);
 
     // record length
-    IntegerHelper.getTwoBytes(PICTURE_OPTION_LENGTH - 4, data, pos + 2);
+    IntegerHelper.getTwoBytes(PICTuRE_OPTION_LENGTH - 4, data, pos + 2);
 
     // the data
     IntegerHelper.getTwoBytes(0x1, data, pos + 4);
@@ -269,7 +269,7 @@ public class ObjRecord extends WritableRecordData
   private byte[] getNoteData()
   {
     int dataLength = COMMON_DATA_LENGTH +
-      NOTE_STRUCTURE_LENGTH +
+      NOTE_STRuCTuRE_LENGTH +
       END_LENGTH;
     int pos = 0;
     byte[] data = new byte[dataLength];
@@ -296,10 +296,10 @@ public class ObjRecord extends WritableRecordData
     IntegerHelper.getTwoBytes(0xd, data, pos);
 
     // record length
-    IntegerHelper.getTwoBytes(NOTE_STRUCTURE_LENGTH - 4, data, pos + 2);
+    IntegerHelper.getTwoBytes(NOTE_STRuCTuRE_LENGTH - 4, data, pos + 2);
 
     // the data
-    pos += NOTE_STRUCTURE_LENGTH;
+    pos += NOTE_STRuCTuRE_LENGTH;
 
     // End
     // record id
@@ -322,7 +322,7 @@ public class ObjRecord extends WritableRecordData
   private byte[] getComboBoxData()
   {
     int dataLength = COMMON_DATA_LENGTH +
-      COMBOBOX_STRUCTURE_LENGTH +
+      COMBOBOX_STRuCTuRE_LENGTH +
       END_LENGTH;
     int pos = 0;
     byte[] data = new byte[dataLength];
@@ -365,7 +365,7 @@ public class ObjRecord extends WritableRecordData
     data[pos + 40] = 0x08;
     data[pos + 42] = 0x40;
 
-    pos += COMBOBOX_STRUCTURE_LENGTH;
+    pos += COMBOBOX_STRuCTuRE_LENGTH;
 
     // End
     // record id

@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 package jxl.biff.formula;
 /**
@@ -25,7 +25,7 @@ import jxl.biff.WorkbookMethods;
 
 
 class Yylex {
-	private final int YY_BUFFER_SIZE = 512;
+	private final int YY_BuFFER_SIZE = 512;
 	private final int YY_F = -1;
 	private final int YY_NO_STATE = -1;
 	private final int YY_NOT_ACCEPT = 0;
@@ -77,7 +77,7 @@ class Yylex {
 	}
 
 	private Yylex () {
-		yy_buffer = new char[YY_BUFFER_SIZE];
+		yy_buffer = new char[YY_BuFFER_SIZE];
 		yy_buffer_read = 0;
 		yy_buffer_index = 0;
 		yy_buffer_start = 0;
@@ -199,7 +199,7 @@ class Yylex {
 	private final int YY_E_MATCH = 1;
 	private java.lang.String yy_error_string[] = {
 		"Error: Internal error.\n",
-		"Error: Unmatched input.\n"
+		"Error: unmatched input.\n"
 	};
 	private void yy_error (int code,boolean fatal) {
 		java.lang.System.out.print(yy_error_string[code]);
@@ -424,7 +424,7 @@ class Yylex {
 			}
 			else {
 				if (YY_NO_STATE == yy_last_accept_state) {
-					throw (new Error("Lexical Error: Unmatched Input."));
+					throw (new Error("Lexical Error: unmatched Input."));
 				}
 				else {
 					yy_anchor = yy_acpt[yy_last_accept_state];
@@ -470,7 +470,7 @@ class Yylex {
 					case -10:
 						break;
 					case 10:
-						{ return new IntegerValue(yytext()) ; }
+						{ return new Integervalue(yytext()) ; }
 					case -11:
 						break;
 					case 11:
@@ -518,7 +518,7 @@ class Yylex {
 					case -22:
 						break;
 					case 22:
-						{ return new DoubleValue(yytext()) ; }
+						{ return new Doublevalue(yytext()) ; }
 					case -23:
 						break;
 					case 23:
@@ -530,7 +530,7 @@ class Yylex {
 					case -25:
 						break;
 					case 25:
-						{return new BooleanValue(yytext());}
+						{return new Booleanvalue(yytext());}
 					case -26:
 						break;
 					case 26:
@@ -542,7 +542,7 @@ class Yylex {
 					case -28:
 						break;
 					case 28:
-						{return new BooleanValue(yytext());}
+						{return new Booleanvalue(yytext());}
 					case -29:
 						break;
 					case 29:
@@ -558,11 +558,11 @@ class Yylex {
 					case -32:
 						break;
 					case 32:
-						{emptyString = false; return new StringValue(yytext()) ; }
+						{emptyString = false; return new Stringvalue(yytext()) ; }
 					case -33:
 						break;
 					case 33:
-						{yybegin(YYINITIAL); if (emptyString) return new StringValue("");}
+						{yybegin(YYINITIAL); if (emptyString) return new Stringvalue("");}
 					case -34:
 						break;
 					case 35:
@@ -582,7 +582,7 @@ class Yylex {
 					case -38:
 						break;
 					case 39:
-						{emptyString = false; return new StringValue(yytext()) ; }
+						{emptyString = false; return new Stringvalue(yytext()) ; }
 					case -39:
 						break;
 					case 41:

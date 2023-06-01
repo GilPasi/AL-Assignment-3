@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -32,13 +32,13 @@ import jxl.format.CellFormat;
 /**
  * Abstract class for all records which actually contain cell values
  */
-public abstract class CellValue extends RecordData
+public abstract class Cellvalue extends RecordData
   implements Cell, CellFeaturesAccessor
 {
   /**
    * The logger
    */
-  private static Logger logger = Logger.getLogger(CellValue.class);
+  private static Logger logger = Logger.getLogger(Cellvalue.class);
 
   /**
    * The row number of this cell record
@@ -88,7 +88,7 @@ public abstract class CellValue extends RecordData
    * @param fr the formatting records
    * @param si the sheet containing this cell
    */
-  protected CellValue(Record t, FormattingRecords fr, SheetImpl si)
+  protected Cellvalue(Record t, FormattingRecords fr, SheetImpl si)
   {
     super(t);
     byte[] data = getRecord().getData();
@@ -121,7 +121,7 @@ public abstract class CellValue extends RecordData
   }
 
   /**
-   * Gets the XFRecord corresponding to the index number.  Used when
+   * Gets the XFRecord corresponding to the index number.  used when
    * copying a spreadsheet
    *
    * @return the xf index for this cell
@@ -132,7 +132,7 @@ public abstract class CellValue extends RecordData
   }
 
   /**
-   * Gets the CellFormat object for this cell.  Used by the WritableWorkbook
+   * Gets the CellFormat object for this cell.  used by the WritableWorkbook
    * API
    *
    * @return the CellFormat used for this cell
@@ -151,7 +151,7 @@ public abstract class CellValue extends RecordData
   /**
    * Determines whether or not this cell has been hidden
    *
-   * @return TRUE if this cell has been hidden, FALSE otherwise
+   * @return TRuE if this cell has been hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -185,7 +185,7 @@ public abstract class CellValue extends RecordData
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public CellFeatures getCellFeatures()
   {

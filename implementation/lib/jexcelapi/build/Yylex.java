@@ -5,18 +5,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -41,7 +41,7 @@ class Yylex {
   public static final int YYEOF = -1;
 
   /** initial size of the lookahead buffer */
-  private static final int ZZ_BUFFERSIZE = 16384;
+  private static final int ZZ_BuFFERSIZE = 16384;
 
   /** lexical states */
   public static final int YYSTRING = 1;
@@ -60,12 +60,12 @@ class Yylex {
   /** 
    * Translates characters to character classes
    */
-  private static final char [] ZZ_CMAP = zzUnpackCMap(ZZ_CMAP_PACKED);
+  private static final char [] ZZ_CMAP = zzunpackCMap(ZZ_CMAP_PACKED);
 
   /** 
    * Translates DFA states to action switch labels.
    */
-  private static final int [] ZZ_ACTION = zzUnpackAction();
+  private static final int [] ZZ_ACTION = zzunpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
@@ -77,14 +77,14 @@ class Yylex {
     "\1\0\1\32\10\0\1\33\2\0\1\31\2\0\1\34"+
     "\4\0\1\35\3\0\1\35\1\0\1\36\1\0";
 
-  private static int [] zzUnpackAction() {
+  private static int [] zzunpackAction() {
     int [] result = new int[94];
     int offset = 0;
-    offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
+    offset = zzunpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
   }
 
-  private static int zzUnpackAction(String packed, int offset, int [] result) {
+  private static int zzunpackAction(String packed, int offset, int [] result) {
     int i = 0;       /* index in packed string  */
     int j = offset;  /* index in unpacked array */
     int l = packed.length();
@@ -100,7 +100,7 @@ class Yylex {
   /** 
    * Translates a state to a row index in the transition table
    */
-  private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
+  private static final int [] ZZ_ROWMAP = zzunpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\45\0\112\0\157\0\224\0\224\0\224\0\224"+
@@ -116,14 +116,14 @@ class Yylex {
     "\0\u08ac\0\224\0\u08d1\0\u08f6\0\u091b\0\u0940\0\u0965\0\u098a"+
     "\0\u09af\0\u09d4\0\224\0\u09f9\0\u0a1e\0\u0a1e";
 
-  private static int [] zzUnpackRowMap() {
+  private static int [] zzunpackRowMap() {
     int [] result = new int[94];
     int offset = 0;
-    offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
+    offset = zzunpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
   }
 
-  private static int zzUnpackRowMap(String packed, int offset, int [] result) {
+  private static int zzunpackRowMap(String packed, int offset, int [] result) {
     int i = 0;  /* index in packed string  */
     int j = offset;  /* index in unpacked array */
     int l = packed.length();
@@ -137,7 +137,7 @@ class Yylex {
   /** 
    * The transition table of the DFA
    */
-  private static final int [] ZZ_TRANS = zzUnpackTrans();
+  private static final int [] ZZ_TRANS = zzunpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\0\1\3\1\4\1\5\1\6\1\7\1\10\1\0"+
@@ -208,14 +208,14 @@ class Yylex {
     "\5\0\1\136\23\0\1\135\12\0\1\135\31\0\1\135"+
     "\10\0";
 
-  private static int [] zzUnpackTrans() {
+  private static int [] zzunpackTrans() {
     int [] result = new int[2627];
     int offset = 0;
-    offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
+    offset = zzunpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
   }
 
-  private static int zzUnpackTrans(String packed, int offset, int [] result) {
+  private static int zzunpackTrans(String packed, int offset, int [] result) {
     int i = 0;       /* index in packed string  */
     int j = offset;  /* index in unpacked array */
     int l = packed.length();
@@ -230,23 +230,23 @@ class Yylex {
 
 
   /* error codes */
-  private static final int ZZ_UNKNOWN_ERROR = 0;
+  private static final int ZZ_uNKNOWN_ERROR = 0;
   private static final int ZZ_NO_MATCH = 1;
-  private static final int ZZ_PUSHBACK_2BIG = 2;
+  private static final int ZZ_PuSHBACK_2BIG = 2;
 
   /* error messages for the codes above */
   private static final String ZZ_ERROR_MSG[] = {
-    "Unkown internal scanner error",
+    "unkown internal scanner error",
     "Error: could not match input",
     "Error: pushback value was too large"
   };
 
   /**
-   * ZZ_ATTRIBUTE[aState] contains the attributes of state <code>aState</code>
+   * ZZ_ATTRIBuTE[aState] contains the attributes of state <code>aState</code>
    */
-  private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
+  private static final int [] ZZ_ATTRIBuTE = zzunpackAttribute();
 
-  private static final String ZZ_ATTRIBUTE_PACKED_0 =
+  private static final String ZZ_ATTRIBuTE_PACKED_0 =
     "\1\0\3\1\4\11\1\0\2\1\1\11\1\0\1\11"+
     "\1\0\4\11\1\1\1\11\2\1\1\11\2\1\1\0"+
     "\1\11\1\0\1\1\3\0\2\1\5\0\3\11\1\1"+
@@ -255,14 +255,14 @@ class Yylex {
     "\2\0\1\1\2\0\1\11\4\0\1\1\3\0\1\11"+
     "\1\0\1\1\1\0";
 
-  private static int [] zzUnpackAttribute() {
+  private static int [] zzunpackAttribute() {
     int [] result = new int[94];
     int offset = 0;
-    offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
+    offset = zzunpackAttribute(ZZ_ATTRIBuTE_PACKED_0, offset, result);
     return result;
   }
 
-  private static int zzUnpackAttribute(String packed, int offset, int [] result) {
+  private static int zzunpackAttribute(String packed, int offset, int [] result) {
     int i = 0;       /* index in packed string  */
     int j = offset;  /* index in unpacked array */
     int l = packed.length();
@@ -285,7 +285,7 @@ class Yylex {
 
   /** this buffer contains the current text to be matched and is
       the source of the yytext() string */
-  private char zzBuffer[] = new char[ZZ_BUFFERSIZE];
+  private char zzBuffer[] = new char[ZZ_BuFFERSIZE];
 
   /** the textposition at the last accepting state */
   private int zzMarkedPos;
@@ -361,12 +361,12 @@ class Yylex {
   }
 
   /** 
-   * Unpacks the compressed character translation table.
+   * unpacks the compressed character translation table.
    *
    * @param packed   the packed character translation table
    * @return         the unpacked character translation table
    */
-  private static char [] zzUnpackCMap(String packed) {
+  private static char [] zzunpackCMap(String packed) {
     char [] map = new char[0x10000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
@@ -516,7 +516,7 @@ class Yylex {
    * If this method is called, something is seriously wrong
    * (e.g. a JFlex bug producing a faulty scanner etc.).
    *
-   * Usual syntax/scanner level error handling should be done
+   * usual syntax/scanner level error handling should be done
    * in error fallback rules.
    *
    * @param   errorCode  the code of the errormessage to display
@@ -527,7 +527,7 @@ class Yylex {
       message = ZZ_ERROR_MSG[errorCode];
     }
     catch (ArrayIndexOutOfBoundsException e) {
-      message = ZZ_ERROR_MSG[ZZ_UNKNOWN_ERROR];
+      message = ZZ_ERROR_MSG[ZZ_uNKNOWN_ERROR];
     }
 
     throw new Error(message);
@@ -544,7 +544,7 @@ class Yylex {
    */
   public void yypushback(int number)  {
     if ( number > yylength() )
-      zzScanError(ZZ_PUSHBACK_2BIG);
+      zzScanError(ZZ_PuSHBACK_2BIG);
 
     zzMarkedPos -= number;
   }
@@ -571,7 +571,7 @@ class Yylex {
 
     int [] zzTransL = ZZ_TRANS;
     int [] zzRowMapL = ZZ_ROWMAP;
-    int [] zzAttrL = ZZ_ATTRIBUTE;
+    int [] zzAttrL = ZZ_ATTRIBuTE;
 
     while (true) {
       zzMarkedPosL = zzMarkedPos;
@@ -686,11 +686,11 @@ class Yylex {
           }
         case 32: break;
         case 3: 
-          { return new IntegerValue(yytext()) ;
+          { return new Integervalue(yytext()) ;
           }
         case 33: break;
         case 24: 
-          { return new DoubleValue(yytext()) ;
+          { return new Doublevalue(yytext()) ;
           }
         case 34: break;
         case 29: 
@@ -710,7 +710,7 @@ class Yylex {
           }
         case 38: break;
         case 26: 
-          { return new BooleanValue(yytext());
+          { return new Booleanvalue(yytext());
           }
         case 39: break;
         case 15: 
@@ -718,7 +718,7 @@ class Yylex {
           }
         case 40: break;
         case 17: 
-          { yybegin(YYINITIAL); if (emptyString) return new StringValue("");
+          { yybegin(YYINITIAL); if (emptyString) return new Stringvalue("");
           }
         case 41: break;
         case 8: 
@@ -766,7 +766,7 @@ class Yylex {
           }
         case 52: break;
         case 1: 
-          { emptyString = false; return new StringValue(yytext()) ;
+          { emptyString = false; return new Stringvalue(yytext()) ;
           }
         case 53: break;
         case 2: 

@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -26,7 +26,7 @@ import jxl.biff.WritableRecordData;
 import jxl.read.biff.Record;
 
 /**
- * A record which merely holds the MSODRAWING data.  Used when copying files
+ * A record which merely holds the MSODRAWING data.  used when copying files
  * which contain images
  */
 public class MsoDrawingRecord extends WritableRecordData
@@ -103,7 +103,7 @@ public class MsoDrawingRecord extends WritableRecordData
    * copying unmodified sheets to indicate that this drawing contains
    * the first time Escher gubbins
    *
-   * @return TRUE if this MSORecord is the first drawing on the sheet
+   * @return TRuE if this MSORecord is the first drawing on the sheet
    */
   public boolean isFirst()
   {

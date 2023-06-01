@@ -3,23 +3,23 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
 
-import jxl.common.LengthUnit;
+import jxl.common.Lengthunit;
 
 import java.io.File;
 
@@ -76,7 +76,7 @@ public interface Image
    * @param unit the unit of measurement
    * @return the width of the image within Excel
    */
-  public double getWidth(LengthUnit unit);
+  public double getWidth(Lengthunit unit);
 
   /**
    * Get the height of this image as rendered within Excel
@@ -84,7 +84,7 @@ public interface Image
    * @param unit the unit of measurement
    * @return the height of the image within Excel
    */
-  public double getHeight(LengthUnit unit);
+  public double getHeight(Lengthunit unit);
 
   /**
    * Gets the width of the image.  Note that this is the width of the 
@@ -110,7 +110,7 @@ public interface Image
    *
    * @return the number of dots per unit specified, if available, 0 otherwise
    */
-  public double getHorizontalResolution(LengthUnit unit);
+  public double getHorizontalResolution(Lengthunit unit);
 
   /**
    * Gets the vertical resolution of the image, if that information
@@ -118,5 +118,5 @@ public interface Image
    *
    * @return the number of dots per unit specified, if available, 0 otherwise
    */
-  public double getVerticalResolution(LengthUnit unit);
+  public double getverticalResolution(Lengthunit unit);
 }

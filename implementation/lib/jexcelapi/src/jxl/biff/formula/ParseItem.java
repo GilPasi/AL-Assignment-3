@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -35,7 +35,7 @@ abstract class ParseItem
   private ParseItem parent;
 
   /**
-   * Volatile flag
+   * volatile flag
    */
   private boolean volatileFunction;
 
@@ -64,7 +64,7 @@ abstract class ParseItem
     volatileFunction = false;
     alternateCode = false;
     valid = true;
-    parseContext = parseContext.DEFAULT;
+    parseContext = parseContext.DEFAuLT;
   }
 
   /**
@@ -78,12 +78,12 @@ abstract class ParseItem
   /**
    * Sets the volatile flag and ripples all the way up the parse tree
    */
-  protected void setVolatile()
+  protected void setvolatile()
   {
     volatileFunction = true;
-    if (parent != null && !parent.isVolatile())
+    if (parent != null && !parent.isvolatile())
     {
-      parent.setVolatile();
+      parent.setvolatile();
     }
   }
 
@@ -102,9 +102,9 @@ abstract class ParseItem
   /**
    * Accessor for the volatile function
    *
-   * @return TRUE if the formula is volatile, FALSE otherwise
+   * @return TRuE if the formula is volatile, FALSE otherwise
    */
-  final boolean isVolatile()
+  final boolean isvolatile()
   {
     return volatileFunction;
   }
@@ -112,9 +112,9 @@ abstract class ParseItem
   /**
    * Accessor for the volatile function
    *
-   * @return TRUE if the formula is volatile, FALSE otherwise
+   * @return TRuE if the formula is volatile, FALSE otherwise
    */
-  final boolean isValid()
+  final boolean isvalid()
   {
     return valid;
   }
@@ -134,7 +134,7 @@ abstract class ParseItem
 
   /**
    * Adjusts all the relative cell references in this formula by the
-   * amount specified.  Used when copying formulas
+   * amount specified.  used when copying formulas
    *
    * @param colAdjust the amount to add on to each relative cell reference
    * @param rowAdjust the amount to add on to each relative row reference
@@ -148,7 +148,7 @@ abstract class ParseItem
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   abstract void columnInserted(int sheetIndex, int col, boolean currentSheet);
@@ -160,7 +160,7 @@ abstract class ParseItem
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   abstract void columnRemoved(int sheetIndex, int col, boolean currentSheet);
@@ -172,7 +172,7 @@ abstract class ParseItem
    *
    * @param sheetIndex the sheet on which the row was inserted
    * @param row the row number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   abstract void rowInserted(int sheetIndex, int row, boolean currentSheet);
@@ -184,7 +184,7 @@ abstract class ParseItem
    *
    * @param sheetIndex the sheet on which the row was removed
    * @param row the row number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   abstract void rowRemoved(int sheetIndex, int row, boolean currentSheet);
@@ -208,7 +208,7 @@ abstract class ParseItem
   /**
    * Accessor for the alternate code flag
    *
-   * @return TRUE to use the alternate code, FALSE otherwise
+   * @return TRuE to use the alternate code, FALSE otherwise
    * @deprecated - use setParseContext now
    */
   protected final boolean useAlternateCode()

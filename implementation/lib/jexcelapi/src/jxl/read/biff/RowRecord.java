@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -100,7 +100,7 @@ public class RowRecord extends RecordData
   /**
    * Interrogates whether this row is of default height
    *
-   * @return TRUE if this is set to the default height, FALSE otherwise
+   * @return TRuE if this is set to the default height, FALSE otherwise
    */
   boolean isDefaultHeight()
   {
@@ -110,7 +110,7 @@ public class RowRecord extends RecordData
   /**
    * Interrogates this row to see whether it matches the default font height
    *
-   * @return TRUE if this matches the default font height, FALSE otherwise
+   * @return TRuE if this matches the default font height, FALSE otherwise
    */
   public boolean matchesDefaultFontHeight()
   {

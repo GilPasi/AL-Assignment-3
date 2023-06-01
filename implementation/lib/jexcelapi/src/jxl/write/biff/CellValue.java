@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
  License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -26,9 +26,9 @@ import jxl.Cell;
 import jxl.CellFeatures;
 import jxl.CellReferenceHelper;
 import jxl.Sheet;
-import jxl.biff.DataValidation;
-import jxl.biff.DataValiditySettingsRecord;
-import jxl.biff.DVParser;
+import jxl.biff.Datavalidation;
+import jxl.biff.DatavaliditySettingsRecord;
+import jxl.biff.DvParser;
 import jxl.biff.FormattingRecords;
 import jxl.biff.IntegerHelper;
 import jxl.biff.NumFormatRecordsException;
@@ -49,13 +49,13 @@ import jxl.write.WritableWorkbook;
  * as labels and numbers, are derived from this class
  * data store
  */
-public abstract class CellValue extends WritableRecordData 
+public abstract class Cellvalue extends WritableRecordData 
   implements WritableCell
 {
   /**
    * The logger
    */
-  private static Logger logger = Logger.getLogger(CellValue.class);
+  private static Logger logger = Logger.getLogger(Cellvalue.class);
   
   /**
    * The row in the worksheet at which this cell is located
@@ -108,7 +108,7 @@ public abstract class CellValue extends WritableRecordData
    * @param t the type indicator
    * @param r the row
    */
-  protected CellValue(Type t, int c, int r)
+  protected Cellvalue(Type t, int c, int r)
   {
     this(t, c, r, WritableWorkbook.NORMAL_STYLE);
     copied = false;
@@ -121,7 +121,7 @@ public abstract class CellValue extends WritableRecordData
    * @param c the cell to clone
    * @param t the type of this cell
    */
-  protected CellValue(Type t, Cell c)
+  protected Cellvalue(Type t, Cell c)
   {
     this(t, c.getColumn(), c.getRow());
     copied = true;
@@ -144,7 +144,7 @@ public abstract class CellValue extends WritableRecordData
    * @param r the row
    * @param st the format to apply to this cell
    */
-  protected CellValue(Type t, int c, int r, CellFormat st)
+  protected Cellvalue(Type t, int c, int r, CellFormat st)
   {
     super(t);
     row    = r;
@@ -162,7 +162,7 @@ public abstract class CellValue extends WritableRecordData
    * @param r the row
    * @param cv the value to copy
    */
-  protected CellValue(Type t, int c, int r, CellValue cv)
+  protected Cellvalue(Type t, int c, int r, Cellvalue cv)
   {
     super(t);
     row    = r;
@@ -227,7 +227,7 @@ public abstract class CellValue extends WritableRecordData
    * Indicates whether or not this cell is hidden, by virtue of either
    * the entire row or column being collapsed
    *
-   * @return TRUE if this cell is hidden, FALSE otherwise
+   * @return TRuE if this cell is hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -287,7 +287,7 @@ public abstract class CellValue extends WritableRecordData
    * Internal method to see if this cell is referenced within the workbook.
    * Once this has been placed in the workbook, it becomes immutable
    * 
-   * @return TRUE if this cell has been added to a sheet, FALSE otherwise
+   * @return TRuE if this cell has been added to a sheet, FALSE otherwise
    */
   final boolean isReferenced()
   {
@@ -476,7 +476,7 @@ public abstract class CellValue extends WritableRecordData
     }
     catch (NumFormatRecordsException e)
     {
-      logger.warn("Maximum number of format records exceeded.  Using " +
+      logger.warn("Maximum number of format records exceeded.  using " +
                   "default format.");
       format = styles.getNormalStyle();
     }
@@ -485,7 +485,7 @@ public abstract class CellValue extends WritableRecordData
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public CellFeatures getCellFeatures()
   {
@@ -495,7 +495,7 @@ public abstract class CellValue extends WritableRecordData
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public WritableCellFeatures getWritableCellFeatures()
   {
@@ -516,11 +516,11 @@ public abstract class CellValue extends WritableRecordData
                   " not null - overwriting");
 
       // Check to see if the features include a shared data validation
-      if (features.hasDataValidation() &&
-          features.getDVParser() != null &&
-          features.getDVParser().extendedCellsValidation())
+      if (features.hasDatavalidation() &&
+          features.getDvParser() != null &&
+          features.getDvParser().extendedCellsvalidation())
       {
-        DVParser dvp = features.getDVParser();
+        DvParser dvp = features.getDvParser();
         logger.warn("Cannot add cell features to " + 
                     CellReferenceHelper.getCellReference(this) + 
                     " because it is part of the shared cell validation " +
@@ -576,11 +576,11 @@ public abstract class CellValue extends WritableRecordData
       features.setCommentDrawing(comment);
     }
 
-    if (features.hasDataValidation())
+    if (features.hasDatavalidation())
     {
       try
       {
-        features.getDVParser().setCell(column, 
+        features.getDvParser().setCell(column, 
                                        row, 
                                        sheet.getWorkbook(), 
                                        sheet.getWorkbook(),
@@ -591,7 +591,7 @@ public abstract class CellValue extends WritableRecordData
         Assert.verify(false);
       }
 
-      sheet.addValidationCell(this);
+      sheet.addvalidationCell(this);
       if (!features.hasDropDown())
       {
         return;
@@ -624,7 +624,7 @@ public abstract class CellValue extends WritableRecordData
     features.removeComment();
 
     // Remove the data validation
-    features.removeDataValidation();
+    features.removeDatavalidation();
     */
 
     features = null;
@@ -644,9 +644,9 @@ public abstract class CellValue extends WritableRecordData
   /**
    * Called by the cell features to remove the data validation
    */
-  public final void removeDataValidation()
+  public final void removeDatavalidation()
   {
-    sheet.removeDataValidation(this);
+    sheet.removeDatavalidation(this);
   }
 
   /**

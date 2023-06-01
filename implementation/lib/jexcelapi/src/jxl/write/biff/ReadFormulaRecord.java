@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -43,7 +43,7 @@ import jxl.write.WritableCell;
  * This method implements the FormulaData interface to allow the copying
  * of writable sheets
  */
-class ReadFormulaRecord extends CellValue implements FormulaData
+class ReadFormulaRecord extends Cellvalue implements FormulaData
 {
   /**
    * The logger
@@ -67,7 +67,7 @@ class ReadFormulaRecord extends CellValue implements FormulaData
    */
   protected ReadFormulaRecord(FormulaData f)
   {
-    super(Type.FORMULA, f);
+    super(Type.FORMuLA, f);
     formula = f;
   }
 
@@ -192,7 +192,7 @@ class ReadFormulaRecord extends CellValue implements FormulaData
 
   /**
    * Gets the raw bytes for the formula.  This will include the
-   * parsed tokens array.  Used when copying spreadsheets
+   * parsed tokens array.  used when copying spreadsheets
    *
    * @return the raw record data
    */
@@ -417,7 +417,7 @@ class ReadFormulaRecord extends CellValue implements FormulaData
    * If this formula was on an imported sheet, check that
    * cell references to another sheet are warned appropriately
    * 
-   * @return TRUE if this formula was able to be imported, FALSE otherwise
+   * @return TRuE if this formula was able to be imported, FALSE otherwise
    */
   public boolean handleImportedCellReferences(ExternalSheet es,
                                               WorkbookMethods mt,

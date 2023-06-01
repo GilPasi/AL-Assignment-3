@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan, Eric Jung
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -80,14 +80,14 @@ public final class HeaderFooter extends jxl.biff.HeaderFooter
     }
 
     /**
-     * Turns underline printing on or off. Underline printing
+     * Turns underline printing on or off. underline printing
      * is initially off. Text subsequently appended to
      * this object will be underlined until this method is
      * called again.
      */
-    public void toggleUnderline()
+    public void toggleunderline()
     {
-      super.toggleUnderline();
+      super.toggleunderline();
     }
 
     /**
@@ -118,9 +118,9 @@ public final class HeaderFooter extends jxl.biff.HeaderFooter
      * this object will be double-underlined until this method is
      * called again.
      */
-    public void toggleDoubleUnderline()
+    public void toggleDoubleunderline()
     {
-      super.toggleDoubleUnderline();
+      super.toggleDoubleunderline();
     }
 
     /**
@@ -185,12 +185,12 @@ public final class HeaderFooter extends jxl.biff.HeaderFooter
      * Sets the font size of text subsequently appended to this
      * object. Previously appended text is not affected.
      * <p/>
-     * Valid point sizes are between 1 and 99 (inclusive). If
+     * valid point sizes are between 1 and 99 (inclusive). If
      * size is outside this range, this method returns false
      * and does not change font size. If size is within this
      * range, the font size is changed and true is returned.
      *
-     * @param size The size in points. Valid point sizes are
+     * @param size The size in points. valid point sizes are
      * between 1 and 99 (inclusive).
      * @return true if the font size was changed, false if font
      * size was not changed because 1 > size > 99.
@@ -259,7 +259,7 @@ public final class HeaderFooter extends jxl.biff.HeaderFooter
     /**
      * Queries if the contents are empty
      *
-     * @return TRUE if the contents are empty, FALSE otherwise
+     * @return TRuE if the contents are empty, FALSE otherwise
      */
     public boolean empty()
     {

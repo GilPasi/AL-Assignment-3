@@ -3,18 +3,18 @@
  *      Copyright (C) 2003 Andrew Khan
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
+ * modify it under the terms of the GNu Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * but WITHOuT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
  * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public
+ * You should have received a copy of the GNu Lesser General Public
  * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
  ***************************************************************************/
 
 package jxl.write.biff;
@@ -82,7 +82,7 @@ class MergedCells
   }
 
   /**
-   * Used to adjust the merged cells following a row insertion
+   * used to adjust the merged cells following a row insertion
    */
   void insertRow(int row)
   {
@@ -97,7 +97,7 @@ class MergedCells
   }
 
   /**
-   * Used to adjust the merged cells following a column insertion
+   * used to adjust the merged cells following a column insertion
    */
   void insertColumn(int col)
   {
@@ -111,7 +111,7 @@ class MergedCells
   }
 
   /**
-   * Used to adjust the merged cells following a column removal
+   * used to adjust the merged cells following a column removal
    */
   void removeColumn(int col)
   {
@@ -135,7 +135,7 @@ class MergedCells
   }
 
   /**
-   * Used to adjust the merged cells following a row removal
+   * used to adjust the merged cells following a row removal
    */
   void removeRow(int row)
   {
@@ -176,7 +176,7 @@ class MergedCells
   }
 
   /**
-   * Unmerges the specified cells.  The Range passed in should be one that
+   * unmerges the specified cells.  The Range passed in should be one that
    * has been previously returned as a result of the getMergedCells method
    *
    * @param r the range of cells to unmerge

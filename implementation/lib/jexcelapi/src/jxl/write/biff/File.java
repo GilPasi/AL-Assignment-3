@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -55,7 +55,7 @@ public final class File
   /**
    * The initial file size
    */
-  private int initialFileSize;
+  private int initialFilpathCount;
   /**
    * The amount to increase the growable array by
    */
@@ -88,17 +88,17 @@ public final class File
   
   private void createDataOutput() throws IOException
   {
-    if (workbookSettings.getUseTemporaryFileDuringWrite())
+    if (workbookSettings.getuseTemporaryFileDuringWrite())
     {
       data = new FileDataOutput
         (workbookSettings.getTemporaryFileDuringWriteDirectory());
     }
     else
     {
-      initialFileSize = workbookSettings.getInitialFileSize();
+      initialFilpathCount = workbookSettings.getInitialFilpathCount();
       arrayGrowSize = workbookSettings.getArrayGrowSize();
 
-      data = new MemoryDataOutput(initialFileSize, arrayGrowSize);
+      data = new MemoryDataOutput(initialFilpathCount, arrayGrowSize);
     }
   }
 
@@ -108,7 +108,7 @@ public final class File
    * allocated to the workbook
    * 
    * @exception IOException 
-   * @param cs TRUE if this should close the stream, FALSE if the application
+   * @param cs TRuE if this should close the stream, FALSE if the application
    * closes it
    */
   void close(boolean cs) throws IOException, JxlWriteException
@@ -160,7 +160,7 @@ public final class File
   }
 
   /**
-   * Used to manually alter the contents of the written out data.  This
+   * used to manually alter the contents of the written out data.  This
    * is used when cross-referencing cell records
    * 
    * @param pos the position to alter

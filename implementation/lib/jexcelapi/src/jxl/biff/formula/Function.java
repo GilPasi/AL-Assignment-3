@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -97,7 +97,7 @@ final class Function
   }
 
   /**
-   * Gets the property name. Used by the FunctionNames object when initializing
+   * Gets the property name. used by the FunctionNames object when initializing
    * the locale specific names
    *
    * @return the property name for this function
@@ -147,11 +147,11 @@ final class Function
       }
     }
 
-    return f != null ? f : UNKNOWN;
+    return f != null ? f : uNKNOWN;
   }
 
   /**
-   * Gets the type object from its string value.  Used when parsing strings
+   * Gets the type object from its string value.  used when parsing strings
    *
    * @param v the function name
    * @param ws the workbook settings
@@ -161,7 +161,7 @@ final class Function
   {
     FunctionNames fn = ws.getFunctionNames();
     Function f = fn.getFunction(v);
-    return f != null ? f : UNKNOWN;
+    return f != null ? f : uNKNOWN;
   }
 
   /**
@@ -177,16 +177,16 @@ final class Function
 
   // The functions
 
-  public static final Function COUNT =
+  public static final Function COuNT =
     new Function(0x0, "count", 0xff);
-  public static final Function ATTRIBUTE = new Function(0x1, "", 0xff);
+  public static final Function ATTRIBuTE = new Function(0x1, "", 0xff);
   public static final Function ISNA =
     new Function(0x2, "isna", 1);
   public static final Function ISERROR =
     new Function(0x3, "iserror", 1);
-  public static final Function SUM =
+  public static final Function SuM =
     new Function(0x4, "sum", 0xff);
-  public static final Function AVERAGE =
+  public static final Function AvERAGE =
     new Function(0x5, "average", 0xff);
   public static final Function MIN =
     new Function(0x6, "min", 0xff);
@@ -194,13 +194,13 @@ final class Function
     new Function(0x7, "max", 0xff);
   public static final Function ROW =
     new Function(0x8, "row", 0xff);
-  public static final Function COLUMN =
+  public static final Function COLuMN =
     new Function(0x9, "column", 0xff);
   public static final Function NA =
     new Function(0xa, "na", 0);
-  public static final Function NPV =
+  public static final Function NPv =
     new Function(0xb, "npv", 0xff);
-  public static final Function STDEV =
+  public static final Function STDEv =
     new Function(0xc, "stdev", 0xff);
   public static final Function DOLLAR =
     new Function(0xd, "dollar", 2);
@@ -230,9 +230,9 @@ final class Function
     new Function(0x19, "int", 1);
   public static final Function SIGN =
     new Function(0x1a, "sign", 1);
-  public static final Function ROUND =
+  public static final Function ROuND =
     new Function(0x1b, "round", 2);
-  public static final Function LOOKUP =
+  public static final Function LOOKuP =
     new Function(0x1c, "lookup", 2);
   public static final Function INDEX =
     new Function(0x1d, "index", 3);
@@ -241,9 +241,9 @@ final class Function
     new Function(0x1f, "mid", 3);
   public static final Function LEN =
     new Function(0x20, "len", 1);
-  public static final Function VALUE =
+  public static final Function vALuE =
     new Function(0x21, "value", 1);
-  public static final Function TRUE =
+  public static final Function TRuE =
     new Function(0x22, "true", 0);
   public static final Function FALSE =
     new Function(0x23, "false", 0);
@@ -255,21 +255,21 @@ final class Function
     new Function(0x26, "not", 1);
   public static final Function MOD =
     new Function(0x27, "mod", 2);
-  public static final Function DCOUNT =
+  public static final Function DCOuNT =
     new Function(0x28, "dcount", 3);
-  public static final Function DSUM =
+  public static final Function DSuM =
     new Function(0x29, "dsum", 3);
-  public static final Function DAVERAGE =
+  public static final Function DAvERAGE =
     new Function(0x2a, "daverage", 3);
   public static final Function DMIN =
     new Function(0x2b, "dmin", 3);
   public static final Function DMAX =
     new Function(0x2c, "dmax", 3);
-  public static final Function DSTDEV =
+  public static final Function DSTDEv =
     new Function(0x2d, "dstdev", 3);
-  public static final Function VAR =
+  public static final Function vAR =
     new Function(0x2e, "var", 0xff);
-  public static final Function DVAR =
+  public static final Function DvAR =
     new Function(0x2f, "dvar", 3);
   public static final Function TEXT =
     new Function(0x30, "text", 2);
@@ -283,9 +283,9 @@ final class Function
     new Function(0x34, "growth", 0xff);
   //public static final Function GOTO =  new Function(0x35, "GOTO",);
   //public static final Function HALT =  new Function(0x36, "HALT",);
-  public static final Function PV =
+  public static final Function Pv =
     new Function(0x38, "pv", 0xff);
-  public static final Function FV =
+  public static final Function Fv =
     new Function(0x39, "fv", 0xff);
   public static final Function NPER =
     new Function(0x3a, "nper", 0xff);
@@ -311,9 +311,9 @@ final class Function
     new Function(0x45, "year", 1);
   public static final Function WEEKDAY =
     new Function(0x46, "weekday", 2);
-  public static final Function HOUR =
+  public static final Function HOuR =
     new Function(0x47, "hour", 1);
-  public static final Function MINUTE =
+  public static final Function MINuTE =
     new Function(0x48, "minute", 1);
   public static final Function SECOND =
     new Function(0x49, "second", 1);
@@ -323,13 +323,13 @@ final class Function
     new Function(0x4b, "areas", 0xff);
   public static final Function ROWS =
     new Function(0x4c, "rows", 1);
-  public static final Function COLUMNS =
+  public static final Function COLuMNS =
     new Function(0x4d, "columns", 0xff);
   public static final Function OFFSET =
     new Function(0x4e, "offset", 0xff);
   //public static final Function ABSREF =  new Function(0x4f, "ABSREF",);
   //public static final Function RELREF =  new Function(0x50, "RELREF",);
-  //public static final Function ARGUMENT =  new Function(0x51,"ARGUMENT",);
+  //public static final Function ARGuMENT =  new Function(0x51,"ARGuMENT",);
   public static final Function SEARCH =  new Function(0x52, "search", 0xff);
   public static final Function TRANSPOSE =
     new Function(0x53, "transpose", 0xff);
@@ -344,10 +344,10 @@ final class Function
   //public static final Function DEREF =  new Function(0x5a, "DEREF",);
   //public static final Function WINDOWS =  new Function(0x5b, "WINDOWS",);
   //public static final Function SERIES =  new Function(0x5c, "SERIES",);
-  //public static final Function DOCUMENTS =  new Function(0x5d,"DOCUMENTS",);
-  //public static final Function ACTIVECELL =  new Function(0x5e,"ACTIVECELL",);
+  //public static final Function DOCuMENTS =  new Function(0x5d,"DOCuMENTS",);
+  //public static final Function ACTIvECELL =  new Function(0x5e,"ACTIvECELL",);
   //public static final Function SELECTION =  new Function(0x5f,"SELECTION",);
-  //public static final Function RESULT =  new Function(0x60, "RESULT",);
+  //public static final Function RESuLT =  new Function(0x60, "RESuLT",);
   public static final Function ATAN2  =
     new Function(0x61, "atan2", 1);
   public static final Function ASIN =
@@ -356,17 +356,17 @@ final class Function
     new Function(0x63, "acos", 1);
   public static final Function CHOOSE =
     new Function(0x64, "choose", 0xff);
-  public static final Function HLOOKUP =
+  public static final Function HLOOKuP =
     new Function(0x65, "hlookup", 0xff);
-  public static final Function VLOOKUP =
+  public static final Function vLOOKuP =
     new Function(0x66, "vlookup", 0xff);
   //public static final Function LINKS =  new Function(0x67, "LINKS",);
-  //public static final Function INPUT =  new Function(0x68, "INPUT",);
+  //public static final Function INPuT =  new Function(0x68, "INPuT",);
   public static final Function ISREF =
     new Function(0x69, "isref", 1);
-  //public static final Function GETFORMULA =  new Function(0x6a,"GETFORMULA",);
+  //public static final Function GETFORMuLA =  new Function(0x6a,"GETFORMuLA",);
   //public static final Function GETNAME =  new Function(0x6b, "GETNAME",);
-  //public static final Function SETVALUE =  new Function(0x6c,"SETVALUE",);
+  //public static final Function SETvALuE =  new Function(0x6c,"SETvALuE",);
   public static final Function LOG =
     new Function(0x6d, "log", 0xff);
   //public static final Function EXEC =  new Function(0x6e, "EXEC",);
@@ -374,7 +374,7 @@ final class Function
     new Function(0x6f, "char", 1);
   public static final Function LOWER =
     new Function(0x70, "lower", 1);
-  public static final Function UPPER =
+  public static final Function uPPER =
     new Function(0x71, "upper", 1);
   public static final Function PROPER =
     new Function(0x72, "proper", 1);
@@ -388,7 +388,7 @@ final class Function
     new Function(0x76, "trim", 1);
   public static final Function REPLACE =
     new Function(0x77, "replace", 4);
-  public static final Function SUBSTITUTE =
+  public static final Function SuBSTITuTE =
     new Function(0x78, "substitute", 0xff);
   public static final Function CODE =
     new Function(0x79, "code", 1);
@@ -402,7 +402,7 @@ final class Function
     new Function(0x7e, "iserr", 1);
   public static final Function ISTEXT =
     new Function(0x7f, "istext", 1);
-  public static final Function ISNUMBER =
+  public static final Function ISNuMBER =
     new Function(0x80, "isnumber", 1);
   public static final Function ISBLANK =
     new Function(0x81, "isblank", 1);
@@ -418,9 +418,9 @@ final class Function
   //public static final Function FWRITELN =  new Function(0x89,"FWRITELN",);
   //public static final Function FWRITE =  new Function(0x8a, "FWRITE",);
   //public static final Function FPOS =  new Function(0x8b, "FPOS",);
-  public static final Function DATEVALUE =
+  public static final Function DATEvALuE =
     new Function(0x8c, "datevalue", 1);
-  public static final Function TIMEVALUE =
+  public static final Function TIMEvALuE =
     new Function(0x8d, "timevalue", 1);
   public static final Function SLN =
     new Function(0x8e, "sln", 3);
@@ -436,7 +436,7 @@ final class Function
   //public static final Function REGISTER =  new Function(0x95,"REGISTER",);
   //public static final Function CALL =  new Function(0x96, "CALL",);
   //public static final Function ADDBAR =  new Function(0x97, "ADDBAR",);
-  //public static final Function ADDMENU =  new Function(0x98, "ADDMENU",);
+  //public static final Function ADDMENu =  new Function(0x98, "ADDMENu",);
   //public static final Function ADDCOMMAND =
   // new Function(0x99,"ADDCOMMAND",);
   //public static final Function ENABLECOMMAND =
@@ -446,8 +446,8 @@ final class Function
   //public static final Function RENAMECOMMAND =
   // new Function(0x9c,"RENAMECOMMAND",);
   //public static final Function SHOWBAR =  new Function(0x9d, "SHOWBAR",);
-  //public static final Function DELETEMENU =
-  //  new Function(0x9e,"DELETEMENU",);
+  //public static final Function DELETEMENu =
+  //  new Function(0x9e,"DELETEMENu",);
   //public static final Function DELETECOMMAND =
   //  new Function(0x9f,"DELETECOMMAND",);
   //public static final Function GETCHARTITEM =
@@ -457,9 +457,9 @@ final class Function
     new Function(0xa2, "clean", 1);
   public static final Function MDETERM =
     new Function(0xa3, "mdeterm", 0xff);
-  public static final Function MINVERSE =
+  public static final Function MINvERSE =
     new Function(0xa4, "minverse", 0xff);
-  public static final Function MMULT =
+  public static final Function MMuLT =
     new Function(0xa5, "mmult", 0xff);
   //public static final Function FILES =  new Function(0xa6, "FILES",
 
@@ -467,9 +467,9 @@ final class Function
     new Function(0xa7, "ipmt", 0xff);
   public static final Function PPMT =
     new Function(0xa8, "ppmt", 0xff);
-  public static final Function COUNTA =
+  public static final Function COuNTA =
     new Function(0xa9, "counta", 0xff);
-  public static final Function PRODUCT =
+  public static final Function PRODuCT =
     new Function(0xb7, "product", 0xff);
   public static final Function FACT =
     new Function(0xb8, "fact", 1);
@@ -477,27 +477,27 @@ final class Function
   //public static final Function GETWORKSPACE =
   //  new Function(0xba,"GETWORKSPACE",);
   //public static final Function GETWINDOW =  new Function(0xbb,"GETWINDOW",);
-  //public static final Function GETDOCUMENT =
-  //  new Function(0xbc,"GETDOCUMENT",);
-  public static final Function DPRODUCT =
+  //public static final Function GETDOCuMENT =
+  //  new Function(0xbc,"GETDOCuMENT",);
+  public static final Function DPRODuCT =
     new Function(0xbd, "dproduct", 3);
   public static final Function ISNONTEXT =
     new Function(0xbe, "isnontext", 1);
   //public static final Function GETNOTE =  new Function(0xbf, "GETNOTE",);
   //public static final Function NOTE =  new Function(0xc0, "NOTE",);
-  public static final Function STDEVP =
+  public static final Function STDEvP =
     new Function(0xc1, "stdevp", 0xff);
-  public static final Function VARP =
+  public static final Function vARP =
     new Function(0xc2, "varp", 0xff);
-  public static final Function DSTDEVP =
+  public static final Function DSTDEvP =
     new Function(0xc3, "dstdevp", 0xff);
-  public static final Function DVARP =
+  public static final Function DvARP =
     new Function(0xc4, "dvarp", 0xff);
-  public static final Function TRUNC =
+  public static final Function TRuNC =
     new Function(0xc5, "trunc", 0xff);
   public static final Function ISLOGICAL =
     new Function(0xc6, "islogical", 1);
-  public static final Function DCOUNTA =
+  public static final Function DCOuNTA =
     new Function(0xc7, "dcounta", 0xff);
   public static final Function FINDB =
     new Function(0xcd, "findb", 0xff);
@@ -513,9 +513,9 @@ final class Function
     new Function(0xd2, "midb", 3);
   public static final Function LENB =
     new Function(0xd3, "lenb", 1);
-  public static final Function ROUNDUP =
+  public static final Function ROuNDuP =
     new Function(0xd4, "roundup", 2);
-  public static final Function ROUNDDOWN =
+  public static final Function ROuNDDOWN =
     new Function(0xd5, "rounddown", 2);
   public static final Function RANK =
     new Function(0xd8, "rank", 0xff);
@@ -525,11 +525,11 @@ final class Function
     new Function(0xdc, "days360", 0xff);
   public static final Function ODAY =
     new Function(0xdd, "today", 0);
-  public static final Function VDB =
+  public static final Function vDB =
     new Function(0xde, "vdb", 0xff);
   public static final Function MEDIAN =
     new Function(0xe3, "median", 0xff);
-  public static final Function SUMPRODUCT =
+  public static final Function SuMPRODuCT =
     new Function(0xe4, "sumproduct", 0xff);
   public static final Function SINH =
     new Function(0xe5, "sinh", 1);
@@ -545,19 +545,19 @@ final class Function
     new Function(0xea, "atanh", 1);
   public static final Function INFO =
     new Function(0xf4, "info", 1);
-  public static final Function AVEDEV =
+  public static final Function AvEDEv =
     new Function(0x10d, "avedev", 0XFF);
   public static final Function BETADIST =
     new Function(0x10e, "betadist", 0XFF);
   public static final Function GAMMALN =
     new Function(0x10f, "gammaln", 1);
-  public static final Function BETAINV =
+  public static final Function BETAINv =
     new Function(0x110, "betainv", 0XFF);
   public static final Function BINOMDIST =
     new Function(0x111, "binomdist", 4);
   public static final Function CHIDIST =
     new Function(0x112, "chidist", 2);
-  public static final Function CHIINV =
+  public static final Function CHIINv =
     new Function(0x113, "chiinv", 2);
   public static final Function COMBIN =
     new Function(0x114, "combin", 2);
@@ -565,23 +565,23 @@ final class Function
     new Function(0x115, "confidence", 3);
   public static final Function CRITBINOM =
     new Function(0x116, "critbinom", 3);
-  public static final Function EVEN =
+  public static final Function EvEN =
     new Function(0x117, "even", 1);
   public static final Function EXPONDIST =
     new Function(0x118, "expondist", 3);
   public static final Function FDIST =
     new Function(0x119, "fdist", 3);
-  public static final Function FINV =
+  public static final Function FINv =
     new Function(0x11a, "finv", 3);
   public static final Function FISHER =
     new Function(0x11b, "fisher", 1);
-  public static final Function FISHERINV =
+  public static final Function FISHERINv =
     new Function(0x11c, "fisherinv", 1);
   public static final Function FLOOR =
     new Function(0x11d, "floor", 2);
   public static final Function GAMMADIST =
     new Function(0x11e, "gammadist", 4);
-  public static final Function GAMMAINV =
+  public static final Function GAMMAINv =
     new Function(0x11f, "gammainv", 3);
   public static final Function CEILING =
     new Function(0x120, "ceiling", 2);
@@ -589,7 +589,7 @@ final class Function
     new Function(0x121, "hypgeomdist", 4);
   public static final Function LOGNORMDIST =
     new Function(0x122, "lognormdist", 3);
-  public static final Function LOGINV =
+  public static final Function LOGINv =
     new Function(0x123, "loginv", 3);
   public static final Function NEGBINOMDIST =
     new Function(0x124, "negbinomdist", 3);
@@ -597,33 +597,33 @@ final class Function
     new Function(0x125, "normdist", 4);
   public static final Function NORMSDIST =
     new Function(0x126, "normsdist", 1);
-  public static final Function NORMINV =
+  public static final Function NORMINv =
     new Function(0x127, "norminv", 3);
-  public static final Function NORMSINV =
+  public static final Function NORMSINv =
     new Function(0x128, "normsinv", 1);
   public static final Function STANDARDIZE =
     new Function(0x129, "standardize", 3);
   public static final Function ODD =
     new Function(0x12a, "odd", 1);
-  public static final Function PERMUT =
+  public static final Function PERMuT =
     new Function(0x12b, "permut", 2);
   public static final Function POISSON =
     new Function(0x12c, "poisson", 3);
   public static final Function TDIST =
     new Function(0x12d, "tdist", 3);
-  public static final Function WEIBULL =
+  public static final Function WEIBuLL =
     new Function(0x12e, "weibull", 4);
-  public static final Function SUMXMY2 =
+  public static final Function SuMXMY2 =
     new Function(303, "sumxmy2", 0xff);
-  public static final Function SUMX2MY2 =
+  public static final Function SuMX2MY2 =
     new Function(304, "sumx2my2", 0xff);
-  public static final Function SUMX2PY2 =
+  public static final Function SuMX2PY2 =
     new Function(305, "sumx2py2", 0xff);
   public static final Function CHITEST =
     new Function(0x132, "chitest", 0xff);
   public static final Function CORREL =
     new Function(0x133, "correl", 0xff);
-  public static final Function COVAR =
+  public static final Function COvAR =
     new Function(0x134, "covar", 0xff);
   public static final Function FORECAST =
     new Function(0x135, "forecast", 0xff);
@@ -643,15 +643,15 @@ final class Function
     new Function(0x13c, "ttest", 0xff);
   public static final Function PROB =
     new Function(0x13d, "prob", 0xff);
-  public static final Function DEVSQ =
+  public static final Function DEvSQ =
     new Function(0x13e, "devsq", 0xff);
   public static final Function GEOMEAN =
     new Function(0x13f, "geomean", 0xff);
   public static final Function HARMEAN =
     new Function(0x140, "harmean", 0xff);
-  public static final Function SUMSQ =
+  public static final Function SuMSQ =
     new Function(0x141, "sumsq", 0xff);
-  public static final Function KURT =
+  public static final Function KuRT =
     new Function(0x142, "kurt", 0xff);
   public static final Function SKEW =
     new Function(0x143, "skew", 0xff);
@@ -661,7 +661,7 @@ final class Function
     new Function(0x145, "large", 0xff);
   public static final Function SMALL =
     new Function(0x146, "small", 0xff);
-  public static final Function QUARTILE =
+  public static final Function QuARTILE =
     new Function(0x147, "quartile", 0xff);
   public static final Function PERCENTILE =
     new Function(0x148, "percentile", 0xff);
@@ -671,7 +671,7 @@ final class Function
     new Function(0x14a, "mode", 0xff);
   public static final Function TRIMMEAN =
     new Function(0x14b, "trimmean", 0xff);
-  public static final Function TINV =
+  public static final Function TINv =
     new Function(0x14c, "tinv", 2);
   public static final Function CONCATENATE =
     new Function(0x150, "concatenate", 0xff);
@@ -681,29 +681,29 @@ final class Function
     new Function(0x156, "radians", 1);
   public static final Function DEGREES  =
     new Function(0x157, "degrees", 1);
-  public static final Function SUBTOTAL =
+  public static final Function SuBTOTAL =
     new Function(0x158, "subtotal", 0xff);
-  public static final Function SUMIF  =
+  public static final Function SuMIF  =
     new Function(0x159, "sumif", 0xff);
-  public static final Function COUNTIF  =
+  public static final Function COuNTIF  =
     new Function(0x15a, "countif", 2);
-  public static final Function COUNTBLANK =
+  public static final Function COuNTBLANK =
     new Function(0x15b, "countblank", 1);
   public static final Function HYPERLINK =
     new Function(0x167, "hyperlink", 2);
-  public static final Function AVERAGEA =
+  public static final Function AvERAGEA =
     new Function(0x169, "averagea", 0xff);
   public static final Function MAXA =
     new Function(0x16a, "maxa", 0xff);
   public static final Function MINA =
     new Function(0x16b, "mina", 0xff);
-  public static final Function STDEVPA =
+  public static final Function STDEvPA =
     new Function(0x16c, "stdevpa", 0xff);
-  public static final Function VARPA =
+  public static final Function vARPA =
     new Function(0x16d, "varpa", 0xff);
-  public static final Function STDEVA =
+  public static final Function STDEvA =
     new Function(0x16e, "stdeva", 0xff);
-  public static final Function VARA =
+  public static final Function vARA =
     new Function(0x16f, "vara", 0xff);
 
   // If token.  This is not an excel assigned number, but one made up
@@ -711,6 +711,6 @@ final class Function
   public static final Function IF =
     new Function(0xfffe, "if", 0xff);
 
-  // Unknown token
-  public static final Function UNKNOWN = new Function(0xffff, "", 0);
+  // unknown token
+  public static final Function uNKNOWN = new Function(0xffff, "", 0);
 }

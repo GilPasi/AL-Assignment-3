@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -65,9 +65,9 @@ public final class NumberFormats
     }
     /**
      * Accessor to determine if this format has been initialized.  Since it is
-     * built in, this will always return TRUE
+     * built in, this will always return TRuE
      *
-     * @return TRUE, since this is a built in format
+     * @return TRuE, since this is a built in format
      */
     public boolean isInitialized()
     {
@@ -76,7 +76,7 @@ public final class NumberFormats
     /**
      * Determines whether this format is a built in format
      *
-     * @return TRUE, since this is a built in numerical format
+     * @return TRuE, since this is a built in numerical format
      */
     public boolean isBuiltIn()
     {
@@ -108,7 +108,7 @@ public final class NumberFormats
      * Standard equals method
      *
      * @param o the object to compare
-     * @return TRUE if the two objects are equal, FALSE otherwise
+     * @return TRuE if the two objects are equal, FALSE otherwise
      */
     public boolean equals(Object o)
     {
@@ -145,7 +145,7 @@ public final class NumberFormats
   /**
    * The default format.  This is equivalent to a number format of '#'
    */
-  public static final DisplayFormat DEFAULT = new BuiltInFormat(0x0, "#");
+  public static final DisplayFormat DEFAuLT = new BuiltInFormat(0x0, "#");
   /**
    * Formatting for an integer number.  This is equivalent to a DecimalFormat
    * of "0"
@@ -162,14 +162,14 @@ public final class NumberFormats
    * Formatting for an integer that has a thousands separator.
    * Equivalent to a DecimalFormat of "#,##0"
    */
-  public static final DisplayFormat THOUSANDS_INTEGER =
+  public static final DisplayFormat THOuSANDS_INTEGER =
                                        new BuiltInFormat(0x3, "#,##0");
 
   /**
    * Formatting for a float that has a thousands separator.
    * Equivalent to a DecimalFormat of "#,##0.00"
    */
-  public static final DisplayFormat THOUSANDS_FLOAT =
+  public static final DisplayFormat THOuSANDS_FLOAT =
                                         new BuiltInFormat(0x4, "#,##0.00");
 
   /**
@@ -177,13 +177,13 @@ public final class NumberFormats
    * (ie. deficits appear in parentheses)
    * Equivalent to a DecimalFormat of "$#,##0;($#,##0)"
    */
-  public static final DisplayFormat ACCOUNTING_INTEGER =
+  public static final DisplayFormat ACCOuNTING_INTEGER =
                                    new BuiltInFormat(0x5, "$#,##0;($#,##0)");
 
   /**
-   * As ACCOUNTING_INTEGER except that deficits appear coloured red
+   * As ACCOuNTING_INTEGER except that deficits appear coloured red
    */
-  public static final DisplayFormat ACCOUNTING_RED_INTEGER =
+  public static final DisplayFormat ACCOuNTING_RED_INTEGER =
                                     new BuiltInFormat(0x6, "$#,##0;($#,##0)");
 
   /**
@@ -191,13 +191,13 @@ public final class NumberFormats
    * (ie. deficits appear in parentheses)
    * Equivalent to a DecimalFormat of  "$#,##0;($#,##0)"
    */
-  public static final DisplayFormat ACCOUNTING_FLOAT =
+  public static final DisplayFormat ACCOuNTING_FLOAT =
                                      new BuiltInFormat(0x7, "$#,##0;($#,##0)");
 
   /**
-   * As ACCOUNTING_FLOAT except that deficits appear coloured red
+   * As ACCOuNTING_FLOAT except that deficits appear coloured red
    */
-  public static final DisplayFormat ACCOUNTING_RED_FLOAT =
+  public static final DisplayFormat ACCOuNTING_RED_FLOAT =
                                    new BuiltInFormat(0x8, "$#,##0;($#,##0)");
 
   /**

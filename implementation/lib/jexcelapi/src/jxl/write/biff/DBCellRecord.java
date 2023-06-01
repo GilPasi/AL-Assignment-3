@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -49,7 +49,7 @@ class DBCellRecord extends WritableRecordData
   private ArrayList cellRowPositions;
 
   /**
-   * The position of this record in the file.  Vital for calculating offsets
+   * The position of this record in the file.  vital for calculating offsets
    */
   private int  position;
 
@@ -113,7 +113,7 @@ class DBCellRecord extends WritableRecordData
     Iterator i = cellRowPositions.iterator();
     while (i.hasNext())
     {
-      int cellPos = ((Integer) i.next()).intValue();
+      int cellPos = ((Integer) i.next()).intvalue();
       IntegerHelper.getTwoBytes(cellPos - lastCellPos, data, pos);
       lastCellPos = cellPos;
       pos += 2;

@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -27,7 +27,7 @@ import jxl.format.CellFormat;
 import jxl.format.Colour;
 import jxl.format.Orientation;
 import jxl.format.Pattern;
-import jxl.format.VerticalAlignment;
+import jxl.format.verticalAlignment;
 import jxl.write.biff.CellXFRecord;
 
 /**
@@ -50,7 +50,7 @@ public class WritableCellFormat extends CellXFRecord
    */
   public WritableCellFormat()
   {
-    this(WritableWorkbook.ARIAL_10_PT, NumberFormats.DEFAULT);
+    this(WritableWorkbook.ARIAL_10_PT, NumberFormats.DEFAuLT);
   }
 
   /**
@@ -60,7 +60,7 @@ public class WritableCellFormat extends CellXFRecord
    */
   public WritableCellFormat(WritableFont font)
   {
-    this(font, NumberFormats.DEFAULT);
+    this(font, NumberFormats.DEFAuLT);
   }
 
   /**
@@ -113,9 +113,9 @@ public class WritableCellFormat extends CellXFRecord
    * @param va the vertical alignment
    * @exception WriteException
    */
-  public void setVerticalAlignment(VerticalAlignment va) throws WriteException
+  public void setverticalAlignment(verticalAlignment va) throws WriteException
   {
-    super.setVerticalAlignment(va);
+    super.setverticalAlignment(va);
   }
 
   /**
@@ -130,7 +130,7 @@ public class WritableCellFormat extends CellXFRecord
   }
 
   /**
-   * Sets the wrap indicator for this format.  If the wrap is set to TRUE, then
+   * Sets the wrap indicator for this format.  If the wrap is set to TRuE, then
    * Excel will wrap data in cells with this format so that it fits within the
    * cell boundaries
    *

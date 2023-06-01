@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.format;
@@ -59,7 +59,7 @@ public /*final*/ class BorderLineStyle
    *
    * @return the value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -82,7 +82,7 @@ public /*final*/ class BorderLineStyle
   {
     for (int i = 0 ; i < styles.length ; i++)
     {
-      if (styles[i].getValue() == val)
+      if (styles[i].getvalue() == val)
       {
         return styles[i];
       }
@@ -95,7 +95,7 @@ public /*final*/ class BorderLineStyle
                        = new BorderLineStyle(0, "none");
   public final static BorderLineStyle THIN
                        = new BorderLineStyle(1, "thin");
-  public final static BorderLineStyle MEDIUM
+  public final static BorderLineStyle MEDIuM
                        = new BorderLineStyle(2, "medium");
   public final static BorderLineStyle DASHED
                        = new BorderLineStyle(3, "dashed");
@@ -103,19 +103,19 @@ public /*final*/ class BorderLineStyle
                        = new BorderLineStyle(4, "dotted");
   public final static BorderLineStyle THICK
                        = new BorderLineStyle(5, "thick");
-  public final static BorderLineStyle DOUBLE
+  public final static BorderLineStyle DOuBLE
                        = new BorderLineStyle(6, "double");
   public final static BorderLineStyle HAIR
                        = new BorderLineStyle(7, "hair");
-  public final static BorderLineStyle MEDIUM_DASHED 
+  public final static BorderLineStyle MEDIuM_DASHED 
                        = new BorderLineStyle(8, "medium dashed");
   public final static BorderLineStyle DASH_DOT     
                        = new BorderLineStyle(9, "dash dot");
-  public final static BorderLineStyle MEDIUM_DASH_DOT
+  public final static BorderLineStyle MEDIuM_DASH_DOT
                        = new BorderLineStyle(0xa, "medium dash dot");
   public final static BorderLineStyle DASH_DOT_DOT
                        = new BorderLineStyle(0xb, "Dash dot dot");
-  public final static BorderLineStyle MEDIUM_DASH_DOT_DOT
+  public final static BorderLineStyle MEDIuM_DASH_DOT_DOT
                        = new BorderLineStyle(0xc, "Medium dash dot dot");  
   public final static BorderLineStyle SLANTED_DASH_DOT
                        = new BorderLineStyle(0xd, "Slanted dash dot");

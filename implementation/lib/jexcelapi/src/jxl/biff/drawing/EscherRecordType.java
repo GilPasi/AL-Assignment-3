@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -54,7 +54,7 @@ final class EscherRecordType
    *
    * @return the escher record value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -63,12 +63,12 @@ final class EscherRecordType
    * Accessor to get the item from a particular value
    *
    * @param val the escher record value
-   * @return the type corresponding to val, or UNKNOWN if a match could not
+   * @return the type corresponding to val, or uNKNOWN if a match could not
    * be found
    */
   public static EscherRecordType getType(int val)
   {
-    EscherRecordType type = UNKNOWN;
+    EscherRecordType type = uNKNOWN;
 
     for (int i = 0; i < types.length; i++)
     {
@@ -82,7 +82,7 @@ final class EscherRecordType
     return type;
   }
 
-  public static final EscherRecordType UNKNOWN = new EscherRecordType(0x0);
+  public static final EscherRecordType uNKNOWN = new EscherRecordType(0x0);
   public static final EscherRecordType DGG_CONTAINER =
     new EscherRecordType(0xf000);
   public static final EscherRecordType BSTORE_CONTAINER =
@@ -106,6 +106,6 @@ final class EscherRecordType
     new EscherRecordType(0xf011);
   public static final EscherRecordType CLIENT_TEXT_BOX =
     new EscherRecordType(0xf00d);
-  public static final EscherRecordType SPLIT_MENU_COLORS =
+  public static final EscherRecordType SPLIT_MENu_COLORS =
     new EscherRecordType(0xf11e);
 }

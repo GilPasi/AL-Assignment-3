@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -76,7 +76,7 @@ class SSTContinueRecord extends WritableRecordData
    */
   public SSTContinueRecord()
   {
-    super(Type.CONTINUE);
+    super(Type.CONTINuE);
 
     byteCount = 0;
     strings = new ArrayList(50);
@@ -201,7 +201,7 @@ class SSTContinueRecord extends WritableRecordData
       pos = 1;
     }
 
-    StringHelper.getUnicodeBytes(firstString, data, pos);
+    StringHelper.getunicodeBytes(firstString, data, pos);
     pos += firstString.length() * 2;
 
     // Now write out the remainder of the strings
@@ -212,10 +212,10 @@ class SSTContinueRecord extends WritableRecordData
     while (i.hasNext())
     {
       s = (String) i.next();
-      length = ( (Integer) stringLengths.get(count)).intValue();
+      length = ( (Integer) stringLengths.get(count)).intvalue();
       IntegerHelper.getTwoBytes(length, data, pos);
       data[pos+2] = 0x01;
-      StringHelper.getUnicodeBytes(s, data, pos+3);
+      StringHelper.getunicodeBytes(s, data, pos+3);
       pos += s.length() * 2 + 3;
       count++;
     }

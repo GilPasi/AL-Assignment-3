@@ -3,26 +3,26 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.demo;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.MalformeduRLException;
+import java.net.uRL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,7 +37,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.format.CellFormat;
 import jxl.format.Colour;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 import jxl.read.biff.BiffException;
 import jxl.write.Blank;
 import jxl.write.DateFormat;
@@ -140,7 +140,7 @@ public class ReadWrite
     // Change the format of cell B4 to be emboldened
     cell = sheet.getWritableCell(1,3);
     WritableFont bold = new WritableFont(WritableFont.ARIAL, 
-                                         WritableFont.DEFAULT_POINT_SIZE, 
+                                         WritableFont.DEFAuLT_POINT_SIZE, 
                                          WritableFont.BOLD);
     cf = new WritableCellFormat(bold);
     cell.setCellFormat(cf);
@@ -148,10 +148,10 @@ public class ReadWrite
     // Change the format of cell B5 to be underlined
     cell = sheet.getWritableCell(1,4);
     WritableFont underline = new WritableFont(WritableFont.ARIAL,
-                                              WritableFont.DEFAULT_POINT_SIZE,
+                                              WritableFont.DEFAuLT_POINT_SIZE,
                                               WritableFont.NO_BOLD,
                                               false,
-                                              UnderlineStyle.SINGLE);
+                                              underlineStyle.SINGLE);
     cf = new WritableCellFormat(underline);
     cell.setCellFormat(cf);
 
@@ -188,18 +188,18 @@ public class ReadWrite
 
     // Change the contents of cell B13 to 42
     cell = sheet.getWritableCell(1,12);
-    if (cell.getType() == CellType.NUMBER)
+    if (cell.getType() == CellType.NuMBER)
     {
       Number n = (Number) cell;
-      n.setValue(42);
+      n.setvalue(42);
     }
 
     // Add 0.1 to the contents of cell B14
     cell = sheet.getWritableCell(1,13);
-    if (cell.getType() == CellType.NUMBER)
+    if (cell.getType() == CellType.NuMBER)
     {
       Number n = (Number) cell;
-      n.setValue(n.getValue() + 0.1);
+      n.setvalue(n.getvalue() + 0.1);
     }
 
     // Change the date format of cell B17 to be a custom format
@@ -227,10 +227,10 @@ public class ReadWrite
     // Change the value in B23 to be 6.8.  This should recalculate the 
     // formula
     cell = sheet.getWritableCell(1,22);
-    if (cell.getType() == CellType.NUMBER)
+    if (cell.getType() == CellType.NuMBER)
     {
       Number n = (Number) cell;
-      n.setValue(6.8);
+      n.setvalue(6.8);
     }
 
     // Change the label in B30.  This will have the effect of making
@@ -269,9 +269,9 @@ public class ReadWrite
         try
         {
           // Change the hyperlink that begins in cell B40 to be a different API
-          wh.setURL(new URL("http://www.andykhan.com/jexcelapi/index.html"));
+          wh.setuRL(new uRL("http://www.andykhan.com/jexcelapi/index.html"));
         }
-        catch (MalformedURLException e)
+        catch (MalformeduRLException e)
         {
           logger.warn(e.toString());
         }
@@ -303,16 +303,16 @@ public class ReadWrite
 
     // Modify the chart data
     Number n = (Number) sheet.getWritableCell(0, 70);
-    n.setValue(9);
+    n.setvalue(9);
     
     n = (Number) sheet.getWritableCell(0, 71);
-    n.setValue(10);
+    n.setvalue(10);
 
     n = (Number) sheet.getWritableCell(0, 73);
-    n.setValue(4);
+    n.setvalue(4);
 
     // Add in a cross sheet formula
-    Formula f = new Formula(1, 80, "ROUND(COS(original!B10),2)");
+    Formula f = new Formula(1, 80, "ROuND(COS(original!B10),2)");
     sheet.addCell(f);
 
     // Add in a formula from the named cells
@@ -320,13 +320,13 @@ public class ReadWrite
     sheet.addCell(f);
 
     // Add in a function formula using named cells
-    f = new Formula(1, 84, "AVERAGE(value1,value1*4,value2)");
+    f = new Formula(1, 84, "AvERAGE(value1,value1*4,value2)");
     sheet.addCell(f);
 
     // Copy sheet 1 to sheet 3
     //     w.copySheet(0, "copy", 2);
 
-    // Use the cell deep copy feature
+    // use the cell deep copy feature
     Label label = new Label(0, 88, "Some copied cells", cf);
     sheet.addCell(label);
 
@@ -354,7 +354,7 @@ public class ReadWrite
     wc = sheet.getWritableCell(4, 15).copyTo(1,92);
     sheet.addCell(wc);
 
-    label = new Label(0, 93, "URL from B40");
+    label = new Label(0, 93, "uRL from B40");
     sheet.addCell(label);
 
     wc = sheet.getWritableCell(1, 39).copyTo(1,93);
@@ -376,7 +376,7 @@ public class ReadWrite
     label = new Label(0,101, "A brand new formula");
     sheet.addCell(label);
     
-    Formula formula = new Formula(1, 101, "SUM(B94:B96)");
+    Formula formula = new Formula(1, 101, "SuM(B94:B96)");
     sheet.addCell(formula);
 
     label = new Label(0,102, "A copy of it");
@@ -403,7 +403,7 @@ public class ReadWrite
     al.add("The Fellowship of the Ring");
     al.add("The Two Towers");
     al.add("The Return of the King");
-    wcf.setDataValidationList(al);
+    wcf.setDatavalidationList(al);
     b.setCellFeatures(wcf);
     sheet.addCell(b);
 
@@ -412,7 +412,7 @@ public class ReadWrite
     sheet.addCell(label);
     b = new Blank(1,152);
     wcf = new WritableCellFeatures();
-    wcf.setNumberValidation(2.718, 3.142, wcf.BETWEEN);
+    wcf.setNumbervalidation(2.718, 3.142, wcf.BETWEEN);
     b.setCellFeatures(wcf);
     sheet.addCell(b);
 
@@ -432,20 +432,20 @@ public class ReadWrite
     // Modify the validation contents of the row 173
     cell = sheet.getWritableCell(0,172);
     wcf = cell.getWritableCellFeatures();
-    Range r = wcf.getSharedDataValidationRange();
+    Range r = wcf.getSharedDatavalidationRange();
     Cell botright = r.getBottomRight();
-    sheet.removeSharedDataValidation(cell);
+    sheet.removeSharedDatavalidation(cell);
     al = new ArrayList();
-    al.add("Stanley Featherstonehaugh Ukridge");
+    al.add("Stanley Featherstonehaugh ukridge");
     al.add("Major Plank");
     al.add("Earl of Ickenham");
     al.add("Sir Gregory Parsloe-Parsloe");
     al.add("Honoria Glossop");
     al.add("Stiffy Byng");
     al.add("Bingo Little");
-    wcf.setDataValidationList(al);
+    wcf.setDatavalidationList(al);
     cell.setCellFeatures(wcf);
-    sheet.applySharedDataValidation(cell, 
+    sheet.applySharedDatavalidation(cell, 
                                     botright.getColumn() - cell.getColumn(),
                                     1);//botright.getRow() - cell.getRow());
   }

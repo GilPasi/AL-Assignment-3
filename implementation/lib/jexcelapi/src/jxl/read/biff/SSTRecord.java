@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -186,7 +186,7 @@ class SSTRecord extends RecordData
       }
       else
       {
-        s = StringHelper.getUnicodeString(bah.bytes, numChars, 0);
+        s = StringHelper.getunicodeString(bah.bytes, numChars, 0);
       }
 
       strings[i] = s;
@@ -330,7 +330,7 @@ class SSTRecord extends RecordData
       }
       else if (!ascii.value && source[breakpos] != 0)
       {
-        // The string is Unicode throughout
+        // The string is unicode throughout
 
         int length = contBreakIndex == continuationBreaks.length - 1 ?
           charsLeft * 2 :
@@ -338,7 +338,7 @@ class SSTRecord extends RecordData
             (charsLeft * 2,
              continuationBreaks[contBreakIndex + 1] - breakpos - 1);
 
-        // It looks like the string continues as Unicode too.  That's handy
+        // It looks like the string continues as unicode too.  That's handy
         System.arraycopy(source,
                          breakpos + 1,
                          bah.bytes,
@@ -352,7 +352,7 @@ class SSTRecord extends RecordData
       }
       else if (!ascii.value && source[breakpos] == 0)
       {
-        // Bummer - the string starts off as Unicode, but after the
+        // Bummer - the string starts off as unicode, but after the
         // continuation it is in straightforward ASCII encoding
         int chars = contBreakIndex == continuationBreaks.length - 1 ?
           charsLeft:
@@ -373,10 +373,10 @@ class SSTRecord extends RecordData
       else
       {
         // Double Bummer - the string starts off as ASCII, but after the
-        // continuation it is in Unicode.  This impacts the allocated array
+        // continuation it is in unicode.  This impacts the allocated array
 
         // Reallocate what we have of the byte array so that it is all
-        // Unicode
+        // unicode
         byte[] oldBytes = bah.bytes;
         bah.bytes = new byte[destPos * 2 + charsLeft * 2];
         for (int j = 0; j < destPos; j++)

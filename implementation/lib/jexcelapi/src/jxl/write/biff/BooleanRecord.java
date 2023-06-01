@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -29,7 +29,7 @@ import jxl.format.CellFormat;
 /**
  * A boolean cell's last calculated value
  */
-public abstract class BooleanRecord extends CellValue
+public abstract class BooleanRecord extends Cellvalue
 {
   /**
    * The boolean value of this cell.  If this cell represents an error, 
@@ -73,7 +73,7 @@ public abstract class BooleanRecord extends CellValue
   protected BooleanRecord(BooleanCell nc)
   {
     super(Type.BOOLERR, nc);
-    value = nc.getValue();
+    value = nc.getvalue();
   }
 
   /**
@@ -94,10 +94,10 @@ public abstract class BooleanRecord extends CellValue
    * this cell contains an error, then returns FALSE.  Always query this cell
    *  type using the accessor method isError() prior to calling this method
    *
-   * @return TRUE if this cell contains TRUE, FALSE if it contains FALSE or
+   * @return TRuE if this cell contains TRuE, FALSE if it contains FALSE or
    * an error code
    */
-  public boolean getValue()
+  public boolean getvalue()
   {
     return value;
   }
@@ -128,7 +128,7 @@ public abstract class BooleanRecord extends CellValue
    * 
    * @param val the boolean value
    */
-  protected void setValue(boolean val)
+  protected void setvalue(boolean val)
   {
     value = val;
   }

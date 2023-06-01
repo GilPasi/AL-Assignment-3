@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -27,13 +27,13 @@ import jxl.biff.RecordData;
 /**
  * Contains the cell dimensions of this worksheet
  */
-class VerticalPageBreaksRecord extends RecordData
+class verticalPageBreaksRecord extends RecordData
 {
   /**
    * The logger
    */
   private final Logger logger = Logger.getLogger
-    (VerticalPageBreaksRecord.class);
+    (verticalPageBreaksRecord.class);
 
   /**
    * The row page breaks
@@ -51,7 +51,7 @@ class VerticalPageBreaksRecord extends RecordData
    *
    * @param t the raw data
    */
-  public VerticalPageBreaksRecord(Record t)
+  public verticalPageBreaksRecord(Record t)
   {
     super(t);
 
@@ -74,7 +74,7 @@ class VerticalPageBreaksRecord extends RecordData
    * @param t the raw data
    * @param biff7 an indicator to initialise this record for biff 7 format
    */
-  public VerticalPageBreaksRecord(Record t, Biff7 biff7)
+  public verticalPageBreaksRecord(Record t, Biff7 biff7)
   {
     super(t);
 

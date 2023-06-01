@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -37,11 +37,11 @@ class PaneRecord extends RecordData
   /**
    * The number of rows visible in the top left pane
    */
-  private int rowsVisible;
+  private int rowsvisible;
   /**
    * The number of columns visible in the top left pane
    */
-  private int columnsVisible;
+  private int columnsvisible;
 
   /**
    * Constructs the dimensions from the raw data
@@ -53,8 +53,8 @@ class PaneRecord extends RecordData
     super(t);
     byte[] data = t.getData();
 
-    columnsVisible = IntegerHelper.getInt(data[0], data[1]);
-    rowsVisible = IntegerHelper.getInt(data[2], data[3]);
+    columnsvisible = IntegerHelper.getInt(data[0], data[1]);
+    rowsvisible = IntegerHelper.getInt(data[2], data[3]);
   }
 
   /**
@@ -62,9 +62,9 @@ class PaneRecord extends RecordData
    *
    * @return the number of rows visible in the top left pane
    */
-  public final int getRowsVisible()
+  public final int getRowsvisible()
   {
-    return rowsVisible;
+    return rowsvisible;
   }
 
   /**
@@ -72,9 +72,9 @@ class PaneRecord extends RecordData
    *
    * @return the number of columns visible in the top left pane
    */
-  public final int getColumnsVisible()
+  public final int getColumnsvisible()
   {
-    return columnsVisible;
+    return columnsvisible;
   }
 }
 

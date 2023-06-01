@@ -3,18 +3,18 @@
 *      Copyright (C) 2006 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -31,7 +31,7 @@ import jxl.common.Logger;
 import jxl.BooleanCell;
 import jxl.Cell;
 import jxl.CellType;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.DateCell;
 import jxl.HeaderFooter;
 import jxl.Hyperlink;
@@ -45,7 +45,7 @@ import jxl.WorkbookSettings;
 import jxl.biff.AutoFilter;
 import jxl.biff.CellReferenceHelper;
 import jxl.biff.ConditionalFormat;
-import jxl.biff.DataValidation;
+import jxl.biff.Datavalidation;
 import jxl.biff.FormattingRecords;
 import jxl.biff.FormulaData;
 import jxl.biff.IndexMapping;
@@ -100,8 +100,8 @@ class WritableSheetCopier
   private ArrayList fromColumnBreaks;
   private ArrayList toRowBreaks;
   private ArrayList toColumnBreaks;
-  private DataValidation fromDataValidation;
-  private DataValidation toDataValidation;
+  private Datavalidation fromDatavalidation;
+  private Datavalidation toDatavalidation;
   private SheetWriter sheetWriter;
   private ArrayList fromDrawings;
   private ArrayList toDrawings;
@@ -154,7 +154,7 @@ class WritableSheetCopier
     fromRows = r;
   }
 
-  void setValidatedCells(ArrayList vc)
+  void setvalidatedCells(ArrayList vc)
   {
     validatedCells = vc;
   }
@@ -189,9 +189,9 @@ class WritableSheetCopier
     fromWorkspaceOptions = wir;
   }
 
-  void setDataValidation(DataValidation dv)
+  void setDatavalidation(Datavalidation dv)
   {
-    fromDataValidation = dv;
+    fromDatavalidation = dv;
   }
 
   void setPLSRecord(PLSRecord plsr)
@@ -210,9 +210,9 @@ class WritableSheetCopier
   }
 
 
-  DataValidation getDataValidation()
+  Datavalidation getDatavalidation()
   {
-    return toDataValidation;
+    return toDatavalidation;
   }
 
   PLSRecord getPLSRecord()
@@ -292,10 +292,10 @@ class WritableSheetCopier
     toColumnBreaks = new ArrayList(fromColumnBreaks);
 
     // Copy the data validations
-    if (fromDataValidation != null)
+    if (fromDatavalidation != null)
     {
-      toDataValidation = new DataValidation
-        (fromDataValidation, 
+      toDatavalidation = new Datavalidation
+        (fromDatavalidation, 
          toSheet.getWorkbook(),
          toSheet.getWorkbook(),
          toSheet.getWorkbook().getSettings());
@@ -357,7 +357,7 @@ class WritableSheetCopier
     {
       newCell = new Label((LabelCell) cell);
     }
-    else if (ct == CellType.NUMBER)
+    else if (ct == CellType.NuMBER)
     {
       newCell = new Number((NumberCell) cell);
     }
@@ -369,23 +369,23 @@ class WritableSheetCopier
     {
       newCell = new Boolean((BooleanCell) cell);
     }
-    else if (ct == CellType.NUMBER_FORMULA)
+    else if (ct == CellType.NuMBER_FORMuLA)
     {
       newCell = new ReadNumberFormulaRecord((FormulaData) cell);
     }
-    else if (ct == CellType.STRING_FORMULA)
+    else if (ct == CellType.STRING_FORMuLA)
     {
       newCell = new ReadStringFormulaRecord((FormulaData) cell);
     }
-    else if( ct == CellType.BOOLEAN_FORMULA)
+    else if( ct == CellType.BOOLEAN_FORMuLA)
     {
       newCell = new ReadBooleanFormulaRecord((FormulaData) cell);
     }
-    else if (ct == CellType.DATE_FORMULA)
+    else if (ct == CellType.DATE_FORMuLA)
     {
       newCell = new ReadDateFormulaRecord((FormulaData) cell);
     }
-    else if(ct == CellType.FORMULA_ERROR)
+    else if(ct == CellType.FORMuLA_ERROR)
     {
       newCell = new ReadErrorFormulaRecord((FormulaData) cell);
     }
@@ -497,7 +497,7 @@ class WritableSheetCopier
             // Cell.setCellFeatures short circuits when the cell is copied,
             // so make sure the copy logic handles the validated cells        
             if (c.getCellFeatures() != null &
-                c.getCellFeatures().hasDataValidation())
+                c.getCellFeatures().hasDatavalidation())
             {
               validatedCells.add(c);
             }
@@ -544,7 +544,7 @@ class WritableSheetCopier
             // Cell.setCellFeatures short circuits when the cell is copied,
             // so make sure the copy logic handles the validated cells        
             if (c.getCellFeatures() != null &
-                c.getCellFeatures().hasDataValidation())
+                c.getCellFeatures().hasDatavalidation())
             {
               validatedCells.add(c);
             } 
@@ -589,7 +589,7 @@ class WritableSheetCopier
     }
     catch (NumFormatRecordsException e)
     {
-      logger.warn("Maximum number of format records exceeded.  Using " +
+      logger.warn("Maximum number of format records exceeded.  using " +
                   "default format.");
 
       return WritableWorkbook.NORMAL_STYLE;

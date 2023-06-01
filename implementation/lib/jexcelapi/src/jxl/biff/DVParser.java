@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -34,37 +34,37 @@ import jxl.biff.formula.FormulaParser;
 import jxl.biff.formula.ParseContext;
 
 /**
- * Class which parses the binary data associated with Data Validity (DV)
+ * Class which parses the binary data associated with Data validity (Dv)
  * setting
  */
-public class DVParser
+public class DvParser
 {
   /**
    * The logger
    */
-  private static Logger logger = Logger.getLogger(DVParser.class);
+  private static Logger logger = Logger.getLogger(DvParser.class);
 
-  // DV Type
-  public static class DVType 
+  // Dv Type
+  public static class DvType 
   {
     private int value;
     private String desc;
     
-    private static DVType[] types = new DVType[0];
+    private static DvType[] types = new DvType[0];
    
-    DVType(int v, String d) 
+    DvType(int v, String d) 
     {
       value = v;
       desc = d;
-      DVType[] oldtypes = types;
-      types = new DVType[oldtypes.length+1];
+      DvType[] oldtypes = types;
+      types = new DvType[oldtypes.length+1];
       System.arraycopy(oldtypes, 0, types, 0, oldtypes.length);
       types[oldtypes.length] = this;
     }
 
-    static DVType getType(int v)
+    static DvType getType(int v)
     {
-      DVType found = null;
+      DvType found = null;
       for (int i = 0 ; i < types.length && found == null ; i++)
       {
         if (types[i].value == v)
@@ -75,7 +75,7 @@ public class DVParser
       return found;
     }
 
-    public int getValue() 
+    public int getvalue() 
     {
       return value;
     }
@@ -115,7 +115,7 @@ public class DVParser
       return found;
     }
 
-    public int getValue() 
+    public int getvalue() 
     {
       return value;
     }
@@ -152,7 +152,7 @@ public class DVParser
       return found;
     }
 
-    public int getValue() 
+    public int getvalue() 
     {
       return value;
     }
@@ -164,14 +164,14 @@ public class DVParser
   }
 
   // The values
-  public static final DVType ANY = new DVType(0, "any");
-  public static final DVType INTEGER = new DVType(1, "int");
-  public static final DVType DECIMAL = new DVType(2, "dec");
-  public static final DVType LIST = new DVType(3, "list");
-  public static final DVType DATE = new DVType(4, "date");
-  public static final DVType TIME = new DVType(5, "time");
-  public static final DVType TEXT_LENGTH = new DVType(6, "strlen");
-  public static final DVType FORMULA = new DVType(7, "form");
+  public static final DvType ANY = new DvType(0, "any");
+  public static final DvType INTEGER = new DvType(1, "int");
+  public static final DvType DECIMAL = new DvType(2, "dec");
+  public static final DvType LIST = new DvType(3, "list");
+  public static final DvType DATE = new DvType(4, "date");
+  public static final DvType TIME = new DvType(5, "time");
+  public static final DvType TEXT_LENGTH = new DvType(6, "strlen");
+  public static final DvType FORMuLA = new DvType(7, "form");
 
   // The error styles
   public static final ErrorStyle STOP = new ErrorStyle(0);
@@ -182,17 +182,17 @@ public class DVParser
   public static final Condition BETWEEN = new Condition(0, "{0} <= x <= {1}");
   public static final Condition NOT_BETWEEN = 
     new Condition(1, "!({0} <= x <= {1}");
-  public static final Condition EQUAL = new Condition(2, "x == {0}");
-  public static final Condition NOT_EQUAL = new Condition(3, "x != {0}");
+  public static final Condition EQuAL = new Condition(2, "x == {0}");
+  public static final Condition NOT_EQuAL = new Condition(3, "x != {0}");
   public static final Condition GREATER_THAN = new Condition(4, "x > {0}");
   public static final Condition LESS_THAN = new Condition(5, "x < {0}");
-  public static final Condition GREATER_EQUAL = new Condition(6, "x >= {0}");
-  public static final Condition LESS_EQUAL = new Condition(7, "x <= {0}");
+  public static final Condition GREATER_EQuAL = new Condition(6, "x >= {0}");
+  public static final Condition LESS_EQuAL = new Condition(7, "x <= {0}");
 
   // The masks
-  private static final int STRING_LIST_GIVEN_MASK = 0x80;
+  private static final int STRING_LIST_GIvEN_MASK = 0x80;
   private static final int EMPTY_CELLS_ALLOWED_MASK = 0x100;
-  private static final int SUPPRESS_ARROW_MASK = 0x200;
+  private static final int SuPPRESS_ARROW_MASK = 0x200;
   private static final int SHOW_PROMPT_MASK = 0x40000;
   private static final int SHOW_ERROR_MASK = 0x80000;
 
@@ -200,16 +200,16 @@ public class DVParser
   private static DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.#");
 
   // The maximum string length for a data validation list
-  private static final int MAX_VALIDATION_LIST_LENGTH = 254;
+  private static final int MAX_vALIDATION_LIST_LENGTH = 254;
 
   // The maximum number of rows and columns
   private static final int MAX_ROWS=0xffff;
-  private static final int MAX_COLUMNS=0xff;
+  private static final int MAX_COLuMNS=0xff;
 
   /**
    * The type
    */
-  private DVType type;
+  private DvType type;
 
   /**
    * The error style
@@ -307,10 +307,10 @@ public class DVParser
   private int row2;
 
   /**
-   * Flag to indicate that this DV Parser is shared amongst a group
+   * Flag to indicate that this Dv Parser is shared amongst a group
    * of cells
    */
-  private boolean extendedCellsValidation;
+  private boolean extendedCellsvalidation;
 
   /**
    * Flag indicated whether this has been copied
@@ -320,7 +320,7 @@ public class DVParser
   /**
    * Constructor
    */
-  public DVParser(byte[] data, 
+  public DvParser(byte[] data, 
                   ExternalSheet es, 
                   WorkbookMethods nt,
                   WorkbookSettings ws)
@@ -330,18 +330,18 @@ public class DVParser
     copied = false;
     int options = IntegerHelper.getInt(data[0], data[1], data[2], data[3]);
 
-    int typeVal = options & 0xf;
-    type = DVType.getType(typeVal);
+    int typeval = options & 0xf;
+    type = DvType.getType(typeval);
 
-    int errorStyleVal = (options & 0x70) >> 4;
-    errorStyle = ErrorStyle.getErrorStyle(errorStyleVal);
+    int errorStyleval = (options & 0x70) >> 4;
+    errorStyle = ErrorStyle.getErrorStyle(errorStyleval);
 
-    int conditionVal = (options & 0xf00000) >> 20;
-    condition = Condition.getCondition(conditionVal);
+    int conditionval = (options & 0xf00000) >> 20;
+    condition = Condition.getCondition(conditionval);
 
-    stringListGiven = (options & STRING_LIST_GIVEN_MASK) != 0;
+    stringListGiven = (options & STRING_LIST_GIvEN_MASK) != 0;
     emptyCellsAllowed = (options & EMPTY_CELLS_ALLOWED_MASK) != 0;
-    suppressArrow = (options & SUPPRESS_ARROW_MASK) != 0;
+    suppressArrow = (options & SuPPRESS_ARROW_MASK) != 0;
     showPrompt = (options & SHOW_PROMPT_MASK) != 0;
     showError = (options & SHOW_ERROR_MASK) != 0;
 
@@ -354,7 +354,7 @@ public class DVParser
     }
     else if (length > 0)
     {
-      promptTitle = StringHelper.getUnicodeString(data, length, pos + 3);
+      promptTitle = StringHelper.getunicodeString(data, length, pos + 3);
       pos += length * 2 + 3;
     }
     else
@@ -370,7 +370,7 @@ public class DVParser
     }
     else if (length > 0)
     {
-      errorTitle = StringHelper.getUnicodeString(data, length, pos + 3);
+      errorTitle = StringHelper.getunicodeString(data, length, pos + 3);
       pos += length * 2 + 3;
     }
     else
@@ -386,7 +386,7 @@ public class DVParser
     }
     else if (length > 0)
     {
-      promptText = StringHelper.getUnicodeString(data, length, pos + 3);
+      promptText = StringHelper.getunicodeString(data, length, pos + 3);
       pos += length * 2 + 3;
     }
     else
@@ -402,7 +402,7 @@ public class DVParser
     }
     else if (length > 0)
     {
-      errorText = StringHelper.getUnicodeString(data, length, pos + 3);
+      errorText = StringHelper.getunicodeString(data, length, pos + 3);
       pos += length * 2 + 3;
     }
     else
@@ -434,7 +434,7 @@ public class DVParser
     column2 = IntegerHelper.getInt(data[pos], data[pos+1]);
     pos += 2;
 
-    extendedCellsValidation = (row1 == row2 && column1 == column2) ? 
+    extendedCellsvalidation = (row1 == row2 && column1 == column2) ? 
       false : true;
 
     // Do the formulas
@@ -449,7 +449,7 @@ public class DVParser
         byte[] tokens = new byte[formula1Length];
         System.arraycopy(data, formula1Pos, tokens, 0, formula1Length);
         formula1 = new FormulaParser(tokens, tmprt, es, nt,ws, 
-                                     ParseContext.DATA_VALIDATION);
+                                     ParseContext.DATA_vALIDATION);
         formula1.parse();
       }
 
@@ -458,7 +458,7 @@ public class DVParser
         byte[] tokens = new byte[formula2Length];
         System.arraycopy(data, formula2Pos, tokens, 0, formula2Length);
         formula2 = new FormulaParser(tokens, tmprt, es, nt, ws, 
-                                     ParseContext.DATA_VALIDATION);
+                                     ParseContext.DATA_vALIDATION);
         formula2.parse();
       }
     }
@@ -473,13 +473,13 @@ public class DVParser
   /**
    * Constructor called when creating a data validation from the API
    */
-  public DVParser(Collection strings)
+  public DvParser(Collection strings)
   {
     copied = false;
     type = LIST;
     errorStyle = STOP;
     condition = BETWEEN;
-    extendedCellsValidation = false;
+    extendedCellsvalidation = false;
     
     // the options
     stringListGiven = true;
@@ -510,11 +510,11 @@ public class DVParser
 
     // If the formula string exceeds
     // the maximum validation list length, then truncate and stop there
-    if (formulaString.length() > MAX_VALIDATION_LIST_LENGTH)
+    if (formulaString.length() > MAX_vALIDATION_LIST_LENGTH)
     {
-      logger.warn("Validation list exceeds maximum number of characters - " +
+      logger.warn("validation list exceeds maximum number of characters - " +
                   "truncating");
-      formulaString.delete(MAX_VALIDATION_LIST_LENGTH, 
+      formulaString.delete(MAX_vALIDATION_LIST_LENGTH, 
                            formulaString.length());
     }
 
@@ -527,16 +527,16 @@ public class DVParser
   /**
    * Constructor called when creating a data validation from the API
    */
-  public DVParser(String namedRange)
+  public DvParser(String namedRange)
   {
     // Handle the case for an empty string
     if (namedRange.length() == 0)
     {
       copied = false;
-      type = FORMULA;
+      type = FORMuLA;
       errorStyle = STOP;
-      condition = EQUAL;
-      extendedCellsValidation = false;
+      condition = EQuAL;
+      extendedCellsvalidation = false;
       // the options
       stringListGiven = false;
       emptyCellsAllowed = false;
@@ -556,7 +556,7 @@ public class DVParser
     type = LIST;
     errorStyle = STOP;
     condition = BETWEEN;
-    extendedCellsValidation = false;
+    extendedCellsvalidation = false;
     
     // the options
     stringListGiven = false;
@@ -575,13 +575,13 @@ public class DVParser
   /**
    * Constructor called when creating a data validation from the API
    */
-  public DVParser(int c1, int r1, int c2, int r2)
+  public DvParser(int c1, int r1, int c2, int r2)
   {
     copied = false;
     type = LIST;
     errorStyle = STOP;
     condition = BETWEEN;
-    extendedCellsValidation = false;
+    extendedCellsvalidation = false;
     
     // the options
     stringListGiven = false;
@@ -604,13 +604,13 @@ public class DVParser
   /**
    * Constructor called when creating a data validation from the API
    */
-  public DVParser(double val1, double val2, Condition c)
+  public DvParser(double val1, double val2, Condition c)
   {
     copied = false;
     type = DECIMAL;
     errorStyle = STOP;
     condition = c;
-    extendedCellsValidation = false;
+    extendedCellsvalidation = false;
     
     // the options
     stringListGiven = false;
@@ -634,7 +634,7 @@ public class DVParser
   /**
    * Constructor called when doing a cell deep copy
    */
-  public DVParser(DVParser copy)
+  public DvParser(DvParser copy)
   {
     copied = true;
     type = copy.type;
@@ -649,7 +649,7 @@ public class DVParser
     promptText = copy.promptText;
     errorTitle = copy.errorTitle;
     errorText = copy.errorText;
-    extendedCellsValidation = copy.extendedCellsValidation;
+    extendedCellsvalidation = copy.extendedCellsvalidation;
 
     row1 = copy.row1;
     row2 = copy.row2;
@@ -704,13 +704,13 @@ public class DVParser
 
     // The options
     int options = 0;
-    options |= type.getValue();
-    options |= errorStyle.getValue() << 4;
-    options |= condition.getValue() << 20;
+    options |= type.getvalue();
+    options |= errorStyle.getvalue() << 4;
+    options |= condition.getvalue() << 20;
 
     if (stringListGiven) 
     {
-      options |= STRING_LIST_GIVEN_MASK;
+      options |= STRING_LIST_GIvEN_MASK;
     }
 
     if (emptyCellsAllowed) 
@@ -720,7 +720,7 @@ public class DVParser
 
     if (suppressArrow)
     {
-      options |= SUPPRESS_ARROW_MASK;
+      options |= SuPPRESS_ARROW_MASK;
     }
 
     if (showPrompt)
@@ -743,7 +743,7 @@ public class DVParser
     data[pos] = (byte) 0x1; // unicode indicator
     pos++;
 
-    StringHelper.getUnicodeBytes(promptTitle, data, pos);
+    StringHelper.getunicodeBytes(promptTitle, data, pos);
     pos += promptTitle.length() * 2;
 
     IntegerHelper.getTwoBytes(errorTitle.length(), data, pos);
@@ -752,7 +752,7 @@ public class DVParser
     data[pos] = (byte) 0x1; // unicode indicator
     pos++;
 
-    StringHelper.getUnicodeBytes(errorTitle, data, pos);
+    StringHelper.getunicodeBytes(errorTitle, data, pos);
     pos += errorTitle.length() * 2;
 
     IntegerHelper.getTwoBytes(promptText.length(), data, pos);
@@ -761,7 +761,7 @@ public class DVParser
     data[pos] = (byte) 0x1; // unicode indicator
     pos++;
 
-    StringHelper.getUnicodeBytes(promptText, data, pos);
+    StringHelper.getunicodeBytes(promptText, data, pos);
     pos += promptText.length() * 2;
 
     IntegerHelper.getTwoBytes(errorText.length(), data, pos);
@@ -770,7 +770,7 @@ public class DVParser
     data[pos] = (byte) 0x1; // unicode indicator
     pos++;
 
-    StringHelper.getUnicodeBytes(errorText, data, pos);
+    StringHelper.getunicodeBytes(errorText, data, pos);
     pos += errorText.length() * 2;
 
     // Formula 1
@@ -856,7 +856,7 @@ public class DVParser
       column1++;
     }
 
-    if (column2 >= col && column2 != MAX_COLUMNS)
+    if (column2 >= col && column2 != MAX_COLuMNS)
     {
       column2++;
     }
@@ -912,7 +912,7 @@ public class DVParser
       column1--;
     }
 
-    if (column2 >= col && column2 != MAX_COLUMNS)
+    if (column2 >= col && column2 != MAX_COLuMNS)
     {
       column2--;
     }
@@ -964,7 +964,7 @@ public class DVParser
    * @return the validation formula as a string
    * @exception FormulaException
    */
-  String getValidationFormula() throws FormulaException
+  String getvalidationFormula() throws FormulaException
   {
     if (type == LIST)
     {
@@ -989,7 +989,7 @@ public class DVParser
     // If this is part of an extended cells validation, then do nothing
     // as this will already have been called and parsed when the top left
     // cell was added
-    if (extendedCellsValidation)
+    if (extendedCellsvalidation)
     {
       return;
     }
@@ -1001,14 +1001,14 @@ public class DVParser
 
     formula1 = new FormulaParser(formula1String,
                                  es, nt, ws, 
-                                 ParseContext.DATA_VALIDATION);
+                                 ParseContext.DATA_vALIDATION);
     formula1.parse();
 
     if (formula2String != null)
     {
       formula2 = new FormulaParser(formula2String,
                                    es, nt, ws, 
-                                   ParseContext.DATA_VALIDATION);
+                                   ParseContext.DATA_vALIDATION);
       formula2.parse();
     }
   }
@@ -1019,20 +1019,20 @@ public class DVParser
    * @param cols - the number of extra columns
    * @param rows - the number of extra rows
    */
-  public void extendCellValidation(int cols, int rows)
+  public void extendCellvalidation(int cols, int rows)
   {
     row2 = row1 + rows;
     column2 = column1 + cols;
-    extendedCellsValidation = true;
+    extendedCellsvalidation = true;
   }
 
   /**
    * Accessor which indicates whether this validation applies across
    * multiple cels
    */
-  public boolean extendedCellsValidation()
+  public boolean extendedCellsvalidation()
   {
-    return extendedCellsValidation;
+    return extendedCellsvalidation;
   }
 
   public boolean copied()

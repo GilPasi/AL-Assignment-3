@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -45,7 +45,7 @@ class Window2Record extends RecordData
   /**
    * Display zero values flag
    */
-  private boolean displayZeroValues;
+  private boolean displayZerovalues;
   /**
    * The window contains frozen panes
    */
@@ -88,7 +88,7 @@ class Window2Record extends RecordData
     selected = ((options & 0x200) != 0);
     showGridLines = ((options & 0x02) != 0);
     frozenPanes = ((options & 0x08) != 0);
-    displayZeroValues = ((options & 0x10) != 0);
+    displayZerovalues = ((options & 0x10) != 0);
     frozenNotSplit = ((options & 0x100) != 0);
     pageBreakPreviewMode = ((options & 0x800) != 0);
 
@@ -113,7 +113,7 @@ class Window2Record extends RecordData
     selected = ((options & 0x200) != 0);
     showGridLines = ((options & 0x02) != 0);
     frozenPanes = ((options & 0x08) != 0);
-    displayZeroValues = ((options & 0x10) != 0);
+    displayZerovalues = ((options & 0x10) != 0);
     frozenNotSplit = ((options & 0x100) != 0);
     pageBreakPreviewMode = ((options & 0x800) != 0);
   }
@@ -121,7 +121,7 @@ class Window2Record extends RecordData
   /**
    * Accessor for the selected flag
    *
-   * @return TRUE if this sheet is selected, FALSE otherwise
+   * @return TRuE if this sheet is selected, FALSE otherwise
    */
   public boolean isSelected()
   {
@@ -131,7 +131,7 @@ class Window2Record extends RecordData
   /**
    * Accessor for the show grid lines flag
    *
-   * @return TRUE to show grid lines, FALSE otherwise
+   * @return TRuE to show grid lines, FALSE otherwise
    */
   public boolean getShowGridLines()
   {
@@ -141,17 +141,17 @@ class Window2Record extends RecordData
   /**
    * Accessor for the zero values flag
    *
-   * @return TRUE if this sheet displays zero values, FALSE otherwise
+   * @return TRuE if this sheet displays zero values, FALSE otherwise
    */
-  public boolean getDisplayZeroValues()
+  public boolean getDisplayZerovalues()
   {
-    return displayZeroValues;
+    return displayZerovalues;
   }
 
   /**
    * Accessor for the frozen panes flag
    *
-   * @return TRUE if this contains frozen panes, FALSE otherwise
+   * @return TRuE if this contains frozen panes, FALSE otherwise
    */
   public boolean getFrozen()
   {
@@ -161,7 +161,7 @@ class Window2Record extends RecordData
   /**
    * Accessor for the frozen not split flag
    *
-   * @return TRUE if this contains frozen, FALSE otherwise
+   * @return TRuE if this contains frozen, FALSE otherwise
    */
   public boolean getFrozenNotSplit()
   {
@@ -171,7 +171,7 @@ class Window2Record extends RecordData
   /**
    * Accessor for the page break preview mode
    *
-   * @return TRUE if this sheet is in page break preview, FALSE otherwise
+   * @return TRuE if this sheet is in page break preview, FALSE otherwise
    */
   public boolean isPageBreakPreview()
   {

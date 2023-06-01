@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.demo;
@@ -88,13 +88,13 @@ class BiffDump
     recordNames.put(Type.SST, "SST");
     recordNames.put(Type.LABELSST, "LABELSST");
     recordNames.put(Type.WRITEACCESS, "WRITEACCESS");
-    recordNames.put(Type.FORMULA, "FORMULA");
-    recordNames.put(Type.FORMULA2, "FORMULA");
+    recordNames.put(Type.FORMuLA, "FORMuLA");
+    recordNames.put(Type.FORMuLA2, "FORMuLA");
     recordNames.put(Type.XF, "XF");
-    recordNames.put(Type.MULRK, "MULRK");
-    recordNames.put(Type.NUMBER, "NUMBER");
-    recordNames.put(Type.BOUNDSHEET, "BOUNDSHEET");
-    recordNames.put(Type.CONTINUE, "CONTINUE");
+    recordNames.put(Type.MuLRK, "MuLRK");
+    recordNames.put(Type.NuMBER, "NuMBER");
+    recordNames.put(Type.BOuNDSHEET, "BOuNDSHEET");
+    recordNames.put(Type.CONTINuE, "CONTINuE");
     recordNames.put(Type.FORMAT, "FORMAT");
     recordNames.put(Type.EXTERNSHEET, "EXTERNSHEET");
     recordNames.put(Type.INDEX, "INDEX");
@@ -102,12 +102,12 @@ class BiffDump
     recordNames.put(Type.ROW, "ROW");
     recordNames.put(Type.DBCELL, "DBCELL");
     recordNames.put(Type.BLANK, "BLANK");
-    recordNames.put(Type.MULBLANK, "MULBLANK");
+    recordNames.put(Type.MuLBLANK, "MuLBLANK");
     recordNames.put(Type.RK, "RK");
     recordNames.put(Type.RK2, "RK");
     recordNames.put(Type.COLINFO, "COLINFO");
     recordNames.put(Type.LABEL, "LABEL");
-    recordNames.put(Type.SHAREDFORMULA, "SHAREDFORMULA");
+    recordNames.put(Type.SHAREDFORMuLA, "SHAREDFORMuLA");
     recordNames.put(Type.CODEPAGE, "CODEPAGE");
     recordNames.put(Type.WINDOW1, "WINDOW1");
     recordNames.put(Type.WINDOW2, "WINDOW2");
@@ -119,44 +119,44 @@ class BiffDump
     recordNames.put(Type.MMS, "MMS");
     recordNames.put(Type.INTERFACEEND, "INTERFACEEND");
     recordNames.put(Type.DSF, "DSF");
-    recordNames.put(Type.FNGROUPCOUNT, "FNGROUPCOUNT");
-    recordNames.put(Type.COUNTRY, "COUNTRY");
+    recordNames.put(Type.FNGROuPCOuNT, "FNGROuPCOuNT");
+    recordNames.put(Type.COuNTRY, "COuNTRY");
     recordNames.put(Type.TABID, "TABID");
     recordNames.put(Type.PROTECT, "PROTECT");
     recordNames.put(Type.SCENPROTECT, "SCENPROTECT");
     recordNames.put(Type.OBJPROTECT, "OBJPROTECT");
     recordNames.put(Type.WINDOWPROTECT, "WINDOWPROTECT");
     recordNames.put(Type.PASSWORD, "PASSWORD");
-    recordNames.put(Type.PROT4REV, "PROT4REV");
-    recordNames.put(Type.PROT4REVPASS, "PROT4REVPASS");
-    recordNames.put(Type.BACKUP, "BACKUP");
+    recordNames.put(Type.PROT4REv, "PROT4REv");
+    recordNames.put(Type.PROT4REvPASS, "PROT4REvPASS");
+    recordNames.put(Type.BACKuP, "BACKuP");
     recordNames.put(Type.HIDEOBJ, "HIDEOBJ");
-    recordNames.put(Type.NINETEENFOUR, "1904");
+    recordNames.put(Type.NINETEENFOuR, "1904");
     recordNames.put(Type.PRECISION, "PRECISION");
     recordNames.put(Type.BOOKBOOL, "BOOKBOOL");
     recordNames.put(Type.STYLE, "STYLE");
     recordNames.put(Type.EXTSST, "EXTSST");
     recordNames.put(Type.REFRESHALL, "REFRESHALL");
     recordNames.put(Type.CALCMODE, "CALCMODE");
-    recordNames.put(Type.CALCCOUNT, "CALCCOUNT");
+    recordNames.put(Type.CALCCOuNT, "CALCCOuNT");
     recordNames.put(Type.NAME, "NAME");
-    recordNames.put(Type.MSODRAWINGGROUP, "MSODRAWINGGROUP");
+    recordNames.put(Type.MSODRAWINGGROuP, "MSODRAWINGGROuP");
     recordNames.put(Type.MSODRAWING, "MSODRAWING");
     recordNames.put(Type.OBJ, "OBJ");
-    recordNames.put(Type.USESELFS, "USESELFS");
-    recordNames.put(Type.SUPBOOK, "SUPBOOK");
+    recordNames.put(Type.uSESELFS, "uSESELFS");
+    recordNames.put(Type.SuPBOOK, "SuPBOOK");
     recordNames.put(Type.LEFTMARGIN, "LEFTMARGIN");
     recordNames.put(Type.RIGHTMARGIN, "RIGHTMARGIN");
     recordNames.put(Type.TOPMARGIN, "TOPMARGIN");
     recordNames.put(Type.BOTTOMMARGIN, "BOTTOMMARGIN");
     recordNames.put(Type.HCENTER, "HCENTER");
-    recordNames.put(Type.VCENTER, "VCENTER");
+    recordNames.put(Type.vCENTER, "vCENTER");
     recordNames.put(Type.ITERATION, "ITERATION");
     recordNames.put(Type.DELTA, "DELTA");
-    recordNames.put(Type.SAVERECALC, "SAVERECALC");
+    recordNames.put(Type.SAvERECALC, "SAvERECALC");
     recordNames.put(Type.PRINTHEADERS, "PRINTHEADERS");
     recordNames.put(Type.PRINTGRIDLINES, "PRINTGRIDLINES");
-    recordNames.put(Type.SETUP, "SETUP");
+    recordNames.put(Type.SETuP, "SETuP");
     recordNames.put(Type.SELECTION, "SELECTION");
     recordNames.put(Type.STRING, "STRING");
     recordNames.put(Type.FONTX, "FONTX");
@@ -164,13 +164,13 @@ class BiffDump
     recordNames.put(Type.WSBOOL, "WSBOOL");
     recordNames.put(Type.GRIDSET, "GRIDSET");
     recordNames.put(Type.REFMODE, "REFMODE");
-    recordNames.put(Type.GUTS, "GUTS");
+    recordNames.put(Type.GuTS, "GuTS");
     recordNames.put(Type.EXTERNNAME, "EXTERNNAME");
     recordNames.put(Type.FBI, "FBI");
     recordNames.put(Type.CRN, "CRN");
     recordNames.put(Type.HORIZONTALPAGEBREAKS, "HORIZONTALPAGEBREAKS");
-    recordNames.put(Type.VERTICALPAGEBREAKS, "VERTICALPAGEBREAKS");
-    recordNames.put(Type.DEFAULTROWHEIGHT, "DEFAULTROWHEIGHT");
+    recordNames.put(Type.vERTICALPAGEBREAKS, "vERTICALPAGEBREAKS");
+    recordNames.put(Type.DEFAuLTROWHEIGHT, "DEFAuLTROWHEIGHT");
     recordNames.put(Type.TEMPLATE, "TEMPLATE");
     recordNames.put(Type.PANE, "PANE");
     recordNames.put(Type.SCL, "SCL");
@@ -182,22 +182,22 @@ class BiffDump
     recordNames.put(Type.WEIRD1, "WEIRD1");
     recordNames.put(Type.BOOLERR, "BOOLERR");
     recordNames.put(Type.SORT, "SORT");
-    recordNames.put(Type.BUTTONPROPERTYSET, "BUTTONPROPERTYSET");
+    recordNames.put(Type.BuTTONPROPERTYSET, "BuTTONPROPERTYSET");
     recordNames.put(Type.NOTE, "NOTE");
     recordNames.put(Type.TXO, "TXO");
-    recordNames.put(Type.DV, "DV");
-    recordNames.put(Type.DVAL, "DVAL");
+    recordNames.put(Type.Dv, "Dv");
+    recordNames.put(Type.DvAL, "DvAL");
     recordNames.put(Type.SERIES, "SERIES");
     recordNames.put(Type.SERIESLIST, "SERIESLIST");
     recordNames.put(Type.SBASEREF, "SBASEREF");
     recordNames.put(Type.CONDFMT, "CONDFMT");
     recordNames.put(Type.CF, "CF");
     recordNames.put(Type.FILTERMODE, "FILTERMODE");
-    recordNames.put(Type.AUTOFILTER, "AUTOFILTER");
-    recordNames.put(Type.AUTOFILTERINFO, "AUTOFILTERINFO");
+    recordNames.put(Type.AuTOFILTER, "AuTOFILTER");
+    recordNames.put(Type.AuTOFILTERINFO, "AuTOFILTERINFO");
     recordNames.put(Type.XCT, "XCT");
     
-    recordNames.put(Type.UNKNOWN, "???");
+    recordNames.put(Type.uNKNOWN, "???");
   }
   /**
    * Dumps out the contents of the excel file
@@ -248,7 +248,7 @@ class BiffDump
     StringBuffer buf = new StringBuffer();
 
     // Write out the record header
-    writeSixDigitValue(pos, buf);
+    writeSixDigitvalue(pos, buf);
     buf.append(" [");
     buf.append(recordNames.get(r.getType()));
     buf.append("]");
@@ -297,7 +297,7 @@ class BiffDump
     while (byteCount < data.length)
     {
       buf = new StringBuffer();
-      writeSixDigitValue(pos+byteCount, buf);
+      writeSixDigitvalue(pos+byteCount, buf);
       buf.append("   ");
 
       lineBytes = Math.min(bytesPerLine, data.length - byteCount);
@@ -341,7 +341,7 @@ class BiffDump
   /**
    * Writes the string passed in as a minimum of four digits
    */
-  private void writeSixDigitValue(int pos, StringBuffer buf)
+  private void writeSixDigitvalue(int pos, StringBuffer buf)
   {
     String val = Integer.toHexString(pos);
 

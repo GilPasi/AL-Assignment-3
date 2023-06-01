@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan, Al Mantei
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -72,7 +72,7 @@ public class SortRecord extends RecordData
 		}
     else 
     {
-			col1Name = StringHelper.getUnicodeString(data, col1Size, curPos);
+			col1Name = StringHelper.getunicodeString(data, col1Size, curPos);
 			curPos += col1Size * 2;
 		}
 
@@ -85,7 +85,7 @@ public class SortRecord extends RecordData
 			} 
       else 
       {
-				col2Name = StringHelper.getUnicodeString(data, col2Size, curPos);
+				col2Name = StringHelper.getunicodeString(data, col2Size, curPos);
 				curPos += col2Size * 2;
 			}
 		} 
@@ -102,7 +102,7 @@ public class SortRecord extends RecordData
 			} 
       else 
       {
-				col3Name = StringHelper.getUnicodeString(data, col3Size, curPos);
+				col3Name = StringHelper.getunicodeString(data, col3Size, curPos);
 				curPos += col3Size * 2;
 			}
 		} 

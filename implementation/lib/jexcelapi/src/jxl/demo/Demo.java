@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.demo;
@@ -36,7 +36,7 @@ import jxl.Workbook;
  */
 public class Demo
 {
-  private static final int CSVFormat = 13;
+  private static final int CSvFormat = 13;
   private static final int XMLFormat = 14;
 
   /**
@@ -82,7 +82,7 @@ public class Demo
 
     if (args[0].equals("-version"))
     {
-      System.out.println("v"+Workbook.getVersion());
+      System.out.println("v"+Workbook.getversion());
       System.exit(0);
     }
 
@@ -170,8 +170,8 @@ public class Demo
       file = args[args.length - 1];
     }
     
-    String encoding = "UTF8";
-    int format = CSVFormat;
+    String encoding = "uTF8";
+    int format = CSvFormat;
     boolean formatInfo = false;
     boolean hideCells = false;
 
@@ -189,7 +189,7 @@ public class Demo
       {
         if (args[i].equals("-unicode"))
         {
-          encoding="UnicodeBig";
+          encoding="unicodeBig";
         }
         else if (args[i].equals("-xml"))
         {
@@ -197,7 +197,7 @@ public class Demo
         }
         else if (args[i].equals("-csv"))
         {
-          format = CSVFormat;
+          format = CSvFormat;
         }
         else if (args[i].equals("-format"))
         {
@@ -210,7 +210,7 @@ public class Demo
         else
         {
           System.err.println
-            ("Command format:  CSV [-unicode] [-xml|-csv] excelfile");
+            ("Command format:  CSv [-unicode] [-xml|-csv] excelfile");
           System.exit(1);
         }
       }
@@ -277,9 +277,9 @@ public class Demo
         
         //        findTest(w);
 
-        if (format == CSVFormat)
+        if (format == CSvFormat)
         {  
-          CSV csv = new CSV(w, System.out, encoding, hideCells);
+          CSv csv = new CSv(w, System.out, encoding, hideCells);
         }
         else if (format == XMLFormat)
         {

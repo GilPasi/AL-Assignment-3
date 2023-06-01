@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -63,7 +63,7 @@ public class NameRecord extends RecordData
   private int sheetRef = 0;
 
   /**
-   * Indicates whether this is a biff8 name record.  Used during copying
+   * Indicates whether this is a biff8 name record.  used during copying
    */
   private boolean isbiff8;
 
@@ -560,7 +560,7 @@ public class NameRecord extends RecordData
   /**
    * Called when copying to determine whether this is a biff8 name
    *
-   * @return TRUE if this is a biff8 name record, FALSE otherwise
+   * @return TRuE if this is a biff8 name record, FALSE otherwise
    */
   public boolean isBiff8()
   {
@@ -570,7 +570,7 @@ public class NameRecord extends RecordData
   /**
    * Queries whether this is a global name or not
    *
-   * @return TRUE if this is a global name, FALSE otherwise
+   * @return TRuE if this is a global name, FALSE otherwise
    */
   public boolean isGlobal()
   {

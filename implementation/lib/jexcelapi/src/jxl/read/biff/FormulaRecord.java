@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -33,7 +33,7 @@ import jxl.biff.formula.ExternalSheet;
 /**
  * A formula's last calculated value
  */
-class FormulaRecord extends CellValue
+class FormulaRecord extends Cellvalue
 {
   /**
    * The logger
@@ -43,7 +43,7 @@ class FormulaRecord extends CellValue
   /**
    * The "real" formula record - will be either a string a or a number
    */
-  private CellValue formula;
+  private Cellvalue formula;
 
   /**
    * Flag to indicate whether this is a shared formula
@@ -253,7 +253,7 @@ class FormulaRecord extends CellValue
    *
    * @return  the cell value
    */
-  final CellValue getFormula()
+  final Cellvalue getFormula()
   {
     return formula;
   }
@@ -262,7 +262,7 @@ class FormulaRecord extends CellValue
    * Interrogates this formula to determine if it forms part of a shared
    * formula
    *
-   * @return TRUE if this is shared formula, FALSE otherwise
+   * @return TRuE if this is shared formula, FALSE otherwise
    */
   final boolean isShared()
   {

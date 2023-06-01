@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -27,7 +27,7 @@ import jxl.WorkbookSettings;
 import jxl.biff.IntegerHelper;
 
 /**
- * A special attribute control token - typically either a SUM function
+ * A special attribute control token - typically either a SuM function
  * or an IF function
  */
 class Attribute extends Operator implements ParsedThing
@@ -52,7 +52,7 @@ class Attribute extends Operator implements ParsedThing
    */
   private WorkbookSettings settings;
 
-  private static final int SUM_MASK  = 0x10;
+  private static final int SuM_MASK  = 0x10;
   private static final int IF_MASK   = 0x02;
   private static final int CHOOSE_MASK   = 0x04;
   private static final int GOTO_MASK = 0x08;
@@ -60,7 +60,7 @@ class Attribute extends Operator implements ParsedThing
   /**
    * If this attribute is an IF functions, sets the associated if conditions
    */
-  private VariableArgFunction ifConditions;
+  private variableArgFunction ifConditions;
 
   /**
    * Constructor
@@ -82,9 +82,9 @@ class Attribute extends Operator implements ParsedThing
   {
     settings = ws;
 
-    if (sf.getFunction(settings) == Function.SUM)
+    if (sf.getFunction(settings) == Function.SuM)
     {
-      options |= SUM_MASK;
+      options |= SuM_MASK;
     }
     else if (sf.getFunction(settings) == Function.IF)
     {
@@ -95,9 +95,9 @@ class Attribute extends Operator implements ParsedThing
   /**
    * Sets the if conditions for this attribute, if it represents an IF function
    *
-   * @param vaf a <code>VariableArgFunction</code> value
+   * @param vaf a <code>variableArgFunction</code> value
    */
-  void setIfConditions(VariableArgFunction vaf)
+  void setIfConditions(variableArgFunction vaf)
   {
     ifConditions = vaf;
 
@@ -131,27 +131,27 @@ class Attribute extends Operator implements ParsedThing
   /**
    * Queries whether this attribute is a function
    *
-   * @return TRUE if this is a function, FALSE otherwise
+   * @return TRuE if this is a function, FALSE otherwise
    */
   public boolean isFunction()
   {
-    return (options & (SUM_MASK | IF_MASK)) != 0;
+    return (options & (SuM_MASK | IF_MASK)) != 0;
   }
 
   /**
    * Queries whether this attribute is a sum
    *
-   * @return TRUE if this is SUM, FALSE otherwise
+   * @return TRuE if this is SuM, FALSE otherwise
    */
   public boolean isSum()
   {
-    return (options & SUM_MASK) != 0;
+    return (options & SuM_MASK) != 0;
   }
 
   /**
    * Queries whether this attribute is an IF
    *
-   * @return TRUE if this is an IF, FALSE otherwise
+   * @return TRuE if this is an IF, FALSE otherwise
    */
   public boolean isIf()
   {
@@ -161,7 +161,7 @@ class Attribute extends Operator implements ParsedThing
   /**
    * Queries whether this attribute is a goto
    *
-   * @return TRUE if this is a goto, FALSE otherwise
+   * @return TRuE if this is a goto, FALSE otherwise
    */
   public boolean isGoto()
   {
@@ -171,7 +171,7 @@ class Attribute extends Operator implements ParsedThing
   /**
    * Queries whether this attribute is a CHOOSE
    *
-   * @return TRUE if this is a CHOOSE, FALSE otherwise
+   * @return TRuE if this is a CHOOSE, FALSE otherwise
    */
   public boolean isChoose()
   {
@@ -185,7 +185,7 @@ class Attribute extends Operator implements ParsedThing
    */
   public void getOperands(Stack s)
   {
-    if ((options & SUM_MASK) != 0)
+    if ((options & SuM_MASK) != 0)
     {
       ParseItem o1 = (ParseItem) s.pop();
       add(o1);
@@ -204,10 +204,10 @@ class Attribute extends Operator implements ParsedThing
    */
   public void getString(StringBuffer buf)
   {
-    if ((options & SUM_MASK) != 0)
+    if ((options & SuM_MASK) != 0)
     {
       ParseItem[] operands = getOperands();
-      buf.append(Function.SUM.getName(settings));
+      buf.append(Function.SuM.getName(settings));
       buf.append('(');
       operands[0].getString(buf);
       buf.append(')');
@@ -260,8 +260,8 @@ class Attribute extends Operator implements ParsedThing
       // Add on the operator byte
       byte[] newdata = new byte[data.length + 4];
       System.arraycopy(data, 0, newdata, 0, data.length);
-      newdata[data.length] = Token.ATTRIBUTE.getCode();
-      newdata[data.length + 1] = SUM_MASK;
+      newdata[data.length] = Token.ATTRIBuTE.getCode();
+      newdata[data.length + 1] = SuM_MASK;
       data = newdata;
     }
     else if (isIf())
@@ -294,7 +294,7 @@ class Attribute extends Operator implements ParsedThing
     byte[] newdata = new byte[data.length + 4];
     System.arraycopy(data, 0, newdata, 0, data.length);
     data = newdata;
-    data[pos] = Token.ATTRIBUTE.getCode();
+    data[pos] = Token.ATTRIBuTE.getCode();
     data[pos + 1] = 0x2;
     falseOffsetPos = pos + 2;
 
@@ -310,7 +310,7 @@ class Attribute extends Operator implements ParsedThing
     newdata = new byte[data.length + 4];
     System.arraycopy(data, 0, newdata, 0, data.length);
     data = newdata;
-    data[pos] = Token.ATTRIBUTE.getCode();
+    data[pos] = Token.ATTRIBuTE.getCode();
     data[pos + 1] = 0x8;
     gotoEndPos = pos + 2;
 
@@ -333,7 +333,7 @@ class Attribute extends Operator implements ParsedThing
       newdata = new byte[data.length + 4];
       System.arraycopy(data, 0, newdata, 0, data.length);
       data = newdata;
-      data[pos] = Token.ATTRIBUTE.getCode();
+      data[pos] = Token.ATTRIBuTE.getCode();
       data[pos + 1] = 0x8;
       data[pos + 2] = 0x3;
     }
@@ -343,7 +343,7 @@ class Attribute extends Operator implements ParsedThing
     newdata = new byte[data.length + 4];
     System.arraycopy(data, 0, newdata, 0, data.length);
     data = newdata;
-    data[pos] = Token.FUNCTIONVARARG.getCode();
+    data[pos] = Token.FuNCTIONvARARG.getCode();
     data[pos + 1] = (byte) numArgs;
     data[pos + 2] = 1;
     data[pos + 3] = 0;  // indicates the end of the expression
@@ -408,7 +408,7 @@ class Attribute extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void columnInserted(int sheetIndex, int col, boolean currentSheet)
@@ -437,7 +437,7 @@ class Attribute extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void columnRemoved(int sheetIndex, int col, boolean currentSheet)
@@ -466,7 +466,7 @@ class Attribute extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the row was inserted
    * @param row the row number which was inserted1
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void rowInserted(int sheetIndex, int row, boolean currentSheet)
@@ -495,7 +495,7 @@ class Attribute extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the row was removed
    * @param row the row number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void rowRemoved(int sheetIndex, int row, boolean currentSheet)

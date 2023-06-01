@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -24,12 +24,12 @@ import java.io.IOException;
 
 import jxl.common.Assert;
 import jxl.common.Logger;
-import jxl.common.LengthUnit;
+import jxl.common.Lengthunit;
 import jxl.common.LengthConverter;
 
 import jxl.Image;
 import jxl.Sheet;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.write.biff.File;
 
 
@@ -145,7 +145,7 @@ public class Drawing implements DrawingGroupObject, Image
   private int drawingNumber;
 
   /**
-   * A reference to the sheet containing this drawing.  Used to calculate
+   * A reference to the sheet containing this drawing.  used to calculate
    * the drawing dimensions in pixels
    */
   private Sheet sheet;
@@ -176,18 +176,18 @@ public class Drawing implements DrawingGroupObject, Image
       o[oldArray.length] = this;
     }
 
-    int getValue()
+    int getvalue()
     {
       return value;
     }
 
     static ImageAnchorProperties getImageAnchorProperties(int val)
     {
-      ImageAnchorProperties iap = MOVE_AND_SIZE_WITH_CELLS;
+      ImageAnchorProperties iap = MOvE_AND_SIZE_WITH_CELLS;
       int pos = 0;
       while (pos < o.length)
       {
-        if (o[pos].getValue()== val)
+        if (o[pos].getvalue()== val)
         {
           iap = o[pos];
           break;
@@ -202,17 +202,17 @@ public class Drawing implements DrawingGroupObject, Image
   }
 
   // The image anchor properties
-  public static ImageAnchorProperties MOVE_AND_SIZE_WITH_CELLS = 
+  public static ImageAnchorProperties MOvE_AND_SIZE_WITH_CELLS = 
     new ImageAnchorProperties(1);
-  public static ImageAnchorProperties MOVE_WITH_CELLS = 
+  public static ImageAnchorProperties MOvE_WITH_CELLS = 
     new ImageAnchorProperties(2);
-  public static ImageAnchorProperties NO_MOVE_OR_SIZE_WITH_CELLS = 
+  public static ImageAnchorProperties NO_MOvE_OR_SIZE_WITH_CELLS = 
     new ImageAnchorProperties(3);
 
   /**
    * The default font size for columns
    */
-  private static final double DEFAULT_FONT_SIZE = 10;
+  private static final double DEFAuLT_FONT_SIZE = 10;
 
   /**
    * Constructor used when reading images
@@ -287,8 +287,8 @@ public class Drawing implements DrawingGroupObject, Image
     this.width = w;
     this.height = h;
     referenceCount = 1;
-    imageAnchorProperties = MOVE_WITH_CELLS;
-    type = ShapeType.PICTURE_FRAME;
+    imageAnchorProperties = MOvE_WITH_CELLS;
+    type = ShapeType.PICTuRE_FRAME;
   }
 
   /**
@@ -314,8 +314,8 @@ public class Drawing implements DrawingGroupObject, Image
     this.width = w;
     this.height = h;
     referenceCount = 1;
-    imageAnchorProperties = MOVE_WITH_CELLS;
-    type = ShapeType.PICTURE_FRAME;
+    imageAnchorProperties = MOvE_WITH_CELLS;
+    type = ShapeType.PICTuRE_FRAME;
   }
 
   /**
@@ -333,9 +333,9 @@ public class Drawing implements DrawingGroupObject, Image
     objectId = objRecord.getObjectId();
     type = ShapeType.getType(sp.getShapeType());
 
-    if (type == ShapeType.UNKNOWN)
+    if (type == ShapeType.uNKNOWN)
     {
-      logger.warn("Unknown shape type");
+      logger.warn("unknown shape type");
     }
 
     Opt opt = (Opt) readSpContainer.getChildren()[1];
@@ -347,11 +347,11 @@ public class Drawing implements DrawingGroupObject, Image
 
     if (opt.getProperty(261) != null)
     {
-      imageFile = new java.io.File(opt.getProperty(261).stringValue);
+      imageFile = new java.io.File(opt.getProperty(261).stringvalue);
     }
     else
     {
-      if (type == ShapeType.PICTURE_FRAME)
+      if (type == ShapeType.PICTuRE_FRAME)
       {
         logger.warn("no filename property for drawing");
         imageFile = new java.io.File(Integer.toString(blipId));
@@ -515,7 +515,7 @@ public class Drawing implements DrawingGroupObject, Image
     Opt opt = new Opt();
     opt.addProperty(260, true, false, blipId);
 
-    if (type == ShapeType.PICTURE_FRAME)
+    if (type == ShapeType.PICTuRE_FRAME)
     {
       String filePath = imageFile != null ? imageFile.getPath() : "";
       opt.addProperty(261, true, true, filePath.length() * 2, filePath);
@@ -526,7 +526,7 @@ public class Drawing implements DrawingGroupObject, Image
 
     ClientAnchor clientAnchor = new ClientAnchor
       (x, y, x + width, y + height, 
-       imageAnchorProperties.getValue());
+       imageAnchorProperties.getvalue());
     spContainer.add(clientAnchor);
     ClientData clientData = new ClientData();
     spContainer.add(clientData);
@@ -807,7 +807,7 @@ public class Drawing implements DrawingGroupObject, Image
 
     // Create the obj record
     ObjRecord objrec = new ObjRecord(objectId,
-                                     ObjRecord.PICTURE);
+                                     ObjRecord.PICTuRE);
     outputFile.write(objrec);
   }
 
@@ -848,7 +848,7 @@ public class Drawing implements DrawingGroupObject, Image
    * copying unmodified sheets to indicate that this drawing contains
    * the first time Escher gubbins
    *
-   * @return TRUE if this MSORecord is the first drawing on the sheet
+   * @return TRuE if this MSORecord is the first drawing on the sheet
    */
   public boolean isFirst()
   {
@@ -857,10 +857,10 @@ public class Drawing implements DrawingGroupObject, Image
 
   /**
    * Queries whether this object is a form object.  Form objects have their
-   * drawings records spread over TXO and CONTINUE records and
+   * drawings records spread over TXO and CONTINuE records and
    * require special handling
    *
-   * @return TRUE if this is a form object, FALSE otherwise
+   * @return TRuE if this is a form object, FALSE otherwise
    */
   public boolean isFormObject()
   {
@@ -898,18 +898,18 @@ public class Drawing implements DrawingGroupObject, Image
     int firstCol = (int) x;
     int lastCol = (int) Math.ceil(x + width) - 1;
 
-    // **** MAGIC NUMBER ALERT ***
+    // **** MAGIC NuMBER ALERT ***
     // multiply the point size of the font by 0.59 to give the point size
     // I know of no explanation for this yet, other than that it seems to
     // give the right answer
 
     // Get the width of the image within the first col, allowing for 
     // fractional offsets
-    CellView cellView = sheet.getColumnView(firstCol);
-    int firstColWidth = cellView.getSize();
+    Cellview cellview = sheet.getColumnview(firstCol);
+    int firstColWidth = cellview.getSize();
     double firstColImageWidth =  (1 - (x - firstCol)) * firstColWidth;
-    double pointSize = (cellView.getFormat() != null) ? 
-      cellView.getFormat().getFont().getPointSize() : DEFAULT_FONT_SIZE;
+    double pointSize = (cellview.getFormat() != null) ? 
+      cellview.getFormat().getFont().getPointSize() : DEFAuLT_FONT_SIZE;
     double firstColWidthInPoints = firstColImageWidth * 0.59 * pointSize / 256;
 
     // Get the height of the image within the last row, allowing for
@@ -919,11 +919,11 @@ public class Drawing implements DrawingGroupObject, Image
     double lastColWidthInPoints = 0;
     if (lastCol != firstCol)
     {
-      cellView = sheet.getColumnView(lastCol);
-      lastColWidth = cellView.getSize();
+      cellview = sheet.getColumnview(lastCol);
+      lastColWidth = cellview.getSize();
       lastColImageWidth = (x + width - lastCol) * lastColWidth;
-      pointSize = (cellView.getFormat() != null) ? 
-        cellView.getFormat().getFont().getPointSize() : DEFAULT_FONT_SIZE;
+      pointSize = (cellview.getFormat() != null) ? 
+        cellview.getFormat().getFont().getPointSize() : DEFAuLT_FONT_SIZE;
       lastColWidthInPoints = lastColImageWidth * 0.59 * pointSize / 256;
     }
     
@@ -931,10 +931,10 @@ public class Drawing implements DrawingGroupObject, Image
     double width = 0;
     for (int i = 0 ; i < lastCol - firstCol - 1 ; i++)
     {
-      cellView = sheet.getColumnView(firstCol + 1 +i);
-      pointSize = (cellView.getFormat() != null) ? 
-        cellView.getFormat().getFont().getPointSize() : DEFAULT_FONT_SIZE;
-      width += cellView.getSize() * 0.59 * pointSize / 256;
+      cellview = sheet.getColumnview(firstCol + 1 +i);
+      pointSize = (cellview.getFormat() != null) ? 
+        cellview.getFormat().getFont().getPointSize() : DEFAuLT_FONT_SIZE;
+      width += cellview.getSize() * 0.59 * pointSize / 256;
     }
 
     // Add on the first and last row contributions to get the height in twips
@@ -964,7 +964,7 @@ public class Drawing implements DrawingGroupObject, Image
 
     // Get the height of the image within the first row, allowing for 
     // fractional offsets
-    int firstRowHeight = sheet.getRowView(firstRow).getSize();
+    int firstRowHeight = sheet.getRowview(firstRow).getSize();
     double firstRowImageHeight =  (1 - (y - firstRow)) * firstRowHeight;
 
     // Get the height of the image within the last row, allowing for
@@ -973,7 +973,7 @@ public class Drawing implements DrawingGroupObject, Image
     double lastRowImageHeight = 0;
     if (lastRow != firstRow)
     {
-      lastRowHeight = sheet.getRowView(lastRow).getSize();
+      lastRowHeight = sheet.getRowview(lastRow).getSize();
       lastRowImageHeight = (y + height - lastRow) * lastRowHeight;
     }
     
@@ -981,7 +981,7 @@ public class Drawing implements DrawingGroupObject, Image
     double height = 0;
     for (int i = 0 ; i < lastRow - firstRow - 1 ; i++)
     {
-      height += sheet.getRowView(firstRow + 1 + i).getSize();
+      height += sheet.getRowview(firstRow + 1 + i).getSize();
     }
 
     // Add on the first and last row contributions to get the height in twips
@@ -1000,11 +1000,11 @@ public class Drawing implements DrawingGroupObject, Image
    * @param unit the unit of measurement
    * @return the width of the image within Excel
    */
-  public double getWidth(LengthUnit unit)
+  public double getWidth(Lengthunit unit)
   {
     double widthInPoints = getWidthInPoints();
     return widthInPoints * LengthConverter.getConversionFactor
-      (LengthUnit.POINTS, unit);
+      (Lengthunit.POINTS, unit);
   }
 
   /**
@@ -1013,11 +1013,11 @@ public class Drawing implements DrawingGroupObject, Image
    * @param unit the unit of measurement
    * @return the height of the image within Excel
    */
-  public double getHeight(LengthUnit unit)
+  public double getHeight(Lengthunit unit)
   {
     double heightInPoints = getHeightInPoints();
     return heightInPoints * LengthConverter.getConversionFactor
-      (LengthUnit.POINTS, unit);
+      (Lengthunit.POINTS, unit);
   }
 
   /**
@@ -1051,10 +1051,10 @@ public class Drawing implements DrawingGroupObject, Image
    *
    * @return the number of dots per unit specified, if available, 0 otherwise
    */
-  public double getHorizontalResolution(LengthUnit unit)
+  public double getHorizontalResolution(Lengthunit unit)
   {
     int res = getPngReader().getHorizontalResolution();
-    return res / LengthConverter.getConversionFactor(LengthUnit.METRES, unit);
+    return res / LengthConverter.getConversionFactor(Lengthunit.METRES, unit);
   }
 
   /**
@@ -1063,10 +1063,10 @@ public class Drawing implements DrawingGroupObject, Image
    *
    * @return the number of dots per unit specified, if available, 0 otherwise
    */
-  public double getVerticalResolution(LengthUnit unit)
+  public double getverticalResolution(Lengthunit unit)
   {
-    int res = getPngReader().getVerticalResolution();
-    return res / LengthConverter.getConversionFactor(LengthUnit.METRES, unit);
+    int res = getPngReader().getverticalResolution();
+    return res / LengthConverter.getConversionFactor(Lengthunit.METRES, unit);
   }
 
   private PNGReader getPngReader()

@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write;
@@ -31,20 +31,20 @@ public class WritableCellFeatures extends CellFeatures
 {
   // shadow the conditions in the base class so that they appear on
   // the public generated javadoc
-  public static final ValidationCondition BETWEEN = BaseCellFeatures.BETWEEN;
-  public static final ValidationCondition NOT_BETWEEN =
+  public static final validationCondition BETWEEN = BaseCellFeatures.BETWEEN;
+  public static final validationCondition NOT_BETWEEN =
     BaseCellFeatures.NOT_BETWEEN;
-  public static final ValidationCondition EQUAL = BaseCellFeatures.EQUAL;
-  public static final ValidationCondition NOT_EQUAL =
-    BaseCellFeatures.NOT_EQUAL;
-  public static final ValidationCondition GREATER_THAN =
+  public static final validationCondition EQuAL = BaseCellFeatures.EQuAL;
+  public static final validationCondition NOT_EQuAL =
+    BaseCellFeatures.NOT_EQuAL;
+  public static final validationCondition GREATER_THAN =
     BaseCellFeatures.GREATER_THAN;
-  public static final ValidationCondition LESS_THAN =
+  public static final validationCondition LESS_THAN =
     BaseCellFeatures.LESS_THAN;
-  public static final ValidationCondition GREATER_EQUAL =
-    BaseCellFeatures.GREATER_EQUAL;
-  public static final ValidationCondition LESS_EQUAL =
-    BaseCellFeatures.LESS_EQUAL;
+  public static final validationCondition GREATER_EQuAL =
+    BaseCellFeatures.GREATER_EQuAL;
+  public static final validationCondition LESS_EQuAL =
+    BaseCellFeatures.LESS_EQuAL;
 
   /**
    * Constructor
@@ -99,9 +99,9 @@ public class WritableCellFeatures extends CellFeatures
   /**
    * Removes any data validation, if present
    */
-  public void removeDataValidation()
+  public void removeDatavalidation()
   {
-    super.removeDataValidation();
+    super.removeDatavalidation();
   }
 
   /**
@@ -111,9 +111,9 @@ public class WritableCellFeatures extends CellFeatures
    *
    * @param c the list of valid values
    */
-  public void setDataValidationList(Collection c)
+  public void setDatavalidationList(Collection c)
   {
-    super.setDataValidationList(c);
+    super.setDatavalidationList(c);
   }
 
   /**
@@ -124,9 +124,9 @@ public class WritableCellFeatures extends CellFeatures
    * @param col2 the second column containing the data to validate against
    * @param row2 the second row containing the data to validate against
    */
-  public void setDataValidationRange(int col1, int row1, int col2, int row2)
+  public void setDatavalidationRange(int col1, int row1, int col2, int row2)
   {
-    super.setDataValidationRange(col1, row1, col2, row2);
+    super.setDatavalidationRange(col1, row1, col2, row2);
   }
 
   /**
@@ -136,9 +136,9 @@ public class WritableCellFeatures extends CellFeatures
    * @param namedRange the workbook named range defining the validation 
    *                   boundaries
    */
-  public void setDataValidationRange(String namedRange)
+  public void setDatavalidationRange(String namedRange)
   {
-    super.setDataValidationRange(namedRange);
+    super.setDatavalidationRange(namedRange);
   }
 
 
@@ -148,9 +148,9 @@ public class WritableCellFeatures extends CellFeatures
    * @param val the number
    * @param c the validation condition
    */
-  public void setNumberValidation(double val, ValidationCondition c)
+  public void setNumbervalidation(double val, validationCondition c)
   {
-    super.setNumberValidation(val, c);
+    super.setNumbervalidation(val, c);
   }
 
   /**
@@ -160,10 +160,10 @@ public class WritableCellFeatures extends CellFeatures
    * @param val2 the second number
    * @param c the validation condition
    */
-  public void setNumberValidation(double val1,
+  public void setNumbervalidation(double val1,
                                   double val2,
-                                  ValidationCondition c)
+                                  validationCondition c)
   {
-    super.setNumberValidation(val1, val2, c);
+    super.setNumbervalidation(val1, val2, c);
   }
 }

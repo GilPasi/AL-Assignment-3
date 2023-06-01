@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -134,7 +134,7 @@ class TokenFormulaParser implements Parser
    */
   private void parseSubExpression(int len) throws FormulaException
   {
-    int tokenVal = 0;
+    int tokenval = 0;
     Token t = null;
     
     // Indicates that we are parsing the incredibly complicated and
@@ -146,18 +146,18 @@ class TokenFormulaParser implements Parser
 
     while (pos < endpos)
     {
-      tokenVal = tokenData[pos];
+      tokenval = tokenData[pos];
       pos++;
 
-      t = Token.getToken(tokenVal);
+      t = Token.getToken(tokenval);
 
-      if (t == Token.UNKNOWN)
+      if (t == Token.uNKNOWN)
       {
         throw new FormulaException
-          (FormulaException.UNRECOGNIZED_TOKEN, tokenVal);
+          (FormulaException.uNRECOGNIZED_TOKEN, tokenval);
       }
 
-      Assert.verify(t != Token.UNKNOWN);
+      Assert.verify(t != Token.uNKNOWN);
 
       // Operands
       if (t == Token.REF)
@@ -178,7 +178,7 @@ class TokenFormulaParser implements Parser
         pos += ec.read(tokenData, pos);
         tokenStack.push(ec);
       }
-      else if (t == Token.REFV)
+      else if (t == Token.REFv)
       {
         SharedFormulaCellReference cr = 
           new SharedFormulaCellReference(relativeTo);
@@ -197,7 +197,7 @@ class TokenFormulaParser implements Parser
         pos += a.read(tokenData, pos);
         tokenStack.push(a);
       }
-      else if (t == Token.AREAV)
+      else if (t == Token.AREAv)
       {
         SharedFormulaArea a = new SharedFormulaArea(relativeTo);
         pos += a.read(tokenData, pos);
@@ -225,25 +225,25 @@ class TokenFormulaParser implements Parser
       }
       else if (t == Token.INTEGER)
       {
-        IntegerValue i = new IntegerValue();
+        Integervalue i = new Integervalue();
         pos += i.read(tokenData, pos);
         tokenStack.push(i);
       }
-      else if (t == Token.DOUBLE)
+      else if (t == Token.DOuBLE)
       {
-        DoubleValue d = new DoubleValue();
+        Doublevalue d = new Doublevalue();
         pos += d.read(tokenData, pos);
         tokenStack.push(d);
       }
       else if (t == Token.BOOL)
       {
-        BooleanValue bv = new BooleanValue();
+        Booleanvalue bv = new Booleanvalue();
         pos += bv.read(tokenData, pos);
         tokenStack.push(bv);
       }
       else if (t == Token.STRING)
       {
-        StringValue sv = new StringValue(settings);
+        Stringvalue sv = new Stringvalue(settings);
         pos += sv.read(tokenData, pos);
         tokenStack.push(sv);
       }
@@ -254,16 +254,16 @@ class TokenFormulaParser implements Parser
         tokenStack.push(ma);
       }
 
-      // Unary Operators
-      else if (t == Token.UNARY_PLUS)
+      // unary Operators
+      else if (t == Token.uNARY_PLuS)
       {
-        UnaryPlus up = new UnaryPlus();
+        unaryPlus up = new unaryPlus();
         pos += up.read(tokenData, pos);
         addOperator(up);
       }
-      else if (t == Token.UNARY_MINUS)
+      else if (t == Token.uNARY_MINuS)
       {
-        UnaryMinus um = new UnaryMinus();
+        unaryMinus um = new unaryMinus();
         pos += um.read(tokenData, pos);
         addOperator(um);
       }
@@ -275,7 +275,7 @@ class TokenFormulaParser implements Parser
       }
 
       // Binary Operators
-      else if (t == Token.SUBTRACT)
+      else if (t == Token.SuBTRACT)
       {
         Subtract s = new Subtract();
         pos += s.read(tokenData, pos);
@@ -287,13 +287,13 @@ class TokenFormulaParser implements Parser
         pos += s.read(tokenData, pos);
         addOperator(s);
       }
-      else if (t == Token.MULTIPLY)
+      else if (t == Token.MuLTIPLY)
       {
         Multiply s = new Multiply();
         pos += s.read(tokenData, pos);
         addOperator(s);
       }
-      else if (t == Token.DIVIDE)
+      else if (t == Token.DIvIDE)
       {
         Divide s = new Divide();
         pos += s.read(tokenData, pos);
@@ -317,7 +317,7 @@ class TokenFormulaParser implements Parser
         pos += lt.read(tokenData, pos);
         addOperator(lt);
       }
-      else if (t == Token.LESS_EQUAL)
+      else if (t == Token.LESS_EQuAL)
       {
         LessEqual lte = new LessEqual();
         pos += lte.read(tokenData, pos);
@@ -329,19 +329,19 @@ class TokenFormulaParser implements Parser
         pos += gt.read(tokenData, pos);
         addOperator(gt);
       }
-      else if (t == Token.GREATER_EQUAL)
+      else if (t == Token.GREATER_EQuAL)
       {
         GreaterEqual gte = new GreaterEqual();
         pos += gte.read(tokenData, pos);
         addOperator(gte);
       }
-      else if (t == Token.NOT_EQUAL)
+      else if (t == Token.NOT_EQuAL)
       {
         NotEqual ne = new NotEqual();
         pos += ne.read(tokenData, pos);
         addOperator(ne);
       }
-      else if (t == Token.EQUAL)
+      else if (t == Token.EQuAL)
       {
         Equal e = new Equal();
         pos += e.read(tokenData, pos);
@@ -355,7 +355,7 @@ class TokenFormulaParser implements Parser
       }
 
       // Functions
-      else if (t == Token.ATTRIBUTE)
+      else if (t == Token.ATTRIBuTE)
       {
         Attribute a = new Attribute(settings);
         pos += a.read(tokenData, pos);
@@ -370,19 +370,19 @@ class TokenFormulaParser implements Parser
           ifStack.push(a);
         }
       }
-      else if (t == Token.FUNCTION)
+      else if (t == Token.FuNCTION)
       {
         BuiltInFunction bif = new BuiltInFunction(settings);
         pos += bif.read(tokenData, pos);
 
         addOperator(bif);
       }
-      else if (t == Token.FUNCTIONVARARG)
+      else if (t == Token.FuNCTIONvARARG)
       {
-        VariableArgFunction vaf = new VariableArgFunction(settings);
+        variableArgFunction vaf = new variableArgFunction(settings);
         pos += vaf.read(tokenData, pos);
 
-        if (vaf.getFunction() != Function.ATTRIBUTE)
+        if (vaf.getFunction() != Function.ATTRIBuTE)
         {
           addOperator(vaf);
         }
@@ -408,7 +408,7 @@ class TokenFormulaParser implements Parser
       }
 
       // Other things
-      else if (t == Token.MEM_FUNC)
+      else if (t == Token.MEM_FuNC)
       {
         MemFunc memFunc = new MemFunc();
         handleMemoryFunction(memFunc);
@@ -474,7 +474,7 @@ class TokenFormulaParser implements Parser
 
   /**
    * Adjusts all the relative cell references in this formula by the
-   * amount specified.  Used when copying formulas
+   * amount specified.  used when copying formulas
    *
    * @param colAdjust the amount to add on to each relative cell reference
    * @param rowAdjust the amount to add on to each relative row reference
@@ -502,7 +502,7 @@ class TokenFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnInserted(int sheetIndex, int col, boolean currentSheet)
@@ -516,7 +516,7 @@ class TokenFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void columnRemoved(int sheetIndex, int col, boolean currentSheet)
@@ -531,7 +531,7 @@ class TokenFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param row the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowInserted(int sheetIndex, int row, boolean currentSheet)
@@ -546,7 +546,7 @@ class TokenFormulaParser implements Parser
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param row the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   public void rowRemoved(int sheetIndex, int row, boolean currentSheet)
@@ -558,11 +558,11 @@ class TokenFormulaParser implements Parser
    * If this formula was on an imported sheet, check that
    * cell references to another sheet are warned appropriately
    *
-   * @return TRUE if the formula is valid import, FALSE otherwise
+   * @return TRuE if the formula is valid import, FALSE otherwise
    */
   public boolean handleImportedCellReferences()
   {
     root.handleImportedCellReferences();
-    return root.isValid();
+    return root.isvalid();
   }
 }

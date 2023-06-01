@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -28,7 +28,7 @@ import jxl.common.Assert;
 
 import jxl.Cell;
 import jxl.CellType;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.Hyperlink;
 import jxl.Image;
 import jxl.LabelCell;
@@ -41,7 +41,7 @@ import jxl.biff.AutoFilter;
 import jxl.biff.CellFinder;
 import jxl.biff.CellReferenceHelper;
 import jxl.biff.ConditionalFormat;
-import jxl.biff.DataValidation;
+import jxl.biff.Datavalidation;
 import jxl.biff.EmptyCell;
 import jxl.biff.FormattingRecords;
 import jxl.biff.Type;
@@ -166,7 +166,7 @@ public class SheetImpl implements Sheet
   /**
    * A list of data validations on this page
    */
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
 
   /**
    * A list of merged cells on this page
@@ -609,7 +609,7 @@ public class SheetImpl implements Sheet
    * column is specified, null is returned
    *
    * @param col the column
-   * @return the ColumnInfoRecord if specified, NULL otherwise
+   * @return the ColumnInfoRecord if specified, NuLL otherwise
    */
   public ColumnInfoRecord getColumnInfo(int col)
   {
@@ -726,7 +726,7 @@ public class SheetImpl implements Sheet
     autoFilter = reader.getAutoFilter();
     charts = reader.getCharts();
     drawings = reader.getDrawings();
-    dataValidation = reader.getDataValidation();
+    datavalidation = reader.getDatavalidation();
     mergedCells = reader.getMergedCells();
     settings = reader.getSettings();
     settings.setHidden(hidden);
@@ -832,7 +832,7 @@ public class SheetImpl implements Sheet
   }
 
   /**
-   * Gets the non-default rows.  Used when copying spreadsheets
+   * Gets the non-default rows.  used when copying spreadsheets
    *
    * @return an array of row properties
    */
@@ -848,17 +848,17 @@ public class SheetImpl implements Sheet
   }
 
   /**
-   * Gets the data validations.  Used when copying sheets
+   * Gets the data validations.  used when copying sheets
    *
    * @return the data validations
    */
-  public DataValidation getDataValidation()
+  public Datavalidation getDatavalidation()
   {
-    return dataValidation;
+    return datavalidation;
   }
 
   /**
-   * Gets the row record.  Usually called by the cell in the specified
+   * Gets the row record.  usually called by the cell in the specified
    * row in order to determine its size
    *
    * @param r the row
@@ -984,12 +984,12 @@ public class SheetImpl implements Sheet
    * Gets the column format for the specified column
    *
    * @param col the column number
-   * @return the column format, or NULL if the column has no specific format
-   * @deprecated use getColumnView instead
+   * @return the column format, or NuLL if the column has no specific format
+   * @deprecated use getColumnview instead
    */
   public CellFormat getColumnFormat(int col)
   {
-    CellView cv = getColumnView(col);
+    Cellview cv = getColumnview(col);
     return cv.getFormat();
   }
 
@@ -1002,7 +1002,7 @@ public class SheetImpl implements Sheet
    */
   public int getColumnWidth(int col)
   {
-    return getColumnView(col).getSize() / 256;
+    return getColumnview(col).getSize() / 256;
   }
 
   /**
@@ -1012,10 +1012,10 @@ public class SheetImpl implements Sheet
    * @return the column format, or the default format if no override is
              specified
    */
-  public CellView getColumnView(int col)
+  public Cellview getColumnview(int col)
   {
     ColumnInfoRecord cir = getColumnInfo(col);
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
 
     if (cir != null)
     {
@@ -1039,11 +1039,11 @@ public class SheetImpl implements Sheet
    * @param row the row number
    * @return the row height, or the default height if the row has no
    *         specified format
-   * @deprecated use getRowView instead
+   * @deprecated use getRowview instead
    */
   public int getRowHeight(int row)
   {
-    return getRowView(row).getDimension();
+    return getRowview(row).getDimension();
   }
 
   /**
@@ -1053,11 +1053,11 @@ public class SheetImpl implements Sheet
    * @return the row format, or the default format if no override is
              specified
    */
-  public CellView getRowView(int row)
+  public Cellview getRowview(int row)
   {
     RowRecord rr = getRowInfo(row);
 
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
 
     if (rr != null)
     {
@@ -1080,7 +1080,7 @@ public class SheetImpl implements Sheet
 
 
   /**
-   * Used when copying sheets in order to determine the type of this sheet
+   * used when copying sheets in order to determine the type of this sheet
    *
    * @return the BOF Record
    */
@@ -1090,7 +1090,7 @@ public class SheetImpl implements Sheet
   }
 
   /**
-   * Used when copying sheets in order to determine the type of the containing
+   * used when copying sheets in order to determine the type of the containing
    * workboook
    *
    * @return the workbook BOF Record
@@ -1175,7 +1175,7 @@ public class SheetImpl implements Sheet
   }
 
   /**
-   * Used by one of the demo programs for debugging purposes only
+   * used by one of the demo programs for debugging purposes only
    */
   public DrawingData getDrawingData()
   {
@@ -1231,7 +1231,7 @@ public class SheetImpl implements Sheet
   }
 
   /** 
-   * Accessor for the maximum column outline level.  Used during a copy
+   * Accessor for the maximum column outline level.  used during a copy
    *
    * @return the maximum column outline level, or 0 if no outlines/groups
    */
@@ -1241,7 +1241,7 @@ public class SheetImpl implements Sheet
   }
 
   /** 
-   * Accessor for the maximum row outline level.  Used during a copy
+   * Accessor for the maximum row outline level.  used during a copy
    *
    * @return the maximum row outline level, or 0 if no outlines/groups
    */

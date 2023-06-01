@@ -3,18 +3,18 @@
 *      Copyright (C) 2006 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -31,7 +31,7 @@ import jxl.common.Logger;
 import jxl.BooleanCell;
 import jxl.Cell;
 import jxl.CellType;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.DateCell;
 import jxl.HeaderFooter;
 import jxl.Hyperlink;
@@ -45,7 +45,7 @@ import jxl.WorkbookSettings;
 import jxl.biff.AutoFilter;
 import jxl.biff.CellReferenceHelper;
 import jxl.biff.ConditionalFormat;
-import jxl.biff.DataValidation;
+import jxl.biff.Datavalidation;
 import jxl.biff.FormattingRecords;
 import jxl.biff.FormulaData;
 import jxl.biff.IndexMapping;
@@ -103,7 +103,7 @@ class SheetCopier
   private ArrayList conditionalFormats;
   private ArrayList validatedCells;
   private AutoFilter autoFilter;
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
   private ComboBox comboBox;
   private PLSRecord plsRecord;
   private boolean chartOnly;
@@ -175,7 +175,7 @@ class SheetCopier
     conditionalFormats = cf;
   }
 
-  void setValidatedCells(ArrayList vc)
+  void setvalidatedCells(ArrayList vc)
   {
     validatedCells = vc;
   }
@@ -185,9 +185,9 @@ class SheetCopier
     return autoFilter;
   }
 
-  DataValidation getDataValidation()
+  Datavalidation getDatavalidation()
   {
-    return dataValidation;
+    return datavalidation;
   }
 
   ComboBox getComboBox()
@@ -324,7 +324,7 @@ class SheetCopier
         drawings.add(c);
         
         // Set up the reference on the cell value
-        CellValue cv = (CellValue) toSheet.getWritableCell(c.getColumn(), 
+        Cellvalue cv = (Cellvalue) toSheet.getWritableCell(c.getColumn(), 
                                                            c.getRow());
         Assert.verify(cv.getCellFeatures() != null);
         cv.getWritableCellFeatures().setCommentDrawing(c);
@@ -360,14 +360,14 @@ class SheetCopier
     }
 
     // Copy the data validations
-    DataValidation rdv = fromSheet.getDataValidation();
+    Datavalidation rdv = fromSheet.getDatavalidation();
     if (rdv != null)
     {
-      dataValidation = new DataValidation(rdv, 
+      datavalidation = new Datavalidation(rdv, 
                                           toSheet.getWorkbook(), 
                                           toSheet.getWorkbook(),
                                           workbookSettings);
-      int objid = dataValidation.getComboBoxObjectId();
+      int objid = datavalidation.getComboBoxObjectId();
 
       if (objid != 0)
       {
@@ -484,10 +484,10 @@ class SheetCopier
     columnBreaks = new ArrayList(fromWritableSheet.columnBreaks);
 
     // Copy the data validations
-    DataValidation rdv = fromWritableSheet.dataValidation;
+    Datavalidation rdv = fromWritableSheet.datavalidation;
     if (rdv != null)
     {
-      dataValidation = new DataValidation(rdv, 
+      datavalidation = new Datavalidation(rdv, 
                                           workbook,
                                           workbook, 
                                           workbookSettings);
@@ -555,7 +555,7 @@ class SheetCopier
 
         if (cf == null)
         {
-          CellFormat readFormat = fromSheet.getColumnView(j).getFormat();
+          CellFormat readFormat = fromSheet.getColumnview(j).getFormat();
           WritableCellFormat wcf = copyCellFormat(readFormat);
         }
 
@@ -600,7 +600,7 @@ class SheetCopier
           if (format == null)
           {
             int rownum = rowrec.getRowNumber();
-            CellFormat readFormat = fromSheet.getRowView(rownum).getFormat();
+            CellFormat readFormat = fromSheet.getRowview(rownum).getFormat();
             WritableCellFormat wcf = copyCellFormat(readFormat);
           }
         }
@@ -658,7 +658,7 @@ class SheetCopier
       {
         Integer key = (Integer) i.next();
         XFRecord xfmapping = (XFRecord) xfRecords.get(key);
-        xfMapping.setMapping(key.intValue(), xfmapping.getXFIndex());
+        xfMapping.setMapping(key.intvalue(), xfmapping.getXFIndex());
       }
 
       IndexMapping fontMapping = new IndexMapping(200);
@@ -666,7 +666,7 @@ class SheetCopier
       {
         Integer key = (Integer) i.next();
         Integer fontmap = (Integer) fonts.get(key);
-        fontMapping.setMapping(key.intValue(), fontmap.intValue());
+        fontMapping.setMapping(key.intvalue(), fontmap.intvalue());
       }
 
       IndexMapping formatMapping = new IndexMapping(200);
@@ -674,7 +674,7 @@ class SheetCopier
       {
         Integer key = (Integer) i.next();
         Integer formatmap = (Integer) formats.get(key);
-        formatMapping.setMapping(key.intValue(), formatmap.intValue());
+        formatMapping.setMapping(key.intvalue(), formatmap.intvalue());
       }
 
       // Now reuse the rationalization feature on each chart  to
@@ -718,7 +718,7 @@ class SheetCopier
         drawings.add(c);
         
         // Set up the reference on the cell value
-        CellValue cv = (CellValue) toSheet.getWritableCell(c.getColumn(), 
+        Cellvalue cv = (Cellvalue) toSheet.getWritableCell(c.getColumn(), 
                                                            c.getRow());
         Assert.verify(cv.getCellFeatures() != null);
         cv.getWritableCellFeatures().setCommentDrawing(c);
@@ -744,14 +744,14 @@ class SheetCopier
     }
 
     // Copy the data validations
-    DataValidation rdv = fromSheet.getDataValidation();
+    Datavalidation rdv = fromSheet.getDatavalidation();
     if (rdv != null)
     {
-      dataValidation = new DataValidation(rdv, 
+      datavalidation = new Datavalidation(rdv, 
                                           toSheet.getWorkbook(), 
                                           toSheet.getWorkbook(),
                                           workbookSettings);
-      int objid = dataValidation.getComboBoxObjectId();
+      int objid = datavalidation.getComboBoxObjectId();
       if (objid != 0)
       {
         comboBox = (ComboBox) drawings.get(objid);
@@ -807,7 +807,7 @@ class SheetCopier
     {
       newCell = new Label((LabelCell) cell);
     }
-    else if (ct == CellType.NUMBER)
+    else if (ct == CellType.NuMBER)
     {
       newCell = new Number((NumberCell) cell);
     }
@@ -819,23 +819,23 @@ class SheetCopier
     {
       newCell = new Boolean((BooleanCell) cell);
     }
-    else if (ct == CellType.NUMBER_FORMULA)
+    else if (ct == CellType.NuMBER_FORMuLA)
     {
       newCell = new ReadNumberFormulaRecord((FormulaData) cell);
     }
-    else if (ct == CellType.STRING_FORMULA)
+    else if (ct == CellType.STRING_FORMuLA)
     {
       newCell = new ReadStringFormulaRecord((FormulaData) cell);
     }
-    else if( ct == CellType.BOOLEAN_FORMULA)
+    else if( ct == CellType.BOOLEAN_FORMuLA)
     {
       newCell = new ReadBooleanFormulaRecord((FormulaData) cell);
     }
-    else if (ct == CellType.DATE_FORMULA)
+    else if (ct == CellType.DATE_FORMuLA)
     {
       newCell = new ReadDateFormulaRecord((FormulaData) cell);
     }
-    else if(ct == CellType.FORMULA_ERROR)
+    else if(ct == CellType.FORMuLA_ERROR)
     {
       newCell = new ReadErrorFormulaRecord((FormulaData) cell);
     }
@@ -947,7 +947,7 @@ class SheetCopier
             // Cell.setCellFeatures short circuits when the cell is copied,
             // so make sure the copy logic handles the validated cells        
             if (c.getCellFeatures() != null &&
-                c.getCellFeatures().hasDataValidation())
+                c.getCellFeatures().hasDatavalidation())
             {
               validatedCells.add(c);
             }
@@ -994,7 +994,7 @@ class SheetCopier
             // Cell.setCellFeatures short circuits when the cell is copied,
             // so make sure the copy logic handles the validated cells
             if (c.getCellFeatures() != null &
-                c.getCellFeatures().hasDataValidation())
+                c.getCellFeatures().hasDatavalidation())
             {
               validatedCells.add(c);
             }
@@ -1039,7 +1039,7 @@ class SheetCopier
     }
     catch (NumFormatRecordsException e)
     {
-      logger.warn("Maximum number of format records exceeded.  Using " +
+      logger.warn("Maximum number of format records exceeded.  using " +
                   "default format.");
 
       return WritableWorkbook.NORMAL_STYLE;

@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -61,7 +61,7 @@ class Opt extends EscherAtom
     boolean blipId;
     boolean complex;
     int value;
-    String stringValue;
+    String stringvalue;
 
     /**
      * Constructor
@@ -94,7 +94,7 @@ class Opt extends EscherAtom
       blipId = bl;
       complex = co;
       value = v;
-      stringValue = s;
+      stringvalue = s;
     }
   }
 
@@ -138,7 +138,7 @@ class Opt extends EscherAtom
       Property p = (Property) i.next();
       if (p.complex)
       {
-        p.stringValue = StringHelper.getUnicodeString(bytes, p.value / 2,
+        p.stringvalue = StringHelper.getunicodeString(bytes, p.value / 2,
                                                       pos);
         pos += p.value;
       }
@@ -152,7 +152,7 @@ class Opt extends EscherAtom
   {
     super(EscherRecordType.OPT);
     properties = new ArrayList();
-    setVersion(3);
+    setversion(3);
   }
 
   /**
@@ -194,12 +194,12 @@ class Opt extends EscherAtom
     {
       Property p = (Property) i.next();
 
-      if (p.complex && p.stringValue != null)
+      if (p.complex && p.stringvalue != null)
       {
         byte[] newData =
-          new byte[data.length + p.stringValue.length() * 2];
+          new byte[data.length + p.stringvalue.length() * 2];
         System.arraycopy(data, 0, newData, 0, data.length);
-        StringHelper.getUnicodeBytes(p.stringValue, newData, data.length);
+        StringHelper.getunicodeBytes(p.stringvalue, newData, data.length);
         data = newData;
       }
     }

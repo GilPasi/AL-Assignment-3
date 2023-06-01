@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -23,7 +23,7 @@ import jxl.common.Assert;
 import jxl.common.Logger;
 
 import jxl.WorkbookSettings;
-import jxl.biff.EncodedURLHelper;
+import jxl.biff.EncodeduRLHelper;
 import jxl.biff.IntegerHelper;
 import jxl.biff.StringHelper;
 import jxl.biff.Type;
@@ -79,14 +79,14 @@ class SupbookRecord extends WritableRecordData
   public final static SupbookType EXTERNAL = new SupbookType();
   public final static SupbookType ADDIN    = new SupbookType();
   public final static SupbookType LINK     = new SupbookType();
-  public final static SupbookType UNKNOWN  = new SupbookType();
+  public final static SupbookType uNKNOWN  = new SupbookType();
   
   /**
    * Constructor for add in function names
    */
   public SupbookRecord()
   {
-    super(Type.SUPBOOK);
+    super(Type.SuPBOOK);
     type = ADDIN;
   }
 
@@ -95,7 +95,7 @@ class SupbookRecord extends WritableRecordData
    */
   public SupbookRecord(int sheets, WorkbookSettings ws)
   {
-    super(Type.SUPBOOK);
+    super(Type.SuPBOOK);
 
     numSheets = sheets;
     type = INTERNAL;
@@ -110,7 +110,7 @@ class SupbookRecord extends WritableRecordData
    */
   public SupbookRecord(String fn, WorkbookSettings ws)
   {
-    super(Type.SUPBOOK);
+    super(Type.SuPBOOK);
 
     fileName = fn;
     numSheets = 1;
@@ -125,7 +125,7 @@ class SupbookRecord extends WritableRecordData
    */
   public SupbookRecord(jxl.read.biff.SupbookRecord sr, WorkbookSettings ws)
   {
-    super(Type.SUPBOOK);
+    super(Type.SuPBOOK);
 
     workbookSettings = ws;
     if (sr.getType() == sr.INTERNAL)
@@ -200,7 +200,7 @@ class SupbookRecord extends WritableRecordData
       totalSheetNameLength += sheetNames[i].length();
     }
 
-    byte[] fileNameData = EncodedURLHelper.getEncodedURL(fileName, 
+    byte[] fileNameData = EncodeduRLHelper.getEncodeduRL(fileName, 
                                                          workbookSettings);
     int dataLength = 2 + // numsheets
       4 + fileNameData.length +
@@ -225,7 +225,7 @@ class SupbookRecord extends WritableRecordData
     {
       IntegerHelper.getTwoBytes(sheetNames[i].length(), data, pos);
       data[pos+2] = 1; // unicode indicator
-      StringHelper.getUnicodeBytes(sheetNames[i], data, pos+3);
+      StringHelper.getunicodeBytes(sheetNames[i], data, pos+3);
       pos += 3 + sheetNames[i].length() * 2;
     }
   }

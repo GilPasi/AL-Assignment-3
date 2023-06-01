@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.format;
@@ -32,7 +32,7 @@ public final class ScriptStyle
   private int value;
 
   /**
-   * The display string for the script style.  Used when presenting the 
+   * The display string for the script style.  used when presenting the 
    * format information
    */
   private String string;
@@ -66,7 +66,7 @@ public final class ScriptStyle
    * 
    * @return the binary value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -91,7 +91,7 @@ public final class ScriptStyle
   {
     for (int i = 0 ; i < styles.length ; i++)
     {
-      if (styles[i].getValue() == val)
+      if (styles[i].getvalue() == val)
       {
         return styles[i];
       }
@@ -102,8 +102,8 @@ public final class ScriptStyle
 
   // The script styles
   public static final ScriptStyle NORMAL_SCRIPT = new ScriptStyle(0, "normal");
-  public static final ScriptStyle SUPERSCRIPT   = new ScriptStyle(1, "super");
-  public static final ScriptStyle SUBSCRIPT     = new ScriptStyle(2, "sub");
+  public static final ScriptStyle SuPERSCRIPT   = new ScriptStyle(1, "super");
+  public static final ScriptStyle SuBSCRIPT     = new ScriptStyle(2, "sub");
 
 
 }

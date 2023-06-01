@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -29,12 +29,12 @@ import jxl.biff.StringHelper;
 /**
  * A string constant operand in a formula
  */
-class StringValue extends Operand implements ParsedThing
+class Stringvalue extends Operand implements ParsedThing
 {
   /**
    * The logger
    */
-  private final static Logger logger = Logger.getLogger(StringValue.class);
+  private final static Logger logger = Logger.getLogger(Stringvalue.class);
 
   /**
    * The string value
@@ -49,7 +49,7 @@ class StringValue extends Operand implements ParsedThing
   /**
    * Constructor
    */
-  public StringValue(WorkbookSettings ws)
+  public Stringvalue(WorkbookSettings ws)
   {
     settings = ws;
   }
@@ -59,7 +59,7 @@ class StringValue extends Operand implements ParsedThing
    *
    * @param s the string token, including quote marks
    */
-  public StringValue(String s)
+  public Stringvalue(String s)
   {
     // remove the quotes
     value = s;
@@ -84,7 +84,7 @@ class StringValue extends Operand implements ParsedThing
     }
     else
     {
-      value = StringHelper.getUnicodeString(data, length, pos+2);
+      value = StringHelper.getunicodeString(data, length, pos+2);
       consumed += length * 2;
     }
 
@@ -102,7 +102,7 @@ class StringValue extends Operand implements ParsedThing
     data[0] = Token.STRING.getCode();
     data[1] = (byte) (value.length());
     data[2] = 0x01;
-    StringHelper.getUnicodeBytes(value, data, 3);
+    StringHelper.getunicodeBytes(value, data, 3);
 
     return data;
   }

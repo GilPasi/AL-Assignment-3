@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.format;
@@ -41,7 +41,7 @@ public interface CellFormat
   /**
    * Gets whether or not the contents of this cell are wrapped
    * 
-   * @return TRUE if this cell's contents are wrapped, FALSE otherwise
+   * @return TRuE if this cell's contents are wrapped, FALSE otherwise
    */
   public boolean getWrap();
 
@@ -57,7 +57,7 @@ public interface CellFormat
    *
    * @return the alignment
    */
-  public VerticalAlignment getVerticalAlignment();
+  public verticalAlignment getverticalAlignment();
 
   /**
    * Gets the orientation
@@ -99,10 +99,10 @@ public interface CellFormat
   public Colour getBorderColour(Border border);
 
   /**
-   * Determines if this cell format has any borders at all.  Used to
+   * Determines if this cell format has any borders at all.  used to
    * set the new borders when merging a group of cells
    *
-   * @return TRUE if this cell has any borders, FALSE otherwise
+   * @return TRuE if this cell has any borders, FALSE otherwise
    */
   public boolean hasBorders();
 
@@ -130,14 +130,14 @@ public interface CellFormat
   /**
    * Gets the shrink to fit flag
    *
-   * @return TRUE if this format is shrink to fit, FALSE otherise
+   * @return TRuE if this format is shrink to fit, FALSE otherise
    */
   public boolean isShrinkToFit();
 
   /**
    * Accessor for whether a particular cell is locked
    *
-   * @return TRUE if this cell is locked, FALSE otherwise
+   * @return TRuE if this cell is locked, FALSE otherwise
    */
   public boolean isLocked();
 }

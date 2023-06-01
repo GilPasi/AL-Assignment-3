@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -50,9 +50,9 @@ public final class CellReferenceHelper
    * Overloaded method which prepends $ for absolute reference
    *
    * @param column the column number
-   * @param colabs TRUE if the column reference is absolute
+   * @param colabs TRuE if the column reference is absolute
    * @param row the row number
-   * @param rowabs TRUE if the row reference is absolute
+   * @param rowabs TRuE if the row reference is absolute
    * @param buf the string buffer
    */
   public static void getCellReference(int column,
@@ -115,7 +115,7 @@ public final class CellReferenceHelper
    * Sees if the column component is relative or not
    *
    * @param s the cell
-   * @return TRUE if the column is relative, FALSE otherwise
+   * @return TRuE if the column is relative, FALSE otherwise
    */
   public static boolean isColumnRelative(String s)
   {
@@ -126,7 +126,7 @@ public final class CellReferenceHelper
    * Sees if the row component is relative or not
    *
    * @param s the cell
-   * @return TRUE if the row is relative, FALSE otherwise
+   * @return TRuE if the row is relative, FALSE otherwise
    */
   public static boolean isRowRelative(String s)
   {
@@ -177,9 +177,9 @@ public final class CellReferenceHelper
    *
    * @param sheet the sheet
    * @param column the column
-   * @param colabs TRUE if the column is an absolute reference
+   * @param colabs TRuE if the column is an absolute reference
    * @param row the row
-   * @param rowabs TRUE if the row is an absolute reference
+   * @param rowabs TRuE if the row is an absolute reference
    * @param workbook the workbook
    * @param buf the string buffer
    */

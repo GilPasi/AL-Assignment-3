@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -119,10 +119,10 @@ public final class CompoundFile extends BaseCompoundFile
 
     propertySets = new ArrayList();
     numBigBlockDepotBlocks = IntegerHelper.getInt
-      (data[NUM_BIG_BLOCK_DEPOT_BLOCKS_POS],
-       data[NUM_BIG_BLOCK_DEPOT_BLOCKS_POS + 1],
-       data[NUM_BIG_BLOCK_DEPOT_BLOCKS_POS + 2],
-       data[NUM_BIG_BLOCK_DEPOT_BLOCKS_POS + 3]);
+      (data[NuM_BIG_BLOCK_DEPOT_BLOCKS_POS],
+       data[NuM_BIG_BLOCK_DEPOT_BLOCKS_POS + 1],
+       data[NuM_BIG_BLOCK_DEPOT_BLOCKS_POS + 2],
+       data[NuM_BIG_BLOCK_DEPOT_BLOCKS_POS + 3]);
     sbdStartBlock = IntegerHelper.getInt
       (data[SMALL_BLOCK_DEPOT_BLOCK_POS],
        data[SMALL_BLOCK_DEPOT_BLOCK_POS + 1],
@@ -139,10 +139,10 @@ public final class CompoundFile extends BaseCompoundFile
        data[EXTENSION_BLOCK_POS + 2],
        data[EXTENSION_BLOCK_POS + 3]);
     numExtensionBlocks = IntegerHelper.getInt
-      (data[NUM_EXTENSION_BLOCK_POS],
-       data[NUM_EXTENSION_BLOCK_POS + 1],
-       data[NUM_EXTENSION_BLOCK_POS + 2],
-       data[NUM_EXTENSION_BLOCK_POS + 3]);
+      (data[NuM_EXTENSION_BLOCK_POS],
+       data[NuM_EXTENSION_BLOCK_POS + 1],
+       data[NuM_EXTENSION_BLOCK_POS + 2],
+       data[NuM_EXTENSION_BLOCK_POS + 3]);
 
     bigBlockDepotBlocks = new int[numBigBlockDepotBlocks];
 
@@ -338,7 +338,7 @@ public final class CompoundFile extends BaseCompoundFile
   }
 
   /**
-   * Gets the defragmented stream from this ole compound file.  Used when
+   * Gets the defragmented stream from this ole compound file.  used when
    * copying workbooks with macros
    *
    * @param psIndex the property storage index

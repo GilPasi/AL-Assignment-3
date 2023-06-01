@@ -3,18 +3,18 @@
 *      Copyright (C) 2005 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -84,7 +84,7 @@ public class FormulaErrorCode
   public static FormulaErrorCode getErrorCode(int code)
   {
     boolean found = false;
-    FormulaErrorCode ec = UNKNOWN;
+    FormulaErrorCode ec = uNKNOWN;
     for (int i = 0; i < codes.length && !found; i++)
     {
       if (codes[i].errorCode == code)
@@ -105,7 +105,7 @@ public class FormulaErrorCode
   public static FormulaErrorCode getErrorCode(String code)
   {
     boolean found = false;
-    FormulaErrorCode ec = UNKNOWN;
+    FormulaErrorCode ec = uNKNOWN;
     
     if (code == null || code.length() == 0)
     {
@@ -123,20 +123,20 @@ public class FormulaErrorCode
     return ec;
   }
 
-  public static final FormulaErrorCode UNKNOWN =
+  public static final FormulaErrorCode uNKNOWN =
     new FormulaErrorCode(0xff, "?");
-  public static final FormulaErrorCode NULL =
-    new FormulaErrorCode(0x0, "#NULL!");
-  public static final FormulaErrorCode DIV0 =
-    new FormulaErrorCode(0x7, "#DIV/0!");
-  public static final FormulaErrorCode VALUE =
-    new FormulaErrorCode(0xf, "#VALUE!");
+  public static final FormulaErrorCode NuLL =
+    new FormulaErrorCode(0x0, "#NuLL!");
+  public static final FormulaErrorCode DIv0 =
+    new FormulaErrorCode(0x7, "#DIv/0!");
+  public static final FormulaErrorCode vALuE =
+    new FormulaErrorCode(0xf, "#vALuE!");
   public static final FormulaErrorCode REF =
     new FormulaErrorCode(0x17, "#REF!");
   public static final FormulaErrorCode NAME =
     new FormulaErrorCode(0x1d, "#NAME?");
-  public static final FormulaErrorCode NUM = new FormulaErrorCode(0x24,
-                                                                  "#NUM!");
+  public static final FormulaErrorCode NuM = new FormulaErrorCode(0x24,
+                                                                  "#NuM!");
   public static final FormulaErrorCode NA = new FormulaErrorCode(0x2a,
                                                                  "#N/A!");
 }

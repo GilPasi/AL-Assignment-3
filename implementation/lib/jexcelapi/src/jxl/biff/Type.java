@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -73,7 +73,7 @@ public final class Type
   /**
    * Standard equals method
    * @param o the object to compare
-   * @return TRUE if the objects are equal, FALSE otherwise
+   * @return TRuE if the objects are equal, FALSE otherwise
    */
   public boolean equals(Object o)
   {
@@ -107,11 +107,11 @@ public final class Type
       }
     }
 
-    return UNKNOWN;
+    return uNKNOWN;
   }
 
   /**
-   * Used to create an arbitrary record type.  This method is only
+   * used to create an arbitrary record type.  This method is only
    * used during bespoke debugging process.  The creation of an
    * arbitrary type does not add it to the static list of known types
    */
@@ -128,10 +128,10 @@ public final class Type
   public static final Type EOF = new Type(0x0a);
   /**
    */
-  public static final Type BOUNDSHEET = new Type(0x85);
+  public static final Type BOuNDSHEET = new Type(0x85);
   /**
    */
-  public static final Type SUPBOOK = new Type(0x1ae);
+  public static final Type SuPBOOK = new Type(0x1ae);
   /**
    */
   public static final Type EXTERNSHEET = new Type(0x17);
@@ -143,7 +143,7 @@ public final class Type
   public static final Type BLANK = new Type(0x201);
   /**
    */
-  public static final Type MULBLANK = new Type(0xbe);
+  public static final Type MuLBLANK = new Type(0xbe);
   /**
    */
   public static final Type ROW = new Type(0x208);
@@ -161,7 +161,7 @@ public final class Type
   public static final Type RK2  = new Type(0x27e);
   /**
    */
-  public static final Type MULRK  = new Type(0xbd);
+  public static final Type MuLRK  = new Type(0xbd);
   /**
    */
   public static final Type INDEX = new Type(0x20b);
@@ -179,7 +179,7 @@ public final class Type
   public static final Type EXTSST = new Type(0xff);
   /**
    */
-  public static final Type CONTINUE = new Type(0x3c);
+  public static final Type CONTINuE = new Type(0x3c);
   /**
    */
   public static final Type LABEL = new Type(0x204);
@@ -191,7 +191,7 @@ public final class Type
   public static final Type LABELSST = new Type(0xfd);
   /**
    */
-  public static final Type NUMBER = new Type(0x203);
+  public static final Type NuMBER = new Type(0x203);
   /**
    */
   public static final Type NAME = new Type(0x18);
@@ -206,13 +206,13 @@ public final class Type
   public static final Type STRING = new Type(0x207);
   /**
    */
-  public static final Type FORMULA = new Type(0x406);
+  public static final Type FORMuLA = new Type(0x406);
   /**
    */
-  public static final Type FORMULA2 = new Type(0x6);
+  public static final Type FORMuLA2 = new Type(0x6);
   /**
    */
-  public static final Type SHAREDFORMULA = new Type(0x4bc);
+  public static final Type SHAREDFORMuLA = new Type(0x4bc);
   /**
    */
   public static final Type FORMAT = new Type(0x41e);
@@ -227,7 +227,7 @@ public final class Type
   public static final Type INTERFACEHDR = new Type(0xe1);
   /**
    */
-  public static final Type SAVERECALC = new Type(0x5f);
+  public static final Type SAvERECALC = new Type(0x5f);
   /**
    */
   public static final Type INTERFACEEND = new Type(0xe2);
@@ -242,7 +242,7 @@ public final class Type
   public static final Type DEFCOLWIDTH = new Type(0x55);
   /**
    */
-  public static final Type DEFAULTROWHEIGHT = new Type(0x225);
+  public static final Type DEFAuLTROWHEIGHT = new Type(0x225);
   /**
    */
   public static final Type WRITEACCESS = new Type(0x5c);
@@ -257,19 +257,19 @@ public final class Type
   public static final Type DSF = new Type(0x161);
   /**
    */
-  public static final Type FNGROUPCOUNT = new Type(0x9c);
+  public static final Type FNGROuPCOuNT = new Type(0x9c);
   /**
    */
   public static final Type FILTERMODE = new Type(0x9b);
   /**
    */
-  public static final Type AUTOFILTERINFO = new Type(0x9d);
+  public static final Type AuTOFILTERINFO = new Type(0x9d);
   /**
    */
-  public static final Type AUTOFILTER = new Type(0x9e);
+  public static final Type AuTOFILTER = new Type(0x9e);
   /**
    */
-  public static final Type COUNTRY = new Type(0x8c);
+  public static final Type COuNTRY = new Type(0x8c);
   /**
    */
   public static final Type PROTECT = new Type(0x12);
@@ -293,13 +293,13 @@ public final class Type
   public static final Type HCENTER = new Type(0x83);
   /**
    */
-  public static final Type VCENTER = new Type(0x84);
+  public static final Type vCENTER = new Type(0x84);
   /**
    */
   public static final Type FILEPASS = new Type(0x2f);
   /**
    */
-  public static final Type SETUP = new Type(0xa1);
+  public static final Type SETuP = new Type(0xa1);
   /**
    */
   public static final Type PRINTGRIDLINES = new Type(0x2b);
@@ -308,16 +308,16 @@ public final class Type
   public static final Type GRIDSET = new Type(0x82);
   /**
    */
-  public static final Type GUTS = new Type(0x80);
+  public static final Type GuTS = new Type(0x80);
   /**
    */
   public static final Type WINDOWPROTECT = new Type(0x19);
   /**
    */
-  public static final Type PROT4REV = new Type(0x1af);
+  public static final Type PROT4REv = new Type(0x1af);
   /**
    */
-  public static final Type PROT4REVPASS = new Type(0x1bc);
+  public static final Type PROT4REvPASS = new Type(0x1bc);
   /**
    */
   public static final Type PASSWORD = new Type(0x13);
@@ -332,13 +332,13 @@ public final class Type
   public static final Type WINDOW2 = new Type(0x23e);
   /**
    */
-  public static final Type BACKUP = new Type(0x40);
+  public static final Type BACKuP = new Type(0x40);
   /**
    */
   public static final Type HIDEOBJ = new Type(0x8d);
   /**
    */
-  public static final Type NINETEENFOUR = new Type(0x22);
+  public static final Type NINETEENFOuR = new Type(0x22);
   /**
    */
   public static final Type PRECISION = new Type(0xe);
@@ -356,7 +356,7 @@ public final class Type
   public static final Type CALCMODE = new Type(0x0d);
   /**
    */
-  public static final Type CALCCOUNT = new Type(0x0c);
+  public static final Type CALCCOuNT = new Type(0x0c);
   /**
    */
   public static final Type REFMODE = new Type(0x0f);
@@ -380,10 +380,10 @@ public final class Type
   public static final Type STYLE = new Type(0x293);
   /**
    */
-  public static final Type USESELFS = new Type(0x160);
+  public static final Type uSESELFS = new Type(0x160);
   /**
    */
-  public static final Type VERTICALPAGEBREAKS = new Type(0x1a);
+  public static final Type vERTICALPAGEBREAKS = new Type(0x1a);
   /**
    */
   public static final Type HORIZONTALPAGEBREAKS = new Type(0x1b);
@@ -401,7 +401,7 @@ public final class Type
   public static final Type MSODRAWING = new Type(0xec);
   /**
    */
-  public static final Type MSODRAWINGGROUP = new Type(0xeb);
+  public static final Type MSODRAWINGGROuP = new Type(0xeb);
   /**
    */
   public static final Type LEFTMARGIN = new Type(0x26);
@@ -443,13 +443,13 @@ public final class Type
   public static final Type CF = new Type(0x1b1);
   /**
    */
-  public static final Type DV = new Type(0x1be);
+  public static final Type Dv = new Type(0x1be);
   /**
    */
-  public static final Type DVAL = new Type(0x1b2);
+  public static final Type DvAL = new Type(0x1b2);
   /**
    */
-  public static final Type BUTTONPROPERTYSET = new Type(0x1ba);
+  public static final Type BuTTONPROPERTYSET = new Type(0x1ba);
   /**
    *
    */
@@ -467,7 +467,7 @@ public final class Type
   public static final Type FBI = new Type(0x1060);
   /**
    */
-  public static final Type ALRUNS = new Type(0x1050);
+  public static final Type ALRuNS = new Type(0x1050);
   /**
    */
   public static final Type SERIES = new Type(0x1003);
@@ -479,16 +479,16 @@ public final class Type
   public static final Type SBASEREF = new Type(0x1048);
   /**
    */
-  public static final Type UNKNOWN = new Type(0xffff);
+  public static final Type uNKNOWN = new Type(0xffff);
 
   // Pivot stuff
   /**
    */
   // public static final Type R = new Type(0xffff);
 
-  // Unknown types
-  public static final Type U1C0 = new Type(0x1c0);
-  public static final Type U1C1 = new Type(0x1c1);
+  // unknown types
+  public static final Type u1C0 = new Type(0x1c0);
+  public static final Type u1C1 = new Type(0x1c1);
 
 }
 

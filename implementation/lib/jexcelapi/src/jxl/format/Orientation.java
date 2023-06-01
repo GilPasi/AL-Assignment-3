@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.format;
@@ -59,7 +59,7 @@ public final class Orientation
    * 
    * @return the internal binary value
    */
-  public int getValue()
+  public int getvalue()
   {
     return value;
   }
@@ -82,7 +82,7 @@ public final class Orientation
   {
     for (int i = 0 ; i < orientations.length ; i++)
     {
-      if (orientations[i].getValue() == val)
+      if (orientations[i].getvalue() == val)
       {
         return orientations[i];
       }
@@ -100,27 +100,27 @@ public final class Orientation
    * Cells with this specified orientation have their data
    * presented vertically
    */
-  public static Orientation VERTICAL  = new Orientation(0xff, "vertical");
+  public static Orientation vERTICAL  = new Orientation(0xff, "vertical");
   /**
    * Cells with this specified orientation will have their data
    * presented with a rotation of 90 degrees upwards
    */
-  public static Orientation PLUS_90  = new Orientation(90, "up 90");  
+  public static Orientation PLuS_90  = new Orientation(90, "up 90");  
   /**
    * Cells with this specified orientation will have their data
    * presented with a rotation of 90 degrees downwards
    */
-  public static Orientation MINUS_90  = new Orientation(180, "down 90");  
+  public static Orientation MINuS_90  = new Orientation(180, "down 90");  
   /**
    * Cells with this specified orientation will have their data
    * presented with a rotation 45 degrees upwards
    */
-  public static Orientation PLUS_45 = new Orientation(45, "up 45");
+  public static Orientation PLuS_45 = new Orientation(45, "up 45");
   /**
    * Cells with this specified orientation will have their data
    * presented with a rotation 45 degrees downwards
    */
-  public static Orientation MINUS_45 = new Orientation(135, "down 45");
+  public static Orientation MINuS_45 = new Orientation(135, "down 45");
   /**
    * Cells with this specified orientation will have their text stacked
    * downwards, but not rotated

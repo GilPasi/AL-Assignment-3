@@ -3,26 +3,26 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.demo;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.MalformeduRLException;
+import java.net.uRL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,7 +31,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import jxl.CellReferenceHelper;
-import jxl.CellView;
+import jxl.Cellview;
 import jxl.HeaderFooter;
 import jxl.Range;
 import jxl.Workbook;
@@ -45,7 +45,7 @@ import jxl.format.PageOrder;
 import jxl.format.PageOrientation;
 import jxl.format.PaperSize;
 import jxl.format.ScriptStyle;
-import jxl.format.UnderlineStyle;
+import jxl.format.underlineStyle;
 import jxl.write.Blank;
 import jxl.write.Boolean;
 import jxl.write.DateFormat;
@@ -94,7 +94,7 @@ public class Write
   }
 
   /**
-   * Uses the JExcelAPI to create a spreadsheet
+   * uses the JExcelAPI to create a spreadsheet
    * 
    * @exception IOException
    * @exception WriteException
@@ -150,10 +150,10 @@ public class Write
       (WritableWorkbook.ARIAL_10_PT);
     wrappedText.setWrap(true);
 
-    s.setColumnView(0,20);
-    s.setColumnView(4,20);
-    s.setColumnView(5,20);
-    s.setColumnView(6,20);
+    s.setColumnview(0,20);
+    s.setColumnview(4,20);
+    s.setColumnview(5,20);
+    s.setColumnview(6,20);
 
     // Floats
     Label l = new Label(0,0,"+/- Pi - default format", wrappedText);
@@ -240,7 +240,7 @@ public class Write
     l = new Label(4,2,"+/- Thousands separator");
     s.addCell(l);
     WritableCellFormat cfi2 = new WritableCellFormat
-      (NumberFormats.THOUSANDS_INTEGER);
+      (NumberFormats.THOuSANDS_INTEGER);
     n = new Number(5, 2, 15042699,cfi2 );
     s.addCell(n);
     n = new Number(6, 2, -15042699, cfi2);
@@ -249,7 +249,7 @@ public class Write
     l = new Label(4,3,"+/- Accounting red - added 0.01");
     s.addCell(l);
     WritableCellFormat cfi3 = new WritableCellFormat
-      (NumberFormats.ACCOUNTING_RED_FLOAT);
+      (NumberFormats.ACCOuNTING_RED_FLOAT);
     n = new Number(5, 3, 15042699.01, cfi3);
     s.addCell(n);
     n = new Number(6, 3, -15042699.01, cfi3);
@@ -309,7 +309,7 @@ public class Write
     
 
     // Booleans
-    l = new Label(0,10, "Boolean - TRUE");
+    l = new Label(0,10, "Boolean - TRuE");
     s.addCell(l);
     Boolean b = new Boolean(1,10, true);
     s.addCell(b);
@@ -328,10 +328,10 @@ public class Write
     l = new Label(4, 19, "Currency formats");
     s.addCell(l);
 
-    l = new Label(4, 21, "UK Pound");
+    l = new Label(4, 21, "uK Pound");
     s.addCell(l);
     NumberFormat poundCurrency = 
-      new NumberFormat(NumberFormat.CURRENCY_POUND + " #,###.00", 
+      new NumberFormat(NumberFormat.CuRRENCY_POuND + " #,###.00", 
                        NumberFormat.COMPLEX_FORMAT);
     WritableCellFormat poundFormat = new WritableCellFormat(poundCurrency);
     n = new Number(5, 21, 12345, poundFormat);
@@ -340,7 +340,7 @@ public class Write
     l = new Label(4, 22, "Euro 1");
     s.addCell(l);
     NumberFormat euroPrefixCurrency = 
-      new NumberFormat(NumberFormat.CURRENCY_EURO_PREFIX + " #,###.00", 
+      new NumberFormat(NumberFormat.CuRRENCY_EuRO_PREFIX + " #,###.00", 
                        NumberFormat.COMPLEX_FORMAT);
     WritableCellFormat euroPrefixFormat = 
       new WritableCellFormat(euroPrefixCurrency);
@@ -350,7 +350,7 @@ public class Write
     l = new Label(4, 23, "Euro 2");
     s.addCell(l);
     NumberFormat euroSuffixCurrency = 
-      new NumberFormat("#,###.00" + NumberFormat.CURRENCY_EURO_SUFFIX, 
+      new NumberFormat("#,###.00" + NumberFormat.CuRRENCY_EuRO_SuFFIX, 
                        NumberFormat.COMPLEX_FORMAT);
     WritableCellFormat euroSuffixFormat = 
       new WritableCellFormat(euroSuffixCurrency);
@@ -360,7 +360,7 @@ public class Write
     l = new Label(4, 24, "Dollar");
     s.addCell(l);
     NumberFormat dollarCurrency = 
-      new NumberFormat(NumberFormat.CURRENCY_DOLLAR + " #,###.00", 
+      new NumberFormat(NumberFormat.CuRRENCY_DOLLAR + " #,###.00", 
                        NumberFormat.COMPLEX_FORMAT);
     WritableCellFormat dollarFormat = 
       new WritableCellFormat(dollarCurrency);
@@ -370,7 +370,7 @@ public class Write
     l = new Label(4, 25, "Japanese Yen");
     s.addCell(l);
     NumberFormat japaneseYenCurrency = 
-      new NumberFormat(NumberFormat.CURRENCY_JAPANESE_YEN + " #,###.00", 
+      new NumberFormat(NumberFormat.CuRRENCY_JAPANESE_YEN + " #,###.00", 
                        NumberFormat.COMPLEX_FORMAT);
     WritableCellFormat japaneseYenFormat = 
       new WritableCellFormat(japaneseYenCurrency);
@@ -450,10 +450,10 @@ public class Write
       (WritableWorkbook.ARIAL_10_PT);
     wrappedText.setWrap(true);
 
-    s.setColumnView(0, 20);
-    s.setColumnView(2, 20);
-    s.setColumnView(3, 20);
-    s.setColumnView(4, 20);
+    s.setColumnview(0, 20);
+    s.setColumnview(2, 20);
+    s.setColumnview(3, 20);
+    s.setColumnview(4, 20);
 
     s.getSettings().setFitWidth(2);
     s.getSettings().setFitHeight(2);
@@ -704,7 +704,7 @@ public class Write
     s.addCell(dt);
 
     // Check out the zero date ie. 1 Jan 1970
-    l = new Label(0,19,"Zero UTC date " + sdf.format(date3),
+    l = new Label(0,19,"Zero uTC date " + sdf.format(date3),
                   wrappedText);
     s.addCell(l);
 
@@ -739,7 +739,7 @@ public class Write
    */
   private void writeLabelFormatSheet(WritableSheet s1) throws WriteException
   {
-    s1.setColumnView(0, 60);
+    s1.setColumnview(0, 60);
 
     Label lr = new Label(0,0, "Arial Fonts");
     s1.addCell(lr);
@@ -821,79 +821,79 @@ public class Write
     s1.addCell(lr);
 
     // The underline styles
-    s1.setColumnView(6, 22);
-    s1.setColumnView(7, 22);
-    s1.setColumnView(8, 22);
-    s1.setColumnView(9, 22);
+    s1.setColumnview(6, 22);
+    s1.setColumnview(7, 22);
+    s1.setColumnview(8, 22);
+    s1.setColumnview(9, 22);
 
-    lr = new Label(0, 11, "Underlining");
+    lr = new Label(0, 11, "underlining");
     s1.addCell(lr);
 
-    WritableFont arial10ptUnderline = new WritableFont
+    WritableFont arial10ptunderline = new WritableFont
       (WritableFont.ARIAL, 
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.SINGLE);
-    WritableCellFormat arialUnderline = new WritableCellFormat
-      (arial10ptUnderline);
-    lr = new Label(6,11, "Underline", arialUnderline);
+       underlineStyle.SINGLE);
+    WritableCellFormat arialunderline = new WritableCellFormat
+      (arial10ptunderline);
+    lr = new Label(6,11, "underline", arialunderline);
     s1.addCell(lr);
 
-    WritableFont arial10ptDoubleUnderline = new WritableFont
+    WritableFont arial10ptDoubleunderline = new WritableFont
       (WritableFont.ARIAL, 
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.DOUBLE);
-    WritableCellFormat arialDoubleUnderline = new WritableCellFormat
-      (arial10ptDoubleUnderline);
-    lr = new Label(7,11, "Double Underline", arialDoubleUnderline);
+       underlineStyle.DOuBLE);
+    WritableCellFormat arialDoubleunderline = new WritableCellFormat
+      (arial10ptDoubleunderline);
+    lr = new Label(7,11, "Double underline", arialDoubleunderline);
     s1.addCell(lr);
 
     WritableFont arial10ptSingleAcc = new WritableFont
       (WritableFont.ARIAL, 
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.SINGLE_ACCOUNTING);
+       underlineStyle.SINGLE_ACCOuNTING);
     WritableCellFormat arialSingleAcc = new WritableCellFormat
       (arial10ptSingleAcc);
-    lr = new Label(8,11, "Single Accounting Underline", arialSingleAcc);
+    lr = new Label(8,11, "Single Accounting underline", arialSingleAcc);
     s1.addCell(lr);
 
     WritableFont arial10ptDoubleAcc = new WritableFont
       (WritableFont.ARIAL, 
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.DOUBLE_ACCOUNTING);
+       underlineStyle.DOuBLE_ACCOuNTING);
     WritableCellFormat arialDoubleAcc = new WritableCellFormat
       (arial10ptDoubleAcc);
-    lr = new Label(9,11, "Double Accounting Underline", arialDoubleAcc);
+    lr = new Label(9,11, "Double Accounting underline", arialDoubleAcc);
     s1.addCell(lr);
 
-    WritableFont times14ptBoldUnderline = new WritableFont
+    WritableFont times14ptBoldunderline = new WritableFont
       (WritableFont.TIMES,
        14,
        WritableFont.BOLD,
        false,
-       UnderlineStyle.SINGLE);
-    WritableCellFormat timesBoldUnderline = new WritableCellFormat
-      (times14ptBoldUnderline);
-    lr = new Label(6,12, "Times 14 Bold Underline", timesBoldUnderline);
+       underlineStyle.SINGLE);
+    WritableCellFormat timesBoldunderline = new WritableCellFormat
+      (times14ptBoldunderline);
+    lr = new Label(6,12, "Times 14 Bold underline", timesBoldunderline);
     s1.addCell(lr);
 
-    WritableFont arial18ptBoldItalicUnderline = new WritableFont
+    WritableFont arial18ptBoldItalicunderline = new WritableFont
       (WritableFont.ARIAL,
        18,
        WritableFont.BOLD,
        true,
-       UnderlineStyle.SINGLE);
-    WritableCellFormat arialBoldItalicUnderline = new WritableCellFormat
-      (arial18ptBoldItalicUnderline);
-    lr = new Label(6,13, "Arial 18 Bold Italic Underline", 
-                   arialBoldItalicUnderline);
+       underlineStyle.SINGLE);
+    WritableCellFormat arialBoldItalicunderline = new WritableCellFormat
+      (arial18ptBoldItalicunderline);
+    lr = new Label(6,13, "Arial 18 Bold Italic underline", 
+                   arialBoldItalicunderline);
     s1.addCell(lr);
 
     lr = new Label(0, 15, "Script styles");
@@ -901,12 +901,12 @@ public class Write
 
     WritableFont superscript = new WritableFont
       (WritableFont.ARIAL,
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.NO_UNDERLINE,
+       underlineStyle.NO_uNDERLINE,
        Colour.BLACK,
-       ScriptStyle.SUPERSCRIPT);
+       ScriptStyle.SuPERSCRIPT);
     WritableCellFormat superscriptFormat = new WritableCellFormat
       (superscript);
     lr = new Label(1,15, "superscript", superscriptFormat);
@@ -914,12 +914,12 @@ public class Write
 
     WritableFont subscript = new WritableFont
       (WritableFont.ARIAL,
-       WritableFont.DEFAULT_POINT_SIZE,
+       WritableFont.DEFAuLT_POINT_SIZE,
        WritableFont.NO_BOLD,
        false,
-       UnderlineStyle.NO_UNDERLINE,
+       underlineStyle.NO_uNDERLINE,
        Colour.BLACK,
-       ScriptStyle.SUBSCRIPT);
+       ScriptStyle.SuBSCRIPT);
     WritableCellFormat subscriptFormat = new WritableCellFormat
       (subscript);
     lr = new Label(2,15, "subscript", subscriptFormat);
@@ -929,21 +929,21 @@ public class Write
     s1.addCell(lr);
 
     WritableFont red = new WritableFont(WritableFont.ARIAL, 
-                                        WritableFont.DEFAULT_POINT_SIZE,
+                                        WritableFont.DEFAuLT_POINT_SIZE,
                                         WritableFont.NO_BOLD,
                                         false,
-                                        UnderlineStyle.NO_UNDERLINE,
+                                        underlineStyle.NO_uNDERLINE,
                                         Colour.RED);
     WritableCellFormat redFormat = new WritableCellFormat(red);
     lr = new Label(2, 17, "Red", redFormat);
     s1.addCell(lr);
 
     WritableFont blue = new WritableFont(WritableFont.ARIAL, 
-                                         WritableFont.DEFAULT_POINT_SIZE,
+                                         WritableFont.DEFAuLT_POINT_SIZE,
                                          WritableFont.NO_BOLD,
                                          false,
-                                         UnderlineStyle.NO_UNDERLINE,
-                                         Colour.BLUE);
+                                         underlineStyle.NO_uNDERLINE,
+                                         Colour.BLuE);
     WritableCellFormat blueFormat = new WritableCellFormat(blue);
     lr = new Label(2, 18, "Blue", blueFormat);
     s1.addCell(lr);
@@ -962,14 +962,14 @@ public class Write
     s1.addCell(lr);
 
     WritableFont yellow = new WritableFont(WritableFont.ARIAL, 
-                                           WritableFont.DEFAULT_POINT_SIZE,
+                                           WritableFont.DEFAuLT_POINT_SIZE,
                                            WritableFont.NO_BOLD,
                                            false,
-                                           UnderlineStyle.NO_UNDERLINE,
+                                           underlineStyle.NO_uNDERLINE,
                                            Colour.YELLOW);
     WritableCellFormat yellowOnBlue = new WritableCellFormat(yellow);
     yellowOnBlue.setWrap(true);
-    yellowOnBlue.setBackground(Colour.BLUE);
+    yellowOnBlue.setBackground(Colour.BLuE);
     lr = new Label(2, 20, "Blue background, yellow foreground", yellowOnBlue);
     s1.addCell(lr);
 
@@ -1022,29 +1022,29 @@ public class Write
     s1.addCell(lr);
 
     WritableCellFormat vertical = new WritableCellFormat();
-    vertical.setOrientation(Orientation.VERTICAL);
-    lr = new Label(0, 26, "Vertical orientation", vertical);
+    vertical.setOrientation(Orientation.vERTICAL);
+    lr = new Label(0, 26, "vertical orientation", vertical);
     s1.addCell(lr);
     
 
     WritableCellFormat plus_90 = new WritableCellFormat();
-    plus_90.setOrientation(Orientation.PLUS_90);
+    plus_90.setOrientation(Orientation.PLuS_90);
     lr = new Label(1, 26, "Plus 90", plus_90);
     s1.addCell(lr);
 
 
     WritableCellFormat minus_90 = new WritableCellFormat();
-    minus_90.setOrientation(Orientation.MINUS_90);
+    minus_90.setOrientation(Orientation.MINuS_90);
     lr = new Label(2, 26, "Minus 90", minus_90);
     s1.addCell(lr);
 
     lr = new Label(0, 28, "Modified row height");
     s1.addCell(lr);
-    s1.setRowView(28, 24*20);
+    s1.setRowview(28, 24*20);
 
     lr = new Label(0, 29, "Collapsed row");
     s1.addCell(lr);
-    s1.setRowView(29, true);
+    s1.setRowview(29, true);
 
     // Write hyperlinks
     try
@@ -1052,7 +1052,7 @@ public class Write
       Label l = new Label(0, 30, "Hyperlink to home page");
       s1.addCell(l);
       
-      URL url = new URL("http://www.andykhan.com/jexcelapi");
+      uRL url = new uRL("http://www.andykhan.com/jexcelapi");
       WritableHyperlink wh = new WritableHyperlink(0, 30, 8, 31, url);
       s1.addHyperlink(wh);
 
@@ -1080,18 +1080,18 @@ public class Write
       s1.addHyperlink(wh);
 
       // Add a very long hyperlink
-      url = new URL("http://www.amazon.co.uk/exec/obidos/ASIN/0571058086"+
+      url = new uRL("http://www.amazon.co.uk/exec/obidos/ASIN/0571058086"+
                    "/qid=1099836249/sr=1-3/ref=sr_1_11_3/202-6017285-1620664");
       wh = new WritableHyperlink(0, 38, 0, 38, url);
       s1.addHyperlink(wh);
     }
-    catch (MalformedURLException e)
+    catch (MalformeduRLException e)
     {
       System.err.println(e.toString());
     }
 
     // Write out some merged cells
-    Label l = new Label(5, 35, "Merged cells", timesBoldUnderline);
+    Label l = new Label(5, 35, "Merged cells", timesBoldunderline);
     s1.mergeCells(5, 35, 8, 37);
     s1.addCell(l);
 
@@ -1131,7 +1131,7 @@ public class Write
     s1.mergeCells(6, 18, 10, 19);
     */
     
-    WritableFont courier10ptFont = new WritableFont(WritableFont.COURIER, 10);
+    WritableFont courier10ptFont = new WritableFont(WritableFont.COuRIER, 10);
     WritableCellFormat courier10pt = new WritableCellFormat(courier10ptFont);
     l = new Label(0, 49, "Courier fonts", courier10pt);
     s1.addCell(l);
@@ -1190,7 +1190,7 @@ public class Write
     al.add("clangers");
     al.add("ivor the engine");
     al.add("noggin the nog");
-    cellFeatures.setDataValidationList(al);
+    cellFeatures.setDatavalidationList(al);
     b.setCellFeatures(cellFeatures);
     s1.addCell(b);
 
@@ -1199,7 +1199,7 @@ public class Write
     
     b = new Blank(1,64);
     cellFeatures = new WritableCellFeatures();
-    cellFeatures.setNumberValidation(4.5, WritableCellFeatures.GREATER_THAN);
+    cellFeatures.setNumbervalidation(4.5, WritableCellFeatures.GREATER_THAN);
     b.setCellFeatures(cellFeatures);
     s1.addCell(b);
 
@@ -1221,7 +1221,7 @@ public class Write
 
     b = new Blank(1,65);
     cellFeatures = new WritableCellFeatures();
-    cellFeatures.setDataValidationRange("validation_range");
+    cellFeatures.setDatavalidationRange("validation_range");
     b.setCellFeatures(cellFeatures);
     s1.addCell(b);
 
@@ -1242,13 +1242,13 @@ public class Write
 
     b = new Blank(1, 66);
     cellFeatures = new WritableCellFeatures();
-    cellFeatures.setDataValidationList(al);
+    cellFeatures.setDatavalidationList(al);
     b.setCellFeatures(cellFeatures);
     s1.addCell(b);
-    s1.applySharedDataValidation(b, 4,4);
+    s1.applySharedDatavalidation(b, 4,4);
 
     cellFeatures = new WritableCellFeatures();
-    cellFeatures.setDataValidationRange("");
+    cellFeatures.setDatavalidationRange("");
     l = new Label(0, 71, "Read only cell using empty data validation");
     l.setCellFeatures(cellFeatures);
     s1.addCell(l);
@@ -1268,9 +1268,9 @@ public class Write
   {
     s.getSettings().setProtected(true);
 
-    s.setColumnView(1, 15);
-    s.setColumnView(2, 15);
-    s.setColumnView(4, 15);
+    s.setColumnview(1, 15);
+    s.setColumnview(2, 15);
+    s.setColumnview(4, 15);
     WritableCellFormat thickLeft = new WritableCellFormat();
     thickLeft.setBorder(Border.LEFT, BorderLineStyle.THICK); 
     Label lr = new Label(1,0, "Thick left", thickLeft);
@@ -1282,7 +1282,7 @@ public class Write
     s.addCell(lr);
 
     WritableCellFormat doubleTop = new WritableCellFormat();
-    doubleTop.setBorder(Border.TOP, BorderLineStyle.DOUBLE);
+    doubleTop.setBorder(Border.TOP, BorderLineStyle.DOuBLE);
     lr = new Label(1, 2, "Double top", doubleTop);
     s.addCell(lr);
 
@@ -1341,7 +1341,7 @@ public class Write
 
     lr = new Label(3, 8, "Hidden row");
     s.addCell(lr);
-    s.setRowView(8, true);
+    s.setRowview(8, true);
 
     WritableCellFormat allThickRed = new WritableCellFormat();
     allThickRed.setBorder(Border.ALL, BorderLineStyle.THICK, Colour.RED);
@@ -1349,8 +1349,8 @@ public class Write
     s.addCell(lr);
 
     WritableCellFormat topBottomBlue = new WritableCellFormat();
-    topBottomBlue.setBorder(Border.TOP, BorderLineStyle.THIN, Colour.BLUE);
-    topBottomBlue.setBorder(Border.BOTTOM, BorderLineStyle.THIN, Colour.BLUE);
+    topBottomBlue.setBorder(Border.TOP, BorderLineStyle.THIN, Colour.BLuE);
+    topBottomBlue.setBorder(Border.BOTTOM, BorderLineStyle.THIN, Colour.BLuE);
     lr = new Label(4, 5, "Top and bottom blue", topBottomBlue);
     s.addCell(lr);
   }
@@ -1362,7 +1362,7 @@ public class Write
   {
     ws.getSettings().setProtected(true);
     ws.getSettings().setPassword("jxl");
-    ws.getSettings().setVerticalFreeze(5);
+    ws.getSettings().setverticalFreeze(5);
     ws.getSettings().setDefaultRowHeight(25*20);
 
     WritableFont wf = new WritableFont(WritableFont.ARIAL, 12);
@@ -1370,11 +1370,11 @@ public class Write
 
     WritableCellFormat wcf = new WritableCellFormat(wf);
 
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(25 * 256);
     cv.setFormat(wcf);
-    ws.setColumnView(0, cv);
-    ws.setColumnView(1, 15);
+    ws.setColumnview(0, cv);
+    ws.setColumnview(1, 15);
 
     for (int i =  0; i < 61; i++)
     {
@@ -1417,9 +1417,9 @@ public class Write
                    "in a different font");
     ws.addCell(l6);
 
-    CellView cf = new CellView();
+    Cellview cf = new Cellview();
     cf.setAutosize(true);
-    ws.setColumnView(5, cf);
+    ws.setColumnview(5, cf);
   }
 
   /**
@@ -1440,14 +1440,14 @@ public class Write
     nc = new Number(0,3, 12);
     ws.addCell(nc);
 
-    ws.setColumnView(2, 20);
+    ws.setColumnview(2, 20);
     WritableCellFormat wcf = new WritableCellFormat();
     wcf.setAlignment(Alignment.RIGHT);
     wcf.setWrap(true);
-    CellView cv = new CellView();
+    Cellview cv = new Cellview();
     cv.setSize(25 * 256);
     cv.setFormat(wcf);
-    ws.setColumnView(3, cv);
+    ws.setColumnview(3, cv);
 
     // Add in the formulas
     Formula f = null;
@@ -1483,19 +1483,19 @@ public class Write
     l = new Label(3,5, "15+((a1+a2)/2.5)*17");
     ws.addCell(l);
 
-    f = new Formula(2, 6, "SUM(a1:a4)");
+    f = new Formula(2, 6, "SuM(a1:a4)");
     ws.addCell(f);
-    l = new Label(3, 6, "SUM(a1:a4)");
+    l = new Label(3, 6, "SuM(a1:a4)");
     ws.addCell(l);
 
-    f = new Formula(2, 7, "SUM(a1:a4)/4");
+    f = new Formula(2, 7, "SuM(a1:a4)/4");
     ws.addCell(f);
-    l = new Label(3, 7, "SUM(a1:a4)/4");
+    l = new Label(3, 7, "SuM(a1:a4)/4");
     ws.addCell(l);
 
-    f = new Formula(2, 8, "AVERAGE(A1:A4)");
+    f = new Formula(2, 8, "AvERAGE(A1:A4)");
     ws.addCell(f);
-    l = new Label(3, 8, "AVERAGE(a1:a4)");
+    l = new Label(3, 8, "AvERAGE(a1:a4)");
     ws.addCell(l);
 
     f = new Formula(2, 9, "MIN(5,4,1,2,3)");
@@ -1503,14 +1503,14 @@ public class Write
     l = new Label(3, 9, "MIN(5,4,1,2,3)");
     ws.addCell(l);
 
-    f = new Formula(2, 10, "ROUND(3.14159265, 3)");
+    f = new Formula(2, 10, "ROuND(3.14159265, 3)");
     ws.addCell(f);
-    l = new Label(3, 10, "ROUND(3.14159265, 3)");
+    l = new Label(3, 10, "ROuND(3.14159265, 3)");
     ws.addCell(l);
 
-    f = new Formula(2, 11, "MAX(SUM(A1:A2), A1*A2, POWER(A1, 2))");
+    f = new Formula(2, 11, "MAX(SuM(A1:A2), A1*A2, POWER(A1, 2))");
     ws.addCell(f);
-    l = new Label(3, 11, "MAX(SUM(A1:A2), A1*A2, POWER(A1, 2))");
+    l = new Label(3, 11, "MAX(SuM(A1:A2), A1*A2, POWER(A1, 2))");
     ws.addCell(l);
 
     f = new Formula(2,12, "IF(A2>A1, \"A2 bigger\", \"A1 bigger\")");
@@ -1528,9 +1528,9 @@ public class Write
     l = new Label(3,14, "IF(A3<=10, \"<= 10\")");
     ws.addCell(l);
 
-    f = new Formula(2, 15, "SUM(1,2,3,4,5)");
+    f = new Formula(2, 15, "SuM(1,2,3,4,5)");
     ws.addCell(f);
-    l = new Label(3, 15, "SUM(1,2,3,4,5)");
+    l = new Label(3, 15, "SuM(1,2,3,4,5)");
     ws.addCell(l);
 
     f = new Formula(2, 16, "HYPERLINK(\"http://www.andykhan.com/jexcelapi\", \"JExcelApi Home Page\")");
@@ -1548,9 +1548,9 @@ public class Write
     l = new Label(3, 18, "Plain text formula");
     ws.addCell(l);
 
-    f = new Formula(2, 19, "SUM(a1,a2,-a3,a4)");
+    f = new Formula(2, 19, "SuM(a1,a2,-a3,a4)");
     ws.addCell(f);
-    l = new Label(3, 19, "SUM(a1,a2,-a3,a4)");
+    l = new Label(3, 19, "SuM(a1,a2,-a3,a4)");
     ws.addCell(l);
 
     f = new Formula(2, 20, "2*-(a1+a2)");
@@ -1584,7 +1584,7 @@ public class Write
     l = new Label(3, 24, buf.toString());
     ws.addCell(l);
 
-    wcf = new WritableCellFormat(DateFormats.DEFAULT);
+    wcf = new WritableCellFormat(DateFormats.DEFAuLT);
     f = new Formula(2, 25, "NOW()", wcf);
     ws.addCell(f);
     l = new Label(3, 25, "NOW()");
@@ -1595,26 +1595,26 @@ public class Write
     l = new Label(3, 26, "$A$2+A3");
     ws.addCell(l);
 
-    f = new Formula(2, 27, "IF(COUNT(A1:A9,B1:B9)=0,\"\",COUNT(A1:A9,B1:B9))");
+    f = new Formula(2, 27, "IF(COuNT(A1:A9,B1:B9)=0,\"\",COuNT(A1:A9,B1:B9))");
     ws.addCell(f);
-    l = new Label(3, 27, "IF(COUNT(A1:A9,B1:B9)=0,\"\",COUNT(A1:A9,B1:B9))");
+    l = new Label(3, 27, "IF(COuNT(A1:A9,B1:B9)=0,\"\",COuNT(A1:A9,B1:B9))");
     ws.addCell(l);
 
-    f = new Formula(2, 28, "SUM(A1,A2,A3,A4)");
+    f = new Formula(2, 28, "SuM(A1,A2,A3,A4)");
     ws.addCell(f);
-    l = new Label(3, 28, "SUM(A1,A2,A3,A4)");
+    l = new Label(3, 28, "SuM(A1,A2,A3,A4)");
     ws.addCell(l);
 
     l = new Label(1, 29, "a1");
     ws.addCell(l);
-    f = new Formula(2, 29, "SUM(INDIRECT(ADDRESS(2,29)):A4)");
+    f = new Formula(2, 29, "SuM(INDIRECT(ADDRESS(2,29)):A4)");
     ws.addCell(f);
-    l = new Label(3, 29, "SUM(INDIRECT(ADDRESS(2,29):A4)");
+    l = new Label(3, 29, "SuM(INDIRECT(ADDRESS(2,29):A4)");
     ws.addCell(l);
 
-    f = new Formula(2, 30, "COUNTIF(A1:A4, \">=12\")");
+    f = new Formula(2, 30, "COuNTIF(A1:A4, \">=12\")");
     ws.addCell(f);
-    l = new Label(3, 30, "COUNTIF(A1:A4, \">=12\")");
+    l = new Label(3, 30, "COuNTIF(A1:A4, \">=12\")");
     ws.addCell(l);
 
     f = new Formula(2, 31, "MAX($A$1:$A$4)");
@@ -1622,9 +1622,9 @@ public class Write
     l = new Label(3, 31, "MAX($A$1:$A$4)");
     ws.addCell(l);
 
-    f = new Formula(2, 32, "OR(A1,TRUE)");
+    f = new Formula(2, 32, "OR(A1,TRuE)");
     ws.addCell(f);
-    l = new Label(3, 32, "OR(A1,TRUE)");
+    l = new Label(3, 32, "OR(A1,TRuE)");
     ws.addCell(l);
 
     f = new Formula(2, 33, "ROWS(A1:C14)");
@@ -1632,9 +1632,9 @@ public class Write
     l = new Label(3, 33, "ROWS(A1:C14)");
     ws.addCell(l);
 
-    f = new Formula(2, 34, "COUNTBLANK(A1:C14)");
+    f = new Formula(2, 34, "COuNTBLANK(A1:C14)");
     ws.addCell(f);
-    l = new Label(3, 34, "COUNTBLANK(A1:C14)");
+    l = new Label(3, 34, "COuNTBLANK(A1:C14)");
     ws.addCell(l);
 
     f = new Formula(2, 35, "IF(((F1=\"Not Found\")*(F2=\"Not Found\")*(F3=\"\")*(F4=\"\")*(F5=\"\")),1,0)");
@@ -1700,13 +1700,13 @@ public class Write
     f = new Formula(2, 25, "PLOP(15)"); // unknown function
     ws.addCell(f);
 
-    f = new Formula(2, 26, "SUM(15,3"); // unmatched parentheses
+    f = new Formula(2, 26, "SuM(15,3"); // unmatched parentheses
     ws.addCell(f);
 
-    f = new Formula(2, 27, "SUM15,3)"); // missing opening parentheses
+    f = new Formula(2, 27, "Suv5,3)"); // missing opening parentheses
     ws.addCell(f);
 
-    f = new Formula(2, 28, "ROUND(3.14159)"); // missing args
+    f = new Formula(2, 28, "ROuND(3.14159)"); // missing args
     ws.addCell(f);
 
     f = new Formula(2, 29, "NONSHEET!A1"); // sheet not found

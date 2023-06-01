@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -35,9 +35,9 @@ import jxl.SheetSettings;
 import jxl.WorkbookSettings;
 import jxl.biff.AutoFilter;
 import jxl.biff.ConditionalFormat;
-import jxl.biff.DataValidation;
-import jxl.biff.DataValiditySettingsRecord;
-import jxl.biff.DVParser;
+import jxl.biff.Datavalidation;
+import jxl.biff.DatavaliditySettingsRecord;
+import jxl.biff.DvParser;
 import jxl.biff.WorkspaceInformationRecord;
 import jxl.biff.XFRecord;
 import jxl.biff.drawing.Chart;
@@ -128,7 +128,7 @@ final class SheetWriter
   /**
    * The data validation validations
    */
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
 
   /**
    * The list of merged ranges
@@ -282,7 +282,7 @@ final class SheetWriter
     DefaultRowHeightRecord drhr = new DefaultRowHeightRecord
      (settings.getDefaultRowHeight(), 
       settings.getDefaultRowHeight() != 
-                SheetSettings.DEFAULT_DEFAULT_ROW_HEIGHT);
+                SheetSettings.DEFAuLT_DEFAuLT_ROW_HEIGHT);
     outputFile.write(drhr);
 
     if (maxRowOutlineLevel > 0)
@@ -304,7 +304,7 @@ final class SheetWriter
 
       for (int i = 0; i < rb.length; i++)
       {
-        rb[i] = ( (Integer) rowBreaks.get(i)).intValue();
+        rb[i] = ( (Integer) rowBreaks.get(i)).intvalue();
       }
 
       HorizontalPageBreaksRecord hpbr = new HorizontalPageBreaksRecord(rb);
@@ -317,10 +317,10 @@ final class SheetWriter
 
       for (int i = 0; i < rb.length; i++)
       {
-        rb[i] = ( (Integer) columnBreaks.get(i)).intValue();
+        rb[i] = ( (Integer) columnBreaks.get(i)).intvalue();
       }
 
-      VerticalPageBreaksRecord hpbr = new VerticalPageBreaksRecord(rb);
+      verticalPageBreaksRecord hpbr = new verticalPageBreaksRecord(rb);
       outputFile.write(hpbr);
     }
 
@@ -334,8 +334,8 @@ final class SheetWriter
       (settings.isHorizontalCentre());
     outputFile.write(hcr);
 
-    VerticalCentreRecord vcr = new VerticalCentreRecord
-      (settings.isVerticalCentre());
+    verticalCentreRecord vcr = new verticalCentreRecord
+      (settings.isverticalCentre());
     outputFile.write(vcr);
 
     // Write out the margins if they don't equal the default
@@ -501,10 +501,10 @@ final class SheetWriter
 
     // Handle the frozen panes
     if (settings.getHorizontalFreeze() != 0 ||
-        settings.getVerticalFreeze() != 0)
+        settings.getverticalFreeze() != 0)
     {
       PaneRecord pr = new PaneRecord(settings.getHorizontalFreeze(),
-                                     settings.getVerticalFreeze());
+                                     settings.getverticalFreeze());
       outputFile.write(pr);
 
       // Handle the selection record.  First, there will always be a top left
@@ -521,21 +521,21 @@ final class SheetWriter
       }
 
       // Bottom left
-      if (settings.getVerticalFreeze() != 0)
+      if (settings.getverticalFreeze() != 0)
       {
         sr = new SelectionRecord
-          (SelectionRecord.lowerLeft, 0, settings.getVerticalFreeze());
+          (SelectionRecord.lowerLeft, 0, settings.getverticalFreeze());
         outputFile.write(sr);
       }
 
       // Bottom right
       if (settings.getHorizontalFreeze() != 0 &&
-          settings.getVerticalFreeze() != 0)
+          settings.getverticalFreeze() != 0)
       {
         sr = new SelectionRecord
           (SelectionRecord.lowerRight, 
            settings.getHorizontalFreeze(), 
-           settings.getVerticalFreeze());
+           settings.getverticalFreeze());
         outputFile.write(sr);
       }
 
@@ -576,9 +576,9 @@ final class SheetWriter
     }
 
     // Write out the data validations
-    if (dataValidation != null || validatedCells.size() > 0)
+    if (datavalidation != null || validatedCells.size() > 0)
     {
-      writeDataValidation();
+      writeDatavalidation();
     }
 
     // Write out the conditional formats
@@ -1074,9 +1074,9 @@ final class SheetWriter
    * @param dv the read-in list of data validations
    * @param vc the api manipulated set of data validations
    */
-  void setDataValidation(DataValidation dv, ArrayList vc)
+  void setDatavalidation(Datavalidation dv, ArrayList vc)
   {
-    dataValidation = dv;
+    datavalidation = dv;
     validatedCells = vc;
   }
 
@@ -1103,24 +1103,24 @@ final class SheetWriter
   /**
    * Writes out the data validations
    */
-  private void writeDataValidation() throws IOException
+  private void writeDatavalidation() throws IOException
   {
-    if (dataValidation != null && validatedCells.size() == 0)
+    if (datavalidation != null && validatedCells.size() == 0)
     {
       // the only data validations are those read in - this should
       // never be the case now that shared data validations add
       // to the validatedCells list
-      dataValidation.write(outputFile); 
+      datavalidation.write(outputFile); 
       return;
     }
 
-    if (dataValidation == null && validatedCells.size() > 0)
+    if (datavalidation == null && validatedCells.size() > 0)
     {
       // the only data validations are those which have been added by the
       // write API.  Need to sort out the combo box id
       int comboBoxId = sheet.getComboBox() != null ? 
-        sheet.getComboBox().getObjectId() : DataValidation.DEFAULT_OBJECT_ID;
-      dataValidation = new DataValidation(comboBoxId,
+        sheet.getComboBox().getObjectId() : Datavalidation.DEFAuLT_OBJECT_ID;
+      datavalidation = new Datavalidation(comboBoxId,
                                           sheet.getWorkbook(),
                                           sheet.getWorkbook(),
                                           workbookSettings);
@@ -1128,49 +1128,49 @@ final class SheetWriter
 
     for (Iterator i = validatedCells.iterator(); i.hasNext(); )
     {
-      CellValue cv = (CellValue) i.next();
+      Cellvalue cv = (Cellvalue) i.next();
       CellFeatures cf = cv.getCellFeatures();
 
-      // Do not do anything if the DVParser has been copied, as it
-      // will already by on the DataValidation record as a result
+      // Do not do anything if the DvParser has been copied, as it
+      // will already by on the Datavalidation record as a result
       // of the SheetCopier process
-      if (!cf.getDVParser().copied())
+      if (!cf.getDvParser().copied())
       {
-        if (!cf.getDVParser().extendedCellsValidation())
+        if (!cf.getDvParser().extendedCellsvalidation())
         {
-          // DVParser is specific for a single cell validation - just add it
-          DataValiditySettingsRecord dvsr = 
-            new DataValiditySettingsRecord(cf.getDVParser());
-          dataValidation.add(dvsr);
+          // DvParser is specific for a single cell validation - just add it
+          DatavaliditySettingsRecord dvsr = 
+            new DatavaliditySettingsRecord(cf.getDvParser());
+          datavalidation.add(dvsr);
         }
         else
         {
-          // Only add the DVParser once for shared validations
+          // Only add the DvParser once for shared validations
           // only add it if it is the top left cell 
-          if (cv.getColumn() == cf.getDVParser().getFirstColumn() &&
-              cv.getRow()    == cf.getDVParser().getFirstRow())
+          if (cv.getColumn() == cf.getDvParser().getFirstColumn() &&
+              cv.getRow()    == cf.getDvParser().getFirstRow())
           {
-            DataValiditySettingsRecord dvsr = 
-              new DataValiditySettingsRecord(cf.getDVParser());
-            dataValidation.add(dvsr);
+            DatavaliditySettingsRecord dvsr = 
+              new DatavaliditySettingsRecord(cf.getDvParser());
+            datavalidation.add(dvsr);
           }
         }
       }
     }
-    dataValidation.write(outputFile);
+    datavalidation.write(outputFile);
   }
   /*
 
     // There is a mixture of read and write validations
     for (Iterator i = validatedCells.iterator(); i.hasNext(); )
     {
-    CellValue cv = (CellValue) i.next();
+    Cellvalue cv = (Cellvalue) i.next();
     CellFeatures cf = cv.getCellFeatures();
-    DataValiditySettingsRecord dvsr = 
-    new DataValiditySettingsRecord(cf.getDVParser());
-    dataValidation.add(dvsr);
+    DatavaliditySettingsRecord dvsr = 
+    new DatavaliditySettingsRecord(cf.getDvParser());
+    datavalidation.add(dvsr);
     }
-    dataValidation.write(outputFile);
+    datavalidation.write(outputFile);
     return;
     }
     */

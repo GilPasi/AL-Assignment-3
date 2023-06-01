@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -188,7 +188,7 @@ public class FormattingRecords
    * then checks against the hash map of FormatRecords
    *
    * @param pos the xf format index
-   * @return TRUE if this format index is formatted as a Date
+   * @return TRuE if this format index is formatted as a Date
    */
   public final boolean isDate(int pos)
   {
@@ -327,7 +327,7 @@ public class FormattingRecords
   }
 
   /**
-   * Gets the XFRecord for the specified index.  Used when copying individual
+   * Gets the XFRecord for the specified index.  used when copying individual
    * cells
    *
    * @param index the XF record to retrieve
@@ -372,7 +372,7 @@ public class FormattingRecords
   public IndexMapping rationalize(IndexMapping fontMapping,
                                   IndexMapping formatMapping)
   {
-    // Update the index codes for the XF records using the format
+    // update the index codes for the XF records using the format
     // mapping and the font mapping
     // at the same time
     XFRecord xfr = null;
@@ -435,7 +435,7 @@ public class FormattingRecords
     }
 
     // It is sufficient to merely change the xf index field on all XFRecords
-    // In this case, CellValues which refer to defunct format records
+    // In this case, Cellvalues which refer to defunct format records
     // will nevertheless be written out with the correct index number
     for (Iterator i = xfRecords.iterator(); i.hasNext();)
     {
@@ -507,7 +507,7 @@ public class FormattingRecords
     // Set the new list
     formatsList = newformats;
 
-    // Update the index codes for the remaining formats
+    // update the index codes for the remaining formats
     i = formatsList.iterator();
 
     while (i.hasNext())

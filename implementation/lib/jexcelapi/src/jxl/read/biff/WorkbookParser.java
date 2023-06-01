@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -124,7 +124,7 @@ public class WorkbookParser extends Workbook
   private ArrayList addInFunctions;
 
   /**
-   * The external sheet record.  Used by formulas, and names
+   * The external sheet record.  used by formulas, and names
    */
   private ExternalSheetRecord externSheet;
 
@@ -201,9 +201,9 @@ public class WorkbookParser extends Workbook
 
  /**
    * Gets the sheets within this workbook.
-   * NOTE:  Use of this method for
+   * NOTE:  use of this method for
    * very large worksheets can cause performance and out of memory problems.
-   * Use the alternative method getSheet() to retrieve each sheet individually
+   * use the alternative method getSheet() to retrieve each sheet individually
    *
    * @return an array of the individual sheets
    */
@@ -438,8 +438,8 @@ public class WorkbookParser extends Workbook
     }
 
     // An unknown supbook - return unkown
-    logger.warn("Unknown Supbook 3");
-    return "[UNKNOWN]";
+    logger.warn("unknown Supbook 3");
+    return "[uNKNOWN]";
   }
 
   /**
@@ -493,8 +493,8 @@ public class WorkbookParser extends Workbook
     }
 
     // An unknown supbook - return unkown
-    logger.warn("Unknown Supbook 4");
-    return "[UNKNOWN]";
+    logger.warn("unknown Supbook 4");
+    return "[uNKNOWN]";
   }
 
   /**
@@ -551,7 +551,7 @@ public class WorkbookParser extends Workbook
 
     if (!bof.isBiff8() && !bof.isBiff7())
     {
-      throw new BiffException(BiffException.unrecognizedBiffVersion);
+      throw new BiffException(BiffException.unrecognizedBiffversion);
     }
 
     if (!bof.isWorkbookGlobals())
@@ -572,7 +572,7 @@ public class WorkbookParser extends Workbook
       {
         continueRecords.clear();
         Record nextrec = excelFile.peek();
-        while (nextrec.getType() == Type.CONTINUE)
+        while (nextrec.getType() == Type.CONTINuE)
         {
           continueRecords.add(excelFile.next());
           nextrec = excelFile.peek();
@@ -635,7 +635,7 @@ public class WorkbookParser extends Workbook
         PaletteRecord palette = new PaletteRecord(r);
         formattingRecords.setPalette(palette);
       }
-      else if (r.getType() == Type.NINETEENFOUR)
+      else if (r.getType() == Type.NINETEENFOuR)
       {
         NineteenFourRecord nr = new NineteenFourRecord(r);
         nineteenFour = nr.is1904();
@@ -683,7 +683,7 @@ public class WorkbookParser extends Workbook
           Assert.verify(false, e.getMessage());
         }
       }
-      else if (r.getType() == Type.BOUNDSHEET)
+      else if (r.getType() == Type.BOuNDSHEET)
       {
         BoundsheetRecord br = null;
 
@@ -727,10 +727,10 @@ public class WorkbookParser extends Workbook
         CodepageRecord cr = new CodepageRecord(r);
         settings.setCharacterSet(cr.getCharacterSet());
       }
-      else if (r.getType() == Type.SUPBOOK)
+      else if (r.getType() == Type.SuPBOOK)
       {
         Record nextrec = excelFile.peek();
-        while (nextrec.getType() == Type.CONTINUE)
+        while (nextrec.getType() == Type.CONTINuE)
         {
           r.addContinueRecord(excelFile.next());
           nextrec = excelFile.peek();
@@ -757,11 +757,11 @@ public class WorkbookParser extends Workbook
       {
         containsMacros = true;
       }
-      else if (r.getType() == Type.COUNTRY)
+      else if (r.getType() == Type.COuNTRY)
       {
         countryRecord = new CountryRecord(r);
       }
-      else if (r.getType() == Type.MSODRAWINGGROUP)
+      else if (r.getType() == Type.MSODRAWINGGROuP)
       {
         if (!settings.getDrawingsDisabled())
         {
@@ -775,14 +775,14 @@ public class WorkbookParser extends Workbook
           drawingGroup.add(msoDrawingGroup);
 
           Record nextrec = excelFile.peek();
-          while (nextrec.getType() == Type.CONTINUE)
+          while (nextrec.getType() == Type.CONTINuE)
           {
             drawingGroup.add(excelFile.next());
             nextrec = excelFile.peek();
           }
         }
       }
-      else if (r.getType() == Type.BUTTONPROPERTYSET)
+      else if (r.getType() == Type.BuTTONPROPERTYSET)
       {
         buttonPropertySet = new ButtonPropertySetRecord(r);
       }
@@ -823,7 +823,7 @@ public class WorkbookParser extends Workbook
       }
       else
       {
-        // logger.info("Unsupported record type: " +
+        // logger.info("unsupported record type: " +
         //            Integer.toHexString(r.getCode())+"h");
       }
     }
@@ -844,7 +844,7 @@ public class WorkbookParser extends Workbook
     {
       if (!bof.isBiff8() && !bof.isBiff7())
       {
-        throw new BiffException(BiffException.unrecognizedBiffVersion);
+        throw new BiffException(BiffException.unrecognizedBiffversion);
       }
 
       if (bof.isWorksheet())
@@ -916,7 +916,7 @@ public class WorkbookParser extends Workbook
 
       if (nr.getBuiltInName() == null)
       {
-        logger.warn("Usage of a local non-builtin name");
+        logger.warn("usage of a local non-builtin name");
       } 
       else if (nr.getBuiltInName() == BuiltInName.PRINT_AREA || 
                nr.getBuiltInName() == BuiltInName.PRINT_TITLES)
@@ -975,7 +975,7 @@ public class WorkbookParser extends Workbook
   }
 
   /**
-   * Accessor for the name records.  Used by the WritableWorkbook when
+   * Accessor for the name records.  used by the WritableWorkbook when
    * creating a copy of this
    *
    * @return the array of names
@@ -1017,7 +1017,7 @@ public class WorkbookParser extends Workbook
    * the name cannot be found, null is returned
    *
    * @param  name the name of the cell/range to search for
-   * @return the cell in the top left of the range if found, NULL
+   * @return the cell in the top left of the range if found, NuLL
    *         otherwise
    */
   public Cell findCellByName(String name)
@@ -1214,7 +1214,7 @@ public class WorkbookParser extends Workbook
   /**
    * Accessor for the containsMacros
    *
-   * @return TRUE if this workbook contains macros, FALSE otherwise
+   * @return TRuE if this workbook contains macros, FALSE otherwise
    */
   public boolean containsMacros()
   {
@@ -1253,7 +1253,7 @@ public class WorkbookParser extends Workbook
   }
 
   /**
-   * Gets the sheet index in this workbook.  Used when importing a sheet
+   * Gets the sheet index in this workbook.  used when importing a sheet
    *
    * @param sheet the sheet
    * @return the 0-based sheet index, or -1 if it is not found

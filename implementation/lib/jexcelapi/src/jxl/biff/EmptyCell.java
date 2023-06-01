@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -25,7 +25,7 @@ import jxl.format.Alignment;
 import jxl.format.CellFormat;
 import jxl.format.Border;
 import jxl.format.BorderLineStyle;
-import jxl.format.VerticalAlignment;
+import jxl.format.verticalAlignment;
 import jxl.write.WritableCell;
 import jxl.write.WritableCellFeatures;
 
@@ -134,7 +134,7 @@ public class EmptyCell implements WritableCell
    * Dummy override
    * @param valign dummy
    */
-  public void setVerticalAlignment(VerticalAlignment valign)
+  public void setverticalAlignment(verticalAlignment valign)
   {
   }
 
@@ -168,7 +168,7 @@ public class EmptyCell implements WritableCell
    * Indicates whether or not this cell is hidden, by virtue of either
    * the entire row or column being collapsed
    *
-   * @return TRUE if this cell is hidden, FALSE otherwise
+   * @return TRuE if this cell is hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -190,7 +190,7 @@ public class EmptyCell implements WritableCell
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public CellFeatures getCellFeatures()
   {
@@ -200,7 +200,7 @@ public class EmptyCell implements WritableCell
   /**
    * Accessor for the cell features
    *
-   * @return the cell features or NULL if this cell doesn't have any
+   * @return the cell features or NuLL if this cell doesn't have any
    */
   public WritableCellFeatures getWritableCellFeatures()
   {

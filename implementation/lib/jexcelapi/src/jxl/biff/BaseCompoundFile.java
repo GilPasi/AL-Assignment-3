@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -46,13 +46,13 @@ public abstract class BaseCompoundFile
      (byte) 0xe1};
   /**
    */
-  protected static final int NUM_BIG_BLOCK_DEPOT_BLOCKS_POS = 0x2c;
+  protected static final int NuM_BIG_BLOCK_DEPOT_BLOCKS_POS = 0x2c;
   /**
    */
   protected static final int SMALL_BLOCK_DEPOT_BLOCK_POS = 0x3c;
   /**
    */
-  protected static final int NUM_SMALL_BLOCK_DEPOT_BLOCKS_POS = 0x40;
+  protected static final int NuM_SMALL_BLOCK_DEPOT_BLOCKS_POS = 0x40;
   /**
    */
   protected static final int ROOT_START_BLOCK_POS = 0x30;
@@ -67,7 +67,7 @@ public abstract class BaseCompoundFile
   protected static final int EXTENSION_BLOCK_POS = 0x44;
   /**
    */
-  protected static final int NUM_EXTENSION_BLOCK_POS = 0x48;
+  protected static final int NuM_EXTENSION_BLOCK_POS = 0x48;
   /**
    */
   protected static final int PROPERTY_STORAGE_BLOCK_SIZE = 0x80;
@@ -87,10 +87,10 @@ public abstract class BaseCompoundFile
     private static final int TYPE_POS = 0x42;
     /**
     */
-    private static final int COLOUR_POS = 0x43;
+    private static final int COLOuR_POS = 0x43;
     /**
      */
-    private static final int PREVIOUS_POS = 0x44;
+    private static final int PREvIOuS_POS = 0x44;
     /**
      */
     private static final int NEXT_POS = 0x48;
@@ -109,16 +109,16 @@ public abstract class BaseCompoundFile
    */
   public final static String ROOT_ENTRY_NAME = "Root Entry";
   public final static String WORKBOOK_NAME = "Workbook";
-  public final static String SUMMARY_INFORMATION_NAME = 
+  public final static String SuMMARY_INFORMATION_NAME = 
     "\u0005SummaryInformation";
-  public final static String DOCUMENT_SUMMARY_INFORMATION_NAME = 
+  public final static String DOCuMENT_SuMMARY_INFORMATION_NAME = 
     "\u0005DocumentSummaryInformation";
   public final static String COMP_OBJ_NAME = 
     "\u0001CompObj";
   public final static String[] STANDARD_PROPERTY_SETS  = 
     new String[] {ROOT_ENTRY_NAME, WORKBOOK_NAME,
-                  SUMMARY_INFORMATION_NAME,
-                  DOCUMENT_SUMMARY_INFORMATION_NAME};
+                  SuMMARY_INFORMATION_NAME,
+                  DOCuMENT_SuMMARY_INFORMATION_NAME};
 
   /**
    * Property storage types
@@ -181,17 +181,17 @@ public abstract class BaseCompoundFile
     public PropertyStorage(byte[] d)
     {
       data = d;
-      int nameSize = IntegerHelper.getInt(data[SIZE_OF_NAME_POS],
+      int nampathCount = IntegerHelper.getInt(data[SIZE_OF_NAME_POS],
                                           data[SIZE_OF_NAME_POS + 1]);
 
-      if (nameSize > SIZE_OF_NAME_POS)
+      if (nampathCount > SIZE_OF_NAME_POS)
       {
         logger.warn("property set name exceeds max length - truncating");
-        nameSize = SIZE_OF_NAME_POS;
+        nampathCount = SIZE_OF_NAME_POS;
 
       }
       type = data[TYPE_POS];
-      colour = data[COLOUR_POS];
+      colour = data[COLOuR_POS];
 
       startBlock = IntegerHelper.getInt
         (data[START_BLOCK_POS],
@@ -204,10 +204,10 @@ public abstract class BaseCompoundFile
          data[SIZE_POS + 2],
          data[SIZE_POS + 3]);
       previous = IntegerHelper.getInt
-        (data[PREVIOUS_POS],
-         data[PREVIOUS_POS+1],
-         data[PREVIOUS_POS+2],
-         data[PREVIOUS_POS+3]);
+        (data[PREvIOuS_POS],
+         data[PREvIOuS_POS+1],
+         data[PREvIOuS_POS+2],
+         data[PREvIOuS_POS+3]);
       next = IntegerHelper.getInt
         (data[NEXT_POS],
          data[NEXT_POS+1],
@@ -220,9 +220,9 @@ public abstract class BaseCompoundFile
          data[CHILD_POS+3]);
 
       int chars = 0;
-      if (nameSize > 2)
+      if (nampathCount > 2)
       {
-        chars = (nameSize - 1) / 2;
+        chars = (nampathCount - 1) / 2;
       }
 
       StringBuffer n = new StringBuffer("");
@@ -235,7 +235,7 @@ public abstract class BaseCompoundFile
     }
 
     /**
-     * Constructs an empty property set.  Used when writing the file
+     * Constructs an empty property set.  used when writing the file
      *
      * @param name the property storage name
      */
@@ -297,7 +297,7 @@ public abstract class BaseCompoundFile
     public void setPrevious(int prev)
     {
       previous = prev;
-      IntegerHelper.getFourBytes(prev, data, PREVIOUS_POS);
+      IntegerHelper.getFourBytes(prev, data, PREvIOuS_POS);
     }
 
     /**
@@ -330,7 +330,7 @@ public abstract class BaseCompoundFile
     public void setColour(int col)
     {
       colour = col == 0 ? 0 : 1;
-      data[COLOUR_POS] = (byte) colour;
+      data[COLOuR_POS] = (byte) colour;
     }
 
   }

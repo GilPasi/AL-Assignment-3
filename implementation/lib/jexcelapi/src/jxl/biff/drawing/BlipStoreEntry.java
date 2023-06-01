@@ -3,18 +3,18 @@
 *      Copyright (C) 2003 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -92,8 +92,8 @@ class BlipStoreEntry extends EscherAtom
   {
     super(EscherRecordType.BSE);
     type = BlipType.PNG;
-    setVersion(2);
-    setInstance(type.getValue());
+    setversion(2);
+    setInstance(type.getvalue());
 
     byte[] imageData = d.getImageBytes();
     imageDataLength = imageData.length;
@@ -125,15 +125,15 @@ class BlipStoreEntry extends EscherAtom
       // Drawing has been specified by API
 
       // Type on win32
-      data[0] = (byte) type.getValue();
+      data[0] = (byte) type.getvalue();
 
       // Type on MacOs
-      data[1] = (byte) type.getValue();
+      data[1] = (byte) type.getvalue();
 
       // The blip identifier
       //    IntegerHelper.getTwoBytes(0xfce1, data, 2);
 
-      // Unused tags - 18 bytes
+      // unused tags - 18 bytes
       //    System.arraycopy(stuff, 0, data, 2, stuff.length);
 
       // The size of the file
@@ -145,7 +145,7 @@ class BlipStoreEntry extends EscherAtom
       // Offset in the delay stream
       IntegerHelper.getFourBytes(0, data, 28);
 
-      // Usage byte
+      // usage byte
       data[32] = (byte) 0;
 
       // Length of the blip name
@@ -166,7 +166,7 @@ class BlipStoreEntry extends EscherAtom
       // 16 bytes
       IntegerHelper.getFourBytes(imageDataLength + 17, data, 40);
 
-      // Unknown stuff
+      // unknown stuff
       //    System.arraycopy(stuff, 0, data, 44, stuff.length);
     }
     else

@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -25,7 +25,7 @@ import jxl.format.CellFormat;
  * This is a bean which client applications may use to get/set various
  * properties for a row or column on a spreadsheet
  */
-public final class CellView
+public final class Cellview
 {
   /**
    * The dimension for the associated group of cells.  For columns this
@@ -45,7 +45,7 @@ public final class CellView
   /**
    * Indicates whether the deprecated function was used to set the dimension
    */
-  private boolean depUsed;
+  private boolean depused;
 
   /**
    * Indicates whether or not this sheet is hidden
@@ -65,10 +65,10 @@ public final class CellView
   /**
    * Default constructor
    */
-  public CellView()
+  public Cellview()
   {
     hidden = false;
-    depUsed = false;
+    depused = false;
     dimension = 1;
     size = 1;
     autosize = false;
@@ -77,10 +77,10 @@ public final class CellView
   /**
    * Copy constructor
    */
-  public CellView(CellView cv)
+  public Cellview(Cellview cv)
   {
     hidden = cv.hidden;
-    depUsed = cv.depUsed;
+    depused = cv.depused;
     dimension = cv.dimension;
     size = cv.size;
     autosize = cv.autosize;
@@ -99,7 +99,7 @@ public final class CellView
   /**
    * Accessor for the hidden nature of this row/column
    *
-   * @return TRUE if this row/column is hidden, FALSE otherwise
+   * @return TRuE if this row/column is hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -116,7 +116,7 @@ public final class CellView
   public void setDimension(int d)
   {
     dimension = d;
-    depUsed = true;
+    depused = true;
   }
 
   /**
@@ -128,7 +128,7 @@ public final class CellView
   public void setSize(int d)
   {
     size = d;
-    depUsed = false;
+    depused = false;
   }
 
   /**
@@ -167,7 +167,7 @@ public final class CellView
   /**
    * Accessor for the cell format for this group.
    *
-   * @return the format for the column/row, or NULL if no format was
+   * @return the format for the column/row, or NuLL if no format was
    *         specified
    */
   public CellFormat getFormat()
@@ -176,14 +176,14 @@ public final class CellView
   }
 
   /**
-   * Accessor for the depUsed attribute
+   * Accessor for the depused attribute
    *
-   * @return TRUE if the deprecated methods were used to set the size,
+   * @return TRuE if the deprecated methods were used to set the size,
    *         FALSE otherwise
    */
-  public boolean depUsed()
+  public boolean depused()
   {
-    return depUsed;
+    return depused;
   }
 
   /**
@@ -201,7 +201,7 @@ public final class CellView
    * NOTE:  use of the autosize function is very processor intensive, so
    * use with care
    *
-   * @return TRUE if this row/column is to be autosized
+   * @return TRuE if this row/column is to be autosized
    */
   public boolean isAutosize()
   {

@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
@@ -112,7 +112,7 @@ public class SetupRecord extends RecordData
    */
   SetupRecord(Record t)
   {
-    super(Type.SETUP);
+    super(Type.SETuP);
 
     data = t.getData();
 
@@ -139,7 +139,7 @@ public class SetupRecord extends RecordData
   /**
    * Accessor for the orientation.  Called when copying sheets
    *
-   * @return TRUE if the orientation is portrait, FALSE if it is landscape
+   * @return TRuE if the orientation is portrait, FALSE if it is landscape
    */
   public boolean isPortrait()
   {
@@ -150,7 +150,7 @@ public class SetupRecord extends RecordData
   /**
    * Accessor for the page order. Called when copying sheets
    * 
-   * @return TRUE if the page order is Left to Right, then Down, otherwise 
+   * @return TRuE if the page order is Left to Right, then Down, otherwise 
    * FALSE
    */
   public boolean isRightDown()
@@ -243,7 +243,7 @@ public class SetupRecord extends RecordData
    *
    * @return an vertical print resolution
    */
-  public int getVerticalPrintResolution()
+  public int getverticalPrintResolution()
   {
     return verticalPrintResolution;
   }

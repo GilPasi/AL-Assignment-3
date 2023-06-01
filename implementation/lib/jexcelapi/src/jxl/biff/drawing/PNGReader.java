@@ -3,18 +3,18 @@
 *      Copyright (C) 2006 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.drawing;
@@ -34,9 +34,9 @@ public class PNGReader
   private int pixelHeight;
   private int verticalResolution;
   private int horizontalResolution;
-  private int resolutionUnit;
+  private int resolutionunit;
 
-  private static byte[] PNG_MAGIC_NUMBER = new byte[]
+  private static byte[] PNG_MAGIC_NuMBER = new byte[]
     {(byte) 0x89, (byte) 0x50, (byte) 0x4e, (byte) 0x47,
      (byte) 0x0d, (byte) 0x0a, (byte) 0x1a, (byte) 0x0a};
 
@@ -47,10 +47,10 @@ public class PNGReader
 
   void read()
   {
-    // Verify the magic data
-    byte[] header = new byte[PNG_MAGIC_NUMBER.length];
+    // verify the magic data
+    byte[] header = new byte[PNG_MAGIC_NuMBER.length];
     System.arraycopy(pngData, 0, header, 0, header.length);
-    boolean pngFile = Arrays.equals(PNG_MAGIC_NUMBER, header);
+    boolean pngFile = Arrays.equals(PNG_MAGIC_NuMBER, header);
     if (!pngFile)
     {
       return;
@@ -88,7 +88,7 @@ public class PNGReader
     if (phys != null)
     {
       byte[] physData = phys.getData();
-      resolutionUnit = physData[8];
+      resolutionunit = physData[8];
       horizontalResolution = getInt(physData[0], physData[1], 
                                       physData[2], physData[3]);
       verticalResolution = getInt(physData[4], physData[5], 
@@ -125,13 +125,13 @@ public class PNGReader
   public int getHorizontalResolution()
   {
     // only return if the resolution unit is in metres
-    return resolutionUnit == 1 ? horizontalResolution : 0;
+    return resolutionunit == 1 ? horizontalResolution : 0;
   }
 
-  public int getVerticalResolution()
+  public int getverticalResolution()
   {
     // only return if the resolution unit is in metres
-    return resolutionUnit == 1 ? verticalResolution : 0;
+    return resolutionunit == 1 ? verticalResolution : 0;
   }
 
   public static void main(String args[])

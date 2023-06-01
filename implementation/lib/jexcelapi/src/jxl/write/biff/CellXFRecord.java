@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -29,7 +29,7 @@ import jxl.format.CellFormat;
 import jxl.format.Colour;
 import jxl.format.Orientation;
 import jxl.format.Pattern;
-import jxl.format.VerticalAlignment;
+import jxl.format.verticalAlignment;
 import jxl.write.WriteException;
 
 /**
@@ -151,7 +151,7 @@ public class CellXFRecord extends XFRecord
    * @exception WriteException 
    * @param va the vertical alignment
    */
-  public void setVerticalAlignment(VerticalAlignment va)
+  public void setverticalAlignment(verticalAlignment va)
     throws WriteException
   {
     if (isInitialized())
@@ -159,7 +159,7 @@ public class CellXFRecord extends XFRecord
       throw new JxlWriteException(JxlWriteException.formatInitialized);
     }
 
-    super.setXFVerticalAlignment(va);
+    super.setXFverticalAlignment(va);
   }
 
   /**
@@ -181,7 +181,7 @@ public class CellXFRecord extends XFRecord
 
   /**
    * Sets the text wrapping for cells with this style.  If the parameter is
-   * set to TRUE, then data in this cell will be wrapped around, and the
+   * set to TRuE, then data in this cell will be wrapped around, and the
    * cell's height adjusted accordingly
    * 
    * @exception WriteException 

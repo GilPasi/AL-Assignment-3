@@ -3,18 +3,18 @@
  *      Copyright (C) 2004 Andrew Khan, Eric Jung
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
+ * modify it under the terms of the GNu Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * but WITHOuT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
  * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public
+ * You should have received a copy of the GNu Lesser General Public
  * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
  ***************************************************************************/
 
 package jxl.biff;
@@ -47,7 +47,7 @@ public abstract class HeaderFooter
   /**
    * Turns underline printing on or off
    */
-  private static final String UNDERLINE_TOGGLE = "&U";
+  private static final String uNDERLINE_TOGGLE = "&u";
 
   /**
    * Turns italic printing on or off
@@ -57,27 +57,27 @@ public abstract class HeaderFooter
   /**
    * Turns strikethrough printing on or off
    */
-  private static final String STRIKETHROUGH_TOGGLE = "&S";
+  private static final String STRIKETHROuGH_TOGGLE = "&S";
 
   /**
    * Turns double-underline printing on or off
    */
-  private static final String DOUBLE_UNDERLINE_TOGGLE = "&E";
+  private static final String DOuBLE_uNDERLINE_TOGGLE = "&E";
 
   /**
    * Turns superscript printing on or off
    */
-  private static final String SUPERSCRIPT_TOGGLE = "&X";
+  private static final String SuPERSCRIPT_TOGGLE = "&X";
 
   /**
    * Turns subscript printing on or off
    */
-  private static final String SUBSCRIPT_TOGGLE = "&Y";
+  private static final String SuBSCRIPT_TOGGLE = "&Y";
 
   /**
    * Turns outline printing on or off (Macintosh only)
    */
-  private static final String OUTLINE_TOGGLE = "&O";
+  private static final String OuTLINE_TOGGLE = "&O";
 
   /**
    * Turns shadow printing on or off (Macintosh only)
@@ -104,12 +104,12 @@ public abstract class HeaderFooter
   /**
    * Prints the page number
    */
-  private static final String PAGENUM = "&P";
+  private static final String PAGENuM = "&P";
 
   /**
    * Prints the total number of pages in the document
    */
-  private static final String TOTAL_PAGENUM = "&N";
+  private static final String TOTAL_PAGENuM = "&N";
 
   /**
    * Prints the current date
@@ -233,14 +233,14 @@ public abstract class HeaderFooter
     }
 
     /**
-     * Turns underline printing on or off. Underline printing
+     * Turns underline printing on or off. underline printing
      * is initially off. Text subsequently appended to
      * this object will be underlined until this method is
      * called again.
      */
-    protected void toggleUnderline()
+    protected void toggleunderline()
     {
-      appendInternal(UNDERLINE_TOGGLE);
+      appendInternal(uNDERLINE_TOGGLE);
     }
 
     /**
@@ -262,7 +262,7 @@ public abstract class HeaderFooter
      */
     protected void toggleStrikethrough()
     {
-      appendInternal(STRIKETHROUGH_TOGGLE);
+      appendInternal(STRIKETHROuGH_TOGGLE);
     }  
 
     /**
@@ -271,9 +271,9 @@ public abstract class HeaderFooter
      * this object will be double-underlined until this method is
      * called again.
      */
-    protected void toggleDoubleUnderline()
+    protected void toggleDoubleunderline()
     {
-      appendInternal(DOUBLE_UNDERLINE_TOGGLE);
+      appendInternal(DOuBLE_uNDERLINE_TOGGLE);
     }      
 
     /**
@@ -284,7 +284,7 @@ public abstract class HeaderFooter
      */
     protected void toggleSuperScript()
     {
-      appendInternal(SUPERSCRIPT_TOGGLE);
+      appendInternal(SuPERSCRIPT_TOGGLE);
     } 	
 
     /**
@@ -295,7 +295,7 @@ public abstract class HeaderFooter
      */
     protected void toggleSubScript()
     {
-      appendInternal(SUBSCRIPT_TOGGLE);
+      appendInternal(SuBSCRIPT_TOGGLE);
     }   
     
     /**
@@ -306,7 +306,7 @@ public abstract class HeaderFooter
      */
     protected void toggleOutline()
     {
-     appendInternal(OUTLINE_TOGGLE);
+     appendInternal(OuTLINE_TOGGLE);
     }
     
     /**
@@ -341,12 +341,12 @@ public abstract class HeaderFooter
      * Sets the font size of text subsequently appended to this
      * object. Previously appended text is not affected.
      * <p/>
-     * Valid point sizes are between 1 and 99 (inclusive). If
+     * valid point sizes are between 1 and 99 (inclusive). If
      * size is outside this range, this method returns false
      * and does not change font size. If size is within this
      * range, the font size is changed and true is returned. 
      * 
-     * @param size The size in points. Valid point sizes are
+     * @param size The size in points. valid point sizes are
      * between 1 and 99 (inclusive).
      * @return true if the font size was changed, false if font
      * size was not changed because 1 > size > 99. 
@@ -381,7 +381,7 @@ public abstract class HeaderFooter
      */
     protected void appendPageNumber()
     {
-      appendInternal(PAGENUM);
+      appendInternal(PAGENuM);
     }
   
     /**
@@ -389,7 +389,7 @@ public abstract class HeaderFooter
      */
     protected void appendTotalPages()
     {
-      appendInternal(TOTAL_PAGENUM);
+      appendInternal(TOTAL_PAGENuM);
     }
   
     /**
@@ -435,7 +435,7 @@ public abstract class HeaderFooter
     /**
      * Queries if the contents are empty
      *
-     * @return TRUE if the contents are empty, FALSE otherwise
+     * @return TRuE if the contents are empty, FALSE otherwise
      */
     protected boolean empty()
     {

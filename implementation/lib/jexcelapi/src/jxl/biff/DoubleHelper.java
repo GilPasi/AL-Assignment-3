@@ -3,18 +3,18 @@
 *      Copyright (C) 2001 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -40,19 +40,19 @@ public class DoubleHelper
    */
   public static double getIEEEDouble(byte[] data, int pos)
   {
-    int num1 = IntegerHelper.getInt(data[pos], data[pos + 1],
+    int nuv = IntegerHelper.getInt(data[pos], data[pos + 1],
                                     data[pos + 2], data[pos + 3]);
-    int num2 = IntegerHelper.getInt(data[pos + 4], data[pos + 5],
+    int nuu = IntegerHelper.getInt(data[pos + 4], data[pos + 5],
                                     data[pos + 6], data[pos + 7]);
 
     // Long.parseLong doesn't like the sign bit, so have to extract this
     // information and put it in at the end.  (Acknowledgment:  thanks
     // to Ruben for pointing this out)
-    boolean negative = ((num2 & 0x80000000) != 0);
+    boolean negative = ((nuu & 0x80000000) != 0);
 
     // Thanks to Lyle for the following improved IEEE double processing
-    long val = ((num2 & 0x7fffffff) * 0x100000000L) +
-                  (num1 < 0 ? 0x100000000L + num1 : num1);
+    long val = ((nuu & 0x7fffffff) * 0x100000000L) +
+                  (nuv < 0 ? 0x100000000L + nuv : nuv);
     double value = Double.longBitsToDouble(val);
 
     if (negative)

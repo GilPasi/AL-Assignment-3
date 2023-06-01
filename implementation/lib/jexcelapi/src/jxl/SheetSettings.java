@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -170,7 +170,7 @@ public final class SheetSettings
   /**
    * Indicates whether the sheet should display zero values
    */
-  private boolean displayZeroValues;
+  private boolean displayZerovalues;
 
   /**
    * The password for protected sheets
@@ -203,7 +203,7 @@ public final class SheetSettings
   private int verticalFreeze;
 
   /**
-   * Vertical centre flag
+   * vertical centre flag
    */
   private boolean verticalCentre;
 
@@ -261,27 +261,27 @@ public final class SheetSettings
   // ***
   // The defaults
   // **
-  private static final PageOrientation DEFAULT_ORIENTATION =
+  private static final PageOrientation DEFAuLT_ORIENTATION =
     PageOrientation.PORTRAIT;
-  private static final PageOrder DEFAULT_ORDER =
+  private static final PageOrder DEFAuLT_ORDER =
     PageOrder.RIGHT_THEN_DOWN;
-  private static final PaperSize DEFAULT_PAPER_SIZE = PaperSize.A4;
-  private static final double DEFAULT_HEADER_MARGIN = 0.5;
-  private static final double DEFAULT_FOOTER_MARGIN = 0.5;
-  private static final int    DEFAULT_PRINT_RESOLUTION = 0x12c;
-  private static final double DEFAULT_WIDTH_MARGIN     = 0.75;
-  private static final double DEFAULT_HEIGHT_MARGIN    = 1;
+  private static final PaperSize DEFAuLT_PAPER_SIZE = PaperSize.A4;
+  private static final double DEFAuLT_HEADER_MARGIN = 0.5;
+  private static final double DEFAuLT_FOOTER_MARGIN = 0.5;
+  private static final int    DEFAuLT_PRINT_RESOLuTION = 0x12c;
+  private static final double DEFAuLT_WIDTH_MARGIN     = 0.75;
+  private static final double DEFAuLT_HEIGHT_MARGIN    = 1;
 
-  private static final int DEFAULT_DEFAULT_COLUMN_WIDTH = 8;
-  private static final int DEFAULT_ZOOM_FACTOR = 100;
-  private static final int DEFAULT_NORMAL_MAGNIFICATION = 100;
-  private static final int DEFAULT_PAGE_BREAK_PREVIEW_MAGNIFICATION = 60;
+  private static final int DEFAuLT_DEFAuLT_COLuMN_WIDTH = 8;
+  private static final int DEFAuLT_ZOOM_FACTOR = 100;
+  private static final int DEFAuLT_NORMAL_MAGNIFICATION = 100;
+  private static final int DEFAuLT_PAGE_BREAK_PREvIEW_MAGNIFICATION = 60;
 
   // The publicly accessible values
   /**
    * The default value for the default row height
    */
-  public static final int DEFAULT_DEFAULT_ROW_HEIGHT = 0xff;
+  public static final int DEFAuLT_DEFAuLT_ROW_HEIGHT = 0xff;
 
   /**
    * Default constructor
@@ -289,31 +289,31 @@ public final class SheetSettings
   public SheetSettings(Sheet s)
   {
     sheet = s; // for internal use, when accessing ranges
-    orientation        = DEFAULT_ORIENTATION;
-    pageOrder          = DEFAULT_ORDER;
-    paperSize          = DEFAULT_PAPER_SIZE;
+    orientation        = DEFAuLT_ORIENTATION;
+    pageOrder          = DEFAuLT_ORDER;
+    paperSize          = DEFAuLT_PAPER_SIZE;
     sheetProtected     = false;
     hidden             = false;
     selected           = false;
-    headerMargin       = DEFAULT_HEADER_MARGIN;
-    footerMargin       = DEFAULT_FOOTER_MARGIN;
-    horizontalPrintResolution = DEFAULT_PRINT_RESOLUTION;
-    verticalPrintResolution   = DEFAULT_PRINT_RESOLUTION;
-    leftMargin         = DEFAULT_WIDTH_MARGIN;
-    rightMargin        = DEFAULT_WIDTH_MARGIN;
-    topMargin          = DEFAULT_HEIGHT_MARGIN;
-    bottomMargin       = DEFAULT_HEIGHT_MARGIN;
+    headerMargin       = DEFAuLT_HEADER_MARGIN;
+    footerMargin       = DEFAuLT_FOOTER_MARGIN;
+    horizontalPrintResolution = DEFAuLT_PRINT_RESOLuTION;
+    verticalPrintResolution   = DEFAuLT_PRINT_RESOLuTION;
+    leftMargin         = DEFAuLT_WIDTH_MARGIN;
+    rightMargin        = DEFAuLT_WIDTH_MARGIN;
+    topMargin          = DEFAuLT_HEIGHT_MARGIN;
+    bottomMargin       = DEFAuLT_HEIGHT_MARGIN;
     fitToPages         = false;
     showGridLines      = true;
     printGridLines     = false;
     printHeaders       = false;
     pageBreakPreviewMode = false;
-    displayZeroValues  = true;
-    defaultColumnWidth = DEFAULT_DEFAULT_COLUMN_WIDTH;
-    defaultRowHeight   = DEFAULT_DEFAULT_ROW_HEIGHT;
-    zoomFactor         = DEFAULT_ZOOM_FACTOR;
-    pageBreakPreviewMagnification = DEFAULT_PAGE_BREAK_PREVIEW_MAGNIFICATION;
-    normalMagnification = DEFAULT_NORMAL_MAGNIFICATION;
+    displayZerovalues  = true;
+    defaultColumnWidth = DEFAuLT_DEFAuLT_COLuMN_WIDTH;
+    defaultRowHeight   = DEFAuLT_DEFAuLT_ROW_HEIGHT;
+    zoomFactor         = DEFAuLT_ZOOM_FACTOR;
+    pageBreakPreviewMagnification = DEFAuLT_PAGE_BREAK_PREvIEW_MAGNIFICATION;
+    normalMagnification = DEFAuLT_NORMAL_MAGNIFICATION;
     horizontalFreeze   = 0;
     verticalFreeze     = 0;
     copies             = 1;
@@ -359,7 +359,7 @@ public final class SheetSettings
     pageBreakPreviewMagnification = copy.pageBreakPreviewMagnification;
     normalMagnification = copy.normalMagnification;
     showGridLines      = copy.showGridLines;
-    displayZeroValues  = copy.displayZeroValues;
+    displayZerovalues  = copy.displayZerovalues;
     pageBreakPreviewMode = copy.pageBreakPreviewMode;
     horizontalFreeze   = copy.horizontalFreeze;
     verticalFreeze     = copy.verticalFreeze;
@@ -465,7 +465,7 @@ public final class SheetSettings
   /**
    * Queries whether this sheet is protected (ie. read only)
    *
-   * @return TRUE if this sheet is read only, FALSE otherwise
+   * @return TRuE if this sheet is read only, FALSE otherwise
    */
   public boolean isProtected()
   {
@@ -535,7 +535,7 @@ public final class SheetSettings
   /**
    * Accessor for the hidden nature of this sheet
    *
-   * @return TRUE if this sheet is hidden, FALSE otherwise
+   * @return TRuE if this sheet is hidden, FALSE otherwise
    */
   public boolean isHidden()
   {
@@ -565,7 +565,7 @@ public final class SheetSettings
   /**
    * Accessor for the selected nature of the sheet
    *
-   * @return TRUE if this sheet is selected, FALSE otherwise
+   * @return TRuE if this sheet is selected, FALSE otherwise
    */
   public boolean isSelected()
   {
@@ -683,7 +683,7 @@ public final class SheetSettings
    *
    * @param vpw the vertical print resolution
    */
-  public void setVerticalPrintResolution(int vpw)
+  public void setverticalPrintResolution(int vpw)
   {
     verticalPrintResolution = vpw;
   }
@@ -693,7 +693,7 @@ public final class SheetSettings
    *
    * @return the vertical print resolution
    */
-  public int getVerticalPrintResolution()
+  public int getverticalPrintResolution()
   {
     return verticalPrintResolution;
   }
@@ -785,7 +785,7 @@ public final class SheetSettings
    */
   public double getDefaultWidthMargin()
   {
-    return DEFAULT_WIDTH_MARGIN;
+    return DEFAuLT_WIDTH_MARGIN;
   }
 
   /**
@@ -795,12 +795,12 @@ public final class SheetSettings
    */
   public double getDefaultHeightMargin()
   {
-    return DEFAULT_HEIGHT_MARGIN;
+    return DEFAuLT_HEIGHT_MARGIN;
   }
 
   /**
    * Accessor for the fit width print flag
-   * @return TRUE if the print is to fit to pages, false otherwise
+   * @return TRuE if the print is to fit to pages, false otherwise
    */
   public boolean getFitToPages()
   {
@@ -809,7 +809,7 @@ public final class SheetSettings
 
   /**
    * Accessor for the fit to pages flag
-   * @param b TRUE to fit to pages, FALSE to use a scale factor
+   * @param b TRuE to fit to pages, FALSE to use a scale factor
    */
   public void setFitToPages(boolean b)
   {
@@ -819,7 +819,7 @@ public final class SheetSettings
   /**
    * Accessor for the password
    *
-   * @return the password to unlock this sheet, or NULL if not protected
+   * @return the password to unlock this sheet, or NuLL if not protected
    */
   public String getPassword()
   {
@@ -966,29 +966,29 @@ public final class SheetSettings
 
 
   /**
-   * Accessor for the displayZeroValues property
+   * Accessor for the displayZerovalues property
    *
-   * @return TRUE to display zero values, FALSE not to bother
+   * @return TRuE to display zero values, FALSE not to bother
    */
-  public boolean getDisplayZeroValues()
+  public boolean getDisplayZerovalues()
   {
-    return displayZeroValues;
+    return displayZerovalues;
   }
 
   /**
-   * Sets the displayZeroValues property
+   * Sets the displayZerovalues property
    *
-   * @param b TRUE to show zero values, FALSE not to bother
+   * @param b TRuE to show zero values, FALSE not to bother
    */
-  public void setDisplayZeroValues(boolean b)
+  public void setDisplayZerovalues(boolean b)
   {
-    displayZeroValues = b;
+    displayZerovalues = b;
   }
 
   /**
    * Accessor for the showGridLines property
    *
-   * @return TRUE if grid lines will be shown, FALSE otherwise
+   * @return TRuE if grid lines will be shown, FALSE otherwise
    */
   public boolean getShowGridLines()
   {
@@ -998,7 +998,7 @@ public final class SheetSettings
   /**
    * Sets the showGridLines property
    *
-   * @param b TRUE to show grid lines on this sheet, FALSE otherwise
+   * @param b TRuE to show grid lines on this sheet, FALSE otherwise
    */
   public void setShowGridLines(boolean b)
   {
@@ -1008,7 +1008,7 @@ public final class SheetSettings
   /**
    * Accessor for the pageBreakPreview mode
    *
-   * @return TRUE if page break preview is enabled, FALSE otherwise
+   * @return TRuE if page break preview is enabled, FALSE otherwise
    */
   public boolean getPageBreakPreviewMode()
   {
@@ -1018,7 +1018,7 @@ public final class SheetSettings
   /**
    * Sets the pageBreakPreviewMode  property
    *
-   * @param b TRUE to launch in page break preview mode, FALSE otherwise
+   * @param b TRuE to launch in page break preview mode, FALSE otherwise
    */
   public void setPageBreakPreviewMode(boolean b)
   {
@@ -1028,7 +1028,7 @@ public final class SheetSettings
   /**
    * Accessor for the printGridLines property
    *
-   * @return TRUE if grid lines will be printed, FALSE otherwise
+   * @return TRuE if grid lines will be printed, FALSE otherwise
    */
   public boolean getPrintGridLines()
   {
@@ -1038,7 +1038,7 @@ public final class SheetSettings
    /**
    * Sets the printGridLines property
    *
-   * @param b TRUE to print grid lines on this sheet, FALSE otherwise
+   * @param b TRuE to print grid lines on this sheet, FALSE otherwise
    */
   public void setPrintGridLines(boolean b)
   {
@@ -1048,7 +1048,7 @@ public final class SheetSettings
   /**
    * Accessor for the printHeaders property
    *
-   * @return TRUE if headers will be printed, FALSE otherwise
+   * @return TRuE if headers will be printed, FALSE otherwise
    */
   public boolean getPrintHeaders()
   {
@@ -1058,7 +1058,7 @@ public final class SheetSettings
    /**
    * Sets the printHeaders property
    *
-   * @param b TRUE to print headers on this sheet, FALSE otherwise
+   * @param b TRuE to print headers on this sheet, FALSE otherwise
    */
   public void setPrintHeaders(boolean b)
   {
@@ -1092,7 +1092,7 @@ public final class SheetSettings
    * @return the column at which the pane is vertically frozen, or 0 if there
    * is no freeze
    */
-  public int getVerticalFreeze()
+  public int getverticalFreeze()
   {
     return verticalFreeze;
   }
@@ -1102,7 +1102,7 @@ public final class SheetSettings
    *
    * @param col the column number to freeze at
    */
-  public void setVerticalFreeze(int col)
+  public void setverticalFreeze(int col)
   {
     verticalFreeze = Math.max(col, 0);
   }
@@ -1192,7 +1192,7 @@ public final class SheetSettings
    *
    * @return Returns the verticalCentre.
    */
-  public boolean isVerticalCentre()
+  public boolean isverticalCentre()
   {
     return verticalCentre;
   }
@@ -1202,7 +1202,7 @@ public final class SheetSettings
    *
    * @param vertCentre The verticalCentre to set.
    */
-  public void setVerticalCentre(boolean vertCentre)
+  public void setverticalCentre(boolean vertCentre)
   {
     this.verticalCentre = vertCentre;
   }
@@ -1210,7 +1210,7 @@ public final class SheetSettings
   /**
    * Sets the automatic formula calculation flag
    *
-   * @param auto - TRUE to automatically calculate the formulas,
+   * @param auto - TRuE to automatically calculate the formulas,
    * FALSE otherwise
    */
   public void setAutomaticFormulaCalculation(boolean auto)
@@ -1221,7 +1221,7 @@ public final class SheetSettings
   /**
    * Retrieves the automatic formula calculation flag
    *
-   * @return TRUE if formulas are calculated automatically, FALSE if they
+   * @return TRuE if formulas are calculated automatically, FALSE if they
    * are calculated manually
    */
   public boolean getAutomaticFormulaCalculation()
@@ -1232,7 +1232,7 @@ public final class SheetSettings
   /**
    * Sets the recalculate formulas when the sheet is saved flag
    *
-   * @param recalc - TRUE to automatically calculate the formulas when the,
+   * @param recalc - TRuE to automatically calculate the formulas when the,
    * spreadsheet is saved, FALSE otherwise
    */
   public void setRecalculateFormulasBeforeSave(boolean recalc)
@@ -1243,7 +1243,7 @@ public final class SheetSettings
   /**
    * Retrieves the recalculate formulas before save  flag
    *
-   * @return TRUE if formulas are calculated before the sheet is saved,
+   * @return TRuE if formulas are calculated before the sheet is saved,
    * FALSE otherwise
    */
   public boolean getRecalculateFormulasBeforeSave()
@@ -1271,7 +1271,7 @@ public final class SheetSettings
   /**
    * Accessor for the print area
    *
-   * @return the print area, or NULL if one is not defined for this sheet
+   * @return the print area, or NuLL if one is not defined for this sheet
    */
   public Range getPrintArea()
   {
@@ -1324,7 +1324,7 @@ public final class SheetSettings
   /**
    * Accessor for the print row titles
    *
-   * @return the print row titles, or NULL if one is not defined for this sheet
+   * @return the print row titles, or NuLL if one is not defined for this sheet
    */
   public Range getPrintTitlesRow()
   {
@@ -1334,7 +1334,7 @@ public final class SheetSettings
   /**
    * Accessor for the print column titles
    *
-   * @return the print column titles, or NULL if one is not defined for this 
+   * @return the print column titles, or NuLL if one is not defined for this 
    * sheet
    */
   public Range getPrintTitlesCol()

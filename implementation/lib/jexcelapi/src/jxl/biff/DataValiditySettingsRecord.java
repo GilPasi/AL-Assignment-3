@@ -3,18 +3,18 @@
 *      Copyright (C) 2004 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff;
@@ -29,16 +29,16 @@ import jxl.biff.formula.FormulaException;
 import jxl.read.biff.Record;
 
 /**
- * Data validity settings.   Contains an individual Data validation (DV).  
- * All the computationa work is delegated to the DVParser object
+ * Data validity settings.   Contains an individual Data validation (Dv).  
+ * All the computationa work is delegated to the DvParser object
  */
-public class DataValiditySettingsRecord extends WritableRecordData
+public class DatavaliditySettingsRecord extends WritableRecordData
 {
   /**
    * The logger
    */
   private static Logger logger = 
-    Logger.getLogger(DataValiditySettingsRecord.class);
+    Logger.getLogger(DatavaliditySettingsRecord.class);
 
   /**
    * The binary data
@@ -48,7 +48,7 @@ public class DataValiditySettingsRecord extends WritableRecordData
   /**
    * The reader
    */
-  private DVParser dvParser;
+  private DvParser dvParser;
 
   /**
    * Handle to the workbook
@@ -68,12 +68,12 @@ public class DataValiditySettingsRecord extends WritableRecordData
   /**
    * Handle to the data validation record
    */
-  private DataValidation dataValidation;
+  private Datavalidation datavalidation;
 
   /**
    * Constructor
    */
-  public DataValiditySettingsRecord(Record t,
+  public DatavaliditySettingsRecord(Record t,
                                     ExternalSheet es, 
                                     WorkbookMethods wm,
                                     WorkbookSettings ws)
@@ -89,9 +89,9 @@ public class DataValiditySettingsRecord extends WritableRecordData
   /**
    * Copy constructor
    */
-  DataValiditySettingsRecord(DataValiditySettingsRecord dvsr)
+  DatavaliditySettingsRecord(DatavaliditySettingsRecord dvsr)
   {
-    super(Type.DV);
+    super(Type.Dv);
 
     data = dvsr.getData();
   }
@@ -101,12 +101,12 @@ public class DataValiditySettingsRecord extends WritableRecordData
    *
    * @param dvsr the record copied from a writable sheet
    */
-  DataValiditySettingsRecord(DataValiditySettingsRecord dvsr,
+  DatavaliditySettingsRecord(DatavaliditySettingsRecord dvsr,
                              ExternalSheet es,
                              WorkbookMethods w, 
                              WorkbookSettings ws)
   {
-    super(Type.DV);
+    super(Type.Dv);
 
     workbook = w;
     externalSheet = es;
@@ -124,9 +124,9 @@ public class DataValiditySettingsRecord extends WritableRecordData
    *
    * @param dvsr the record copied from a writable sheet
    */
-  public DataValiditySettingsRecord(DVParser dvp)
+  public DatavaliditySettingsRecord(DvParser dvp)
   {
-    super(Type.DV);
+    super(Type.Dv);
     dvParser = dvp;
   }
 
@@ -137,7 +137,7 @@ public class DataValiditySettingsRecord extends WritableRecordData
   {
     if (dvParser == null)
     {
-      dvParser = new DVParser(data, externalSheet, 
+      dvParser = new DvParser(data, externalSheet, 
                               workbook, workbookSettings);
     }
   }
@@ -282,21 +282,21 @@ public class DataValiditySettingsRecord extends WritableRecordData
    *
    * @param dv the data validation
    */
-  void setDataValidation(DataValidation dv)
+  void setDatavalidation(Datavalidation dv)
   {
-    dataValidation = dv;
+    datavalidation = dv;
   }
 
   /**
-   * Gets the DVParser.  This is used when doing a deep copy of cells
+   * Gets the DvParser.  This is used when doing a deep copy of cells
    * on the writable side of things
    */
-  DVParser getDVParser()
+  DvParser getDvParser()
   {
     return dvParser;
   }
 
-  public String getValidationFormula()
+  public String getvalidationFormula()
   {
     try
     {
@@ -305,7 +305,7 @@ public class DataValiditySettingsRecord extends WritableRecordData
         initialize();
       }
 
-      return dvParser.getValidationFormula();
+      return dvParser.getvalidationFormula();
     }
     catch (FormulaException e)
     {

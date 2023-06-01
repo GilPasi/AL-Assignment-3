@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl;
@@ -197,8 +197,8 @@ public interface Sheet
    * Gets the column format for the specified column
    *
    * @param col the column number
-   * @return the column format, or NULL if the column has no specific format
-   * @deprecated Use getColumnView and the CellView bean instead
+   * @return the column format, or NuLL if the column has no specific format
+   * @deprecated use getColumnview and the Cellview bean instead
    */
   public CellFormat getColumnFormat(int col);
 
@@ -208,7 +208,7 @@ public interface Sheet
    * @param col the column number
    * @return the column width, or the default width if the column has no
    *         specified format
-   * @deprecated Use getColumnView instead
+   * @deprecated use getColumnview instead
    */
   public int getColumnWidth(int col);
 
@@ -219,7 +219,7 @@ public interface Sheet
    * @return the column format, or the default format if no override is
              specified
    */
-  public CellView getColumnView(int col);
+  public Cellview getColumnview(int col);
 
   /**
    * Gets the row height for the specified column
@@ -227,7 +227,7 @@ public interface Sheet
    * @param row the row number
    * @return the row height, or the default height if the column has no
    *         specified format
-   * @deprecated use getRowView instead
+   * @deprecated use getRowview instead
    */
   public int getRowHeight(int row);
 
@@ -238,7 +238,7 @@ public interface Sheet
    * @return the row format, which may be the default format if no format
    *         is specified
    */
-  public CellView getRowView(int row);
+  public Cellview getRowview(int row);
 
   /**
    * Accessor for the number of images on the sheet

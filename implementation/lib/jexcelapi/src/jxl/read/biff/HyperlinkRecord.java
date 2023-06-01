@@ -3,25 +3,25 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.read.biff;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.MalformeduRLException;
+import java.net.uRL;
 
 import jxl.common.Logger;
 
@@ -64,9 +64,9 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   private int lastColumn;
 
   /**
-   * The URL referred to by this hyperlink
+   * The uRL referred to by this hyperlink
    */
-  private URL url;
+  private uRL url;
 
   /**
    * The local file referred to by this hyperlink
@@ -188,13 +188,13 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
                                          data[startpos + 2],
                                          data[startpos + 3]);
 
-        urlString = StringHelper.getUnicodeString(data, bytes / 2 - 1,
+        urlString = StringHelper.getunicodeString(data, bytes / 2 - 1,
                                                   startpos + 4);
-        url = new URL(urlString);
+        url = new uRL(urlString);
       }
-      catch (MalformedURLException e)
+      catch (MalformeduRLException e)
       {
-        logger.warn("URL " + urlString + " is malformed.  Trying a file");
+        logger.warn("uRL " + urlString + " is malformed.  Trying a file");
         try
         {
           linkType = fileLink;
@@ -202,15 +202,15 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
         }
         catch (Exception e3)
         {
-          logger.warn("Cannot set to file.  Setting a default URL");
+          logger.warn("Cannot set to file.  Setting a default uRL");
 
-          // Set a default URL
+          // Set a default uRL
           try
           {
             linkType = urlLink;
-            url = new URL("http://www.andykhan.com/jexcelapi/index.html");
+            url = new uRL("http://www.andykhan.com/jexcelapi/index.html");
           }
-          catch (MalformedURLException e2)
+          catch (MalformeduRLException e2)
           {
             // fail silently
           }
@@ -222,16 +222,16 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
         StringBuffer sb2 = new StringBuffer();
         CellReferenceHelper.getCellReference(firstColumn, firstRow, sb1);
         CellReferenceHelper.getCellReference(lastColumn, lastRow, sb2);
-        sb1.insert(0, "Exception when parsing URL ");
-        sb1.append('\"').append(sb2.toString()).append("\".  Using default.");
+        sb1.insert(0, "Exception when parsing uRL ");
+        sb1.append('\"').append(sb2.toString()).append("\".  using default.");
         logger.warn(sb1, e);
 
-        // Set a default URL
+        // Set a default uRL
         try
         {
-          url = new URL("http://www.andykhan.com/jexcelapi/index.html");
+          url = new uRL("http://www.andykhan.com/jexcelapi/index.html");
         }
-        catch (MalformedURLException e2)
+        catch (MalformeduRLException e2)
         {
           // fail silently
         }
@@ -275,7 +275,7 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
     else if (linkType == workbookLink)
     {
       int chars = IntegerHelper.getInt(data[32], data[33], data[34], data[35]);
-      location  = StringHelper.getUnicodeString(data, chars - 1, 36);
+      location  = StringHelper.getunicodeString(data, chars - 1, 36);
     }
     else
     {
@@ -288,7 +288,7 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   /**
    * Determines whether this is a hyperlink to a file
    *
-   * @return TRUE if this is a hyperlink to a file, FALSE otherwise
+   * @return TRuE if this is a hyperlink to a file, FALSE otherwise
    */
   public boolean isFile()
   {
@@ -298,9 +298,9 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   /**
    * Determines whether this is a hyperlink to a web resource
    *
-   * @return TRUE if this is a URL
+   * @return TRuE if this is a uRL
    */
-  public boolean isURL()
+  public boolean isuRL()
   {
     return linkType == urlLink;
   }
@@ -308,7 +308,7 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   /**
    * Determines whether this is a hyperlink to a location in this workbook
    *
-   * @return TRUE if this is a link to an internal location
+   * @return TRuE if this is a link to an internal location
    */
   public boolean isLocation()
   {
@@ -356,11 +356,11 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   }
 
   /**
-   * Gets the URL referenced by this Hyperlink
+   * Gets the uRL referenced by this Hyperlink
    *
-   * @return the URL, or NULL if this hyperlink is not a URL
+   * @return the uRL, or NuLL if this hyperlink is not a uRL
    */
-  public URL getURL()
+  public uRL getuRL()
   {
     return url;
   }
@@ -368,7 +368,7 @@ public class HyperlinkRecord extends RecordData implements Hyperlink
   /**
    * Returns the local file eferenced by this Hyperlink
    *
-   * @return the file, or NULL if this hyperlink is not a file
+   * @return the file, or NuLL if this hyperlink is not a file
    */
   public File getFile()
   {

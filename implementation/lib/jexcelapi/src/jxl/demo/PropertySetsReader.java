@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.demo;
@@ -55,10 +55,10 @@ class PropertySetsReader
     writer = new BufferedWriter(new OutputStreamWriter(os));
     FileInputStream fis = new FileInputStream(file);
 
-    int initialFileSize = 1024*1024; // 1mb
+    int initialFilpathCount = 1024*1024; // 1mb
     int arrayGrowSize = 1024*1024;// 1mb
 
-    byte[] d = new byte[initialFileSize];  
+    byte[] d = new byte[initialFilpathCount];  
     int bytesRead = fis.read(d);
     int pos = bytesRead;
 
@@ -131,11 +131,11 @@ class PropertySetsReader
   {
     if (ps.equalsIgnoreCase("SummaryInformation"))
     {
-      ps = BaseCompoundFile.SUMMARY_INFORMATION_NAME;
+      ps = BaseCompoundFile.SuMMARY_INFORMATION_NAME;
     }
     else if (ps.equalsIgnoreCase("DocumentSummaryInformation"))
     {
-      ps = BaseCompoundFile.DOCUMENT_SUMMARY_INFORMATION_NAME;
+      ps = BaseCompoundFile.DOCuMENT_SuMMARY_INFORMATION_NAME;
     }
     else if (ps.equalsIgnoreCase("CompObj"))
     {

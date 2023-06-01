@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.biff.formula;
@@ -79,7 +79,7 @@ class BuiltInFunction extends Operator implements ParsedThing
   {
     int index = IntegerHelper.getInt(data[pos], data[pos + 1]);
     function = Function.getFunction(index);
-    Assert.verify(function != Function.UNKNOWN, "function code " + index);
+    Assert.verify(function != Function.uNKNOWN, "function code " + index);
     return 2;
   }
 
@@ -137,7 +137,7 @@ class BuiltInFunction extends Operator implements ParsedThing
 
   /**
    * Adjusts all the relative cell references in this formula by the
-   * amount specified.  Used when copying formulas
+   * amount specified.  used when copying formulas
    *
    * @param colAdjust the amount to add on to each relative cell reference
    * @param rowAdjust the amount to add on to each relative row reference
@@ -159,7 +159,7 @@ class BuiltInFunction extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the column was inserted
    * @param col the column number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void columnInserted(int sheetIndex, int col, boolean currentSheet)
@@ -178,7 +178,7 @@ class BuiltInFunction extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the column was removed
    * @param col the column number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void columnRemoved(int sheetIndex, int col, boolean currentSheet)
@@ -198,7 +198,7 @@ class BuiltInFunction extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the row was inserted
    * @param row the row number which was inserted
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void rowInserted(int sheetIndex, int row, boolean currentSheet)
@@ -217,7 +217,7 @@ class BuiltInFunction extends Operator implements ParsedThing
    *
    * @param sheetIndex the sheet on which the row was removed
    * @param row the row number which was removed
-   * @param currentSheet TRUE if this formula is on the sheet in which the
+   * @param currentSheet TRuE if this formula is on the sheet in which the
    * column was inserted, FALSE otherwise
    */
   void rowRemoved(int sheetIndex, int row, boolean currentSheet)
@@ -268,8 +268,8 @@ class BuiltInFunction extends Operator implements ParsedThing
     // Add on the operator byte
     byte[] newdata = new byte[data.length + 3];
     System.arraycopy(data, 0, newdata, 0, data.length);
-    newdata[data.length] = !useAlternateCode() ? Token.FUNCTION.getCode() :
-                                                 Token.FUNCTION.getCode2();
+    newdata[data.length] = !useAlternateCode() ? Token.FuNCTION.getCode() :
+                                                 Token.FuNCTION.getCode2();
     IntegerHelper.getTwoBytes(function.getCode(), newdata, data.length + 1);
 
     return newdata;

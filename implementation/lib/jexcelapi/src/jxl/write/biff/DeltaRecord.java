@@ -3,18 +3,18 @@
 *      Copyright (C) 2002 Andrew Khan
 *
 * This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
+* modify it under the terms of the GNu Lesser General Public
 * License as published by the Free Software Foundation; either
 * version 2.1 of the License, or (at your option) any later version.
 *
 * This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* but WITHOuT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICuLAR PuRPOSE.  See the GNu
 * Lesser General Public License for more details.
 *
-* You should have received a copy of the GNU Lesser General Public
+* You should have received a copy of the GNu Lesser General Public
 * License along with this library; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 uSA
 ***************************************************************************/
 
 package jxl.write.biff;
@@ -36,7 +36,7 @@ class DeltaRecord extends WritableRecordData
   /**
    * The number of iterations
    */
-  private double iterationValue;
+  private double iterationvalue;
   
   /**
    * Constructor
@@ -46,7 +46,7 @@ class DeltaRecord extends WritableRecordData
   public DeltaRecord(double itval)
   {
     super(Type.DELTA);
-    iterationValue = itval;
+    iterationvalue = itval;
 
     data = new byte[8];
   }
@@ -59,9 +59,9 @@ class DeltaRecord extends WritableRecordData
    */
   public byte[] getData()
   {
-    DoubleHelper.getIEEEBytes(iterationValue, data, 0);
+    DoubleHelper.getIEEEBytes(iterationvalue, data, 0);
 
-    /*    long val = Double.doubleToLongBits(iterationValue);
+    /*    long val = Double.doubleToLongBits(iterationvalue);
     data[0] = (byte) (val & 0xff);
     data[1] = (byte) ((val & 0xff00) >> 8);
     data[2] = (byte) ((val & 0xff0000) >> 16);
