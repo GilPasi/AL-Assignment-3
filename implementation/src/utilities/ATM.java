@@ -58,7 +58,7 @@ public class ATM {//Equivalent to an edge
 		return isolatedAtm;
 	}
 	
-	//Accessor methods
+	//----Accessors----
 	public int getPriority () {return priority;}
 	public int getVisitsCout () {return visitsCount;}
 	public int getId() {return id;}
@@ -70,10 +70,6 @@ public class ATM {//Equivalent to an edge
 		return "[" + id + ":"+city+":" + x + "," + y + "]";
 	}
 	
-	public static void printAll() {
-		for(ATM atm : allATMs)
-			System.out.println(atm);
-	}
 	
 	public double road (ATM other) {
 		final double  EXTRA_SPEED = 70 , INTRA_SPEED  = 30 ,//kph
@@ -112,7 +108,11 @@ public class ATM {//Equivalent to an edge
 	
 	public int neighborsCount () {return routes.size();}
 	
-	//Mutator methods
+	public boolean idEquals(ATM other) {return id == other.id;}
+	
+	
+	
+	//----Mutator----
 	public void visit () {visitsCount++;}
 	
 	public int setPriority (int priority) throws Exception {
@@ -123,10 +123,7 @@ public class ATM {//Equivalent to an edge
 	
 	public void addRoute (Route newRoute) {routes.add(newRoute);}
 	
-	
-	
-	
-	//Class Methods
+	//----Class Methods----
 	private static ATM calcGeograficCenter() {
 		//Taken from google-maps
 		final double SOUTHEST = 29.490584850191187, NORTHEST = 33.315720555693524,

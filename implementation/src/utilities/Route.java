@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class Route { //Equivalent to an edge
 	private ATM u , v;
+	
 	private double weight , time ;
 	private static double maxWeight = Double.MIN_VALUE;
-	private static ArrayList<Route> allRoutes;
     boolean isVisited = false;
 	
 	
@@ -25,12 +25,7 @@ public class Route { //Equivalent to an edge
 		time = u.road(v);
 		maxWeight = Math.max(time, maxWeight);//Update if necessary
 		time = u.weight(v);
-		
-		if(allRoutes == null)
-			allRoutes = new ArrayList<Route>();
-		allRoutes.add(this);
 	}
-
 	
 	//-----Accessors-----
 	public ATM getU() {
@@ -40,11 +35,6 @@ public class Route { //Equivalent to an edge
 	public ATM getV() {
 		return v;
 	}
-
-	public static ArrayList<Route> getAllRoutes() {
-		return new ArrayList<>(allRoutes);
-	}
-
 
 	public double getWeight() {
 		return weight;
