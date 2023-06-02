@@ -35,7 +35,12 @@ public class Map {
 		return coordinations[machineIndex];
 	}
 	
+	public int getMachineCount() {return  machineCount;}
+	public int getPathCount() {return  pathCount;}
+
 	
+	//Preserve encapsulation
+	public ArrayList<ArrayList<Path>> getPaths (){return copyPaths(paths);}
 	
 	
 	
@@ -360,6 +365,13 @@ public class Map {
 			return path.getV().getIndex();
 		else
 			return path.getU().getIndex();
+		
+	}
+	public static int inferPrevious(Path path , int machine) {
+		if(path.getU().getIndex() == machine)
+			return path.getU().getIndex();
+		else
+			return path.getV().getIndex();
 		
 	}
 	
